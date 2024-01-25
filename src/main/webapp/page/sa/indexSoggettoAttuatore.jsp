@@ -93,6 +93,8 @@
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <style>
             #containerCanvas {
@@ -142,10 +144,12 @@
             }
         </style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
-        <%@ include file="menu/head1.jsp"%>
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
+
+
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <%@ include file="menu/menu.jsp"%>
                 <!-- end:: Aside -->
@@ -156,11 +160,7 @@
                         <!-- begin:: Content Head -->
                         <div class="kt-subheader   kt-grid__item" id="kt_subheader">
                             <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                                <div class="kt-subheader__main">
-                                    <h3 class="kt-subheader__title">Home</h3>
-                                    <span class="kt-subheader__separator kt-subheader__separator--v"></span>
-                                    <a class="kt-subheader__breadcrumbs-link">Soggetto Attuatore</a>
-                                </div>
+
                                 <div class="kt-portlet__head-toolbar kt-align-right">
                                     <ul class="nav nav-pills nav-pills-lg nav-pills-label nav-pills-bold" style="padding-top: 0.5rem;" role="tablist">
                                         <li class="nav-item">
@@ -299,7 +299,7 @@
                         <!-- end:: Content Head -->
                         <a id="chgPwd" href="<%=src%>/page/personal/chgPwd.jsp" class="btn btn-outline-brand btn-sm fancyProfileNoClose" style="display:none;"></a>
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
+                    
                     <!-- end:: Footer -->
                     <!-- end:: Content -->
                 </div>
@@ -319,7 +319,7 @@
                 </div>
             </div>
         </div>
-
+        <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         <!-- end:: Page -->
 
         <!-- begin::Quick Panel -->
@@ -354,28 +354,28 @@
         <!--end::Global Theme Bundle -->
         <!--begin::Page Vendors(used by this page) -->
         <script type="text/javascript">
-                                                                            var KTAppOptions = {
-                                                                                "colors": {
-                                                                                    "state": {
-                                                                                        "brand": "#5d78ff",
-                                                                                        "dark": "#282a3c",
-                                                                                        "light": "#ffffff",
-                                                                                        "primary": "#5867dd",
-                                                                                        "success": "#34bfa3",
-                                                                                        "info": "#36a3f7",
-                                                                                        "warning": "#ffb822"
-                                                                                    },
-                                                                                    "base": {
-                                                                                        "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                                                        "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                                                                                    }
-                                                                                }
-                                                                            };
-                                                                            $('[data-toggle="popover-hover"]').popover({
-                                                                                html: true,
-                                                                                trigger: 'hover',
-                                                                                placement: 'right'
-                                                                            });
+            var KTAppOptions = {
+                "colors": {
+                    "state": {
+                        "brand": "#5d78ff",
+                        "dark": "#282a3c",
+                        "light": "#ffffff",
+                        "primary": "#5867dd",
+                        "success": "#34bfa3",
+                        "info": "#36a3f7",
+                        "warning": "#ffb822"
+                    },
+                    "base": {
+                        "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                        "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                    }
+                }
+            };
+            $('[data-toggle="popover-hover"]').popover({
+                html: true,
+                trigger: 'hover',
+                placement: 'right'
+            });
         </script>
         <script>
             $('.kt-scroll').each(function () {
