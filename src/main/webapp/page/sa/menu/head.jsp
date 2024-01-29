@@ -1,7 +1,7 @@
 <%@page import="java.util.Date"%>
 <!-- begin:: Header -->
 <%String no_cache = "?dummy=" + String.valueOf(new Date().getTime());%>
-<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
+<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed" style="background-color: #0059b3!important; border: none">
     <!-- begin:: Header Menu -->
     <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
     <div class="kt-header-menu-wrapper " id="kt_header_menu_wrapper">
@@ -16,10 +16,10 @@
         <div class="kt-header__topbar-item kt-header__topbar-item--user">
             <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
                 <div class="kt-header__topbar-user">
-                    <span class="kt-header__topbar-welcome kt-hidden-mobile">Ciao,</span>
-                    <span class="kt-header__topbar-username kt-hidden-mobile"><%=us.getSoggettoAttuatore().getRagionesociale()%></span>
+                    <span class="kt-header__topbar-welcome kt-hidden-mobile" style="color: white">Ciao,</span>
+                    <span class="kt-header__topbar-username kt-hidden-mobile" style="color: white"><%=us.getSoggettoAttuatore().getRagionesociale()%></span>
                     <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-                    <span class="kt-badge kt-badge--username kt-badge--unified-io kt-badge--lg kt-badge--rounded kt-badge--bold">
+                    <span class="kt-badge kt-badge--username kt-badge--unified-io kt-badge--lg kt-badge--rounded kt-badge--bold" style="color: white" >
                         <%=us.getSoggettoAttuatore().getRagionesociale().substring(0, 1).toUpperCase()%>
                     </span>
                 </div>
@@ -92,12 +92,6 @@
     </div>
     <!-- end:: Header Topbar -->
 </div>
-<!-- end:: Header 
-<link href="<%=src%>/assets/soop/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="<%=src%>/assets/soop/js/jquery-3.6.1.min.js"></script>
-<script type="text/javascript" src="<%=src%>/assets/soop/js/jquery.fancybox.min.js"></script>
-<script type="text/javascript" src="<%=src%>/assets/soop/js/fancy.js"></script>
--->
 
 <link href="<%=src%>/assets/soop/css/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="<%=src%>/assets/soop/js/jquery-1.10.1.min.js"></script>
