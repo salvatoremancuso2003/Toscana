@@ -1,7 +1,7 @@
 <%@page import="java.util.Date"%>
 <!-- begin:: Header -->
 <%String no_cache = "?dummy=" + String.valueOf(new Date().getTime());%>
-<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
+<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " style="border: solid 1px #0059b3; background-color: #0059b3 ">
 
     <!-- begin:: Header Menu -->
     <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
