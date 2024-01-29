@@ -209,6 +209,7 @@
                                                     <span class="badge bg-white text-primary"><%=contatori[0]%></span>
                                                 </button>
                                             </div>
+                                                
                                             <div class="col-xl-3 col-lg-12 col-md-6" style="padding-bottom: 1.5rem;">
                                                 <button type="button" class="btn btn-primary btn-lg btn-me">
                                                     Allievi formati <span class="badge bg-white text-primary"><%=contatori[1]%></span>
