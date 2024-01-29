@@ -174,7 +174,7 @@
                                         <%if (us.getTipo() == 1) {%>
                                         <li class="nav-item">
                                             <a style="color: #0d6efd; background-color: white; " class="nav-link"  data-toggle="tab" id="tab1" href="#kt_widget5_tab1_content" role="tab">
-                                                Dashboard
+                                                Dashboard 
                                             </a>
                                         </li>
                                         <%}%>
