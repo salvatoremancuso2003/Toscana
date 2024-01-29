@@ -152,313 +152,503 @@
         </style>
     </head>
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
-        <!-- begin:: Page -->
+        <!-- begin:: Page -->                   
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
 
-        <%@ include file="menu/head1.jsp"%>
-        <div class="kt-grid kt-grid--hor kt-grid--root">
-            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-                <%@ include file="menu/menu.jsp"%>
-                <!-- end:: Aside -->
-                <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
-                    <%@ include file="../../Bootstrap2024/index/login/Header_login.jsp"%>
-                    <%@ include file="menu/head.jsp"%>
-                    <!-- begin:: Footer -->
-                    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-image: url(<%=src%>/resource/bg.png); background-size: cover;background-position: center; background-color: #fff;">
-                        <!-- begin:: Content Head -->
-                        
-                        <br>
-                        <div class="tab-content" style="margin-right: 10px;">
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+            <%@ include file="menu/menu.jsp"%>
+            <!-- end:: Aside -->
+            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
 
-                            <div class="row">
-                                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12" style="padding-right: 0px;">
-                                    <%
-                                        String[] contatori = Action.contatoriHome();
-                                    %>
-                                    <div class="row flex col-lg-12"  style="margin-right: 0px; padding-right: 0px;">
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchAllieviMicro.jsp"><div class="one-half custom-redbox">Allievi da validare<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[0]%></label></div></a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchAllieviMicro.jsp"><div class="one-half custom-greenbox">Allievi validati<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[1]%></label></div></a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchAllieviMicro.jsp"><div class="one-half custom-bluebox allievi">Allievi formati<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[2]%></label></div></a>
-                                        </div>
+                <%@ include file="menu/head.jsp"%>
+                <!-- begin:: Footer -->
+                <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-image: url(<%=src%>/resource/bg.png); background-size: cover;background-position: center; background-color: #fff;">
+                    <!-- begin:: Content Head -->
+
+                    <div class="tab-content" style="margin-right: 10px; ">
+
+                        <div class="row">
+                            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12" style="padding-right: 0px;">
+                                <%
+                                    String[] contatori = Action.contatoriHome();
+                                %>
 
 
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchSA.jsp"><div class="one-half custom-redbox soggetti">SE da validare<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[3]%></label></div></a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchSA.jsp"><div class="one-half custom-greenbox soggetti">SE attivi<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[4]%></label></div></a>
-                                        </div>
+                                <div class="row flex col-lg-12"  style="margin-right: 0px; padding-right: 0px;">
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button1">
+                                            Allievi da validare 
+                                            <span class="badge bg-white text-primary"><%=contatori[0]%></span>
+                                        </button>
 
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchDocenti.jsp"><div class="one-half custom-redbox">Docenti da validare<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[5]%></label></div></a>
-                                        </div>
+                                    </div>
+                                    <script>
+                                        const button1 = document.getElementById('button1');
+                                        button1.addEventListener('click', function () {
+                                            window.location.href = "searchAllieviMicro.jsp"
+                                        }
+                                        )
+                                    </script>
 
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchDocenti.jsp"><div class="one-half custom-bluebox allievi">Docenti validati<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[6]%></label></div></a>
-                                        </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button2">
+                                            Allievi validati 
+                                            <span class="badge bg-white text-primary"><%=contatori[1]%></span>
+                                        </button>
 
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchPFMicro.jsp"><div class="one-half custom-yellowbox">PF in attuazione<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[7]%></label></div></a>
-                                        </div>
+                                    </div>
+                                    <script>
+                                        const button2 = document.getElementById('button2');
+                                        button2.addEventListener('click', function () {
+                                            window.location.href = "searchAllieviMicro.jsp"
+                                        }
+                                        )
+                                    </script>
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button3">
+                                            Allievi formati 
+                                            <span class="badge bg-white text-primary"><%=contatori[2]%></span>
+                                        </button>
 
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchPFMicro.jsp?tipo=archiviato">
-                                                <div class="one-half custom-greenbox terminati">PF conclusi<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[8]%></label></div></a>
-                                        </div>
+                                    </div>
+                                    <script>
+                                        const button3 = document.getElementById('button3');
+                                        button3.addEventListener('click', function () {
+                                            window.location.href = "searchAllieviMicro.jsp"
+                                        }
+                                        )
+                                    </script>
 
 
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchPFMicro.jsp"><div class="one-half custom-yellowbox">
-                                                    PF attesa validazione M2<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[9]%></label></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchPFMicro.jsp"><div class="one-half custom-greenbox terminati">
-                                                    PF validati M2<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[10]%></label></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchPFMicro.jsp"><div class="one-half custom-yellowbox">
-                                                    PF attesa validazione M3<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[11]%></label></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchPFMicro.jsp"><div class="one-half custom-greenbox terminati">
-                                                    PF validati M3<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[12]%></label></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchPFMicro.jsp"><div class="one-half custom-yellowbox">
-                                                    PF attesa validazione M4<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[13]%></label></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchPFMicro.jsp"><div class="one-half custom-greenbox terminati">
-                                                    PF validati M4<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[14]%></label></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchPFMicro.jsp"><div class="one-half custom-yellowbox">
-                                                    PF attesa controllo M6<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[15]%></label></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="searchPFMicro.jsp"><div class="one-half custom-greenbox terminati">
-                                                    PF controllati M6<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=contatori[16]%></label></div>
-                                            </a>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
-                                            <a href="saFAQ.jsp"><div class="one-half custom-yellowbox faq">FAQ in attesa<br>
-                                                    <label style="font-size: 3rem; font-weight: 800;"><%=messaggi%></label></div></a>
-                                        </div>
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button4">
+                                            SE da validare 
+                                            <span class="badge bg-white text-primary"><%=contatori[3]%></span>
+                                        </button>
+
+                                    </div>
+                                    <script>
+                                        const button4 = document.getElementById('button4');
+                                        button4.addEventListener('click', function () {
+                                            window.location.href = "searchSA.jsp";
+                                        }
+                                        )
+                                    </script>
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button5">
+                                            SE attivi 
+                                            <span class="badge bg-white text-primary"><%=contatori[4]%></span>
+                                        </button>
+
+                                    </div>
+                                    <script>
+                                        const button5 = document.getElementById('button5');
+                                        button5.addEventListener('click', function () {
+                                            window.location.href = "searchSA.jsp";
+                                        }
+                                        )
+                                    </script>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button6">
+                                            Docenti da validare
+                                            <span class="badge bg-white text-primary"><%=contatori[5]%></span>
+                                        </button>
+
+                                    </div>
+
+                                    <script>
+                                        const button6 = document.getElementById('button6');
+                                        button6.addEventListener('click', function () {
+                                            window.location.href = "searchDocenti.jsp";
+                                        }
+                                        )
+                                    </script>
+
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button7">
+                                            Docenti validati
+                                            <span class="badge bg-white text-primary"><%=contatori[6]%></span>
+                                        </button>
+
+                                    </div>
+
+                                    <script>
+                                        const button7 = document.getElementById('button7');
+                                        button7.addEventListener('click', function () {
+                                            window.location.href = "searchDocenti.jsp";
+                                        }
+                                        )
+                                    </script>
+
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button8">
+                                            PF in attuazione
+                                            <span class="badge bg-white text-primary"><%=contatori[7]%></span>
+                                        </button>
+
+                                    </div>
+
+                                    <script>
+                                        const button8 = document.getElementById('button8');
+                                        button8.addEventListener('click', function () {
+                                            window.location.href = "searchPFMicro.jsp";
+                                        }
+                                        )
+                                    </script>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button9">
+                                            PF conclusi
+                                            <span class="badge bg-white text-primary"><%=contatori[8]%></span>
+                                        </button>
+
+                                    </div>
+
+                                    <script>
+                                        const button9 = document.getElementById('button9');
+                                        button9.addEventListener('click', function () {
+                                            window.location.href = "searchPFMicro.jsp?tipo=archiviato";
+                                        }
+                                        )
+                                    </script>
+
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button10">
+                                            PF attesa validazione M2
+                                            <span class="badge bg-white text-primary"><%=contatori[9]%></span>
+                                        </button>
+
+                                    </div>
+
+                                    <script>
+                                        const button10 = document.getElementById('button10');
+                                        button10.addEventListener('click', function () {
+                                            window.location.href = "searchPFMicro.jsp";
+                                        }
+                                        )
+                                    </script>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button11">
+                                            PF validati M2 
+                                            <span class="badge bg-white text-primary"><%=contatori[10]%></span>
+                                        </button>
+
+                                    </div>
+
+                                    <script>
+                                        const button11 = document.getElementById('button11');
+                                        button11.addEventListener('click', function () {
+                                            window.location.href = "searchPFMicro.jsp";
+                                        }
+                                        )
+                                    </script>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button12">
+                                            PF attesa validazione M3
+                                            <span class="badge bg-white text-primary"><%=contatori[11]%></span>
+                                        </button>
+
                                     </div>
                                 </div>
 
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12" style="padding-left: 0px;">
-                                    <div class="kt-portlet kt-portlet--height-fluid" style="border-radius: 5px; display:block;">
-                                        <div class="kt-portlet__head">
-                                            <div class="kt-portlet__head-label">
-                                                <h3 class="kt-portlet__head-title kt-font-io">
-                                                    Bacheca
-                                                </h3>
-                                            </div>
-                                            <div class="kt-portlet__head-toolbar">
-                                                <ul class="nav nav-pills nav-pills-sm nav-pills-label nav-pills-bold" role="tablist">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link active" data-toggle="tab" href="#sat" role="tab">
-                                                            Soggetti Esecutori
-                                                        </a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" data-toggle="tab" href="#export" role="tab">
-                                                            Estrazione File
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
+                                <script>
+                                    const button12 = document.getElementById('button12');
+                                    button12.addEventListener('click', function () {
+                                        window.location.href = "searchPFMicro.jsp";
+                                    }
+                                    )
+                                </script>
 
-                                        <div class="kt-portlet__body" >
-                                            <div class="tab-content">
-                                                <div class="tab-pane active kt-scroll" id="sat" style="max-height: 650px;" aria-expanded="true">
-                                                    <div class="accordion accordion-solid accordion-toggle-plus " id="accordionExample6" >
-                                                        <%for (SoggettiAttuatori s : lsa) {
-                                                                bgc = i % 2 == 0 ? "background-color: #46c8ef38" : "background-color: #089eff52";
-                                                                i++;%>
-                                                        <div class="card" style="border-radius: 5px;">
-                                                            <div class="card-header" id="heading<%=s.getId()%>" >
-                                                                <div class="card-title collapsed kt-font-io " style="<%=bgc%>" data-toggle="collapse" data-target="#collapse<%=s.getId()%>" aria-expanded="false" aria-controls="collapse<%=s.getId()%>">
-                                                                    <i class="flaticon-presentation-1 kt-font-io" style="font-size: 2rem;"></i> <b><%=s.getRagionesociale()%></b>
-                                                                </div>
-                                                            </div>
-                                                            <div id="collapse<%=s.getId()%>" class="collapse" aria-labelledby="heading<%=s.getId()%>" data-parent="#accordionExample6">
-                                                                <div class="card-body kt-font-io" style="border-radius: 5px;">
-                                                                    <div class="row ">
-                                                                        <div class="col-lg-8">
-                                                                            <h5>Progetti formativi: <%=s.getProgettiformativi().size()%></h5>
-                                                                        </div>
-                                                                        <div class="col-lg-4">
-                                                                            <h5><i class="flaticon-users-1" style="font-size: 1.5rem;"></i> Allievi: <%=s.getAllievi().size()%></h5>
-                                                                        </div>
-                                                                    </div>
-                                                                    <%requirementCountMap = Utility.GroupByAndCount(s);
-                                                                        for (Map.Entry<StatiPrg, Long> sd : requirementCountMap.entrySet()) {
-                                                                            styles = Utility.styleMicro(sd.getKey());
-                                                                    %>
-                                                                    <h6>
-                                                                        <a href="<%=src%>/page/mc/searchPFMicro.jsp?tipo=<%=sd.getKey().getTipo()%>&sa=<%=s.getId()%>" style="<%=styles[0]%>">
-                                                                            <span class="fa-stack">
-                                                                                <span class="fa fa-circle fa-stack-2x" style="<%=styles[0]%>"></span>
-                                                                                <strong class="fa-stack-1x kt-font-white">
-                                                                                    <%=sd.getValue()%>    
-                                                                                </strong>
-                                                                            </span>
-                                                                            &nbsp;&nbsp;<%=styles[1]%>
-                                                                        </a>
-                                                                    </h6>
-                                                                    <%}%>
-                                                                </div>
+                                <div class="row flex col-lg-12"  style="margin-right: 0px; padding-right: 0px;">
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button13">
+                                            PF validati M3
+                                            <span class="badge bg-white text-primary"><%=contatori[12]%></span>
+                                        </button>
+
+                                    </div>
+
+                                    <script>
+                                        const button13 = document.getElementById('button13');
+                                        button13.addEventListener('click', function () {
+                                            window.location.href = "searchPFMicro.jsp";
+                                        }
+                                        )
+                                    </script>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button14">
+                                            PF attesa validazione M4
+                                            <span class="badge bg-white text-primary"><%=contatori[13]%></span>
+                                        </button>
+
+                                    </div>
+
+                                    <script>
+                                        const button14 = document.getElementById('button14');
+                                        button14.addEventListener('click', function () {
+                                            window.location.href = "searchPFMicro.jsp";
+                                        }
+                                        )
+                                    </script>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button15">
+                                            PF validati M4
+                                            <span class="badge bg-white text-primary"><%=contatori[14]%></span>
+                                        </button>
+
+                                    </div>
+
+                                    <script>
+                                        const button15 = document.getElementById('button15');
+                                        button15.addEventListener('click', function () {
+                                            window.location.href = "searchPFMicro.jsp";
+                                        }
+                                        )
+                                    </script>
+
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button16">
+                                            PF attesa controllo M6
+                                            <span class="badge bg-white text-primary"><%=contatori[15]%></span>
+                                        </button>
+
+                                    </div>
+
+                                    <script>
+                                        const button16 = document.getElementById('button16');
+                                        button16.addEventListener('click', function () {
+                                            window.location.href = "searchPFMicro.jsp";
+                                        }
+                                        )
+                                    </script>
+
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button17">
+                                            PF controllati M6
+                                            <span class="badge bg-white text-primary"><%=contatori[16]%></span>
+                                        </button>
+
+                                    </div>
+
+                                    <script>
+                                        const button17 = document.getElementById('button17');
+                                        button17.addEventListener('click', function () {
+                                            window.location.href = "searchPFMicro.jsp";
+                                        }
+                                        )
+
+                                    </script>
+
+                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
+                                        <button type="button" class="btn btn-primary btn-lg btn-me" id="button18">
+                                            FAQ in attesa
+                                            <span class="badge bg-white text-primary"><%=messaggi%></span>
+                                        </button>
+
+                                    </div>
+                                    <script>
+                                        const button18 = document.getElementById('button18');
+                                        button18.addEventListener('click', function () {
+                                            window.location.href = "saFAQ.jsp";
+                                        }
+                                        )
+                                    </script>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12" style="padding-left: 0px;">
+                                <div class="kt-portlet kt-portlet--height-fluid" style="border-radius: 5px; display:block;">
+                                    <div class="kt-portlet__head">
+                                        <div class="kt-portlet__head-label">
+                                            <h3 class="kt-portlet__head-title kt-font-io">
+                                                Bacheca
+                                            </h3>
+                                        </div>
+                                        <div class="kt-portlet__head-toolbar">
+                                            <ul class="nav nav-pills nav-pills-sm nav-pills-label nav-pills-bold" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#sat" role="tab">
+                                                        Soggetti Esecutori
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#export" role="tab">
+                                                        Estrazione File
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="kt-portlet__body" >
+                                        <div class="tab-content">
+                                            <div class="tab-pane active kt-scroll" id="sat" style="max-height: 650px;" aria-expanded="true">
+                                                <div class="accordion accordion-solid accordion-toggle-plus " id="accordionExample6" >
+                                                    <%for (SoggettiAttuatori s : lsa) {
+                                                            bgc = i % 2 == 0 ? "background-color: #46c8ef38" : "background-color: #089eff52";
+                                                            i++;%>
+                                                    <div class="card" style="border-radius: 5px;">
+                                                        <div class="card-header" id="heading<%=s.getId()%>" >
+                                                            <div class="card-title collapsed kt-font-io " style="<%=bgc%>" data-toggle="collapse" data-target="#collapse<%=s.getId()%>" aria-expanded="false" aria-controls="collapse<%=s.getId()%>">
+                                                                <i class="flaticon-presentation-1 kt-font-io" style="font-size: 2rem;"></i> <b><%=s.getRagionesociale()%></b>
                                                             </div>
                                                         </div>
-                                                        <%}%>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="tab-pane" id="export" aria-expanded="false">
-
-                                                    <%
-
-                                                        for (Estrazioni e1 : est) {
-                                                            if (e1.getPath() != null) {
-                                                    %>
-                                                    <div class="kt-notification">
-                                                        <a href="<%=request.getContextPath()%>/OperazioniGeneral?type=downloadDoc&path=<%=e1.getPath()%>" 
-                                                           class="kt-notification__item kt-notification__item2" target="_blank">
-                                                            <div class="kt-notification__item-icon">
-                                                                <i class="fa fa-file-excel" 
-                                                                   style="font-size: 2rem; color: #006b4c;"></i>
-                                                            </div>
-                                                            <div class="kt-notification__item-details ">
-                                                                <div class="kt-notification__item-title" style="color: #006b4c;">
-                                                                    <b style="font-size: 15px;"><%=e1.getProgetti()%></b>
-                                                                </div> 
-                                                                <div class="kt-notification__item-time kt-font-io">
-                                                                    <b><%=e1.getVisualTime()%></b><br>
+                                                        <div id="collapse<%=s.getId()%>" class="collapse" aria-labelledby="heading<%=s.getId()%>" data-parent="#accordionExample6">
+                                                            <div class="card-body kt-font-io" style="border-radius: 5px;">
+                                                                <div class="row ">
+                                                                    <div class="col-lg-8">
+                                                                        <h5>Progetti formativi: <%=s.getProgettiformativi().size()%></h5>
+                                                                    </div>
+                                                                    <div class="col-lg-4">
+                                                                        <h5><i class="flaticon-users-1" style="font-size: 1.5rem;"></i> Allievi: <%=s.getAllievi().size()%></h5>
+                                                                    </div>
                                                                 </div>
+                                                                <%requirementCountMap = Utility.GroupByAndCount(s);
+                                                                    for (Map.Entry<StatiPrg, Long> sd : requirementCountMap.entrySet()) {
+                                                                        styles = Utility.styleMicro(sd.getKey());
+                                                                %>
+                                                                <h6>
+                                                                    <a href="<%=src%>/page/mc/searchPFMicro.jsp?tipo=<%=sd.getKey().getTipo()%>&sa=<%=s.getId()%>" style="<%=styles[0]%>">
+                                                                        <span class="fa-stack">
+                                                                            <span class="fa fa-circle fa-stack-2x" style="<%=styles[0]%>"></span>
+                                                                            <strong class="fa-stack-1x kt-font-white">
+                                                                                <%=sd.getValue()%>    
+                                                                            </strong>
+                                                                        </span>
+                                                                        &nbsp;&nbsp;<%=styles[1]%>
+                                                                    </a>
+                                                                </h6>
+                                                                <%}%>
                                                             </div>
-                                                        </a>
+                                                        </div>
                                                     </div>
-                                                    <%}
-                                                        }%>
+                                                    <%}%>
                                                 </div>
                                             </div>
+
+
+                                            <div class="tab-pane" id="export" aria-expanded="false">
+
+                                                <%
+
+                                                    for (Estrazioni e1 : est) {
+                                                        if (e1.getPath() != null) {
+                                                %>
+                                                <div class="kt-notification">
+                                                    <a href="<%=request.getContextPath()%>/OperazioniGeneral?type=downloadDoc&path=<%=e1.getPath()%>" 
+                                                       class="kt-notification__item kt-notification__item2" target="_blank">
+                                                        <div class="kt-notification__item-icon">
+                                                            <i class="fa fa-file-excel" 
+                                                               style="font-size: 2rem; color: #006b4c;"></i>
+                                                        </div>
+                                                        <div class="kt-notification__item-details ">
+                                                            <div class="kt-notification__item-title" style="color: #006b4c;">
+                                                                <b style="font-size: 15px;"><%=e1.getProgetti()%></b>
+                                                            </div> 
+                                                            <div class="kt-notification__item-time kt-font-io">
+                                                                <b><%=e1.getVisualTime()%></b><br>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <%}
+                                                }%>
+                                            </div>
                                         </div>
+                                    </div>
 
-                                    </div> 
-                                </div>
-
-                            </div>      
-                            <!-- end:: Content Head -->
-                            <a id="chgPwd" href="<%=src%>/page/personal/chgPwd.jsp" class="btn btn-outline-brand btn-sm fancyProfileNoClose" style="display:none;"></a>
-                        </div>
-                        <!-- end:: Footer -->
-                        <!-- end:: Content -->
-                    </div>
-                    <%@ include file="menu/footer.jsp"%>
-                    <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
-
-                    <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-                        <button id="showmod1" type="button" class="btn btn-outline-brand btn-sm" data-toggle="modal" data-target="#kt_modal_6">Launch Modal</button>
-                    </div>
-                    <div class="modal fade" id="kt_modal_6" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="text_modal_title"></h5>
-                                    <button type="button" id='close_kt_modal_6' class="close" data-target="#kt_modal_6" data-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body" id="text_modal_html"></div>
+                                </div> 
                             </div>
+
+                        </div>      
+                        <!-- end:: Content Head -->
+                        <a id="chgPwd" href="<%=src%>/page/personal/chgPwd.jsp" class="btn btn-outline-brand btn-sm fancyProfileNoClose" style="display:none;"></a>
+                    </div>
+                    <!-- end:: Footer -->
+                    <!-- end:: Content -->
+                </div>
+                <br>
+
+                <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
+
+                <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                    <button id="showmod1" type="button" class="btn btn-outline-brand btn-sm" data-toggle="modal" data-target="#kt_modal_6">Launch Modal</button>
+                </div>
+                <div class="modal fade" id="kt_modal_6" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="text_modal_title"></h5>
+                                <button type="button" id='close_kt_modal_6' class="close" data-target="#kt_modal_6" data-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="text_modal_html"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="kt_scrolltop" class="kt-scrolltop">
-                <i class="fa fa-arrow-up"></i>
-            </div>
+        </div>
+        <div id="kt_scrolltop" class="kt-scrolltop">
+            <i class="fa fa-arrow-up"></i>
+        </div>
 
-            <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
-            <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-            <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-            <script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
-            <script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
-            <script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
-            <script src="<%=src%>/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
-            <script src="<%=src%>/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
-            <script src="<%=src%>/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
-            <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
-            <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
-            <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
-            <script type="text/javascript">
-            var KTAppOptions = {
-                "colors": {
-                    "state": {
-                        "brand": "#5d78ff",
-                        "dark": "#282a3c",
-                        "light": "#ffffff",
-                        "primary": "#5867dd",
-                        "success": "#34bfa3",
-                        "info": "#36a3f7",
-                        "warning": "#ffb822"
-                    },
-                    "base": {
-                        "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                        "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                    }
-                }
-            };
+        <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
+        <script type="text/javascript">
+                                        var KTAppOptions = {
+                                            "colors": {
+                                                "state": {
+                                                    "brand": "#5d78ff",
+                                                    "dark": "#282a3c",
+                                                    "light": "#ffffff",
+                                                    "primary": "#5867dd",
+                                                    "success": "#34bfa3",
+                                                    "info": "#36a3f7",
+                                                    "warning": "#ffb822"
+                                                },
+                                                "base": {
+                                                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                                }
+                                            }
+                                        };
+                                        $('.kt-scroll').each(function () {
+                                            const ps = new PerfectScrollbar($(this)[0]);
+                                        });
+        </script>
 
-            $('.kt-scroll').each(function () {
-                const ps = new PerfectScrollbar($(this)[0]);
+        <script>
+            function fancyBoxClose() {
+                $('div.fancybox-overlay.fancybox-overlay-fixed').css('display', 'none');
+            }
+            jQuery(document).ready(function () {
+            <%if (us.getStato() == 2) {%>
+                $('#chgPwd')[0].click();
+            <%}%>
             });
-            </script>
-
-            <script>
-                function fancyBoxClose() {
-                    $('div.fancybox-overlay.fancybox-overlay-fixed').css('display', 'none');
-                }
-                jQuery(document).ready(function () {
-                <%if (us.getStato() == 2) {%>
-                    $('#chgPwd')[0].click();
-                <%}%>
-                });
-
-                <%if (request.getParameter("fileNotFound") != null) {%>
-                swalError("<h2>File Non Trovato<h2>", "<h4>Il file richiesto non esiste.</h4>");
-                <%}%>
-            </script>
+            <%if (request.getParameter("fileNotFound") != null) {%>
+            swalError("<h2>File Non Trovato<h2>", "<h4>Il file richiesto non esiste.</h4>");
+            <%}%>
+        </script>
     </body>
 </html>
 <%
