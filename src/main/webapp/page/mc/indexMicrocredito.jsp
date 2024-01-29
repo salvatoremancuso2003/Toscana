@@ -88,6 +88,7 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <style>
             #containerCanvas {
@@ -108,42 +109,66 @@
                 background-color: #c2eee1!important;
                 margin-bottom:1.5rem;
             }
-            .custom-yellowbox.faq:before{font-family: 'Flaticon';content: "\f177";}
-            .custom-bluebox.allievi:before{font-family: 'Flaticon';content: "\f1af";}
-            .custom-redbox:before{font-family: 'Flaticon';content: "\f1af";}
-            .custom-greenbox.terminati:before{font-family: 'Flaticon2';content: "\f126";}
-            .custom-greenbox:before{font-family: 'Flaticon';content: "\f1b7";}
-            .custom-greenbox.soggetti:before{font-family: 'Flaticon';content: "\f114";}
-            .custom-greybox.docente:before{font-family: 'Flaticon';content: "\f11d";}
-            .custom-bluebox:before{font-family: 'Flaticon';content: "\f114";}
-            .custom-redbox.soggetti:before{font-family: 'Flaticon';content: "\f114";}
-            .custom-yellowbox:before{font-family: 'Flaticon2';content: "\f126";}
+            .custom-yellowbox.faq:before{
+                font-family: 'Flaticon';
+                content: "\f177";
+            }
+            .custom-bluebox.allievi:before{
+                font-family: 'Flaticon';
+                content: "\f1af";
+            }
+            .custom-redbox:before{
+                font-family: 'Flaticon';
+                content: "\f1af";
+            }
+            .custom-greenbox.terminati:before{
+                font-family: 'Flaticon2';
+                content: "\f126";
+            }
+            .custom-greenbox:before{
+                font-family: 'Flaticon';
+                content: "\f1b7";
+            }
+            .custom-greenbox.soggetti:before{
+                font-family: 'Flaticon';
+                content: "\f114";
+            }
+            .custom-greybox.docente:before{
+                font-family: 'Flaticon';
+                content: "\f11d";
+            }
+            .custom-bluebox:before{
+                font-family: 'Flaticon';
+                content: "\f114";
+            }
+            .custom-redbox.soggetti:before{
+                font-family: 'Flaticon';
+                content: "\f114";
+            }
+            .custom-yellowbox:before{
+                font-family: 'Flaticon2';
+                content: "\f126";
+            }
         </style>
     </head>
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
         <!-- begin:: Page -->
+
         <%@ include file="menu/head1.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <%@ include file="menu/menu.jsp"%>
                 <!-- end:: Aside -->
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+                    <%@ include file="../../Bootstrap2024/index/login/Header_login.jsp"%>
                     <%@ include file="menu/head.jsp"%>
                     <!-- begin:: Footer -->
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-image: url(<%=src%>/resource/bg.png); background-size: cover;background-position: center; background-color: #fff;">
                         <!-- begin:: Content Head -->
-                        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                            <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                                <div class="kt-subheader__main">
-                                    <h3 class="kt-subheader__title">Home</h3>
-                                    <span class="kt-subheader__separator kt-subheader__separator--v"></span>
-                                    <a class="kt-subheader__breadcrumbs-link">YES I Start Up - Toscana</a>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <br>
                         <div class="tab-content" style="margin-right: 10px;">
-                            
+
                             <div class="row">
                                 <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12" style="padding-right: 0px;">
                                     <%
@@ -346,7 +371,7 @@
                                                         </a>
                                                     </div>
                                                     <%}
-}%>
+                                                        }%>
                                                 </div>
                                             </div>
                                         </div>
@@ -362,6 +387,8 @@
                         <!-- end:: Content -->
                     </div>
                     <%@ include file="menu/footer.jsp"%>
+                    <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
+
                     <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
                         <button id="showmod1" type="button" class="btn btn-outline-brand btn-sm" data-toggle="modal" data-target="#kt_modal_6">Launch Modal</button>
                     </div>
@@ -381,6 +408,7 @@
             <div id="kt_scrolltop" class="kt-scrolltop">
                 <i class="fa fa-arrow-up"></i>
             </div>
+
             <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
             <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
             <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
@@ -394,27 +422,27 @@
             <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
             <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
             <script type="text/javascript">
-                                                                                    var KTAppOptions = {
-                                                                                        "colors": {
-                                                                                            "state": {
-                                                                                                "brand": "#5d78ff",
-                                                                                                "dark": "#282a3c",
-                                                                                                "light": "#ffffff",
-                                                                                                "primary": "#5867dd",
-                                                                                                "success": "#34bfa3",
-                                                                                                "info": "#36a3f7",
-                                                                                                "warning": "#ffb822"
-                                                                                            },
-                                                                                            "base": {
-                                                                                                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                                                                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                                                                                            }
-                                                                                        }
-                                                                                    };
+            var KTAppOptions = {
+                "colors": {
+                    "state": {
+                        "brand": "#5d78ff",
+                        "dark": "#282a3c",
+                        "light": "#ffffff",
+                        "primary": "#5867dd",
+                        "success": "#34bfa3",
+                        "info": "#36a3f7",
+                        "warning": "#ffb822"
+                    },
+                    "base": {
+                        "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                        "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                    }
+                }
+            };
 
-                                                                                    $('.kt-scroll').each(function () {
-                                                                                        const ps = new PerfectScrollbar($(this)[0]);
-                                                                                    });
+            $('.kt-scroll').each(function () {
+                const ps = new PerfectScrollbar($(this)[0]);
+            });
             </script>
 
             <script>

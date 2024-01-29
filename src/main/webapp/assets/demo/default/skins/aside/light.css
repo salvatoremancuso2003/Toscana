@@ -1,5 +1,5 @@
 .kt-aside {
-  background-color: #ffffff;
+  background-color: #0059b3;
   -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.08);
   box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.08); }
   .kt-aside .ps > .ps__rail-x {
@@ -50,10 +50,10 @@
         color: #5d78ff; }
 
 .kt-aside-menu {
-  background-color: #ffffff ; }
+  background-color: #06c ; }
   .kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__heading .kt-menu__link-text,
   .kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__link-text {
-    color: #313752 ; }
+      color: #ffffff ; }
   .kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__heading .kt-menu__link-icon,
   .kt-aside-menu .kt-menu__nav > .kt-menu__item > .kt-menu__link .kt-menu__link-icon {
     color: #c4cff9 ; }
@@ -140,7 +140,7 @@
     transition: background-color 0.3s; }
     .kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__heading,
     .kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__link {
-      background-color: #f6f7fd ; }
+      background-color: #06c ; }
       .kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__heading .kt-menu__link-text,
       .kt-aside-menu .kt-menu__nav > .kt-menu__item.kt-menu__item--active > .kt-menu__link .kt-menu__link-text {
         color: #5d78ff ; }
