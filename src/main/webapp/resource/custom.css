@@ -263,7 +263,7 @@ and open the template in the editor.
     color: #1e26d0 !important; }
 
 .kt-badge.kt-badge--unified-io {
-    color: #363a90;
+    color: #ffffff;
     background: rgba(234, 163, 29, 0.21); }
 
 .kt-switch.kt-switch--io:not(.kt-switch--outline) input:empty ~ span:before {
