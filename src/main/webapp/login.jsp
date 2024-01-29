@@ -74,14 +74,7 @@
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-color: white;">
                     <div class="kt-grid__item kt-grid__item--fluid kt-login__wrapper">
                         <div class="kt-login__container">
-                            <div class="kt-login__logo">
 
-                                <img src="assets/soop/img/l2-EU.jpg" alt="" height="50px"/>
-                                <img src="assets/soop/img/l3-ML.jpg" alt="" height="50px"/>
-                                <img src="assets/soop/img/l7-AN.png" alt="" height="50px"/>
-                                <img src="assets/soop/img/l6-GO.jpg" alt="" height="50px"/>
-
-                            </div>
                             <hr>
                             <div class="kt-login__signin">
                                 <div class="kt-login__head">
@@ -116,11 +109,11 @@
                                     <div class="row kt-login__extra">
                                         <div class="col-6 kt-align-left">
                                             <div class="col">
-                                                <a href="faq.jsp" class="kt-font-io-n" style="font-size: 20px;"><b>FAQ</b></a>
+                                                <a href="faq.jsp" class="" style="font-size: 18px;"><b> FAQ</b></a>
                                             </div>
                                         </div>
                                         <div class="col-6 kt-align-right">
-                                            <a href="javascript:;" id="kt_login_forgot" class="kt-login__link">Password dimenticata ?</a>
+                                            <a href="javascript:;" id="kt_login_forgot" class="">Password dimenticata ?</a>
                                         </div>
                                     </div>
                                     <div class="kt-login__actions">
@@ -150,7 +143,6 @@
                                                 Guida all'uso della piattaforma
 
                                             </a>
-                                            <img src="resource/new.png" alt='blinking!' id='blinking_image'/>
                                         </div>
                                     </div>
                                 </div>
@@ -185,154 +177,147 @@
                                 </form>
                             </div>
                             <hr>
-                            <div class="login__logo"> 
-                                <center>
-                                    <img src="assets/soop/img/l4-RT.jpg" alt="" height="54px"/>
-                                    <img src="assets/soop/img/l1-AR.png" alt="" height="34px"/>
-                                    <img src="assets/soop/img/logo_blue_1.png" alt="" height="54px"/>
-                                </center>
-                            </div>
+
                         </div>
                     </div>
+                    <%@ include file="Bootstrap2024/index/login/Footer_login.jsp"%>
+
+
                 </div>
-                <%@ include file="Bootstrap2024/index/login/Footer_login.jsp"%>
-                
-
             </div>
-        </div>
 
-        <!-- end:: Page -->
+            <!-- end:: Page -->
 
-        <script type="text/javascript" src="assets/soop/js/jquery-3.6.1.min.js"></script>
-        <!--begin:: Global Mandatory Vendors -->
-        <script src="assets/soop/js/utility.js" type="text/javascript"></script>
-        <script>
-                                    function ctrlForm() {
-                                        var err = false;
-                                        var user = $("#user");
-                                        var pass = $("#password");
-                                        if (checkValue(user, false)) {
-                                            err = true;
-                                        }
-                                        if (checkValue(pass, false)) {
-                                            err = true;
-                                        }
-                                        if (err) {
-                                            $("#drop_login").trigger('click');
-                                            return false;
-                                        }
-                                        swal.fire({
-                                            title: 'Sto Accedendo...',
-                                            text: '',
-                                            onOpen: function () {
-                                                swal.showLoading();
+            <script type="text/javascript" src="assets/soop/js/jquery-3.6.1.min.js"></script>
+            <!--begin:: Global Mandatory Vendors -->
+            <script src="assets/soop/js/utility.js" type="text/javascript"></script>
+            <script>
+                                        function ctrlForm() {
+                                            var err = false;
+                                            var user = $("#user");
+                                            var pass = $("#password");
+                                            if (checkValue(user, false)) {
+                                                err = true;
                                             }
-                                        });
-                                        return true;
-                                    }
-        </script>
+                                            if (checkValue(pass, false)) {
+                                                err = true;
+                                            }
+                                            if (err) {
+                                                $("#drop_login").trigger('click');
+                                                return false;
+                                            }
+                                            swal.fire({
+                                                title: 'Sto Accedendo...',
+                                                text: '',
+                                                onOpen: function () {
+                                                    swal.showLoading();
+                                                }
+                                            });
+                                            return true;
+                                        }
+            </script>
 
-        <script>
-            var KTAppOptions = {
-                "colors": {
-                    "state": {
-                        "brand": "#5d78ff",
-                        "dark": "#282a3c",
-                        "light": "#ffffff",
-                        "primary": "#5867dd",
-                        "success": "#34bfa3",
-                        "info": "#36a3f7",
-                        "warning": "#ffb822",
-                        "danger": "#fd3995"
-                    },
-                    "base": {
-                        "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                        "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                    }
-                }
-            };
-        </script>
-
-
-        <script type="text/javascript" src="assets/soop/js/jquery.fancybox.min.js"></script>
-        <script type="text/javascript" src="assets/soop/js/fancy.js"></script>
-        <script src="assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
-        <script src="assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-        <script src="assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
-        <script src="assets/soop/js/moment.min.js" type="text/javascript"></script>
-        <script src="assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
-        <script src="assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
-        <script src="assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
-        <script src="assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
-        <script src="assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
-        <script src="assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
-        <script src="assets/app/custom/login/login-general.js" type="text/javascript"></script>
-        <script src="assets/app/bundle/app.bundle.js" type="text/javascript"></script>
-        <script src="assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
-
-        <script type="text/javascript">
-            function ctrlEmail() {
-                var err = true;
-                var email = $('#email');
-                if (checkValue(email, false)) {
-                    err = false;
-                }
-                return err;
-            }
-
-            $("#submit_pwd").on('click', function () {
-                if (ctrlEmail()) {
-                    showLoad();
-                    $('#kt_form_pwd').ajaxSubmit({
-                        error: function () {
-                            closeSwal();
-                            swal.fire({
-                                "title": 'Errore',
-                                "text": "Riprovare, se l'errore persiste contattare il servizio clienti",
-                                "type": "error",
-                                cancelButtonColor: "#3a2c7a",
-                                cancelButtonClass: "btn btn-io-n"
-                            });
+            <script>
+                var KTAppOptions = {
+                    "colors": {
+                        "state": {
+                            "brand": "#5d78ff",
+                            "dark": "#282a3c",
+                            "light": "#ffffff",
+                            "primary": "#5867dd",
+                            "success": "#34bfa3",
+                            "info": "#36a3f7",
+                            "warning": "#ffb822",
+                            "danger": "#fd3995"
                         },
-                        success: function (resp) {
-                            var json = JSON.parse(resp);
-                            closeSwal();
-                            if (json.result) {
-                                swalSuccessReload("Password cambiata con successo!", "Hai ricevuto una mail al tuo indirizzo contenente la nuova password da modificare al prossimo accesso");
-                            } else {
-                                $('#email').attr("class", "form-control is-invalid");
+                        "base": {
+                            "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                            "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                        }
+                    }
+                };
+            </script>
+
+
+            <script type="text/javascript" src="assets/soop/js/jquery.fancybox.min.js"></script>
+            <script type="text/javascript" src="assets/soop/js/fancy.js"></script>
+            <script src="assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
+            <script src="assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+            <script src="assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+            <script src="assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+            <script src="assets/soop/js/moment.min.js" type="text/javascript"></script>
+            <script src="assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+            <script src="assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
+            <script src="assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+            <script src="assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
+            <script src="assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+            <script src="assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
+            <script src="assets/app/custom/login/login-general.js" type="text/javascript"></script>
+            <script src="assets/app/bundle/app.bundle.js" type="text/javascript"></script>
+            <script src="assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+
+            <script type="text/javascript">
+                function ctrlEmail() {
+                    var err = true;
+                    var email = $('#email');
+                    if (checkValue(email, false)) {
+                        err = false;
+                    }
+                    return err;
+                }
+
+                $("#submit_pwd").on('click', function () {
+                    if (ctrlEmail()) {
+                        showLoad();
+                        $('#kt_form_pwd').ajaxSubmit({
+                            error: function () {
+                                closeSwal();
                                 swal.fire({
-                                    "title": '<h3><b>Errore!</b></h3>',
-                                    "html": "<h5>" + json.messagge + "</h5>",
+                                    "title": 'Errore',
+                                    "text": "Riprovare, se l'errore persiste contattare il servizio clienti",
                                     "type": "error",
+                                    cancelButtonColor: "#3a2c7a",
                                     cancelButtonClass: "btn btn-io-n"
                                 });
+                            },
+                            success: function (resp) {
+                                var json = JSON.parse(resp);
+                                closeSwal();
+                                if (json.result) {
+                                    swalSuccessReload("Password cambiata con successo!", "Hai ricevuto una mail al tuo indirizzo contenente la nuova password da modificare al prossimo accesso");
+                                } else {
+                                    $('#email').attr("class", "form-control is-invalid");
+                                    swal.fire({
+                                        "title": '<h3><b>Errore!</b></h3>',
+                                        "html": "<h5>" + json.messagge + "</h5>",
+                                        "type": "error",
+                                        cancelButtonClass: "btn btn-io-n"
+                                    });
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
                 }
-            }
-            );
-        </script>
+                );
+            </script>
 
-        <script type="text/javascript">
-            <%  String esito = request.getParameter("esito");
-                if (esito == null) {
-                    esito = "";
-                } else if (esito.equals("KO")) {%>
+            <script type="text/javascript">
+                <%  String esito = request.getParameter("esito");
+                    if (esito == null) {
+                        esito = "";
+                    } else if (esito.equals("KO")) {%>
             swal.fire({
                 type: 'error',
                 title: 'Credenziali errate',
                 confirmButtonColor: '#363a90'
             });
-            <%} else if (esito.equals("banned")) {%>
+                <%} else if (esito.equals("banned")) {%>
             swal.fire({
                 type: 'error',
                 title: 'Utenza bloccata',
                 confirmButtonColor: '#363a90'
             });
-            <%}%>
+                <%}%>
 
             function clickLink(link, target) {
                 var a = document.createElement('a');
@@ -349,7 +334,7 @@
 
 
 
-        </script>
+            </script>
 
 
 

@@ -142,6 +142,9 @@
                 font-family: 'Flaticon2';
                 content: "\f126";
             }
+           
+            
+          
         </style>
     </head>
     <body>
@@ -164,13 +167,13 @@
                                 <div class="kt-portlet__head-toolbar kt-align-right">
                                     <ul class="nav nav-pills nav-pills-lg nav-pills-label nav-pills-bold" style="padding-top: 0.5rem;" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link " data-toggle="tab" id="tab2" href="#kt_widget5_tab2_content"  role="tab">
+                                            <a style="color: #0d6efd; background-color: white; " class="nav-link " data-toggle="tab" id="tab2" href="#kt_widget5_tab2_content"  role="tab">
                                                 Riepilogo
                                             </a>
                                         </li>
                                         <%if (us.getTipo() == 1) {%>
                                         <li class="nav-item">
-                                            <a class="nav-link"  data-toggle="tab" id="tab1" href="#kt_widget5_tab1_content" role="tab">
+                                            <a style="color: #0d6efd; background-color: white; " class="nav-link"  data-toggle="tab" id="tab1" href="#kt_widget5_tab1_content" role="tab">
                                                 Dashboard
                                             </a>
                                         </li>
@@ -198,20 +201,25 @@
                                             %>
 
                                             <div class="col-xl-3 col-lg-12 col-md-6" style="padding-bottom: 1.5rem;">
-                                                <div class="one-half custom-redbox">Allievi totali<br><label style="font-size: 3rem; font-weight: 800;">
-                                                        <%=contatori[0]%></label></div>
+                                                <button type="button" class="btn btn-primary btn-lg btn-me">
+                                                    Allievi totali 
+                                                    <span class="badge bg-white text-primary"><%=contatori[0]%></span>
+                                                </button>
                                             </div>
                                             <div class="col-xl-3 col-lg-12 col-md-6" style="padding-bottom: 1.5rem;">
-                                                <div class="one-half custom-greenbox">Allievi formati<br><label style="font-size: 3rem; font-weight: 800;">
-                                                        <%=contatori[1]%></label></div>
+                                                <button type="button" class="btn btn-primary btn-lg btn-me">
+                                                    Allievi formati <span class="badge bg-white text-primary"><%=contatori[1]%></span>
+                                                </button>
                                             </div>
                                             <div class="col-xl-3 col-lg-12 col-md-6" style="padding-bottom: 1.5rem;">
-                                                <div class="one-half custom-yellowbox">Progetti totali<br><label style="font-size: 3rem; font-weight: 800;">
-                                                        <%=contatori[2]%></label></div>
+                                                <button type="button" class="btn btn-primary btn-lg btn-me">
+                                                    Progetti totali <span class="badge bg-white text-primary"><%=contatori[2]%></span>
+                                                </button>
                                             </div>
                                             <div class="col-xl-3 col-lg-12 col-md-6" style="padding-bottom: 1.5rem;">
-                                                <div class="one-half custom-bluebox">Progetti conclusi<br><label style="font-size: 3rem; font-weight: 800;">
-                                                        <%=contatori[3]%></label></div>
+                                                <button type="button" class="btn btn-primary btn-lg btn-me">
+                                                    Progetti conclusi <span class="badge bg-white text-primary"><%=contatori[3]%></span>
+                                                </button>
                                             </div>
                                         </div>
                                         <%if (Utility.demoversion) {%>
@@ -261,32 +269,32 @@
                                     <div class="col-lg-8">
                                         <div class="row">
                                             <div class="col-xl-6 col-lg-12"><br><br>
-                                                <h5 class="kt-font-io-n"><b>Soggetto Attuatore</b></h5><br>
-                                                <h6><b>Ragione Sociale:</b> <%=us.getSoggettoAttuatore().getRagionesociale()%></h6><br>
+                                                <h5 style="color: #fd7e14" ><b>Soggetto Attuatore</b></h5><br>
+                                                <h6 class="text-primary"><b>Ragione Sociale:</b> <%=us.getSoggettoAttuatore().getRagionesociale()%></h6><br>
                                                 <%if (us.getSoggettoAttuatore().getPiva() != null && !us.getSoggettoAttuatore().getPiva().equalsIgnoreCase("")) {%>
-                                                <h6><b>Partita IVA:</b> <%=us.getSoggettoAttuatore().getPiva()%></h6><br>
+                                                <h6 class="text-primary"><b>Partita IVA:</b> <%=us.getSoggettoAttuatore().getPiva()%></h6><br>
                                                 <%}
                                                     if (us.getSoggettoAttuatore().getCodicefiscale() != null && !us.getSoggettoAttuatore().getCodicefiscale().equalsIgnoreCase("")) {%>
-                                                <h6><b>Codice Fiscale:</b> <%=us.getSoggettoAttuatore().getCodicefiscale()%></h6><br>
+                                                <h6 class="text-primary"><b>Codice Fiscale:</b> <%=us.getSoggettoAttuatore().getCodicefiscale()%></h6><br>
                                                 <%}%>
-                                                <h6><b>Email:</b> <%=us.getSoggettoAttuatore().getEmail()%></h6><br>
-                                                <h6><b>PEC:</b> <%=us.getSoggettoAttuatore().getPec()%></h6><br>
-                                                <h6><b>Telefono:</b> <%=us.getSoggettoAttuatore().getTelefono_sa()%></h6><br>
-                                                <h6><b>Cellulare:</b> <%=us.getSoggettoAttuatore().getCell_sa()%></h6><br>
-                                                <h6><b>Indirizzo:</b> <%=us.getSoggettoAttuatore().getIndirizzo()%></h6><br>
-                                                <h6><b>Comune:</b> <%=us.getSoggettoAttuatore().getComune().getNome()%> (<%=us.getSoggettoAttuatore().getCap()%>, <%=us.getSoggettoAttuatore().getComune().getNome_provincia()%>)</h6><br><br><br>
+                                                <h6 class="text-primary"><b>Email:</b> <%=us.getSoggettoAttuatore().getEmail()%></h6><br>
+                                                <h6 class="text-primary"><b>PEC:</b> <%=us.getSoggettoAttuatore().getPec()%></h6><br>
+                                                <h6 class="text-primary"><b>Telefono:</b> <%=us.getSoggettoAttuatore().getTelefono_sa()%></h6><br>
+                                                <h6 class="text-primary"><b>Cellulare:</b> <%=us.getSoggettoAttuatore().getCell_sa()%></h6><br>
+                                                <h6 class="text-primary"><b>Indirizzo:</b> <%=us.getSoggettoAttuatore().getIndirizzo()%></h6><br>
+                                                <h6 class="text-primary"><b>Comune:</b> <%=us.getSoggettoAttuatore().getComune().getNome()%> (<%=us.getSoggettoAttuatore().getCap()%>, <%=us.getSoggettoAttuatore().getComune().getNome_provincia()%>)</h6><br><br><br>
                                             </div>
                                             <div class="col-xl-6 col-lg-12"><br><br>
-                                                <h5 class="kt-font-io-n"><b>Amministratore Delegato / Unico</b></h5><br>
-                                                <h6><b>Nome:</b> <%=us.getSoggettoAttuatore().getNome()%></h6><br>
-                                                <h6><b>Cognome:</b> <%=us.getSoggettoAttuatore().getCognome()%></h6><br>
-                                                <h6><b>Data Nascita:</b> <%=sdf.format(us.getSoggettoAttuatore().getDatanascita())%></h6><br>
-                                                <h6><b>Numero Documento:</b> <%=us.getSoggettoAttuatore().getNro_documento()%></h6><br>
-                                                <h6><b>Scadenza Documento:</b> <%=sdf.format(us.getSoggettoAttuatore().getScadenza())%></h6><br><br><br>
-                                                <h5 class="kt-font-io-n"><b>Referente</b></h5><br>
-                                                <h6><b>Nome:</b> <%=us.getSoggettoAttuatore().getNome_refente()%></h6><br>
-                                                <h6><b>Cognome:</b> <%=us.getSoggettoAttuatore().getCognome_referente()%></h6><br>
-                                                <h6><b>Telefono:</b> <%=us.getSoggettoAttuatore().getTelefono_referente()%></h6><br>
+                                                <h5 style="color: #fd7e14"><b>Amministratore Delegato / Unico</b></h5><br>
+                                                <h6 class="text-primary"><b>Nome:</b> <%=us.getSoggettoAttuatore().getNome()%></h6><br>
+                                                <h6 class="text-primary"><b>Cognome:</b> <%=us.getSoggettoAttuatore().getCognome()%></h6><br>
+                                                <h6 class="text-primary"><b>Data Nascita:</b> <%=sdf.format(us.getSoggettoAttuatore().getDatanascita())%></h6><br>
+                                                <h6 class="text-primary"><b>Numero Documento:</b> <%=us.getSoggettoAttuatore().getNro_documento()%></h6><br>
+                                                <h6 class="text-primary"><b>Scadenza Documento:</b> <%=sdf.format(us.getSoggettoAttuatore().getScadenza())%></h6><br><br><br>
+                                                <h5 style="color: #fd7e14"><b>Referente</b></h5><br>
+                                                <h6 class="text-primary"><b>Nome:</b> <%=us.getSoggettoAttuatore().getNome_refente()%></h6><br>
+                                                <h6 class="text-primary"><b>Cognome:</b> <%=us.getSoggettoAttuatore().getCognome_referente()%></h6><br>
+                                                <h6 class="text-primary"><b>Telefono:</b> <%=us.getSoggettoAttuatore().getTelefono_referente()%></h6><br>
                                             </div>
                                         </div>
                                     </div>
@@ -299,7 +307,7 @@
                         <!-- end:: Content Head -->
                         <a id="chgPwd" href="<%=src%>/page/personal/chgPwd.jsp" class="btn btn-outline-brand btn-sm fancyProfileNoClose" style="display:none;"></a>
                     </div>
-                    
+
                     <!-- end:: Footer -->
                     <!-- end:: Content -->
                 </div>
