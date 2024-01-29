@@ -48,6 +48,7 @@ public class Login extends HttpServlet {
                 request.getSession().setAttribute("user", us);
                 e.insertTracking(us.getUsername(), "Log In");
                 switch (us.getTipo()) {
+                    
                     case 1:
                         request.getSession().setAttribute("t_user", "sa");
                         request.getSession().setAttribute("guida", e.getPath("guida_SA"));
