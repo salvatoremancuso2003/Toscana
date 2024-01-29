@@ -100,6 +100,7 @@
             #containerCanvas {
                 position: inherit;
                 padding-top: 0;
+                
             }
             .kt-portlet .kt-iconbox .kt-iconbox--animate-slow {
                 height: 90%;
