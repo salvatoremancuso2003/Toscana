@@ -364,7 +364,7 @@
                                     }
                                     )
                                 </script>
-                                
+
 
                                 <div class="row flex col-lg-12"  style="margin-right: 0px; padding-right: 0px;">
                                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
@@ -563,7 +563,7 @@
                                                     </a>
                                                 </div>
                                                 <%}
-                                                }%>
+                                                    }%>
                                             </div>
                                         </div>
                                     </div>

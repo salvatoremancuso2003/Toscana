@@ -100,7 +100,7 @@
             #containerCanvas {
                 position: inherit;
                 padding-top: 0;
-                
+
             }
             .kt-portlet .kt-iconbox .kt-iconbox--animate-slow {
                 height: 90%;
@@ -143,10 +143,14 @@
                 font-family: 'Flaticon2';
                 content: "\f126";
             }
-           
-            
-            
-          
+            .body{
+
+                font-family: serif;
+             
+            }
+
+
+
         </style>
     </head>
     <body>
@@ -165,7 +169,7 @@
                         <!-- begin:: Content Head -->
                         <div class="kt-subheader   kt-grid__item" id="kt_subheader">
                             <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                                
+
 
                                 <div class="kt-portlet__head-toolbar kt-align-right">
                                     <ul class="nav nav-pills nav-pills-lg nav-pills-label nav-pills-bold" style="padding-top: 0.5rem;" role="tablist">
@@ -209,7 +213,7 @@
                                                     <span class="badge bg-white text-primary"><%=contatori[0]%></span>
                                                 </button>
                                             </div>
-                                                
+
                                             <div class="col-xl-3 col-lg-12 col-md-6" style="padding-bottom: 1.5rem;">
                                                 <button type="button" class="btn btn-primary btn-lg btn-me">
                                                     Allievi formati <span class="badge bg-white text-primary"><%=contatori[1]%></span>
