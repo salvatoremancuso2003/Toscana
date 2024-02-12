@@ -92,9 +92,11 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
+        <link rel="stylesheet" href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css"/>
     </head>
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
         <div class="kt-grid kt-grid--hor kt-grid--root">
+            <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -103,7 +105,7 @@
                                 <div class="kt-portlet__head">
                                     <div class="kt-portlet__head-label">
                                         <p>
-                                            <label class="kt-portlet__head-title" style="padding-top: 10px;">
+                                            <label class="text-primary" style="padding-top: 10px; font-size: 27px">
                                                 Registro Aula:
                                             </label><br>
                                             <!--è possibile caricare solo due registi per giorno (mattina, pomeriggio)-->
@@ -113,13 +115,14 @@
                                 <div class="kt-portlet__body">
                                     <form class="kt-form" id="kt_form" action="<%=request.getContextPath()%>/OperazioniSA?type=modifyRegistrioAula" style="padding-top: 0;"  method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="iddoc" value="<%=d.getId()%>">
-                                        <div class="row col" style="color: #464457;">
-                                            <h5>Modifica registro del <%=new SimpleDateFormat("dd/MM/yyyy").format(d.getGiorno())%>.</h5>
+                                        <div class="row col">
+                                            <h5 class="text-primary">Modifica registro del <%=new SimpleDateFormat("dd/MM/yyyy").format(d.getGiorno())%>.</h5>
                                         </div>
+                                        <br>
                                         <div class="row">
                                             <div class="col-lg-5">
                                                 <div class="form-group">
-                                                    <label>Docente</label><label class='kt-font-danger kt-font-boldest'>*</label>
+                                                    <label for="docente" class="active">Docente</label><label class='text-danger'>*</label>
                                                     <div class="select-div" id="docente_div">
                                                         <select class="form-control kt-select2-general obbligatory" id="docente" name="docente">
                                                             <option value="-">Seleziona Docente</option>
@@ -134,7 +137,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Ora di Inizio e Fine Lezione</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                    <label for="range2" class="active">Ora di Inizio e Fine Lezione</label><label class="text-danger">*</label>
                                                     <input type="hidden" class="form-control" id="range">
                                                     <input type="text" class="form-control obbligatory" name="range" id="range2" readonly autocomplete="off" placeholder="Selezionare ora di inzio e fine" value="<%=sdf_date.format(d.getGiorno())%> - <%=sdf_time.format(d.getOrariostart())%> - <%=sdf_time.format(d.getOrarioend())%>">
                                                 </div>
@@ -152,7 +155,7 @@
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label>Presenti</label><label class='kt-font-danger kt-font-boldest'>*</label>
+                                                    <label for="allievi" class="active">Presenti</label><label class='text-danger'>*</label>
                                                     <div class="select-div" id="allievi_div">
                                                         <select class="form-control kt-select2 obbligatory" id="allievi" name="allievi[]" multiple="multiple">
                                                             <%  boolean find;
@@ -171,9 +174,12 @@
                                                                 }%>
                                                         </select>
                                                     </div>
-                                                    <label class='kt-font-danger'>per inserire ingresso e uscita per gli alunni settare prima ora inizio e fine lezione</label>
+
                                                 </div>
+                                               
+
                                                 <div class="form-group">
+                                                     <label class='text-danger' for="ingressi_allievi" >per inserire ingresso e uscita per gli alunni settare prima ora inizio e fine lezione</label>
                                                     <div class="row" id="ingressi_allievi">
                                                     </div>
                                                 </div>
@@ -182,8 +188,8 @@
                                     </form>
                                     <div class="form-group">
                                         <div class="kt-form__actions">
-                                            <a href="javascript:void(0);" class="btn btn-io" id="submit"><font color='white'>Salva</font></a>
-                                            <button onclick="location.reload();" class="btn btn-io-n"><font color='white'>Reset</font></button>
+                                            <a href="javascript:void(0);" class="btn btn-primary" id="submit"><font color='white'>Salva</font></a>
+                                            <button onclick="location.reload();" class="btn btn-warning"><font color='white'>Reset</font></button>
                                         </div>
                                     </div>
                                 </div>
@@ -192,10 +198,13 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0066CC">
             <i class="fa fa-arrow-up"></i>
         </div>
+
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.bundle.min.js"></script>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>

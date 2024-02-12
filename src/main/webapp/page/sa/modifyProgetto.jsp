@@ -76,6 +76,7 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
+        <link rel="stylesheet" href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css"/>
         <style>
             a.disablelink {
                 color: #7c7fb7!important;
@@ -85,7 +86,9 @@
         </style>
     </head>
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+
         <div class="kt-grid kt-grid--hor kt-grid--root">
+            <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -93,7 +96,7 @@
                             <div class="kt-portlet kt-portlet--mobile">
                                 <div class="kt-portlet__head">
                                     <div class="kt-portlet__head-label">
-                                        <h3 class="kt-portlet__head-title">
+                                        <h3 class="text-primary">
                                             Modifica Progetto:
                                         </h3>
                                     </div>
@@ -141,9 +144,9 @@
                                         <input type="hidden" id="id_progetto" name="id_progetto" value="<%=p.getId()%>">
                                         <div class="form-group">
                                             <div class="col-12">
-                                                <label>Nome</label><%=p.getStato().getModifiche().getNome() == 1 ? "<label class='kt-font-danger kt-font-boldest'>*</label>" : ""%>
-                                                <div class="dropdown bootstrap-select form-control kt- paddig_0" id="nome_pf_div">
-                                                    <select class="form-control kt-select2-general obbligatory" <%=p.getStato().getModifiche().getNome() == 1 ? "" : "disabled"%> id="nome_pf" name="nome_pf">
+                                                <label for="nome_pf" class="active">Nome</label><%=p.getStato().getModifiche().getNome() == 1 ? "<label class='kt-font-danger kt-font-boldest'>*</label>" : ""%>
+                                                <div class="dropdown bootstrap-select form-control kt- paddig_0" id="nome_pf_div" >
+                                                    <select style="border: 1px solid" class="form-control kt-select2-general obbligatory" <%=p.getStato().getModifiche().getNome() == 1 ? "" : "disabled"%> id="nome_pf" name="nome_pf">
                                                         <option value="-">Seleziona Nome</option>
                                                         <%for (NomiProgetto s : nomi) {
                                                                 if (p.getNome().equals(s)) {%>
@@ -158,19 +161,19 @@
                                         </div>
                                         <div class="form-group">
                                             <div class="col-12">
-                                                <label>Descrizione</label>
-                                                <textarea class="form-control" <%=p.getStato().getModifiche().getDescrizione() == 1 ? "" : "disabled"%> id="descrizione_pf" name="descrizione_pf" rows="5"><%=p.getDescrizione()%></textarea>
+                                                <label for="descrizione_pf" class="active">Descrizione</label>
+                                                <textarea style="border: 1px solid" class="form-control" <%=p.getStato().getModifiche().getDescrizione() == 1 ? "" : "disabled"%> id="descrizione_pf" name="descrizione_pf" rows="5"><%=p.getDescrizione()%></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-12">
-                                                <label>Date Inizio - Fine </label><%=p.getStato().getModifiche().getDate() == 1 ? "<label class='kt-font-danger kt-font-boldest'>*</label>" : ""%>
-                                                <input type="text" class="form-control obbligatory" <%=p.getStato().getModifiche().getDate() == 1 ? "id='kt_daterange' readonly" : "disabled"%>  name="date"  value="<%=sdf.format(p.getStart()) + " - " + sdf.format(p.getEnd())%>" autocomplete="off">
+                                                <label for="kt_daterange" class="active">Date Inizio - Fine </label><%=p.getStato().getModifiche().getDate() == 1 ? "<label class='kt-font-danger kt-font-boldest'>*</label>" : ""%>
+                                                <input style="border: 1px solid" type="text" class="form-control obbligatory" <%=p.getStato().getModifiche().getDate() == 1 ? "id='kt_daterange' readonly" : "disabled"%>  name="date"  value="<%=sdf.format(p.getStart()) + " - " + sdf.format(p.getEnd())%>" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-12">
-                                                <label>Sede di Formazione</label><%=p.getStato().getModifiche().getSede() == 1 ? "<label class='kt-font-danger kt-font-boldest'>*</label>" : ""%>
+                                                <label for="sede" class="active">Sede di Formazione</label><%=p.getStato().getModifiche().getSede() == 1 ? "<label class='kt-font-danger kt-font-boldest'>*</label>" : ""%>
                                                 <div class="dropdown bootstrap-select form-control kt-" id="sede_div" style="padding: 0;">
                                                     <select class="form-control kt-select2-general obbligatory" id="sede" name="sede"  style="width: 100%" <%=p.getStato().getModifiche().getSede() == 1 ? "" : "disabled"%>>
                                                         <option value="-">Seleziona Sede</option>
@@ -187,7 +190,7 @@
                                         </div>
                                         <div class="form-group row col">
                                             <div class="col-12">
-                                                <label>Allievi</label><%=p.getStato().getModifiche().getAllievi() == 1 ? "<label class='kt-font-danger kt-font-boldest'>*</label>" : ""%>
+                                                <label for="allievi" class="active">Allievi</label><%=p.getStato().getModifiche().getAllievi() == 1 ? "<label class='kt-font-danger kt-font-boldest'>*</label>" : ""%>
                                                 <div class="select-div" id="allievi_div">
                                                     <select class="form-control kt-select2 obbligatory" id="allievi" name="allievi[]" multiple="multiple" style="width: 100%" <%=p.getStato().getModifiche().getAllievi() == 1 ? "" : "disabled"%>>
                                                         <%for (Allievi a : alunni_prg) {%>
@@ -205,11 +208,11 @@
                                                                                             <label style="color:#fff;">-</label>
                                                                                         </div>-->
                                         </div>
-                                        <label class="kt-font-danger kt-font-bold"><font size="2">* Campi Obbligatori</font></label>
+                                        <label class="text-danger"><font size="2">* Campi Obbligatori</font></label>
                                         <div class="kt-portlet__foot">
                                             <div class="kt-form__actions">
                                                 <div class="row" style="align-items: center;justify-content: center; display:flex;">
-                                                    <a id="submit" href="javascript:void(0);" class="btn btn-io ">Salva modifiche</a>
+                                                    <a id="submit" href="javascript:void(0);" class="btn btn-primary ">Salva modifiche</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -220,10 +223,12 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0066CC">
             <i class="fa fa-arrow-up"></i>
         </div>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.bundle.min.js"></script>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>

@@ -66,10 +66,12 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
+        <link rel="stylesheet" href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css"/>
 
     </head>
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
         <div class="kt-grid kt-grid--hor kt-grid--root">
+            <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -77,7 +79,7 @@
                             <div class="kt-portlet kt-portlet--mobile">
                                 <div class="kt-portlet__head">
                                     <div class="kt-portlet__head-label">
-                                        <h3 class="kt-portlet__head-title">
+                                        <h3 class="text-primary">
                                             Modifica Docenti:
                                         </h3>
                                     </div>
@@ -86,7 +88,7 @@
                                     <form id="kt_form" action="<%=request.getContextPath()%>/OperazioniSA?type=modifyDocenti" class="kt-form kt-form--label-right" accept-charset="ISO-8859-1" method="post">
                                         <input type="hidden" id="id_progetto" name="id_progetto" value="<%=p.getId()%>">
                                         <div class="form-group">
-                                            <label>Docente</label>
+                                            <label class="active" for="docenti">Docente</label>
                                             <div class="dropdown bootstrap-select form-control kt-" id="docenti_div" style="padding: 0;">
                                                 <select class="form-control kt-select2 obbligatory" id="docenti" name="docenti[]" multiple="multiple" style="width: 100%">
                                                     <%for (Docenti d : docenti_prg) {%>
@@ -100,11 +102,11 @@
                                         </div>
                                         <div class="form-group row" id="teacher_doc">
                                         </div>
-                                        <label class="kt-font-danger kt-font-bold"><font size="2">Se il docente è già selezionato non verrano sostituiti i relativi documenti nel progetto.</font></label>
+                                        <label class="text-danger"><font size="2">Se il docente è già selezionato non verrano sostituiti i relativi documenti nel progetto.</font></label>
                                         <div class="kt-portlet__foot">
                                             <div class="kt-form__actions">
                                                 <div class="row">
-                                                    <a id="submit" href="javascript:void(0);" class="btn btn-io">Salva</a>
+                                                    <a id="submit" href="javascript:void(0);" class="btn btn-primary">Salva</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -115,10 +117,13 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0066CC;">
             <i class="fa fa-arrow-up"></i>
         </div>
+
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.bundle.min.js"></script>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
@@ -137,7 +142,7 @@
         <!--this page-->
         <script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
-       <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
         <script id="docenti_allievi" src="<%=src%>/page/sa/js/docenti_allievi.js" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
 

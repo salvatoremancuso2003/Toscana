@@ -69,6 +69,7 @@
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <!--this page-->
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
@@ -78,16 +79,19 @@
         <script type="text/javascript" src="<%=src%>/assets/soop/js/jquery.fancybox.min.js"></script>
         <script type="text/javascript" src="<%=src%>/assets/soop/js/fancy.js"></script>
         <script type="text/javascript">
-            function check(){
-                if(document.getElementById('codfisc').value==="-"){
+            function check() {
+                if (document.getElementById('codfisc').value === "-") {
                     return false;
                 }
                 return true;
             }
         </script>
+
+
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body >
         <div class="kt-grid kt-grid--hor kt-grid--root">
+            <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -95,17 +99,18 @@
                             <div class="kt-portlet kt-portlet--mobile">
                                 <div class="kt-portlet__head">
                                     <div class="kt-portlet__head-label">
-                                        <h3 class="kt-portlet__head-title">
+                                        <h2 class="text-primary">
                                             FAD
-                                        </h3>
+                                        </h2>
                                     </div>
                                 </div>
-                                <form target="_blank" method="post" action="<%=Utility.linkfad%>" onsubmit="return check();">
+                                <!-- %=Utility.linkfad% -->
+                                <form target="_blank" method="post" action="" onsubmit="return check();">
                                     <div class="kt-portlet__body">
                                         <input type="hidden" name="progetto" value="<%=p.getId()%>">
                                         <input type="hidden" name="view" value="0">
                                         <input type="hidden" name="type" value="login_fad_mc"/>
-                                        <h4 class='kt-font-io' style="padding-top: 20px;">Seleziona Docente per FAD:</h4>
+                                        <h4 class='text-primary' style="padding-top: 20px;">Seleziona Docente per FAD:</h4>
                                         <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
                                         <div class="row col-12">
                                             <div class="dropdown bootstrap-select form-control kt-" id="stato_div" style="padding: 0;height: 35px;">
@@ -117,7 +122,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        </div>
+                                    </div>
                                     <div class="kt-portlet__foot">
                                         <div class="kt-form__actions">
                                             <div class="row col-12">
@@ -131,10 +136,13 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0066CC">
             <i class="fa fa-arrow-up"></i>
         </div>
+        
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.bundle.min.js"></script>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
@@ -157,23 +165,23 @@
         <script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
         <script type="text/javascript">
-            var KTAppOptions = {
-                "colors": {
-                    "state": {
-                        "brand": "#5d78ff",
-                        "dark": "#282a3c",
-                        "light": "#ffffff",
-                        "primary": "#5867dd",
-                        "success": "#34bfa3",
-                        "info": "#36a3f7",
-                        "warning": "#ffb822"
-                    },
-                    "base": {
-                        "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                        "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                    }
-                }
-            };
+                                    var KTAppOptions = {
+                                        "colors": {
+                                            "state": {
+                                                "brand": "#5d78ff",
+                                                "dark": "#282a3c",
+                                                "light": "#ffffff",
+                                                "primary": "#5867dd",
+                                                "success": "#34bfa3",
+                                                "info": "#36a3f7",
+                                                "warning": "#ffb822"
+                                            },
+                                            "base": {
+                                                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                            }
+                                        }
+                                    };
         </script>
         <script>
         </script>
