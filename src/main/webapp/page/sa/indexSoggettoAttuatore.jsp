@@ -100,7 +100,7 @@
             #containerCanvas {
                 position: inherit;
                 padding-top: 0;
-                
+
             }
             .kt-portlet .kt-iconbox .kt-iconbox--animate-slow {
                 height: 90%;
@@ -143,10 +143,10 @@
                 font-family: 'Flaticon2';
                 content: "\f126";
             }
-           
-            
-            
-          
+
+
+
+
         </style>
     </head>
     <body>
@@ -165,7 +165,7 @@
                         <!-- begin:: Content Head -->
                         <div class="kt-subheader   kt-grid__item" id="kt_subheader">
                             <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                                
+
 
                                 <div class="kt-portlet__head-toolbar kt-align-right">
                                     <ul class="nav nav-pills nav-pills-lg nav-pills-label nav-pills-bold" style="padding-top: 0.5rem;" role="tablist">
@@ -339,9 +339,7 @@
         <!-- end::Quick Panel -->
 
         <!-- begin::Scrolltop -->
-        <div id="kt_scrolltop" class="kt-scrolltop">
-            <i class="fa fa-arrow-up"></i>
-        </div>
+
         <!--begin:: Global Mandatory Vendors -->
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>

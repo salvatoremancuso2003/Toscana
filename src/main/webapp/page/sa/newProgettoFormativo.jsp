@@ -59,6 +59,7 @@
         </script>
         <!-- this page -->
         <link href="<%=src%>/assets/vendors/general/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/js/bootstrap-italia.min.js" rel="stylesheet" type="text/css"/>
         <link href="<%=src%>/assets/app/custom/wizard/wizard-v1_io.css" rel="stylesheet" type="text/css"/>
         <link href="<%=src%>/assets/vendors/general/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
@@ -76,6 +77,7 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
 
@@ -91,13 +93,17 @@
             .offset-sm-1{
                 margin-left: 5%;
             }
+
+            body{
+                background-color: #f2f2f2
+            }
         </style>
 
 
         <script type="text/javascript">
 
             function model_funct(codice) {
-           
+
                 document.getElementById('save').value = "1";
                 document.getElementById('modello_' + codice).value = codice;
                 document.getElementById("kt_form").target = "_blank";
@@ -107,9 +113,10 @@
         </script>
 
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
         <%if (fancy) {%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <%@ include file="menu/head1.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
@@ -128,19 +135,20 @@
                             </div>
                         </div>
                         <%} else {%>
-                        
+
                         <div class="kt-grid kt-grid--hor kt-grid--root">
                             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
                                     <%}%>
                                     <!-- end:: Content Head -->
                                     <!-- begin:: Content -->
-                                    
+
                                     <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
                                         <div class="row">
-                                            <div class="alert alert-info">
-                                                <b>MODELLO 2</b> - La presente richiesta, firmata digitalmente, deve essere inviata almeno 15 gg. Prima della data prevista per l'avvio del percorso ed il corso deve essere avviato entro 15 giorni dalla data di autorizzazione.
+                                            <div class="alert alert-info" role="alert">
+                                                <strong>MODELLO 2</strong> - La presente richiesta, firmata digitalmente, deve essere inviata almeno 15 gg. Prima della data prevista per l'avvio del percorso ed il corso deve essere avviato entro 15 giorni dalla data di autorizzazione.
                                             </div>
+
                                         </div>
                                         <div class="row" style="height: 100%;">
                                             <div class="kt-grid  kt-wizard-v1 kt-wizard-v1--white" id="kt_wizard_v1" data-ktwizard-state="step-first" style="width: 100%;">
@@ -215,7 +223,7 @@
                                                                 <div class="kt-wizard-v1__form" style="color: #6c7293; min-height: 40vh">
                                                                     <div class="form-group row">
                                                                         <div class="col-lg-12">
-                                                                            <label>Nome</label><label class="kt-font-danger kt-font-boldest"> *</label>
+                                                                            <label></label><label class="kt-font-danger kt-font-boldest"> *</label>
                                                                             <div class="dropdown bootstrap-select form-control kt- paddig_0" id="nome_pf_div">
                                                                                 <select class="form-control kt-select2-general obbligatory" id="nome_pf" name="nome_pf">
                                                                                     <option value="-">Seleziona Nome</option>
@@ -225,28 +233,28 @@
                                                                                 </select>
                                                                             </div>
 
-                                                                            <!--                                                                            <label>Nome</label><label class="kt-font-danger kt-font-boldest">*</label>
-                                                                                                                                                        <input type="text" class="form-control obbligatory" name="nome_pf" id="nome_pf" placeholder="Nome Progetto Formativo">-->
+                                                                            <!--<label>Nome</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                                <input type="text" class="form-control obbligatory" name="nome_pf" id="nome_pf" placeholder="Nome Progetto Formativo">-->
                                                                         </div>
                                                                     </div>
-                                                                                <input type="hidden" name="svolgimento" value="M" />
+                                                                    <input type="hidden" name="svolgimento" value="M" />
                                                                     <div class="form-group">
-                                                                        <label>Descrizione</label>
+                                                                        <label></label>
                                                                         <textarea class="form-control" id="descrizione_pf" name="descrizione_pf" placeholder="Descrizione Progetto Formativo" rows="5"></textarea>
                                                                     </div>
                                                                     <div class="form-group row">
                                                                         <div class="col-lg-12">
-                                                                            <label>Date Avvio - Chiusura <i class="fa fa-info-circle" 
-                                                                                              data-container="body" 
-                                                                                              data-toggle="kt-popover" 
-                                                                                              data-placement="bottom"
-                                                                                              data-original-title="Date Percorso"
-                                                                                              data-content="La data di chiusura non pu&#242; essere successiva ai 45 gg solari dalla data di avvio, 
-                                                                              la data di chiusura effettiva sar&#224; comunicata con la dichiarazione di chiusura percorso."></i>
-                                                                            </label><label class="kt-font-danger kt-font-boldest">*</label>
-                                                                            
-                                                                              
-                                                                            
+                                                                           <!-- <label><i class="fa fa-info-circle" 
+                                                                                      data-container="body" 
+                                                                                      data-toggle="kt-popover" 
+                                                                                      data-placement="bottom"
+                                                                                      data-original-title="Date Percorso"
+                                                                                      data-content="La data di chiusura non pu&#242; essere successiva ai 45 gg solari dalla data di avvio, 
+                                                                                      la data di chiusura effettiva sar&#224; comunicata con la dichiarazione di chiusura percorso."></i>
+                                                                            </label><label class="kt-font-danger kt-font-boldest">*</label>-->
+
+
+
                                                                             <input type="text" class="form-control obbligatory" name="date" id="kt_daterange" 
                                                                                    value="" placeholder="Date Inizio e Fine" readonly autocomplete="off" />
                                                                         </div>
@@ -261,7 +269,7 @@
                                                                 <div class="kt-wizard-v1__form" style="color: #6c7293;">
                                                                     <div class="kt-scroll col-12 center" data-scroll="true" style="min-height: 40vh">
                                                                         <div class="form-group">
-                                                                            <label>Sede di Formazione</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                            <label></label><label class="kt-font-danger kt-font-boldest"></label>
                                                                             <div class="dropdown bootstrap-select form-control kt-" id="sede_div" style="padding: 0;">
                                                                                 <select class="form-control kt-select2-general obbligatory" id="sede" name="sede"  style="width: 100%">
                                                                                     <option value="-">Seleziona Sede</option>
@@ -272,14 +280,14 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group">
-                                                                            <label>Allievi <i class="fa fa-info-circle" 
+                                                                            <label><i class="" 
                                                                                               data-container="body" 
                                                                                               data-toggle="kt-popover" 
                                                                                               data-placement="bottom"
                                                                                               data-original-title="Aggiungi Allievi"
                                                                                               data-content="Non &#232; possibile inserire allievi in misura superiore al numero massimo consentito (12),
                                                                                               non sono ammessi uditori, non &#232; possibile inserire allievi dopo la data di avvio del corso."></i>
-                                                                            </label> <label class="kt-font-danger kt-font-boldest">*</label> 
+                                                                            </label> <label class="kt-font-danger kt-font-boldest"></label> 
                                                                             <div class="select-div" id="allievi_div">
                                                                                 <select class="form-control kt-select2 obbligatory" id="allievi" name="allievi[]" multiple="multiple" style="width: 100%">
                                                                                     <%for (Allievi a : alunni) {%>
@@ -301,7 +309,7 @@
                                                                 <div class="kt-wizard-v1__form" style="color: #6c7293;">
                                                                     <div class="kt-scroll col-12 center" data-scroll="true" style="min-height: 40vh">
                                                                         <div class="form-group">
-                                                                            <label>Docenti</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                            <label></label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                             <div class="dropdown bootstrap-select form-control kt-" id="docenti_div" style="padding: 0;">
                                                                                 <select class="form-control kt-select2 obbligatory" id="docenti" name="docenti[]" multiple="multiple" style="width: 100%">
                                                                                     <%for (Docenti d : docente) {%>
@@ -405,14 +413,14 @@
                                                             </div>
                                                         </div>
                                                         <div class="kt-form__actions">
-                                                            <div class="btn btn-io-n btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
+                                                            <div class="btn btn-warning btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
                                                                 Indietro
                                                             </div>
-                                                            <div class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                            <div class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                  data-ktwizard-type="action-submit">
                                                                 Salva
                                                             </div>
-                                                            <div id="go_next" class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+                                                            <div id="go_next" class="btn btn-primary" data-ktwizard-type="action-next">
                                                                 Avanti
                                                             </div>
                                                         </div>
@@ -423,7 +431,7 @@
                                     </div>
                                 </div>
                                 <%if (fancy) {%>
-                                <%@ include file="menu/footer.jsp"%>
+                                <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
                                 <%}%>
                             </div>
                         </div>

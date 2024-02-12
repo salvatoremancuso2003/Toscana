@@ -60,6 +60,7 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <!--end::countDown -->
         <style>
@@ -76,11 +77,16 @@
             .select2-dropdown {
                 z-index: 99999!important;
             }
+            
+            body{
+                background-color: #f2f2f2;
+            }
         </style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
         <%@ include file="menu/head1.jsp"%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <%@ include file="menu/menu.jsp"%>
@@ -100,76 +106,81 @@
                             </div>
                         </div>
                         <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="kt-portlet" id="kt_portlet" data-ktportlet="true"><!--io-background-->
-                                        <div class="kt-portlet__head">
-                                            <div class="kt-portlet__head-label">
-                                                <h3 class="kt-portlet__head-title" >
-                                                    Scegli i progetti da rendicontare:
-                                                </h3>
-                                            </div>
-                                            <div class="kt-portlet__head-toolbar">
-                                                <div class="kt-portlet__head-group">
-                                                    <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="kt-portlet" id="kt_portlet" data-ktportlet="true"><!--io-background-->
+                                            <div class="kt-portlet__head">
+                                                <div class="kt-portlet__head-label">
+                                                    <h3 class="kt-portlet__head-title" >
+                                                        Scegli i progetti da rendicontare:
+                                                    </h3>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <form id="kt_form" action="<%=request.getContextPath()%>/OperazioniMicro?type=crearendicontazione" class="kt-form kt-form--label-right" accept-charset="ISO-8859-1" method="post">
-                                            <div class="kt-portlet__body paddig_0_t paddig_0_b">
-                                                <div class="kt-section kt-section--first">
-                                                    <div class="kt-section__body">
-                                                        <div class="form-group row">
-                                                            <div class="col-lg-12">
-                                                                <br/>
-                                                                <label>Progetti</label><label class="kt-font-danger kt-font-boldest">*</label>
-                                                                <div class="dropdown bootstrap-select form-control kt-" id="progetti_div">
-                                                                    <select class="form-control kt-select2 obbligatory" id="progetti" name="progetti[]" multiple="multiple">
-                                                                        <%for (ProgettiFormativi p : progetti) {%>
-                                                                        <option value="<%=p.getId()%>"><%=p.getCip()%></option>
-                                                                        <%}%>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="form-group row"><div class="col-lg-6">
-                                                                <a href="javascript:void(0);" id="submit" class="btn btn-io"><i class="fa fa-check"></i> Invia Richiesta</a>
-                                                            </div></div>
+                                                <div class="kt-portlet__head-toolbar">
+                                                    <div class="kt-portlet__head-group">
+                                                        <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                            <form id="kt_form" action="<%=request.getContextPath()%>/OperazioniMicro?type=crearendicontazione" class="kt-form kt-form--label-right" accept-charset="ISO-8859-1" method="post">
+                                                <div class="kt-portlet__body paddig_0_t paddig_0_b">
+                                                    <div class="kt-section kt-section--first">
+                                                        <div class="kt-section__body">
+                                                            <div class="form-group row">
+                                                                <div class="col-lg-12">
+                                                                    <br/>
+                                                                    <label>Progetti</label>
+                                                                    <br/>
+                                                                    <div class="dropdown bootstrap-select form-control kt-" id="progetti_div">
+                                                                        <select class="form-control kt-select2 obbligatory" id="progetti" name="progetti[]" multiple="multiple">
+                                                                            <%for (ProgettiFormativi p : progetti) {%>
+                                                                            <option value="<%=p.getId()%>"><%=p.getCip()%></option>
+                                                                            <%}%>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="form-group row"><div class="col-lg-6">
+                                                                    <a href="javascript:void(0);" id="submit" class="btn btn-primary"><i class="fa fa-check"></i> Invia Richiesta</a>
+                                                                </div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">
-                                        <div class="kt-portlet__head">
-                                            <div class="kt-portlet__head-label col-lg-8">
-                                                <div class="col-lg-4">
-                                                    <h3 class="kt-portlet__head-title text" >
-                                                        Risultati :
-                                                    </h3>
+                            <div class="container-fluid">                                       
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">
+                                            <div class="kt-portlet__head">
+                                                <div class="kt-portlet__head-label col-lg-8">
+                                                    <div class="col-lg-4">
+                                                        <h3 class="kt-portlet__head-title text" >
+                                                            Risultati :
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <div class="kt-portlet__head-toolbar">
+                                                    <div class="kt-portlet__head-group">
+                                                        <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="kt-portlet__head-toolbar">
-                                                <div class="kt-portlet__head-group">
-                                                    <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
-                                                </div>
+                                            <div class="kt-portlet__body kt-scroll-x">
+                                                <table class="table table-striped table-bordered " cellspacing="0" id="kt_table_1" style="width:100%; border-collapse: collapse;"> 
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-uppercase text-center">CIP Progetto/i</th>
+                                                            <th class="text-uppercase text-center">File Rendicontazione</th>
+                                                            <th class="text-uppercase text-center">Data Richiesta</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>  
                                             </div>
-                                        </div>
-                                        <div class="kt-portlet__body kt-scroll-x">
-                                            <table class="table table-striped table-bordered " cellspacing="0" id="kt_table_1" style="width:100%; border-collapse: collapse;"> 
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-uppercase text-center">CIP Progetto/i</th>
-                                                        <th class="text-uppercase text-center">File Rendicontazione</th>
-                                                        <th class="text-uppercase text-center">Data Richiesta</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>  
                                         </div>
                                     </div>
                                 </div>
@@ -177,11 +188,11 @@
                         </div>
                         <!-- end:: Content Head -->
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
                     <!-- end:: Footer -->
                     <!-- end:: Content -->
                 </div>
             </div>
+            <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
         </div>
         <!-- begin::Scrolltop -->
         <div id="kt_scrolltop" class="kt-scrolltop">
@@ -203,6 +214,7 @@
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
         <!--this page -->
         <script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.min.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/custom/datatables/datatables.bundle.js" type="text/javascript"></script>
@@ -299,7 +311,7 @@
                         columns: [
                             {data: 'progetti', className: 'text-center'},
                             {data: 'path', className: 'text-center'},
-                            {data: 'timestamp', className: 'text-center'}                            
+                            {data: 'timestamp', className: 'text-center'}
                         ],
                         drawCallback: function () {
                             $('[data-toggle="kt-tooltip"]').tooltip();

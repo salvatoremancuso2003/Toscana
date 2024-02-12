@@ -49,7 +49,6 @@
         <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
             <div class="kt-aside__brand-logo">
                 <a href="indexSoggettoAttuatore.jsp">
-                    <img src="<%=src%>/assets/media/logos/logo.png" width="150" style="padding-top: 10px;" alt=""/>
                 </a>
             </div>
             <div class="kt-aside__brand-tools">

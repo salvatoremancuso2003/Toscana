@@ -52,6 +52,7 @@
         <link href="<%=src%>/assets/vendors/custom/vendors/fontawesome5/css/all.min.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
         <link href="<%=src%>/resource/faq.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <!----->
         <link href="<%=src%>/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/custom.css" rel="stylesheet" type="text/css" />
@@ -62,9 +63,10 @@
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
 
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
         <%@ include file="menu/head1.jsp"%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <%@ include file="menu/menu.jsp"%>
@@ -84,40 +86,42 @@
                             </div>
                         </div>
                         <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">
-                                        <div class="kt-portlet__head">
-                                            <div class="kt-portlet__head-label col-lg-8">
-                                                <div class="col-lg-12">
-                                                    <h3 class="kt-portlet__head-title text" >
-                                                        FAQs:
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <div class="kt-portlet__head-toolbar">
-                                                <div class="kt-portlet__head-group">
-                                                    <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="kt-portlet__body ">
-                                            <div class="col-xl-12">
-                                                <div class="accordion accordion-solid accordion-toggle-plus" id="accordionExample1">
-                                                    <%for (Faq f : faqs) {%>
-                                                    <div class="card">
-                                                        <div class="card-header">
-                                                            <div class="card-title collapsed kt-font-io-n" data-toggle="collapse" data-target="#collapse_<%=f.getId()%>" aria-expanded="false" aria-controls="collapse_<%=f.getId()%>" style="text-align: left;">
-                                                                <%=f.getDomanda_mod()%>
-                                                            </div>
-                                                        </div>
-                                                        <div id="collapse_<%=f.getId()%>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample1">
-                                                            <div class="card-body" style="text-align: left;">
-                                                                <%=f.getRisposta()%>
-                                                            </div>
-                                                        </div>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">
+                                            <div class="kt-portlet__head">
+                                                <div class="kt-portlet__head-label col-lg-8">
+                                                    <div class="col-lg-12">
+                                                        <h3 class="kt-portlet__head-title text" >
+                                                            FAQs:
+                                                        </h3>
                                                     </div>
-                                                    <%}%>
+                                                </div>
+                                                <div class="kt-portlet__head-toolbar">
+                                                    <div class="kt-portlet__head-group">
+                                                        <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="kt-portlet__body ">
+                                                <div class="col-xl-12">
+                                                    <div class="accordion accordion-solid accordion-toggle-plus" id="accordionExample1">
+                                                        <%for (Faq f : faqs) {%>
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <div class="card-title collapsed kt-font-io-n" data-toggle="collapse" data-target="#collapse_<%=f.getId()%>" aria-expanded="false" aria-controls="collapse_<%=f.getId()%>" style="text-align: left;">
+                                                                    <%=f.getDomanda_mod()%>
+                                                                </div>
+                                                            </div>
+                                                            <div id="collapse_<%=f.getId()%>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample1">
+                                                                <div class="card-body" style="text-align: left;">
+                                                                    <%=f.getRisposta()%>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <%}%>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -127,7 +131,7 @@
                         </div>
                         <!-- end:: Content Head -->
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
+                    <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
                 </div>
             </div>
         </div>
@@ -151,6 +155,7 @@
         <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.min.js" type="text/javascript"></script>
         <!--this page -->
 
         <script type="text/javascript">

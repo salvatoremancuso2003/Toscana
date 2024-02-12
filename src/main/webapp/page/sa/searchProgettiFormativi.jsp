@@ -50,6 +50,7 @@
         <link href="<%=src%>/assets/vendors/general/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <!--fine-->
         <link href="<%=src%>/assets/vendors/general/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/general/owl.carousel/dist/assets/owl.theme.default.css" rel="stylesheet" type="text/css" />
@@ -76,12 +77,13 @@
             }
         </style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading-enabled kt-page--loading">
+    <body>
         <div class="kt-page-loader kt-page-loader--logo">
             <img height="100" alt="Logo" src="<%=src%>/assets/media/logos/logo.png"/>
             <div class="kt-spinner kt-spinner--io"></div>
         </div>
         <%@ include file="menu/head1.jsp"%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <%@ include file="menu/menu.jsp"%>
@@ -98,99 +100,103 @@
                             </div>
                         </div>
                         <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="kt-portlet" id="kt_portlet" data-ktportlet="true"><!--io-background-->
-                                        <div class="kt-portlet__head">
-                                            <div class="kt-portlet__head-label">
-                                                <h3 class="kt-portlet__head-title" >
-                                                    Cerca :
-                                                </h3>
-                                            </div>
-                                            <div class="kt-portlet__head-toolbar">
-                                                <div class="kt-portlet__head-group">
-                                                    <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="kt-portlet" id="kt_portlet" data-ktportlet="true"><!--io-background-->
+                                            <div class="kt-portlet__head">
+                                                <div class="kt-portlet__head-label">
+                                                    <h3 class="kt-portlet__head-title" >
+                                                        Cerca :
+                                                    </h3>
+                                                </div>
+                                                <div class="kt-portlet__head-toolbar">
+                                                    <div class="kt-portlet__head-group">
+                                                        <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
+
+                                            <form action="" class="kt-form kt-form--label-right" onsubmit="refresh();return false;" accept-charset="ISO-8859-1" method="post">
+                                                <div class="kt-portlet__body paddig_0_t paddig_0_b">
+                                                    <div class="kt-section kt-section--first">
+                                                        <div class="kt-section__body"><br>
+                                                            <div class="form-group row">
+                                                                <div class="col-lg-3">
+                                                                    <input class="form-control" value="<%=icip%>" name="cip" id="cip" autocomplete="off" placeholder="CIP">
+                                                                </div>
+                                                                <div class="col-lg-3">
+                                                                    <div class="dropdown bootstrap-select form-control kt-" id="stato_div" style="padding: 0;height: 35px;">
+                                                                        <select class="form-control kt-select2-general" id="stato" name="stato" style="width: 100%">
+                                                                            <option value="-">Seleziona Stato</option>
+                                                                            <%for (StatiPrg i : stati) {%>
+                                                                            <option value="<%=i.getTipo()%>"><%=i.getDescrizione()%></option>
+                                                                            <%}%>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="kt-portlet__foot">
+                                                            <div class="kt-form__actions">
+                                                                <div class="row">
+                                                                    <div class="offset-lg-6 col-lg-6 kt-align-right">
+                                                                        <a onclick="refresh();" href="javascript:void(0);" class="btn btn-primary"><font color='white'>Cerca</font></a>
+                                                                        <a href="<%=pageName_%>" class="btn btn-danger"><font color='white'>Reset</font></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <form action="" class="kt-form kt-form--label-right" onsubmit="refresh();return false;" accept-charset="ISO-8859-1" method="post">
-                                            <div class="kt-portlet__body paddig_0_t paddig_0_b">
-                                                <div class="kt-section kt-section--first">
-                                                    <div class="kt-section__body"><br>
-                                                        <div class="form-group row">
-                                                            <div class="col-lg-3">
-                                                                <label>CIP</label>
-                                                                <input class="form-control" value="<%=icip%>" name="cip" id="cip" autocomplete="off">
-                                                            </div>
-                                                            <div class="col-lg-3">
-                                                                <label>Stato</label>
-                                                                <div class="dropdown bootstrap-select form-control kt-" id="stato_div" style="padding: 0;height: 35px;">
-                                                                    <select class="form-control kt-select2-general" id="stato" name="stato" style="width: 100%">
-                                                                        <option value="-">Seleziona Stato</option>
-                                                                        <%for (StatiPrg i : stati) {%>
-                                                                        <option value="<%=i.getTipo()%>"><%=i.getDescrizione()%></option>
-                                                                        <%}%>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="kt-portlet__foot">
-                                                        <div class="kt-form__actions">
-                                                            <div class="row">
-                                                                <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                                    <a onclick="refresh();" href="javascript:void(0);" class="btn btn-io"><font color='white'>Cerca</font></a>
-                                                                    <a href="<%=pageName_%>" class="btn btn-io-n"><font color='white'>Reset</font></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row" id="offsetresult">
-                                <div class="col-lg-12">
-                                    <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">
-                                        <div class="kt-portlet__head">
-                                            <div class="kt-portlet__head-label col-lg-8">
-                                                <div class="col-lg-4">
-                                                    <h3 class="kt-portlet__head-title text" >
-                                                        Risultati :
-                                                    </h3>
+
+                            <div class="container-fluid">                             
+                                <div class="row" id="offsetresult">
+                                    <div class="col-lg-12">
+                                        <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">
+                                            <div class="kt-portlet__head">
+                                                <div class="kt-portlet__head-label col-lg-8">
+                                                    <div class="col-lg-4">
+                                                        <h3 class="kt-portlet__head-title text" >
+                                                            Risultati :
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <div class="kt-portlet__head-toolbar">
+                                                    <div class="kt-portlet__head-group">
+                                                        <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="kt-portlet__head-toolbar">
-                                                <div class="kt-portlet__head-group">
-                                                    <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
-                                                </div>
+                                            <div class="kt-portlet__body kt-scroll-x">
+                                                <table class="table table-striped table-bordered " cellspacing="0" id="kt_table_1" style="width:100%;"> 
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-uppercase text-center">Azioni</th>
+                                                            <th class="text-uppercase text-center">ID</th>
+                                                            <th class="text-uppercase text-center">Data Inizio</th>
+                                                            <th class="text-uppercase text-center">Data Fine</th>
+                                                            <th class="text-uppercase text-center">CIP</th>
+                                                            <th class="text-uppercase text-center">Allievi</th>
+                                                            <th class="text-uppercase text-center">Stato</th>
+                                                            <th class="text-uppercase text-center">Motivo Errore</th>
+                                                            <th class="text-uppercase text-center">Errore O Verificare</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>  
                                             </div>
-                                        </div>
-                                        <div class="kt-portlet__body kt-scroll-x">
-                                            <table class="table table-striped table-bordered " cellspacing="0" id="kt_table_1" style="width:100%;"> 
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-uppercase text-center">Azioni</th>
-                                                        <th class="text-uppercase text-center">ID</th>
-                                                        <th class="text-uppercase text-center">Data Inizio</th>
-                                                        <th class="text-uppercase text-center">Data Fine</th>
-                                                        <th class="text-uppercase text-center">CIP</th>
-                                                        <th class="text-uppercase text-center">Allievi</th>
-                                                        <th class="text-uppercase text-center">Stato</th>
-                                                        <th class="text-uppercase text-center">Motivo Errore</th>
-                                                        <th class="text-uppercase text-center">Errore O Verificare</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>  
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
+                    <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
                 </div>
             </div>
         </div>
@@ -270,6 +276,7 @@
         <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.min.js" type="text/javascript"></script>
         <!--this page -->
         <script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
@@ -286,23 +293,23 @@
                 data-demoversion="<%=Utility.demoversion%>"
         type="text/javascript"></script>
         <script type="text/javascript">
-                                                                        var KTAppOptions = {
-                                                                            "colors": {
-                                                                                "state": {
-                                                                                    "brand": "#5d78ff",
-                                                                                    "dark": "#282a3c",
-                                                                                    "light": "#ffffff",
-                                                                                    "primary": "#5867dd",
-                                                                                    "success": "#34bfa3",
-                                                                                    "info": "#36a3f7",
-                                                                                    "warning": "#ffb822"
-                                                                                },
-                                                                                "base": {
-                                                                                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                                                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                                                            var KTAppOptions = {
+                                                                                "colors": {
+                                                                                    "state": {
+                                                                                        "brand": "#5d78ff",
+                                                                                        "dark": "#282a3c",
+                                                                                        "light": "#ffffff",
+                                                                                        "primary": "#5867dd",
+                                                                                        "success": "#34bfa3",
+                                                                                        "info": "#36a3f7",
+                                                                                        "warning": "#ffb822"
+                                                                                    },
+                                                                                    "base": {
+                                                                                        "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                                                                        "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                                                                    }
                                                                                 }
-                                                                            }
-                                                                        };
+                                                                            };
 
         </script>
 

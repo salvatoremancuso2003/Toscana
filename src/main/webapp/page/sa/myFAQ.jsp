@@ -47,6 +47,7 @@
         <link href="<%=src%>/assets/vendors/custom/vendors/fontawesome5/css/all.min.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
         <link href="<%=src%>/resource/faq.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <!----->
         <link href="<%=src%>/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/custom.css" rel="stylesheet" type="text/css" />
@@ -57,9 +58,10 @@
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
 
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
         <%@ include file="menu/head1.jsp"%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <%@ include file="menu/menu.jsp"%>
@@ -79,36 +81,38 @@
                             </div>
                         </div>
                         <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">
-                                        <div class="kt-portlet__head">
-                                            <div class="kt-portlet__head-label col-lg-8">
-                                                <div class="col-lg-12">
-                                                    <h3 class="kt-portlet__head-title text" >
-                                                        Conversazione
-                                                    </h3><sub class="kt-font-danger">possibile visionare solo gli ultimi 40 messaggi</sub>
-                                                </div>
-                                            </div>
-                                            <div class="kt-portlet__head-toolbar">
-                                                <div class="kt-portlet__head-group">
-                                                    <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="kt-portlet__body ">
-                                            <div class="center col-lg-6 col-md-8 col-sm-12">
-                                                <div class ="row">
-                                                    <div class="col-12 kt-scroll" id="answers" style="padding-right: 20px;"><!--risposte-->
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">
+                                            <div class="kt-portlet__head">
+                                                <div class="kt-portlet__head-label col-lg-8">
+                                                    <div class="col-lg-12">
+                                                        <h3 class="kt-portlet__head-title text" >
+                                                            Conversazione
+                                                        </h3><sub class="kt-font-danger">possibile visionare solo gli ultimi 40 messaggi</sub>
                                                     </div>
                                                 </div>
-                                                <!--send ask-->
-                                                <div class="row" id="send">
-                                                    <div class="col-11">
-                                                        <textarea class="form-control obbligatory" name="ask" id="ask" placeholder="Scrivi qui la tua domanda" style="height: calc(1.5em + 1.3rem + 2px)!important;" onkeypress="return pressEnter(event)"></textarea>
+                                                <div class="kt-portlet__head-toolbar">
+                                                    <div class="kt-portlet__head-group">
+                                                        <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
                                                     </div>
-                                                    <div class="col-1">
-                                                        <a onclick="sendAsk();" href="javascript:void(0);" class="btn btn-io btn-icon btn-circle"><i class="fa fa-paper-plane"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="kt-portlet__body ">
+                                                <div class="center col-lg-6 col-md-8 col-sm-12">
+                                                    <div class ="row">
+                                                        <div class="col-12 kt-scroll" id="answers" style="padding-right: 20px;"><!--risposte-->
+                                                        </div>
+                                                    </div>
+                                                    <!--send ask-->
+                                                    <div class="row" id="send">
+                                                        <div class="col-11">
+                                                            <textarea class="form-control obbligatory" name="ask" id="ask" placeholder="Scrivi qui la tua domanda" style="height: calc(1.5em + 1.3rem + 2px)!important;" onkeypress="return pressEnter(event)"></textarea>
+                                                        </div>
+                                                        <div class="col-1">
+                                                            <a onclick="sendAsk();" href="javascript:void(0);" class="btn btn-io btn-icon btn-circle"><i class="fa fa-paper-plane"></i></a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -119,7 +123,7 @@
                         </div>
                         <!-- end:: Content Head -->
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
+                    <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
                 </div>
             </div>
         </div>
@@ -143,26 +147,27 @@
         <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.min.js" type="text/javascript"></script>
         <!--this page -->
         <script id="myFAQ" src="<%=src%>/page/sa/js/myFAQ.js<%=no_cache%>" type="text/javascript" data-context="<%=request.getContextPath()%>"></script>
         <script type="text/javascript">
-                                                        var KTAppOptions = {
-                                                            "colors": {
-                                                                "state": {
-                                                                    "brand": "#5d78ff",
-                                                                    "dark": "#282a3c",
-                                                                    "light": "#ffffff",
-                                                                    "primary": "#5867dd",
-                                                                    "success": "#34bfa3",
-                                                                    "info": "#36a3f7",
-                                                                    "warning": "#ffb822"
-                                                                },
-                                                                "base": {
-                                                                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                                                                }
-                                                            }
-                                                        };
+                                                                var KTAppOptions = {
+                                                                    "colors": {
+                                                                        "state": {
+                                                                            "brand": "#5d78ff",
+                                                                            "dark": "#282a3c",
+                                                                            "light": "#ffffff",
+                                                                            "primary": "#5867dd",
+                                                                            "success": "#34bfa3",
+                                                                            "info": "#36a3f7",
+                                                                            "warning": "#ffb822"
+                                                                        },
+                                                                        "base": {
+                                                                            "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                                                            "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                                                        }
+                                                                    }
+                                                                };
         </script>
         <script>
 

@@ -36,6 +36,8 @@
 
         <!--begin::Fonts -->
         <script src="<%=src%>/resource/webfont.js"></script>
+
+
         <script>
             WebFont.load({
                 google: {
@@ -46,6 +48,7 @@
                 }
             });
         </script>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.min.js"></script>
         <!-- this page -->
         <link href="<%=src%>/assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/general/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
@@ -65,10 +68,16 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
+
+        <style>body{
+                background-color: #f2f2f2;
+            }</style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <%@ include file="menu/head1.jsp"%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <%@ include file="menu/menu.jsp"%>
@@ -106,7 +115,6 @@
                                                     <div class="kt-section__body"><br>
                                                         <div class="form-group row">
                                                             <div class="col-lg-3">
-                                                                <label>Soggetto Esecutore</label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" id="soggettoattuatore_div" style="padding: 0;height: 35px;">
                                                                     <select class="form-control kt-select2-general" id="soggettoattuatore" name="soggettoattuatore"  style="width: 100%">
                                                                         <option value="-">Seleziona Soggetto Esecutore</option>
@@ -133,15 +141,15 @@
                                                                 <input class="form-control" name="cf" id="cf" autocomplete="off">
                                                             </div>
                                                         </div>
-                                                                    <input type="hidden" name="cpi" value="-" />
-                                                        
+                                                        <input type="hidden" name="cpi" value="-" />
+
                                                     </div>
                                                     <div class="kt-portlet__foot">
                                                         <div class="kt-form__actions">
                                                             <div class="row">
                                                                 <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                                    <a onclick="refresh();" href="javascript:void(0);" class="btn btn-io"><font color='white'>Cerca</font></a>
-                                                                    <a href="<%=pageName_%>" class="btn btn-io-n"><font color='white'>Reset</font></a>
+                                                                    <a onclick="refresh();" href="javascript:void(0);" class="btn btn-primary"><font color='white'>Cerca</font></a>
+                                                                    <a href="<%=pageName_%>" class="btn btn-danger"><font color='white'>Reset</font></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -191,9 +199,9 @@
                             </div>
                         </div>
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
                 </div>
             </div>
+            <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
         </div>
         <div id="kt_scrolltop" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
@@ -236,23 +244,23 @@
         <script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
         <script type="text/javascript">
-                                                                        var KTAppOptions = {
-                                                                            "colors": {
-                                                                                "state": {
-                                                                                    "brand": "#5d78ff",
-                                                                                    "dark": "#282a3c",
-                                                                                    "light": "#ffffff",
-                                                                                    "primary": "#5867dd",
-                                                                                    "success": "#34bfa3",
-                                                                                    "info": "#36a3f7",
-                                                                                    "warning": "#ffb822"
-                                                                                },
-                                                                                "base": {
-                                                                                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                                                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                                                                                }
-                                                                            }
-                                                                        };
+            var KTAppOptions = {
+                "colors": {
+                    "state": {
+                        "brand": "#5d78ff",
+                        "dark": "#282a3c",
+                        "light": "#ffffff",
+                        "primary": "#5867dd",
+                        "success": "#34bfa3",
+                        "info": "#36a3f7",
+                        "warning": "#ffb822"
+                    },
+                    "base": {
+                        "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                        "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                    }
+                }
+            };
         </script>
         <script>
 
@@ -360,11 +368,11 @@
                                             + " (" + (row.comune_residenza.provincia === null ? "N.I." : row.comune_residenza.provincia) + ")";
                                     return comune + ",<br> " + row.indirizzoresidenza;
                                 }
-                            },{
+                            }, {
                                 targets: 6,
                                 className: 'text-center',
                                 render: function (data, type, row, meta) {
-                                    if(row.soggetto === null) {
+                                    if (row.soggetto === null) {
                                         return "";
                                     } else {
                                         return row.soggetto.ragionesociale;
@@ -449,7 +457,7 @@
                     }
                 });
             }
-            
+
             function upDoc(id, id_tipoDoc, fdata) {
                 $.ajax({
                     type: "POST",

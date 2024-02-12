@@ -49,6 +49,7 @@
         <meta name="description" content="Updates and statistics">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src="<%=src%>/resource/webfont.js"></script>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.min.js"></script>
         <script>
             WebFont.load({
                 google: {
@@ -78,6 +79,7 @@
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/custom.css" rel="stylesheet" type="text/css" />
 
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
@@ -91,6 +93,10 @@
                 background-color: #eaa21c;
             }
 
+            body{
+                background-color: #f2f2f2;
+            }
+
         </style>
         <script type="text/javascript">
             function model_funct(codice) {
@@ -102,9 +108,10 @@
             }
         </script>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
         <%if (fancy) {%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <%@ include file="menu/head1.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
@@ -128,22 +135,23 @@
                                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
                                     <%}%>
                                     <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="alert alert-info">
-                                                    MODELLO 1 - La scheda d'iscrizione deve essere compilata in ogni sua parte, i campi contrassegnati con l'asterisco sono obbligatori. 
-                                                    La scheda generata dal sistema informativo dovr&#224; essere firmata (con firma elettronica pdf) dall'allievo e caricata in piattaforma. 
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="alert alert-info" role="alert">
+                                                        <strong>MODELLO 1 -</strong> La scheda d'iscrizione deve essere compilata in ogni sua parte, i campi contrassegnati con l'asterisco sono obbligatori. La scheda generata dal sistema informativo dovrà essere firmata (con firma elettronica pdf) dall'allievo e caricata in piattaforma.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="alert alert-warning" role="alert">
+                                                        <strong>MODELLO 1 -</strong> Il S.I. controlla il QRCODE presente sulla domanda, si consiglia pertanto di verificare che la scansione non abbia reso illeggibile il QRCODE (in tal caso verrà visualizzato un Messaggio di errore ed è necessario caricare un documento correttamente scansionato).
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="alert alert-warning">
-                                                    MODELLO 1 - Il S.I. controlla il QRCODE presente sulla domanda, si consiglia pertanto di verificare che la scansione non abbia reso illeggibile il QRCODE 
-                                                    (in tal caso verr&#224; visualizzato un Messaggio di errore ed è necessario caricare un documento correttamente scansionato). 
-                                                </div>
-                                            </div>
-                                        </div>
+
 
                                         <div class="kt-portlet kt-portlet--mobile">
                                             <form class="kt-form" id="kt_form" 
@@ -169,57 +177,82 @@
                                                                 <div class="form-row">
                                                                     <div class="form-group col-lg-6">
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="allievo_div" style="padding: 0;">
-                                                                        <select class="form-control kt-select2-general obbligatory" id="allievo" name="allievo"  style="width: 100%">
-                                                                            <option value="-">Seleziona</option>
-                                                                            <%for (Allievi al1 : list_allievi) {%>
-                                                                            <option value="<%=al1.getId()%>"><%=al1.getCognome()%> <%=al1.getNome()%> - <%=al1.getCodicefiscale()%></option>
-                                                                            <%}%>
-                                                                            <!--                                                                                <option value="100">ITALIA</option>
-                                                                            <option value="200">STATO UE</option>
-                                                                            <option value="300">STATO EXTRA UE</option>-->
-                                                                        </select>
+                                                                            <select class="form-control kt-select2-general obbligatory" id="allievo" name="allievo"  style="width: 100%">
+                                                                                <option value="-">Seleziona</option>
+                                                                                <%for (Allievi al1 : list_allievi) {%>
+                                                                                <option value="<%=al1.getId()%>"><%=al1.getCognome()%> <%=al1.getNome()%> - <%=al1.getCodicefiscale()%></option>
+                                                                                <%}%>
+                                                                                <!--                                                                                <option value="100">ITALIA</option>
+                                                                                <option value="200">STATO UE</option>
+                                                                                <option value="300">STATO EXTRA UE</option>-->
+                                                                            </select>
+                                                                        </div>
                                                                     </div>
-                                                                    </div>
-                                                                    
+
                                                                 </div>
 
                                                                 <h5>AUTORIZZAZIONI PRIVACY</h5>
-                                                                <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
+                                                                <hr>
 
-                                                                <div class="form-row">   
-                                                                    <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label>Autorizzazione Privacy 1 </label><label class="kt-font-danger kt-font-boldest">*</label>
-
-                                                                        <span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
-                                                                            <label>
-                                                                                <input type="checkbox" class="form-control" name="prv1" id="prv1" checked disabled/>
-                                                                                <span></span>
-                                                                                <%=prv1%>
-                                                                            </label>
-                                                                        </span>
-
-                                                                    </div>
-                                                                    <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label>Autorizzazione Privacy 2 </label>
-                                                                        <span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
-                                                                            <label>
-                                                                                <input type="checkbox" class="form-control" name="prv2" id="prv2"/>
-                                                                                <span></span>
-                                                                                <%=prv2%>
-                                                                            </label>
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label>Autorizzazione Privacy 3</label>
-                                                                        <span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
-                                                                            <label>
-                                                                                <input type="checkbox" class="form-control" name="prv3" id="prv3"/>
-                                                                                <span></span>
-                                                                                <%=prv3%>
-                                                                            </label>
-                                                                        </span>
+                                                                <div class="container-fluid">
+                                                                    <div class="row justify-content-center">
+                                                                        <div class="col-xl-4 col-lg-6">
+                                                                            <div class="form-group row align-items-center">
+                                                                                <label for="prv1" class="col-sm-6 col-form-label">Autorizzazione Privacy 1</label>
+                                                                                <br/>
+                                                                                <br/>
+                                                                                <br/>
+                                                                                <div class="col-sm-6">
+                                                                                    <div class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
+                                                                                        <label class="d-flex align-items-center">
+                                                                                            <input type="checkbox" class="form-control" id="prv1" checked disabled>
+                                                                                            <span></span>
+                                                                                            <%=prv1%>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xl-4 col-lg-6">
+                                                                            <div class="form-group row align-items-center">
+                                                                                <label for="prv2" class="col-sm-6 col-form-label">Autorizzazione Privacy 2</label>
+                                                                                <br/>
+                                                                                <br/>
+                                                                                <br/>
+                                                                                <div class="col-sm-6">
+                                                                                    <div class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
+                                                                                        <label class="d-flex align-items-center">
+                                                                                            <input type="checkbox" class="form-control" id="prv2">
+                                                                                            <span></span>
+                                                                                            <%=prv2%>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-xl-4 col-lg-6">
+                                                                            <div class="form-group row align-items-center">
+                                                                                <label for="prv3" class="col-sm-6 col-form-label">Autorizzazione Privacy 3</label>
+                                                                                <br/>
+                                                                                <br/>
+                                                                                <br/>
+                                                                                <div class="col-sm-6">
+                                                                                    <div class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
+                                                                                        <label class="d-flex align-items-center">
+                                                                                            <input type="checkbox" class="form-control" id="prv3">
+                                                                                            <span></span>
+                                                                                            <%=prv3%>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
+
+
+                                                                <hr>
+
 
                                                                 <%if (mod_1.getModello() != null) {%>
                                                                 <h5>MODELLO 1</h5>
@@ -227,7 +260,9 @@
                                                                 <div class="form-group row">
                                                                     <div class="form-group col-xl-6 col-lg-6">
                                                                         <label>Scaricare il modello per l'allievo selezionato per poi caricarlo firmato dall'allievo nel campo seguente.</label>
-                                                                        <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                                        <br/>
+                                                                        <br/>
+                                                                        <button class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                                 type="button" 
                                                                                 onclick="return model_funct('<%=mod_1.getId()%>');"
                                                                                 >
@@ -235,132 +270,131 @@
                                                                         </button>
                                                                     </div>
                                                                     <div class="form-group col-xl-4 col-lg-6">
-                                                                        <div class="custom-file">
-                                                                            <input type="file" <%=mod_1.getObbligatorio() == 1 ? "tipo='obbligatory'" : ""%> 
-                                                                                   class="custom-file-input" 
-                                                                                   accept="<%=mod_1.getMimetype()%>" name="doc_<%=mod_1.getId()%>" 
-                                                                                   onchange="return checkFileExtAndDim('<%=mod_1.getEstensione()%>');">
-                                                                            <label class="custom-file-label selected" name="label_<%=mod_1.getId()%>">Scegli File</label>
-                                                                        </div>
+                                                                        <input type="file" <%=mod_1.getObbligatorio() == 1 ? "tipo='obbligatory'" : ""%> 
+                                                                               class="custom-file-input" 
+                                                                               accept="<%=mod_1.getMimetype()%>" name="doc_<%=mod_1.getId()%>" 
+                                                                               onchange="return checkFileExtAndDim('<%=mod_1.getEstensione()%>');">
+                                                                        <label class="custom-file-label selected" name="label_<%=mod_1.getId()%>">Scegli File</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <%}%>
+                                                            <h5>Altra Documentazione</h5>
+                                                            <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
+                                                            <div class="form-group row">
+                                                                <%for (TipoDoc_Allievi t : tipo_doc) {%>
+                                                                <div class="form-group col-xl-4 col-lg-6">
+                                                                    <label><%=t.getDescrizione()%></label><%=t.getObbligatorio() == 1 ? "<label id='label_doc_" + t.getId() + "' class='kt-font-danger kt-font-boldest'>*</label>" : "<label id='label_doc_" + t.getId() + "' class='kt-font-danger kt-font-boldest'></label>"%>
+                                                                    <div class="custom-file">
+                                                                        <input type="file" <%=t.getObbligatorio() == 1 ? "tipo='obbligatory'" : ""%> 
+                                                                               class="custom-file-input" 
+                                                                               accept="<%=t.getMimetype()%>" name="doc_<%=t.getId()%>" id="doc_<%=t.getId()%>"
+                                                                               onchange="return checkFileExtAndDim('<%=t.getEstensione()%>');">
+                                                                        <label class="custom-file-label selected" name="label_<%=t.getId()%>">Scegli File</label>
                                                                     </div>
                                                                 </div>
                                                                 <%}%>
-                                                                <h5>Altra Documentazione</h5>
-                                                                <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
-                                                                <div class="form-group row">
-                                                                    <%for (TipoDoc_Allievi t : tipo_doc) {%>
-                                                                    <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label><%=t.getDescrizione()%></label><%=t.getObbligatorio() == 1 ? "<label id='label_doc_" + t.getId() + "' class='kt-font-danger kt-font-boldest'>*</label>" : "<label id='label_doc_" + t.getId() + "' class='kt-font-danger kt-font-boldest'></label>"%>
-                                                                        <div class="custom-file">
-                                                                            <input type="file" <%=t.getObbligatorio() == 1 ? "tipo='obbligatory'" : ""%> 
-                                                                                   class="custom-file-input" 
-                                                                                   accept="<%=t.getMimetype()%>" name="doc_<%=t.getId()%>" id="doc_<%=t.getId()%>"
-                                                                                   onchange="return checkFileExtAndDim('<%=t.getEstensione()%>');">
-                                                                            <label class="custom-file-label selected" name="label_<%=t.getId()%>">Scegli File</label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <%}%>
-                                                                </div>
-                                                                <div class="kt-portlet__foot" style="padding-left: 10px;">
-                                                                    <div class="kt-form__actions">
-                                                                        <div class="row">
-                                                                            <a id="submit_change" href="javascript:void(0);" class="btn btn-io" style="font-family: Poppins"><i class="flaticon2-plus-1"></i> Aggiungi</a>
-                                                                        </div>
+                                                            </div>
+                                                            <div class="kt-portlet__foot" style="padding-left: 10px;">
+                                                                <div class="kt-form__actions">
+                                                                    <div class="row">
+                                                                        <a id="submit_change" href="javascript:void(0);" class="btn btn-primary" style="font-family: Poppins"><i class="flaticon2-plus-1"></i> Aggiungi</a>
                                                                     </div>
                                                                 </div>
-                                                            </div>    
-                                                        </div>
+                                                            </div>
+                                                        </div>    
                                                     </div>
                                                 </div>
-                                            </form>     
                                         </div>
+                                        </form>     
                                     </div>
-                                    <%if (fancy) {%>
                                 </div>
-                                <%@ include file="menu/footer.jsp"%>
-                                <%}%>
+                                <%if (fancy) {%>
                             </div>
+                            <%}%>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
-            <i class="fa fa-arrow-up"></i>
-        </div>
-        <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/custom/general/components/extended/blockui1.33.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
-        <!--this page -->
-        <script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
-        <script id="newAllievo" src="<%=src%>/page/sa/js/modello1.js" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
-        <script type="text/javascript">
-                                                                                       var KTAppOptions = {
-                                                                                           "colors": {
-                                                                                               "state": {
-                                                                                                   "brand": "#5d78ff",
-                                                                                                   "dark": "#282a3c",
-                                                                                                   "light": "#ffffff",
-                                                                                                   "primary": "#5867dd",
-                                                                                                   "success": "#34bfa3",
-                                                                                                   "info": "#36a3f7",
-                                                                                                   "warning": "#ffb822"
-                                                                                               },
-                                                                                               "base": {
-                                                                                                   "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                                                                   "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                                                                                               }
+        <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
+    </div>
+    <div id="kt_scrolltop" class="kt-scrolltop">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+    <script src="../../Bootstrap2024/assets/js/jQuery.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/app/custom/general/components/extended/blockui1.33.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
+    <!--this page -->
+    <script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script id="newAllievo" src="<%=src%>/page/sa/js/modello1.js" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
+    <script type="text/javascript">
+                                                                                   var KTAppOptions = {
+                                                                                       "colors": {
+                                                                                           "state": {
+                                                                                               "brand": "#5d78ff",
+                                                                                               "dark": "#282a3c",
+                                                                                               "light": "#ffffff",
+                                                                                               "primary": "#5867dd",
+                                                                                               "success": "#34bfa3",
+                                                                                               "info": "#36a3f7",
+                                                                                               "warning": "#ffb822"
+                                                                                           },
+                                                                                           "base": {
+                                                                                               "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                                                                               "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
                                                                                            }
-                                                                                       };
-        </script>
-        <script>
-            var datep = function () {
-                var arrows = {
-                    leftArrow: '<i class="la la-angle-left"></i>',
-                    rightArrow: '<i class="la la-angle-right"></i>'
+                                                                                       }
+                                                                                   };
+    </script>
+    <script>
+        var datep = function () {
+            var arrows = {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>'
+            }
+
+            var demos = function () {
+                $('input.dateBorth').datepicker({
+                    orientation: "bottom left",
+                    todayHighlight: true,
+                    templates: arrows,
+                    autoclose: true,
+                    format: 'dd/mm/yyyy',
+                    startView: 'decade',
+                    endDate: new Date()
+                });
+
+            }
+
+            return {
+                // public functions
+                init: function () {
+                    demos();
                 }
+            };
+        }();
 
-                var demos = function () {
-                    $('input.dateBorth').datepicker({
-                        orientation: "bottom left",
-                        todayHighlight: true,
-                        templates: arrows,
-                        autoclose: true,
-                        format: 'dd/mm/yyyy',
-                        startView: 'decade',
-                        endDate: new Date()
-                    });
-
-                }
-
-                return {
-                    // public functions
-                    init: function () {
-                        demos();
-                    }
-                };
-            }();
-
-            jQuery(document).ready(function () {
-                datep.init();
-            });
-        </script>
-    </body>
+        jQuery(document).ready(function () {
+            datep.init();
+        });
+    </script>
+</body>
 </html>
 <%}
     }%>

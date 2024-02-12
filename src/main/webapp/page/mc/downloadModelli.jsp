@@ -47,17 +47,22 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css"/>
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css"/>
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico"/>
+        <style>body{
+                background-color: #f2f2f2;
+            }</style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body class="  kt-subheader--fixed">
         <%@ include file="menu/head1.jsp"%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <%@ include file="menu/menu.jsp"%>
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
                     <%@ include file="menu/head.jsp"%>
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-                        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                        <!--<div class="kt-subheader   kt-grid__item" id="kt_subheader">
                             <div class="kt-subheader   kt-grid__item" id="kt_subheader">
                                 <div class="kt-subheader__main">
                                     <h3 class="kt-subheader__title">Materiale didattico</h3>
@@ -65,7 +70,7 @@
                                     <a class="kt-subheader__breadcrumbs-link">Gestisci</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="kt-content  kt-grid__item kt-grid__item--fluid">
                             <form id="kt_form" action="<%=request.getContextPath()%>/OperazioniMicro?type=addCloud" 
                                   enctype="multipart/form-data" style="padding: 0;" class="kt-form kt-form--label-right"
@@ -95,7 +100,7 @@
                                                 </div>
                                             </div>
                                             <div class="kt-portlet__foot">
-                                                <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                <button class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                         type="button" id="submit"
                                                         >
                                                     Carica
@@ -131,28 +136,29 @@
                                 </div>
                             </div>
                         </div>
-                        <%@ include file="menu/footer.jsp"%>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
-            <i class="fa fa-arrow-up"></i>
-        </div>
-        <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
-        <script type="text/javascript">
+        <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
+    </div>
+    <div id="kt_scrolltop" class="kt-scrolltop">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+    <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
             var KTAppOptions = {
                 "colors": {
                     "state": {
@@ -170,15 +176,15 @@
                     }
                 }
             };
-        </script>
-        <script>
-            $('#submit').on('click', function () {
-                submitForm($('#kt_form'), "Documento caricato!", "Operazione effettuata con successo.", true, true);
-            });
-        </script>
-    </body>
+    </script>
+    <script>
+        $('#submit').on('click', function () {
+            submitForm($('#kt_form'), "Documento caricato!", "Operazione effettuata con successo.", true, true);
+        });
+    </script>
+</body>
 </html>
 <%
         }
     }
-%>
+%>  

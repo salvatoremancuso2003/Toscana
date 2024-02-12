@@ -18,13 +18,15 @@
             int tipo = Integer.parseInt(en.getPath("MaterialeDidattico_Modelli"));
             en.close();
 %>
-<html>
+<html lang="it">
     <head>
         <meta charset="utf-8" />
         <title>YES I Start Up - Toscana - Materiale didattico</title>
         <meta name="description" content="Updates and statistics">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src="<%=src%>/resource/webfont.js"></script>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.min.js" type="text/javascript"></script>
+
         <script>
             WebFont.load({
                 google: {
@@ -47,100 +49,121 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css"/>
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css"/>
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico"/>
+        <style>
+            body{
+
+                background-color: #f2f2f2;
+
+            }
+        </style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <%@ include file="menu/head1.jsp"%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <%@ include file="menu/menu.jsp"%>
-                <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
-                    <%@ include file="menu/head.jsp"%>
-                    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-                        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                            <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                                <div class="kt-subheader__main">
-                                    <h3 class="kt-subheader__title">Materiale didattico</h3>
-                                    <span class="kt-subheader__separator kt-subheader__separator--v"></span>
-                                    <a class="kt-subheader__breadcrumbs-link">Modelli in Facsimile</a>
-                                </div>
-                            </div>
+
+                <%@ include file="menu/head.jsp"%>
+                <%if (us.getTipo() == 2) {%>
+                <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
+                    <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                        <div class="kt-subheader__main">
+                            <h3 class="kt-subheader__title">Materiale didattico</h3>
+                            <span class="kt-subheader__separator kt-subheader__separator--v"></span>
+                            <a class="kt-subheader__breadcrumbs-link">Modelli in Facsimile</a>
                         </div>
-                        <%if (us.getTipo() == 2) {%>
-                        <div class="kt-content  kt-grid__item kt-grid__item--fluid">
-                            <form id="kt_form" action="<%=request.getContextPath()%>/OperazioniMicro?type=addCloud" 
-                                  enctype="multipart/form-data" style="padding: 0;" class="kt-form kt-form--label-right"
-                                  accept-charset="ISO-8859-1" method="post">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">
-                                            <div class="kt-portlet__head">
-                                                <div class="kt-portlet__head-label col-lg-8">
-                                                    <div class="col-lg-4">
-                                                        <h3 class="kt-portlet__head-title text" >
-                                                            Carica Nuovo File (Pdf,Word) :
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                                <div class="kt-portlet__head-toolbar">
-                                                    <div class="kt-portlet__head-group">
-                                                        <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="kt-portlet__body">
-                                                <div class="custom-file">
-                                                    <input type="hidden" name ="tf" value="<%=tipo%>"/>
-                                                    <input type="file" required name="file" id="file" class="custom-file-input" accept=".doc, .docx, .pdf"/>
-                                                    <label class="custom-file-label selected" style="color: #a7abc3; text-align: left;">Scegli File</label>
-                                                </div>
-                                            </div>
-                                            <div class="kt-portlet__foot">
-                                                <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
-                                                        type="button" id="submit"
-                                                        >
-                                                    Carica
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <%}%>
-                        <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+                    </div>
+                    <div class="container-fluid">
+                        <form id="kt_form" action="<%=request.getContextPath()%>/OperazioniMicro?type=addCloud" enctype="multipart/form-data" class="kt-form kt-form--label-right" accept-charset="ISO-8859-1" method="post">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">
-                                        <div class="kt-portlet__head">
-                                            <div class="kt-portlet__head-label col-lg-8">
-                                                <div class="col-lg-4">
-                                                    <h3 class="kt-portlet__head-title text" >
-                                                        File presenti :
-                                                    </h3>
+                                    <div class="container">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-8">
+                                                <div class="card" id="kt_portlet" data-ktportlet="true">
+                                                    <div class="card-header">
+                                                        <div class="row">
+                                                            <div class="col-lg-8">
+                                                                <div class="col-lg-4">
+                                                                    <h3 class="card-title text">
+                                                                        Carica Nuovo File (Pdf,Word) :
+                                                                    </h3>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                                <div class="card-tools">
+                                                                    <a href="#" data-ktportlet-tool="toggle" class="btn btn-primary">
+                                                                        <i class="la la-angle-down" id="toggle_search"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="custom-file">
+                                                            <input type="hidden" name="tf" value="<%=tipo%>" />
+                                                            <input type="file" required name="file" id="file" class="custom-file-input" accept=".doc, .docx, .pdf" />
+                                                            <label class="custom-file-label selected" style="color: #a7abc3; text-align: left;">Scegli File</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <button class="btn btn-io btn-md btn-tall btn-wide font-weight-bold text-uppercase" type="button" id="submit">
+                                                            Carica
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="kt-portlet__head-toolbar">
-                                                <div class="kt-portlet__head-group">
-                                                    <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="kt-portlet__body">
-                                            <%@ include file="../all/modelli.jsp"%>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <%@ include file="menu/footer.jsp"%>
+
+                            <%}%>
+                            <div class="container-fluid" style="padding: 10px">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center">
+                                        <div class="card" id="kt_portlet" data-ktportlet="true">
+                                            <div class="card-header">
+                                                <div class="row">
+                                                    <div class="col-lg-8 mx-auto">
+                                                        <div class="col-lg-4">
+                                                            <h3 class="card-title text">
+                                                                File presenti :
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+                                                        <div class="card-tools">
+                                                            <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md">
+                                                                <i class="la la-angle-down" id="toggle_search"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <%@ include file="../all/modelli.jsp" %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
+                    <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
                 </div>
             </div>
         </div>
+
+
         <div id="kt_scrolltop" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
+
+        <!-- script -->
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
@@ -178,6 +201,8 @@
                 submitForm($('#kt_form'), "Documento caricato!", "Operazione effettuata con successo.", true, true);
             });
         </script>
+
+        <!-- end script -->
     </body>
 </html>
 <%

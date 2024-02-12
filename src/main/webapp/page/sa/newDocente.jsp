@@ -61,6 +61,7 @@
         </script>
         <!-- this page -->
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/general/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
         <!-- - -->
@@ -81,57 +82,19 @@
 
 
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
-        <style type="text/css">
-            .kt-section__title {
-                font-size: 1.2rem!important;
-            }
-
-            .form-group {
-                margin-bottom: 1rem;
-            }
-
-            .custom-file-label::after {
-                color:#fff;
-                background-color: #eaa21c;
-            }
-
-            a.disablelink > i {
-                color: #7c7fb7!important;
-            }
-
-            .datepicker table tr td.highlighted.disabled, .datepicker table tr td.highlighted.disabled:active {
-                background: #d9edf7;
-                color: #d08902 !important;
-            }
-
-            .datepicker tbody tr > td.day {
-                background: #ebedf2;
-                color: #1d32a6 !important;
-            }
-
-            .datepicker tbody tr > td.day.active, .datepicker tbody tr > td.day.active {
-                background: #363a90;
-                color: #ffffff !important;
-            }
-
-            .datepicker table tr td.disabled, .datepicker table tr td.disabled {
-                background: none;
-                color: #777;
-                cursor: default;
-                color: #756c6e !important;
-            }
-        </style>
+            
     </head>
 
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <%@ include file="menu/head1.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
+            <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <%@ include file="menu/menu.jsp"%>
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
                     <%@ include file="menu/head.jsp"%>
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-                        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                        <!--<div class="kt-subheader   kt-grid__item" id="kt_subheader">
                             <div class="kt-subheader   kt-grid__item" id="kt_subheader">
                                 <div class="kt-subheader__main">
                                     <h3 class="kt-subheader__title">Docenti</h3>
@@ -139,24 +102,25 @@
                                     <a class="kt-subheader__breadcrumbs-link">Aggiungi</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">
                                         <form id="kt_form" action="<%=request.getContextPath()%>/OperazioniSA?type=addDocente" 
                                               class="kt-form kt-form--label-right" method="post" enctype="multipart/form-data">
                                             <input type="hidden" name="save" id="save" value="0" />
-                                            <%if(Utility.demoversion){%>
-                                                <div class="kt-portlet__head">
-                                                    <div class="kt-portlet__head-label">
-                                                        <h3 class="kt-portlet__head-title">
-                                                            <a href="<%=request.getContextPath()%>/OperazioniSA?type=generaterandomDocenti" 
-                                                               class="btn btn-dark kt-font-bold"><i class="fa fa-user"></i> INSERISCI DOCENTE RANDOM</a>
-                                                        </h3>
-                                                    </div>
+                                            <%if (Utility.demoversion) {%>
+                                            <div class="kt-portlet__head">
+                                                <div class="kt-portlet__head-label">
+                                                    <h3 class="kt-portlet__head-title">
+                                                        <a href="<%=request.getContextPath()%>/OperazioniSA?type=generaterandomDocenti" 
+                                                           class="btn btn-dark kt-font-bold"><i class="fa fa-user"></i> INSERISCI DOCENTE RANDOM</a>
+                                                    </h3>
                                                 </div>
-                                                <%}%>
+                                            </div>
+                                            <%}%>
                                             <div class="kt-portlet__body">
                                                 <h5>ANAGRAFICA</h5>
                                                 <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
@@ -164,20 +128,20 @@
                                                     <div class="kt-section__body">
                                                         <div class="form-group row ">
                                                             <div class="col-lg-3">
-                                                                <label for="nome">Nome </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="nome"> Nome </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input class="form-control obbligatory" name="nome" id="nome">
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="cognome">Cognome </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="cognome">Cognome </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input class="form-control obbligatory" name="cognome" id="cognome">
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="cf">Codice Fiscale </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="cf">Codice Fiscale </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input class="form-control obbligatory" name="cf" id="cf">
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="com_nas">Comune di nascita <i class="fa fa-info-circle" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h6>Per i soggetti nati all'estero, indicare lo stato di nascita.</h6>"></i></label>
-                                                                <label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="com_nas"> <i class="fa fa-info-circle" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h6>Per i soggetti nati all'estero, indicare lo stato di nascita.</h6>"></i></label>
+                                                                <label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" 
                                                                      id="com_nas_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" 
@@ -192,13 +156,13 @@
                                                         </div>
                                                         <div class="form-group row ">
                                                             <div class="col-lg-3">
-                                                                <label for="datanascita">Data Nascita </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="datanascita">Data Nascita </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input type="text" class="form-control obbligatory date-picker_r" 
                                                                        name="data" id="datanascita" autocomplete="off" onkeydown="return false" />
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="reg_res">Regione di residenza </label>
-                                                                <label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="reg_res"> </label>
+                                                                <label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" 
                                                                      id="reg_res_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" 
@@ -211,23 +175,23 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="email">Email </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="email">Email </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input class="form-control obbligatory" name="email" id="email">
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="pecmail">PEC </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="pecmail">PEC </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input class="form-control obbligatory" name="pecmail" id="pecmail">
                                                             </div>
 
                                                         </div>
                                                         <div class="form-group row ">
                                                             <div class="col-lg-3">
-                                                                <label for="telefono">Numero di cellulare (Senza +39) </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="telefono">Numero di cellulare (Senza +39) </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input class="form-control obbligatory" name="telefono" id="telefono" onkeypress="return isNumber(event);">
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="tit_stu">Titolo di studio </label>
-                                                                <label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="tit_stu"> </label>
+                                                                <label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" 
                                                                      id="tit_stu_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" 
@@ -240,8 +204,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="area_stu">Area Prevalente di qualificazione </label>
-                                                                <label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="area_stu"> </label>
+                                                                <label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" 
                                                                      id="area_stu_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" 
@@ -254,8 +218,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="fascia">Fascia </label>
-                                                                <label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="fascia"> </label>
+                                                                <label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" 
                                                                      id="fascia_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" 
@@ -272,8 +236,8 @@
                                                     </div>
                                                     <div class="form-group row ">
                                                         <div class="col-lg-3">
-                                                            <label for="inquad">Inquadramento </label>
-                                                            <label class="kt-font-danger kt-font-boldest">*</label>
+                                                            <label for="inquad"></label>
+                                                            <label class="kt-font-danger kt-font-boldest"></label>
                                                             <div class="dropdown bootstrap-select form-control kt-" 
                                                                  id="inquad_div" style="padding: 0;">
                                                                 <select class="form-control kt-select2-general obbligatory" 
@@ -313,7 +277,7 @@
                                                             <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
                                                             <div class="form-group row">
                                                                 <div class="col-lg-3">
-                                                                    <label for="tipo_att_<%=i%>">Tipologia di attivit&#224; </label><label id="tipo_att_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="tipo_att_<%=i%>"> </label><label id="tipo_att_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <div class="dropdown bootstrap-select form-control kt-" 
                                                                          id="tipo_att_<%=i%>_div" style="padding: 0;">
                                                                         <select class="form-control kt-select2-general" 
@@ -326,26 +290,26 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <label for="committente_<%=i%>">Committente </label><label id="committente_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="committente_<%=i%>">Committente </label><label id="committente_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <input class="form-control" name="committente_<%=i%>" id="committente_<%=i%>">
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <label for="data_inizio_<%=i%>">Data inizio periodo di riferimento </label><label id="data_inizio_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="data_inizio_<%=i%>">Data inizio periodo di riferimento </label><label id="data_inizio_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <input type="text" class="form-control datepicker-custom" name="data_inizio_<%=i%>" id="data_inizio_<%=i%>" onkeydown="return false" >
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <label for="data_fine_<%=i%>">Data fine periodo di riferimento </label><label id="data_fine_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="data_fine_<%=i%>">Data fine periodo di riferimento </label><label id="data_fine_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <input type="text" class="form-control datepicker-custom" name="data_fine_<%=i%>" id="data_fine_<%=i%>" onkeydown="return false" >
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <div class="col-lg-3">
-                                                                    <label for="durata_<%=i%>">Durata</label><label id="durata_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="durata_<%=i%>"> Durata</label><label id="durata_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <input class="form-control" onkeypress="return isNumber(event);"
                                                                            name="durata_<%=i%>" id="durata_<%=i%>">
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <label for="unita_<%=i%>">Unit&#224; di misura </label><label id="unita_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="unita_<%=i%>"></label><label id="unita_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <div class="dropdown bootstrap-select form-control kt-" 
                                                                          id="unita_<%=i%>_div" style="padding: 0;">
                                                                         <select class="form-control kt-select2-general" 
@@ -358,7 +322,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <label for="incarico_<%=i%>">Tipologia di incarico </label><label id="incarico_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label> 
+                                                                    <label for="incarico_<%=i%>"></label><label id="incarico_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label> 
                                                                     <div class="dropdown bootstrap-select form-control kt-" 
                                                                          id="incarico_<%=i%>_div" style="padding: 0;">
                                                                         <select class="form-control kt-select2-general" id="incarico_<%=i%>" name="incarico_<%=i%>">
@@ -370,7 +334,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <label for="fonte_<%=i%>">Fonte di finanziamento </label><label id="fonte_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="fonte_<%=i%>"></label><label id="fonte_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <div class="dropdown bootstrap-select form-control kt-" 
                                                                          id="fonte_<%=i%>_div" style="padding: 0;">
                                                                         <select class="form-control kt-select2-general" id="fonte_<%=i%>" name="fonte_<%=i%>">
@@ -395,7 +359,7 @@
                                                                            raggruppare le attivit&#224; per tipologia e attribuire un numero progressivo da 1 a 5.
                                                                            Tale numero deve essere trascritto (anche a penna) sul cv in modo da consentire la verifica della fascia di appartenenza." 
                                                                            data-original-title="NUMERO PROGRESSIVO DI RIFERIMENTO CV"></i>
-                                                                    </label><label id="progr_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    </label><label id="progr_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <input class="form-control" name="progr_<%=i%>" id="progr_<%=i%>" onkeypress="return isNumber(event);" />
                                                                 </div>
                                                             </div>
@@ -415,8 +379,10 @@
                                                                         <h6>RICHIESTA ACCREDITAMENTO DOCENTE</h6>
                                                                     </div>
                                                                     <div class="form-group col-xl-6 col-lg-6">
-                                                                        <label>Scaricare il modello con i dati inseriti per poi caricarlo firmato digitalmente (.p7m CAdES, .pdf PAdES) nel campo seguente.</label>
-                                                                        <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                                        <label> Scaricare il modello con i dati inseriti per poi caricarlo firmato digitalmente (.p7m CAdES, .pdf PAdES) nel campo seguente.</label>
+                                                                        <hr/>
+                                                                        <hr/>
+                                                                        <button class="btn btn-primary" 
                                                                                 type="button" 
                                                                                 onclick="return model_funct('<%=richiesta.getId()%>');">
                                                                             Scarica
@@ -436,23 +402,23 @@
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="col-xl-3 col-lg-6">
-                                                                <label for="docid">DOCUMENTO DI RICONOSCIMENTO DOCENTE </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="docid"></label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="custom-file">
                                                                     <input type="file" tipo="obbligatory" class="custom-file-input" accept="application/pdf" 
                                                                            name="docid" id="docid" onchange="return checkFileExtAndDim(['pdf']);">
-                                                                    <label style="text-align: left;" class="custom-file-label selected" id="label_file">Scegli File</label>
+                                                                    <label style="text-align: left;" class="custom-file-label selected" id="label_file">documento riconoscimento docente</label>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-3 col-lg-6">
-                                                                <label for="scadenzadoc">DATA SCADENZA DOCUMENTO DOCENTE </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="scadenzadoc">DATA SCADENZA DOCUMENTO DOCENTE  </label> <label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input type="text" class="form-control obbligatory date-picker_r1" name="scadenzadoc" id="scadenzadoc" 
                                                                        onkeydown="return false"  autocomplete="off"/>
                                                             </div>
                                                             <div class="col-xl-3 col-lg-6">
-                                                                <label for="cv">CURRICULUM VITAE DOCENTE </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="cv"> </label>
                                                                 <div class="custom-file">
                                                                     <input type="file" tipo="obbligatory" class="custom-file-input" accept="application/pdf" name="cv" id="cv" onchange="return checkFileExtAndDim(['pdf']);">
-                                                                    <label style="text-align: left;" class="custom-file-label selected" id="label_file">Scegli File</label>
+                                                                    <label style="text-align: left;" class="custom-file-label selected" id="label_file">Curriculum vitae docente</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -463,8 +429,8 @@
                                                     <div class="kt-form__actions">
                                                         <div class="row">
                                                             <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                                <a id="submit" href="javascript:void(0);" class="btn btn-io"><font color='white'>Salva</font></a>
-                                                                <a href="<%=pageName_%>" class="btn btn-io-n"><font color='white'>Reset</font></a>
+                                                                <a id="submit" href="javascript:void(0);" class="btn btn-primary"><font color='white'>Salva</font></a>
+                                                                <a href="<%=pageName_%>" class="btn btn-danger"><font color='white'>Reset</font></a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -476,7 +442,7 @@
                             </div>
                         </div>
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
+                    <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
                 </div>
             </div>
         </div>
@@ -484,9 +450,9 @@
             <i class="fa fa-arrow-up"></i>
         </div>
         <!--begin:: Global Mandatory Vendors -->
-        <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
+        <script src="../../Bootstrap2024/assets/js/jQuery.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.min.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>

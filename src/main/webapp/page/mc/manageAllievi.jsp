@@ -54,12 +54,19 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <!-- this page -->
         <link href="<%=src%>/resource/datatbles.bundle.css" rel="stylesheet" type="text/css"/>
+        <style>body{
+                background-color: #f2f2f2;
+            }</style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+
+
+    <body class="align-content-start">
         <%@ include file="menu/head1.jsp"%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <%@ include file="menu/menu.jsp"%>
@@ -113,9 +120,9 @@
                             </div>
                         </div>
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
                 </div>
             </div>
+            <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
         </div>
         <div id="kt_scrolltop" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
@@ -246,7 +253,7 @@
                                     option += '<a class="fancyBoxFullReload dropdown-item" href="modello0anagr.jsp?id=' +
                                             row.id + '"><i class="fa fa-user"></i> Anagrafica Allievo</a>';
                                     option += '<a class="dropdown-item" href="javascript:void(0);" onclick="swalDocumentAgg(' + row.id + ')"><i class="fa fa-file-alt"></i> Visualizza Documentazione Integrativa</a>';
-                                    option += '<a class="dropdown-item" href="javascript:void(0);" onclick="uploadDoc('+ row.id + ')"><i class="fa fa-upload"></i> Carica Documentazione Integrativa</a>';
+                                    option += '<a class="dropdown-item" href="javascript:void(0);" onclick="uploadDoc(' + row.id + ')"><i class="fa fa-upload"></i> Carica Documentazione Integrativa</a>';
 
                                     option += '</div></div>';
                                     return option;

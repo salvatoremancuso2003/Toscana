@@ -22859,7 +22859,7 @@ td > .kt-radio.kt-radio--single {
     background-color: #ffffff; }
 
 .kt-switch.kt-switch--outline.kt-switch--primary input:checked ~ span:after {
-    background-color: #363a90;
+    background-color: 0059b3;
     opacity: 1; }
 
 .kt-switch.kt-switch--success:not(.kt-switch--outline) input:empty ~ span:before {
