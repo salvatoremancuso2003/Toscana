@@ -82,6 +82,7 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/raf/jquery-confirm.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/custom.css" rel="stylesheet" type="text/css" />
 
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
@@ -132,10 +133,15 @@
             .select2-container--open {
                 z-index: 999999999;
             }
+
+            body{
+                background-color:#CCC;
+            }
         </style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -187,10 +193,8 @@
                                                 <input type="hidden" name="idcalendar" value="<%=lm.getId()%>" />
                                                 <input type="hidden" id="orastandardlezione" value="<%=lm.getLezione_calendario().getOre()%>"/>
                                                 <div class="form-row">
-                                                    <label class="col-md-2 col-form-label fw-bold fs-6">
-                                                        <span class="text-danger"><b>ORA INIZIO</b></span>
-                                                    </label>
                                                     <div class="col-lg-4">
+                                                        <h6 style="color: red;"><b> ORA INIZIO </b></h6>
                                                         <%if (modify) {%>
                                                         <div class="dropdown bootstrap-select form-control kt-" id="orai_div" style="padding: 0;height: 35px;">
                                                             <select class="form-control kt-select2-general" id="orai" name="orai" 
@@ -225,14 +229,12 @@
                                                         </div>    
                                                         <%} else {%>
                                                         <label class="col-md-4 col-form-label fw-bold fs-6">
-                                                            <span><b><%=pl1.getOrainizio()%></b></span>
+                                                            <span><b> <br><%=pl1.getOrainizio()%></b></span>
                                                         </label>
                                                         <%}%>
                                                     </div>    
-                                                    <label class="col-md-2 col-form-label fw-bold fs-6">
-                                                        <span class="text-danger"><b>ORA FINE</b></span>
-                                                    </label>
                                                     <div class="col-lg-4">
+                                                        <h6 style="color: red;"><b> ORA FINE </b></h6>
                                                         <%if (modify) {%>
                                                         <div class="dropdown bootstrap-select form-control kt-" id="oraf_div" style="padding: 0;height: 35px;">
                                                             <select class="form-control kt-select2-general" id="oraf" name="oraf" data-placeholder="Ora Fine" 
@@ -242,7 +244,7 @@
                                                         </div> 
                                                         <%} else {%>
                                                         <label class="col-md-4 col-form-label fw-bold fs-6">
-                                                            <span><b><%=pl1.getOrafine()%></b></span>
+                                                            <span><b> <br><%=pl1.getOrafine()%></b></span>
                                                         </label>
                                                         <%}%>
                                                     </div> 
@@ -250,10 +252,8 @@
 
                                                 </div>
                                                 <div class="form-row"><hr></div>
+                                                <h6 style="color: red;"> <br><br><br><br> <b> DOCENTI </b> </h6>                                                                                  
                                                 <div class="form-row">
-                                                    <label class="col-md-2 col-form-label fw-bold fs-6">
-                                                        <span class="text-danger"><b>DOCENTE</b></span>
-                                                    </label>
                                                     <div class="col-lg-4">
                                                         <%if (modify) {%>
                                                         <div class="dropdown bootstrap-select form-control kt-" id="docente_div" style="padding: 0;height: 35px;">
@@ -271,10 +271,8 @@
                                                 </div>
                                                 <div class="form-row"><hr></div>
                                                 <div class="form-row">
-                                                    <label class="col-md-2 col-form-label fw-bold fs-6">
-                                                        <span class="text-danger"><b>ALLIEVI</b></span>
-                                                    </label>
                                                     <div class="col-lg-10">
+                                                        <h6 style="color: red;"><br><br><br> <b> ALLIEVI </b></h6>
                                                         <table class="table table-hover table-row-bordered">
                                                             <thead>
                                                                 <tr>
@@ -326,8 +324,6 @@
                                                                         <option value="1">SI</option>
                                                                         <option value="0" selected>NO</option>
                                                                         <%}%>
-
-
                                                                     </select>
                                                                     <%} else {%>
                                                                     <span class="text-dark"><b><%=allievo_presente.equals("1") ? "SI" : "NO"%></b></span>
@@ -397,58 +393,56 @@
                     </div>
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-    </div>
-</div>
-</div>
-<div id="kt_scrolltop" class="kt-scrolltop">
-    <i class="fa fa-arrow-up"></i>
-</div>
-<script src="<%=src%>/assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/app/custom/general/components/extended/blockui1.33.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
-<!--this page -->
-<script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-timepicker.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/bootstrap-timepicker/js/bootstrap-timepicker.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/raf/jquery-confirm.min.js" type="text/javascript"></script>
-<input type="hidden" id="systemtype" value="<%=Utility.iswindows()%>" />
-<script id="calendarjs" defer src="<%=src%>/page/sa/js/calendar.js" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
-<script type="text/javascript">
-                                                                   var KTAppOptions = {
-                                                                       "colors": {
-                                                                           "state": {
-                                                                               "brand": "#5d78ff",
-                                                                               "dark": "#282a3c",
-                                                                               "light": "#ffffff",
-                                                                               "primary": "#5867dd",
-                                                                               "success": "#34bfa3",
-                                                                               "info": "#36a3f7",
-                                                                               "warning": "#ffb822"
-                                                                           },
-                                                                           "base": {
-                                                                               "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                                               "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                                                                           }
-                                                                       }
-                                                                   };
-</script>
-</body>
+        <div id="kt_scrolltop" class="kt-scrolltop">
+            <i class="fa fa-arrow-up"></i>
+        </div>
+        <script src="<%=src%>/assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/app/custom/general/components/extended/blockui1.33.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
+        <!--this page -->
+        <script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-timepicker.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/bootstrap-timepicker/js/bootstrap-timepicker.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/raf/jquery-confirm.min.js" type="text/javascript"></script>
+        <input type="hidden" id="systemtype" value="<%=Utility.iswindows()%>" />
+        <script id="calendarjs" defer src="<%=src%>/page/sa/js/calendar.js" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
+        <script type="text/javascript">
+                                                                           var KTAppOptions = {
+                                                                               "colors": {
+                                                                                   "state": {
+                                                                                       "brand": "#5d78ff",
+                                                                                       "dark": "#282a3c",
+                                                                                       "light": "#ffffff",
+                                                                                       "primary": "#5867dd",
+                                                                                       "success": "#34bfa3",
+                                                                                       "info": "#36a3f7",
+                                                                                       "warning": "#ffb822"
+                                                                                   },
+                                                                                   "base": {
+                                                                                       "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                                                                       "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                                                                   }
+                                                                               }
+                                                                           };
+        </script>
+    </body>
 </html>
 <%}
     }%>

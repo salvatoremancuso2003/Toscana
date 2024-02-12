@@ -65,6 +65,7 @@
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/general/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/general/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <!-- - -->
         <link href="<%=src%>/assets/vendors/general/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/general/owl.carousel/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
@@ -84,61 +85,36 @@
         <link href="<%=src%>/assets/raf/jquery-confirm.min.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/custom.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
-        <style type="text/css">
-            .form-group {
-                margin-bottom: 1rem;
+
+        <style>
+
+            #hOraInizio{
+                color: red;
             }
 
-            .custom-file-label::after {
-                color:#fff;
-                background-color: #eaa21c;
+            #hAllievi{
+                color: red;
             }
 
-            .kt-radio > span::after {
-                border: solid #363a90;
-                background: #363a90;
+            #hDocenti{
+                color: red;
             }
 
-            .kt-radio > input:checked ~ span {
-                border: 1px solid #363a90;
+            #hOrafine{
+                color: red;
+                
             }
 
-            a.disablelink > i {
-                color: #7c7fb7!important;
-            }
-
-            .datepicker table tr td.highlighted.disabled, .datepicker table tr td.highlighted.disabled:active {
-                background: #d9edf7;
-                color: #d08902 !important;
-            }
-
-            .datepicker tbody tr > td.day {
-                background: #ebedf2;
-                color: #1d32a6 !important;
-            }
-
-            .datepicker tbody tr > td.day.active, .datepicker tbody tr > td.day.active {
-                background: #363a90;
-                color: #ffffff !important;
-            }
-
-            .datepicker table tr td.disabled, .datepicker table tr td.disabled {
-                background: none;
-                color: #777;
-                cursor: default;
-                color: #756c6e !important;
-            }
-            .select2-container--open {
-                z-index: 999999999;
-            }
         </style>
+
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
         <div class="kt-grid kt-grid--hor kt-grid--root">
+            <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-                    <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+                    <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content" style="padding: 47px!important">
                         <div class="kt-portlet kt-portlet--mobile">
                             <div class="kt-portlet__head" style="display: none;">
                                 <div class="kt-portlet__head-label">
@@ -187,10 +163,8 @@
                                                 <input type="hidden" name="idcalendar" value="<%=lm.getId()%>" />
                                                 <input type="hidden" id="orastandardlezione" value="<%=lm.getLezione_calendario().getOre()%>"/>
                                                 <div class="form-row">
-                                                    <label class="col-md-2 col-form-label fw-bold fs-6">
-                                                        <span class="text-danger"><b>ORA INIZIO</b></span>
-                                                    </label>
                                                     <div class="col-lg-4">
+                                                        <h6 id="hOraInizio"> <b> ORA INIZIO </b> </h6> 
                                                         <%if (modify) {%>
                                                         <div class="dropdown bootstrap-select form-control kt-" id="orai_div" style="padding: 0;height: 35px;">
                                                             <select class="form-control kt-select2-general" id="orai" name="orai" 
@@ -228,15 +202,14 @@
                                                             <span><b><%=pl1.getOrainizio()%></b></span>
                                                         </label>
                                                         <%}%>
-                                                    </div>    
-                                                    <label class="col-md-2 col-form-label fw-bold fs-6">
-                                                        <span class="text-danger"><b>ORA FINE</b></span>
-                                                    </label>
+                                                    </div>
+
                                                     <div class="col-lg-4">
+                                                        <h6 id="hOraFine"> <b> ORA FINE </b> </h6>
                                                         <%if (modify) {%>
-                                                        <div class="dropdown bootstrap-select form-control kt-" id="oraf_div" style="padding: 0;height: 35px;">
+                                                        <div class="dropdown bootstrap-select form-control kt-" id="oraf_div" style="padding: 0;height: 35px; ">
                                                             <select class="form-control kt-select2-general" id="oraf" name="oraf" data-placeholder="Ora Fine" 
-                                                                    style="width: 100%" required >
+                                                                    style="width: 100%; margin-bottom :10px !important; " required >
                                                                 <option value="<%=lm.getOrafine()%>" selected><%=lm.getOrafine()%></option>
                                                             </select>                                    
                                                         </div> 
@@ -245,16 +218,16 @@
                                                             <span><b><%=pl1.getOrafine()%></b></span>
                                                         </label>
                                                         <%}%>
+
+
                                                     </div> 
 
 
                                                 </div>
                                                 <div class="form-row"><hr></div>
                                                 <div class="form-row">
-                                                    <label class="col-md-2 col-form-label fw-bold fs-6">
-                                                        <span class="text-danger"><b>DOCENTE</b></span>
-                                                    </label>
                                                     <div class="col-lg-4">
+                                                        <h6 id="hDocenti"><b> DOCENTI </b></h6>
                                                         <%if (modify) {%>
                                                         <div class="dropdown bootstrap-select form-control kt-" id="docente_div" style="padding: 0;height: 35px;">
                                                             <select class="form-control kt-select2-general" id="docente" name="docente" data-placeholder="Ora Fine" 
@@ -271,10 +244,8 @@
                                                 </div>
                                                 <div class="form-row"><hr></div>
                                                 <div class="form-row">
-                                                    <label class="col-md-2 col-form-label fw-bold fs-6">
-                                                        <span class="text-danger"><b>ALLIEVI</b></span>
-                                                    </label>
                                                     <div class="col-lg-10">
+                                                        <h6 id="hAllievi"> <b> ALLIEVI </b> </h6>
                                                         <table class="table table-hover table-row-bordered">
                                                             <thead>
                                                                 <tr>
@@ -372,10 +343,10 @@
                                                                class="custom-file-input" 
                                                                accept="application/pkcs7-mime,application/pdf" name="registrofirmato" id="registrofirmato"
                                                                onchange="return checkFileExtAndDim('pdf,p7m');" required>
-                                                        <label class="custom-file-label selected" name="label_registrofirmato">Scegli File</label>
+                                                        <label class="custom-file-label selected" name="label_registrofirmato"></label>
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-io"><i class="fa fa-save"></i> SALVA DATI</button>
+                                                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> SALVA DATI</button>
                                             </form>
                                             <%} else {%>
                                             </form>
@@ -395,39 +366,37 @@
                     </div>
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-    </div>
-</div>
-</div>
-<div id="kt_scrolltop" class="kt-scrolltop">
-    <i class="fa fa-arrow-up"></i>
-</div>
-<script src="<%=src%>/assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/app/custom/general/components/extended/blockui1.33.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
-<!--this page -->
-<script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-timepicker.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/bootstrap-timepicker/js/bootstrap-timepicker.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/raf/jquery-confirm.min.js" type="text/javascript"></script>
-<input type="hidden" id="systemtype" value="<%=Utility.iswindows()%>" />
-<script id="calendarjs" defer src="<%=src%>/page/sa/js/calendar.js" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
-<script type="text/javascript">
+        <div id="kt_scrolltop" class="kt-scrolltop">
+            <i class="fa fa-arrow-up"></i>
+        </div>
+        <script src="<%=src%>/assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/app/custom/general/components/extended/blockui1.33.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
+        <!--this page -->
+        <script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/bootstrap-select/dist/js/bootstrap-select.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-timepicker.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/vendors/general/bootstrap-timepicker/js/bootstrap-timepicker.js" type="text/javascript"></script>
+        <script src="<%=src%>/assets/raf/jquery-confirm.min.js" type="text/javascript"></script>
+        <input type="hidden" id="systemtype" value="<%=Utility.iswindows()%>" />
+        <script id="calendarjs" defer src="<%=src%>/page/sa/js/calendar.js" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
+        <script type="text/javascript">
                                                                    var KTAppOptions = {
                                                                        "colors": {
                                                                            "state": {
@@ -445,8 +414,8 @@
                                                                            }
                                                                        }
                                                                    };
-</script>
-</body>
+        </script>
+    </body>
 </html>
 <%}
     }%>
