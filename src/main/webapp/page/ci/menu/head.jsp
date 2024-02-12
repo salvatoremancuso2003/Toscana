@@ -1,7 +1,7 @@
 <%@page import="java.util.Date"%>
 <!-- begin:: Header -->
 <%String no_cache = "?dummy=" + String.valueOf(new Date().getTime());%>
-<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
+<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " style="border: none;  background-color: #0059b3">
 
     <!-- begin:: Header Menu -->
     <button class="kt-header-menu-wrapper-close" id="kt_header_menu_mobile_close_btn"><i class="la la-close"></i></button>
@@ -18,9 +18,9 @@
             <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
                 <div class="kt-header__topbar-user">
                     <span class="kt-header__topbar-welcome kt-hidden-mobile">Ciao,</span>
-                    <span class="kt-header__topbar-username kt-hidden-mobile"><%=us.getUsername()%></span>
+                    <span class="kt-header__topbar-username kt-hidden-mobile" ><%=us.getUsername()%></span>
                     <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
-                    <span class="kt-badge kt-badge--username kt-badge--unified-io kt-badge--lg kt-badge--rounded kt-badge--bold">
+                    <span class="kt-badge kt-badge--username kt-badge--unified-io kt-badge--lg kt-badge--rounded kt-badge--bold" style="color: white">
                         <%=us.getUsername().substring(0, 1).toUpperCase()%>
                     </span>
                 </div>

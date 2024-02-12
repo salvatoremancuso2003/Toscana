@@ -54,12 +54,13 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css"/>
         <!-- this page -->
 
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <style>
             .ui-datepicker-other-month.ui-state-disabled:not(.my_class) span{
-                color: red;    
+                color: red;
             }
             .block{
                 display: block;
@@ -72,6 +73,7 @@
         </style>
     </head>
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <%@ include file="menu/head1.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
@@ -79,24 +81,15 @@
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
                     <%@ include file="menu/head.jsp"%>
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-                        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                            <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                                <div class="kt-subheader__main">
-                                    <h3 class="kt-subheader__title">CAD</h3>
-                                    <span class="kt-subheader__separator kt-subheader__separator--v"></span>
-                                    <a class="kt-subheader__breadcrumbs-link">I MIei CAD</a>
-                                </div>
-                            </div>
-                        </div>
                         <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="kt-portlet" id="kt_portlet" data-ktportlet="true"><!--io-background-->
                                         <div class="kt-portlet__head">
                                             <div class="kt-portlet__head-label">
-                                                <h3 class="kt-portlet__head-title" >
+                                                <h4 class="text-primary">
                                                     I Miei CAD :
-                                                </h3>
+                                                </h4>
                                             </div>
                                             <div class="kt-portlet__head-toolbar">
                                                 <div class="kt-portlet__head-group">
@@ -114,7 +107,7 @@
                             </div>
                         </div>
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
+                    <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
                 </div>
             </div>
         </div>

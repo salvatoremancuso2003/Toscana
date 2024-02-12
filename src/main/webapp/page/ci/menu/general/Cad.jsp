@@ -14,7 +14,7 @@
         <ul class="kt-menu__subnav">
             <li class="kt-menu__item <%=pageName.equals("createCad.jsp") ? "kt-menu__item--active" : ""%>" aria-haspopup="true">
                 <a href="createCad.jsp" class="kt-menu__link ">
-                    <i class="kt-menu__link-bullet fa fa-calendar-plus">
+                    <i class="kt-menu__link-bullet fa fa-calendar-plus" id="i1" style="color: white !important;">
                         <span></span>
                     </i>
                     <span class="kt-menu__link-text">Crea</span>
@@ -22,10 +22,10 @@
             </li>
             <li class="kt-menu__item <%=pageName.equals("myCad.jsp") ? "kt-menu__item--active" : ""%>" aria-haspopup="true">
                 <a href="myCad.jsp" class="kt-menu__link ">
-                    <i class="kt-menu__link-bullet fa fa-calendar-alt">
+                    <i class="kt-menu__link-bullet fa fa-calendar-alt" id="i2" style="color: white !important;">
                         <span></span>
                     </i>
-                    <span class="kt-menu__link-text">I Miei CAD</span>
+                    <span class="kt-menu__link-text" >I Miei CAD</span>
                 </a>
             </li>
         </ul>

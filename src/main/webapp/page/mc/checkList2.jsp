@@ -85,8 +85,24 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
+        <link rel="stylesheet" href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css"/>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.bundle.min.js"></script>
+
+
+        <style>
+            .text-start {
+                max-width: 75%;
+                word-wrap: break-word;
+                margin: 0;
+                float: left;
+
+            }
+        </style>
+
     </head>
+
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -108,211 +124,271 @@
                                         <div class="row">
 
                                             <div class="col-lg-5">
-                                                <div class="row col" style="color: #464457;">
-                                                    <h5>Anagrafica percorso</h5>
+                                                <div class="row col">
+                                                    <h3 class="text-primary">Anagrafica percorso</h3>
+                                                    <hr style="color: white;">
+                                                    <hr style="color: white;">
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-lg-6">
-                                                        <label>SE sottoposto a controllo</label>
-                                                        <input class="form-control" type="text" readonly="" value="<%=p.getSoggetto().getRagionesociale()%>">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <label class="active" for="text1" >SE sottoposto a controllo</label>
+                                                            <input class="form-control" type="text" readonly="" id="text1" value="<%=p.getSoggetto().getRagionesociale()%>">
+                                                        </div>
+
+                                                        <div class="col-6">
+                                                            <label class="active" for="cod">Codice di protocollo</label>
+                                                            <input class="form-control" type="text" readonly="" id="cod" value="<%=p.getSoggetto().getProtocollo()%>">
+                                                        </div>
                                                     </div>
-                                                    <div class="col-lg-6">
-                                                        <label>Codice di protocollo</label>
-                                                        <input class="form-control" type="text" readonly="" value="<%=p.getSoggetto().getProtocollo()%>">
+                                                    <hr style="color: white">
+                                                    <div class="row">
+                                                        <div class="col-6 col-md-4">
+                                                            <label class="active" for="idPiattaforma">ID Piattaforma</label>
+                                                            <input class="form-control" type="text" readonly="" id="idPiattaforma" value="<%=p.getSoggetto().getId()%>">
+                                                        </div>
+                                                        <div class="col-6 col-md-4">
+                                                            <label class="active" for="CIP">CIP</label>
+                                                            <input class="form-control" type="text" readonly="" id="CIP" value="<%=p.getCip()%>">
+                                                        </div>
+                                                        <div class="col-6 col-md-4">
+                                                            <label class="active" for="date-">Date avvio - chiusura</label>
+                                                            <input type="text" class="form-control" readonly id="date-" value="<%=sdf.format(p.getStart()) + " - " + sdf.format(p.getEnd())%>" >
+                                                        </div>
                                                     </div>
+                                                    <hr style="color: white">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <label class="active" for="allievi3">Allievi iscritti</label>
+                                                            <input class="form-control" type="text" readonly id="allievi3" value="<%=p.getAllievi().size()%>" name="allievi_start">
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <label class="active" for="allievi2">Allievi che hanno terminato il corso</label>
+                                                            <input class="form-control" type="text" readonly id="allievi2" value="<%=allievi.size()%>" name="allievi_end">
+                                                        </div>
+                                                    </div>
+                                                    <hr style="color: white;">
+                                                    <label>Percentuale di performance 1% di allievi che termina il percorso  <b class="kt-font-io"><%=percentage%>%</b> &nbsp; <b class="kt-font-danger"><%=percentage2%>%</b></label>
+                                                    <div class="form-group kt-align-left row customcheck">
+                                                        <div class="col-10 kt-align-left"><b>Verifica validità corso</b><br>Il numero minimo di allievi previsto dall'avviso ha frequentato la FASE A per un numero di ore pari o superiore a 36?</div>
+                                                        <div class="col-2 kt-align-right">
+                                                            <div class="toggles">
+                                                                <label>
+                                                                    <input type="checkbox" name="check_valid" id="check_valid" checked>
+                                                                    <span class="lever"></span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-lg-3">
-                                                        <label>ID Piattaforma</label>
-                                                        <input class="form-control" type="text" readonly="" value="<%=p.getSoggetto().getId()%>">
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <label>CIP</label>
-                                                        <input class="form-control" type="text" readonly="" value="<%=p.getCip()%>">
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <label>Date avvio - chiusura</label>
-                                                        <input type="text" class="form-control" readonly value="<%=sdf.format(p.getStart()) + " - " + sdf.format(p.getEnd())%>" >
-                                                    </div>
+                                                <div class="row col">
+                                                    <h4 class="text-primary">Verifiche di sistema, presenza dei documenti amministrativi di percorso</h4>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-lg-6">
-                                                        <label>Allievi iscritti</label>
-                                                        <input class="form-control" type="text" readonly value="<%=p.getAllievi().size()%>" name="allievi_start">
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <label>Allievi che hanno terminato il corso</label>
-                                                        <input class="form-control" type="text" readonly value="<%=allievi.size()%>" name="allievi_end">
-                                                    </div>
-                                                </div>
-                                                <label>Percentuale di performance 1% di allievi che termina il percorso  <b class="kt-font-io"><%=percentage%>%</b> &nbsp; <b class="kt-font-danger"><%=percentage2%>%</b></label>
-                                                <div class="form-group kt-align-left row customcheck">
-                                                    <div class="col-10 kt-align-left"><b>Verifica validità corso</b><br>Il numero minimo di allievi previsto dall'avviso ha frequentato la FASE A per un numero di ore pari o superiore a 36?</div>
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
-                                                            <label>
-                                                                <input type="checkbox" name="check_valid" id="check_valid" checked>
-                                                                <span></span>
-                                                            </label>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <br>
-                                                <div class="row col" style="color: #464457;">
-                                                    <h5>Verifiche di sistema, presenza dei documenti amministrativi di percorso</h5>
-                                                </div>
-                                                <div class="form-group row customcheck">
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
+                                                <hr style="color: white;">
+
+
+                                                <div class="container">
+                                                    <div class="form-group row customcheck">
+                                                        <div class="toggles" >
                                                             <label>
                                                                 <input type="checkbox" name="check_swot" id="check_swot" checked>
-                                                                <span></span>
+                                                                <span class="lever" style="float: "></span>
                                                             </label>
-                                                        </span>
+                                                        </div>
+                                                        <div class="text-start" style=" margin-bottom: 10px; margin-top: 5px;">Presenza Analisi Swot</div>
                                                     </div>
-                                                    <div class="col-10 kt-align-left">Presenza Analisi Swot</div>
-                                                </div>
-                                                <div class="form-group row customcheck">
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
+                                                    <div class="form-group row customcheck">
+                                                        <div class="toggles">
                                                             <label>
                                                                 <input type="checkbox" name="check_m9_1" id="check_m9_1" checked>
-                                                                <span></span>
+                                                                <span class="lever" style=""></span>
                                                             </label>
-                                                        </span>
+                                                        </div>
+                                                        <div class="text-start" style=" margin-bottom: 10px; margin-top: 5px;">Presenza Modello 9 con i relativi allegati</div>
                                                     </div>
-                                                    <div class="col-10 kt-align-left">Presenza Modello 9 con i relativi allegati</div>
-                                                </div>
-                                                <div class="form-group row customcheck">
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
+                                                    <div class="form-group row customcheck">
+                                                        <div class="toggles">
                                                             <label>
                                                                 <input type="checkbox" name="check_cvdoc" id="check_cvdoc" checked>
-                                                                <span></span>
+                                                                <span  class="lever" style=" "></span>
                                                             </label>
-                                                        </span>
+                                                        </div>
+                                                        <div  class="text-start" style=" margin-bottom: 10px; margin-top: 5px;">Presenza di tutti i CV dei docenti coinvolti nel percorso</div>
                                                     </div>
-                                                    <div class="col-10 kt-align-left">Presenza di tutti i CV dei docenti coinvolti nel percorso</div>
-                                                </div>
-                                                <div class="form-group row customcheck">
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
+
+
+                                                    <div class="form-group row customcheck">
+                                                        <div class="toggles">
                                                             <label>
                                                                 <input type="checkbox" name="check_regdoc" id="check_regdoc" checked>
-                                                                <span></span>
+                                                                <span  class="lever" style=""></span>
                                                             </label>
-                                                        </span>
+                                                        </div>
+                                                        <div class="text-start" style=" margin-bottom: 10px; margin-top: 5px; ">Registro presenza on-line del docente è stato alimentato secondo la tab.2 (allegata al Modello 9)?</div>
                                                     </div>
-                                                    <div class="col-10 kt-align-left">Registro presenza on-line del docente è stato alimentato secondo la tab.2 (allegata al Modello 9)?</div>
-                                                </div>
-                                                <div class="form-group row customcheck">
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
+
+
+                                                    <div class="form-group row customcheck">
+                                                        <div class="toggles">
                                                             <label>
                                                                 <input type="checkbox" name="check_chiuso" id="check_chiuso" checked>
-                                                                <span></span>
+                                                                <span class="lever" style=""></span>
                                                             </label>
-                                                        </span>
+                                                        </div>
+                                                        <div class="text-start" style=" margin-bottom: 10px; margin-top: 5px;">Stato del corso aggiornato da In Attuazione a Chiuso</div>
                                                     </div>
-                                                    <div class="col-10 kt-align-left">Stato del corso aggiornato da In Attuazione a Chiuso</div>
-                                                </div>
-                                                <div class="form-group row customcheck" >
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
+                                                    <div class="form-group row customcheck" >
+                                                        <div class="toggles">
                                                             <label>
                                                                 <input type="checkbox" name="check_m13" id="check_m13" checked>
-                                                                <span></span>
+                                                                <span  class="lever" style=""></span>
                                                             </label>
-                                                        </span>
+                                                        </div>
+                                                        <div class="text-start" style=" margin-bottom: 10px; margin-top: 5px;">Presenza Modello 13 (attestazione consegna materiale)</div>
                                                     </div>
-                                                    <div class="col-10 kt-align-left">Presenza Modello 13 (attestazione consegna materiale)</div>
                                                 </div>
+
+
+
+
+                                                <hr style="color: white">
+                                                <hr style="color: white">
                                                 <div class="form-group row">
                                                     <div class="col-lg-12">
-                                                        <label>Specificare cosa è stato consegnato</label>
-                                                        <input class="form-control obbligatory" type="text" name="m9_input" id="m9_input" >
+                                                        <label for="m9_input" class="active">Specificare cosa è stato consegnato</label>
+                                                        <input class="form-control obbligatory" type="text" name="m9_input" id="m9_input" style="border: 1px solid;">
                                                     </div>
                                                 </div>
+                                                <hr style="color: white">
+                                                <hr style="color: white">
                                                 <div class="form-group row" >
                                                     <div class="col-lg-12">
-                                                        <label>Note: in caso di esito negativo, richiedere integrazioni via mail, riportando data di invio mail della richiesta nel presente box.</label>
-                                                        <textarea class="form-control" name="note_esito" id="note_esito" rows="4" cols="50"></textarea>
+                                                        <label for="note_esito" class="active" style="white-space: normal; ">Note: in caso di esito negativo, richiedere integrazioni via mail, riportando data di invio mail della richiesta nel presente box.</label>
+                                                        <br>
+                                                        <textarea class="form-control" name="note_esito" id="note_esito" rows="4" cols="50" style="border: 1px solid;"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-lg-1">
                                                 <div class="center separator"> </div>
                                             </div>
+
+
                                             <div class="col-lg-6">
                                                 <div class="row col" style="color: #464457;">
-                                                    <h5>Verifiche amministrative extra-sistema</h5>
+                                                    <h4 class="text-primary">Verifiche amministrative extra-sistema</h4>
                                                 </div>
-                                                <div class="form-group row customcheck">
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
-                                                            <label>
-                                                                <input type="checkbox" name="check_m2" id="check_m2" checked>
-                                                                <span></span>
-                                                            </label>
-                                                        </span>
+
+
+
+                                                <div class="container">
+                                                    <hr style="color: white">
+                                                    <div class="form-group row customcheck" style="display: flex; justify-content: flex-start">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <div class="toggles">
+                                                                    <label for="check_m2" class="active">
+                                                                        <input type="checkbox" name="check_m2" id="check_m2" checked>
+                                                                        <span class="lever" style=""></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-9" style=" margin-bottom: 10px; margin-top: 5px;">Presenza Modello 2 (richiesta di autorizzazione avvio)</div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-10 kt-align-left">Presenza Modello 2 (richiesta di autorizzazione avvio)</div>
-                                                </div>
-                                                <div class="form-group row customcheck">
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
-                                                            <label>
-                                                                <input type="checkbox" name="check_m6_1" id="check_m6_1" checked>
-                                                                <span></span>
-                                                            </label>
-                                                        </span>
+                                                    <div class="form-group row customcheck" style="display: flex; justify-content: flex-start">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <div class="toggles">
+                                                                    <label for="check_m6_1" class="active">
+                                                                        <input type="checkbox" name="check_m6_1" id="check_m6_1" checked>
+                                                                        <span class="lever" style=""></span>
+                                                                    </label> 
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-9" style=" margin-bottom: 10px; margin-top: 5px;">Modello 6 (comunicazione di avvio e calendari FASE A): è stato trasmesso prima dell'avvio della FASE A?</div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-10 kt-align-left">Modello 6 (comunicazione di avvio e calendari FASE A): è stato trasmesso prima dell'avvio della FASE A?</div>
-                                                </div>
-                                                <div class="form-group row customcheck">
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
-                                                            <label>
-                                                                <input type="checkbox" name="check_m6_2" id="check_m6_2" checked>
-                                                                <span></span>
-                                                            </label>
-                                                        </span>
+                                                    <div class="form-group row customcheck" style="display: flex; justify-content: flex-start">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <div class="toggles">
+                                                                    <label for="check_m6_2" class="active">
+                                                                        <input type="checkbox" name="check_m6_2" id="check_m6_2" checked>
+                                                                        <span class="lever" style=""></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-9" style=" margin-bottom: 10px; margin-top: 5px;">Modello 6 (comunicazione di avvio e calendari FASE A): sono presenti tutti gli allegati obbligatori?</div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-10 kt-align-left">Modello 6 (comunicazione di avvio e calendari FASE A): sono presenti tutti gli allegati obbligatori?</div>
-                                                </div>
-                                                <div class="form-group row customcheck">
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
-                                                            <label>
-                                                                <input type="checkbox" name="check_m7_1" id="check_m7_1" checked>
-                                                                <span></span>
-                                                            </label>
-                                                        </span>
+                                                    <div class="form-group row customcheck" style="display: flex; justify-content: flex-start">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <div class="toggles">
+                                                                    <label for="check_m7_1" class="active">
+                                                                        <input type="checkbox" name="check_m7_1" id="check_m7_1" checked>
+                                                                        <span class="lever" style=""></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-9" style=" margin-bottom: 10px; margin-top: 5px;">Modello 7 (comunicazione calendari FASE B): è stato trasmesso prima dell'avvio della FASE B?</div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-10 kt-align-left">Modello 7 (comunicazione calendari FASE B): è stato trasmesso prima dell'avvio della FASE B?</div>
-                                                </div>
-                                                <div class="form-group row customcheck ">
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
-                                                            <label>
-                                                                <input type="checkbox" name="check_m7_2" id="check_m7_2" checked>
-                                                                <span></span>
-                                                            </label>
-                                                        </span>
+                                                    <div class="form-group row customcheck " style="display: flex; justify-content: flex-start">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <div class="toggles">
+                                                                    <label for="check_m7_2" class="active">
+                                                                        <input type="checkbox" name="check_m7_2" id="check_m7_2" checked>
+                                                                        <span class="lever" style=""></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-9" style=" margin-bottom: 10px; margin-top: 5px;">Modello 7 (comunicazione calendari FASE B): sono presenti tutti gli allegati obbligatori?</div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-10 kt-align-left">Modello 7 (comunicazione calendari FASE B): sono presenti tutti gli allegati obbligatori?</div>
-                                                </div>
-                                                <div class="form-group row customcheck">
-                                                    <div class="col-2 kt-align-right"><span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
-                                                            <label>
-                                                                <input type="checkbox" name="check_m9_2" id="check_m9_2" checked>
-                                                                <span></span>
-                                                            </label>
-                                                        </span>
+
+                                                    <div class="form-group row customcheck" style="display: flex; justify-content: flex-start">
+                                                        <div class="row">
+                                                            <div class="col-3">
+                                                                <div class="toggles">
+                                                                    <label for="check_m9_2" class="active">
+                                                                        <input type="checkbox" name="check_m9_2" id="check_m9_2" checked>
+                                                                        <span class="lever"></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-9">Modello 9 (dichiarazione chiusura percorso in originale) è completo di tutti gli allegati obbligatori?  </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-10 kt-align-left">Modello 9 (dichiarazione chiusura percorso in originale) è completo di tutti gli allegati obbligatori?  </div>
+
                                                 </div>
+
+
+
+                                                <hr style="color: white">
+                                                <hr style="color: white">
                                                 <div class="form-group row">
                                                     <div class="col-lg-12">
-                                                        <label>Note</label>
-                                                        <textarea class="form-control" id="note" name="note" rows="4" cols="50"></textarea>
+                                                        <label for="note" class="active">Note: </label>
+                                                        <textarea class="form-control" id="note" name="note" rows="4" cols="50" style="border: 1px solid;"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="row col" style="color: #464457;">
-                                                    <h5>Verifiche di sistema documenti allievo</h5>
+                                                    <h4 class="text-primary">Verifiche di sistema documenti allievo</h4>
                                                 </div>
+                                                <hr style="color: white">
                                                 <div class="form-group">
-                                                    <label>Lista allievi</label><label class='kt-font-danger kt-font-boldest'>*</label>
+                                                    <label for="allievi" class="active">Lista allievi</label>
+                                                    <hr style="color: white">
                                                     <div class="select-div" id="allievi_div">
-                                                        <select class="form-control kt-select2 obbligatory" id="allievi" name="allievi[]" multiple="multiple">
+                                                        <select "class="form-control kt-select2 obbligatory" id="allievi" name="allievi[]" multiple="multiple">
                                                             <%for (Allievi a : allievi) {%>
                                                             <option selected value="<%=a.getId()%>"><%=a.getCognome()%> <%=a.getNome()%></option>
                                                             <%}%>
@@ -343,8 +419,8 @@
                                     </form>
                                     <div class="form-group">
                                         <div class="kt-form__actions">
-                                            <a href="javascript:void(0);" class="btn btn-io" id="submit"><font color='white'>Salva</font></a>
-                                            <button onclick="location.reload();" class="btn btn-io-n"><font color='white'>Reset</font></button>
+                                            <a href="javascript:void(0);" class="btn btn-primary" id="submit"><font color='white'>Salva</font></a>
+                                            <button onclick="location.reload();" class="btn btn-danger"><font color='white'>Reset</font></button>
                                         </div>
                                     </div>
 
@@ -354,9 +430,10 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
-            <i class="fa fa-arrow-up"></i>
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0066CC !important;">
+            <i class="fa fa-arrow-up" ></i>
         </div>
 
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
@@ -374,7 +451,7 @@
         <script src="<%=src%>/assets/app/custom/general/components/extended/blockui1.33.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
+
         <!--this page-->
         <script src="<%=src%>/assets/vendors/general/inputmask/dist/inputmask/inputmask.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/inputmask/dist/inputmask/jquery.inputmask.js" type="text/javascript"></script>
@@ -384,23 +461,23 @@
         <script src="<%=src%>/assets/vendors/general/bootstrap-timepicker/js/bootstrap-timepicker.js" type="text/javascript"></script>
 
         <script type="text/javascript">
-                                                var KTAppOptions = {
-                                                    "colors": {
-                                                        "state": {
-                                                            "brand": "#5d78ff",
-                                                            "dark": "#282a3c",
-                                                            "light": "#ffffff",
-                                                            "primary": "#5867dd",
-                                                            "success": "#34bfa3",
-                                                            "info": "#36a3f7",
-                                                            "warning": "#ffb822"
-                                                        },
-                                                        "base": {
-                                                            "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                            "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                                                        }
-                                                    }
-                                                };
+            var KTAppOptions = {
+                "colors": {
+                    "state": {
+                        "brand": "#5d78ff",
+                        "dark": "#282a3c",
+                        "light": "#ffffff",
+                        "primary": "#5867dd",
+                        "success": "#34bfa3",
+                        "info": "#36a3f7",
+                        "warning": "#ffb822"
+                    },
+                    "base": {
+                        "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                        "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                    }
+                }
+            };
         </script>
         <script>
             function ctrlForm() {

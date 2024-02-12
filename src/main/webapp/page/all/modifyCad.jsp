@@ -57,12 +57,13 @@
         <link href="<%=src%>/assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/custom/vendors/fontawesome5/css/all.min.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
-        <link href="<%=src%>/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/custom.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/header/base/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="<%=src%>/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css"/>
         <!-- this page -->
 
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
@@ -84,7 +85,7 @@
                             <div class="kt-portlet kt-portlet--mobile">
                                 <div class="kt-portlet__head">
                                     <div class="kt-portlet__head-label">
-                                        <h3 class="kt-portlet__head-title">
+                                        <h3 class="text-primary">
                                             Modifica Conferenza:
                                         </h3>
                                     </div>
@@ -95,56 +96,58 @@
                                         <div class="kt-portlet__body paddig_0_t paddig_0_b">
                                             <div class="kt-section kt-section--first">
                                                 <div class="kt-section__body"><br>
-                                                    <h5>Dati personali:</h5>
-                                                    <div class="kt-separator kt-separator--border kt-separator--space-sm"></div>
-                                                    <div class="row form-group">
-                                                        <div class="col-lg-3 col-md-6">
-                                                            <label>Nome</label><label class="kt-font-danger">*</label>
-                                                            <input class="form-control obbligatory" name="nome" value="<%=cad.getNome()%>">
+                                                    <div class="container">
+                                                        <h5 class="text-primary">Dati personali:</h5>
+                                                        <hr style="color: white">
+                                                        <div class="row form-group">
+                                                            <div class="form-group">
+                                                                <label style="color: #0066CC" for="nome" class="active">Nome</label><label class="kt-font-danger">*</label>
+                                                                <input class="form-control" name="nome" id="nome" value="<%=cad.getNome()%>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label style="color: #0066CC" for="cognome" class="active">Cognome</label><label class="kt-font-danger">*</label>
+                                                                <input class="form-control" id="cognome" name="cognome" value="<%=cad.getCognome()%>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label style="color: #0066CC" for="numero" class="active">Numero</label><label class="kt-font-danger">*</label>
+                                                                <input class="form-control" id="numero" name="numero" onkeypress="return isNumber(event);" value="<%=cad.getNumero()%>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label style="color: #0066CC" for="email" class="active">Email</label><label class="kt-font-danger">*</label>
+                                                                <input class="form-control" name="email" id="email" value="<%=cad.getEmail()%>">
+                                                            </div>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-6">
-                                                            <label>Cognome</label><label class="kt-font-danger">*</label>
-                                                            <input class="form-control obbligatory" name="cognome" value="<%=cad.getCognome()%>">
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-6">
-                                                            <label>Numero</label><label class="kt-font-danger">*</label>
-                                                            <input class="form-control obbligatory" name="numero" onkeypress="return isNumber(event);" value="<%=cad.getNumero()%>">
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-6">
-                                                            <label>Email</label><label class="kt-font-danger">*</label>
-                                                            <input class="form-control obbligatory" name="email" id="email" value="<%=cad.getEmail()%>">
-                                                        </div>
-                                                    </div>
-                                                    <h5>Data e ora colloquio:</h5>
-                                                    <div class="kt-separator kt-separator--border kt-separator--space-sm"></div>
-                                                    <div class="row form-group">
-                                                        <div class="col-lg-3 col-md-6">
-                                                            <label>Data</label><label class="kt-font-danger">*</label>
-                                                            <input type="text" class="form-control obbligatory" name="giorno" id="giorno"  autocomplete="off" readonly value="<%=sdf.format(cad.getGiorno())%>">
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-6">
-                                                            <label>ora di inizio e fine</label><label class="kt-font-danger">*</label>
-                                                            <div class="input-group" >
-                                                                <div class="col-6" style="padding-left: 0px; ">
-                                                                    <input type="text" class="form-control time obbligatory" disabled name="start" id="start" value="<%=sdf_h.format(cad.getOrariostart())%>" autocomplete="off" readonly/>
+                                                        <h5 class="text-primary">Data e ora colloquio:</h5>
+                                                        <div class="kt-separator kt-separator--border kt-separator--space-sm"></div>
+                                                        <div class="row form-group">
+                                                            <div class="form-group">
+                                                                <label style="color: #0066CC" for="giorno" class="active">Data</label><label class="kt-font-danger">*</label>
+                                                                <input type="text" class="form-control" name="giorno" id="giorno"  autocomplete="off" readonly value="<%=sdf.format(cad.getGiorno())%>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label style="color: #0066CC" class="active">ora di inizio e fine</label><label class="kt-font-danger">*</label>
+                                                                <div class="input-group" >
+                                                                    <div class="col-6" style="padding-left: 0px; ">
+                                                                        <input type="text" class="form-control" disabled name="start" id="start" value="<%=sdf_h.format(cad.getOrariostart())%>" autocomplete="off" readonly/>
+                                                                    </div>
+                                                                    <div class="col-6" style="padding-right: 0px;">
+                                                                        <input type="text" class="form-control" disabled name="end" id="end" value="<%=sdf_h.format(cad.getOrarioend())%>" autocomplete="off" readonly/>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="col-6" style="padding-right: 0px;">
-                                                                    <input type="text" class="form-control time obbligatory" disabled name="end" id="end" value="<%=sdf_h.format(cad.getOrarioend())%>" autocomplete="off" readonly/>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6">
+                                                                <div id="impegni">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-6 col-md-6">
-                                                            <div id="impegni">
-                                                            </div>
-                                                        </div>
                                                     </div>
-                                                </div>
-                                                <label class="kt-font-danger kt-font-bold"><font size="2" >* Campi Obbligatori</font></label>
-                                                <div class="kt-portlet__foot">
-                                                    <div class="kt-form__actions">
-                                                        <div class="row">
-                                                            <div class="offset-6 col-6 kt-align-right">
-                                                                <a id="submit" href="javascript:void(0);" class="btn btn-io"><font color='white'>Salva</font></a>
+                                                    <label class="kt-font-danger kt-font-bold"><font size="2" >* Campi Obbligatori</font></label>
+                                                    <div class="kt-portlet__foot">
+                                                        <div class="kt-form__actions">
+                                                            <div class="row">
+                                                                <div class="offset-6 col-6 kt-align-right">
+                                                                    <a id="submit" href="javascript:void(0);" class="btn btn-io"><font color='white'>Salva</font></a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -155,8 +158,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>	
-                </div>
+                    </div>
+                </div>	
             </div>
         </div>
         <div id="kt_scrolltop" class="kt-scrolltop">
@@ -185,26 +188,26 @@
         <script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
         <script id="createCad" src="<%=src%>/page/all/js/createCad.js<%="?dummy=" + String.valueOf(new Date().getTime())%>" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
         <script type="text/javascript">
-                                                                var KTAppOptions = {
-                                                                    "colors": {
-                                                                        "state": {
-                                                                            "brand": "#5d78ff",
-                                                                            "dark": "#282a3c",
-                                                                            "light": "#ffffff",
-                                                                            "primary": "#5867dd",
-                                                                            "success": "#34bfa3",
-                                                                            "info": "#36a3f7",
-                                                                            "warning": "#ffb822"
-                                                                        },
-                                                                        "base": {
-                                                                            "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                                            "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                                                                        }
-                                                                    }
-                                                                };
+                                                                        var KTAppOptions = {
+                                                                            "colors": {
+                                                                                "state": {
+                                                                                    "brand": "#5d78ff",
+                                                                                    "dark": "#282a3c",
+                                                                                    "light": "#ffffff",
+                                                                                    "primary": "#5867dd",
+                                                                                    "success": "#34bfa3",
+                                                                                    "info": "#36a3f7",
+                                                                                    "warning": "#ffb822"
+                                                                                },
+                                                                                "base": {
+                                                                                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                                                                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                                                                }
+                                                                            }
+                                                                        };
         </script>
         <script>
-            id =<%=cad.getId()%>;
+        id =<%=cad.getId()%>;
         </script>
     </body>
 </html>

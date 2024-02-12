@@ -25,11 +25,10 @@
 <!DOCTYPE html>
 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
     <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
-    <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside">
-        <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
-            <div class="kt-aside__brand-logo">
+    <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside"  >
+        <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" style="height: 50px;" >
+            <div class="kt-aside__brand-logo" style="">
                 <a href="indexMicrocredito.jsp">
-                    <img src="<%=src%>/assets/media/logos/logo.png" width="150" style="padding-top: 10px;" alt=""/>
                 </a>
             </div>
             <div class="kt-aside__brand-tools">
@@ -44,7 +43,7 @@
                     <li class="kt-menu__item  <%=home%>" aria-haspopup="true">
                         <a href="indexCi.jsp" class="kt-menu__link ">
                             <span class="kt-menu__link-icon"><i class="flaticon-home-2"></i></span>
-                            <span class="kt-menu__link-text">Home</span>
+                            <span class="kt-menu__link-text" style="color: white;" >Home</span>
                         </a>
                     </li>
                     <%@include file="general/Cad.jsp"%>

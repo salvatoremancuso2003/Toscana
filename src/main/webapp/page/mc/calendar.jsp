@@ -83,7 +83,6 @@
         <link href="<%=src%>/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/raf/jquery-confirm.min.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/custom.css" rel="stylesheet" type="text/css" />
-
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <style type="text/css">
             .form-group {
@@ -316,7 +315,8 @@
                                                                 <td>
                                                                     <%if (modify) {
                                                                     %>
-                                                                    <select class="form-control kt-select2-general" id="sino_<%=a1.getId()%>" name="sino_<%=a1.getId()%>"
+                                                                    <select class="form-control kt-select2-general" 
+                                                                            id="sino_<%=a1.getId()%>" name="sino_<%=a1.getId()%>"
                                                                             style="width: 100%" required onchange="return checkorariomax();">
 
                                                                         <%if (allievo_presente.equals("1")) {%>

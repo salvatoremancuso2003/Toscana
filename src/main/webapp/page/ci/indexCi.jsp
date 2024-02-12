@@ -48,6 +48,7 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <style>
             #containerCanvas {
@@ -68,10 +69,23 @@
                 background-color: #c2eee1!important;
                 margin-bottom:1.5rem;
             }
+
+
+            #i1:hover{
+                color: #0066CC !important;
+            }
+
+            #i2:hover{
+                color: #0066CC !important;
+            }
+
         </style>
     </head>
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
         <!-- begin:: Page -->
+        <%@ include file="../../Bootstrap2024/index/index_ci/Header_ci.jsp"%>
+
+
         <%@ include file="menu/head1.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
@@ -79,25 +93,18 @@
                 <!-- end:: Aside -->
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
                     <%@ include file="menu/head.jsp"%>
+
                     <!-- begin:: Footer -->
-                    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-image: url(<%=src%>/resource/bg.png); background-size: cover;background-position: center; background-color: #fff;">
+                    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-color: #fff;">
                         <!-- begin:: Content Head -->
-                        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                            <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                                <div class="kt-subheader__main">
-                                    <h3 class="kt-subheader__title">Home</h3>
-                                    <span class="kt-subheader__separator kt-subheader__separator--v"></span>
-                                    <a class="kt-subheader__breadcrumbs-link">YES I Start Up - Toscana</a>
-                                </div>
-                            </div>
-                        </div>
+
                         <br>
                         <div class="tab-content" style="margin-right: 10px;">
                             <!-- end:: Content Head -->
                             <a id="chgPwd" href="<%=src%>/page/personal/chgPwd.jsp" class="btn btn-outline-brand btn-sm fancyProfileNoClose" style="display:none;"></a>
                         </div>
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
+                    <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
                     <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
                         <button id="showmod1" type="button" class="btn btn-outline-brand btn-sm" data-toggle="modal" data-target="#kt_modal_6">Launch Modal</button>
                     </div>

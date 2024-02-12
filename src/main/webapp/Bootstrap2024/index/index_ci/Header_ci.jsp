@@ -25,23 +25,6 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="it-header-slim-wrapper-content">
-                                <a class="d-lg-block navbar-brand" href="#">Regione Toscana</a>
-                                <div class="it-header-slim-right-zone">
-                                    <div class="nav-item dropdown">
-                                        <div class="dropdown-menu">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div class="link-list-wrapper">
-                                                        <ul class="link-list">
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -59,11 +42,15 @@
                                             <use href="/dist/svg/sprites.svg#it-pa"></use>
                                             </svg>
                                             <div class="it-brand-text">
-                                                <div class="it-brand-title"><h3 style="font-size:2rem; color:white !important;"><b>YES I STARTUP - Regione Toscana</b></h3></div>
+                                                <div class="it-brand-title"><h3 class="kt-login__title kt-font-io" style="font-size:2rem; color:white !important;"><b>YES I STARTUP - Regione Toscana</b></h3></div>
                                                 <!--<div class="it-brand-tagline d-none d-md-block">Uno dei tanti Comuni d'Italia</div>-->
+
                                             </div>
                                         </a>
+
                                     </div>
+
+
                                     <div class="it-right-zone">
                                         <!--<div class="it-socials d-none d-md-flex">
                                             <span>Seguici su</span>
@@ -104,8 +91,14 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
+                <h3 class="text-primary" style="display: flex; justify-content: center;">Home</h3>
+
+                
+
                 <div class="it-header-navbar-wrapper" id="header-nav-wrapper">
+
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
