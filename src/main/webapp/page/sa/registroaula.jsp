@@ -96,7 +96,7 @@
                                     <div class="form-group form-group-sm row">
                                         <div class="col-12">
                                             <div class="row">
-                                                <h5>Registro Lezioni - Modalità svolgimento <u>IN PRESENZA</u>: Lezioni programmate</h5>
+                                                <h5 class="text-primary">Registro Lezioni - Modalità svolgimento <u class="text-primary">IN PRESENZA</u>: Lezioni programmate</h5>
                                             </div>
                                             <table class="table table-bordered" style="width: 100%;" >
                                                 <thead>

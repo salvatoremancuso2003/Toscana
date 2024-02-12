@@ -92,12 +92,14 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
+        <link rel="stylesheet" href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css"/>
 
 
 
     </head>
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
         <div class="kt-grid kt-grid--hor kt-grid--root">
+            <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -105,13 +107,13 @@
                             <div class="kt-portlet kt-portlet--mobile">
                                 <div class="kt-portlet__head">
                                     <div class="kt-portlet__head-label">
-                                        <h3 class="kt-portlet__head-title">
+                                        <h3 class="text-primary">
                                             Documenti e Registri
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="kt-portlet__body">
-                                    <h4 class='kt-font-io'>Documenti:</h4>
+                                    <h4 class='text-primary'>Documenti:</h4>
                                     <div class="kt-separator kt-separator--border kt-separator--space-md" style="margin-top: 0px;"></div>
                                     <div class="row">
                                         <%for (Documenti_Allievi d : docs) {
@@ -131,9 +133,10 @@
                                                     </a>
                                                 </div>
                                                 <div class='col-6 paddig_0_l' style="text-align: left;">
-                                                    <a class="btn btn-icon btn-sm btn-io-n" href="javascript:void(0);" onclick="changeDocs(<%=d.getId()%>,<%=id_se%>, '<%=idea%>', '<%=protocollo%>',<%=d.getTipo().getId()%>, '<%=d.getTipo().getEstensione().getEstensione().replaceAll("\"", "&quot;")%>', '<%=d.getTipo().getEstensione().getMime_type()%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Modifica documento">
+                                                    <a class="btn btn-icon btn-sm btn-io-n" href="javascript:void(0);" onclick="changeDocs(%=d.getId()%>,%=id_se%>, '%=idea%>', '%=protocollo%>',<%=d.getTipo().getId()%>, '<%=d.getTipo().getEstensione().getEstensione().replaceAll("\"", "&quot;")%>', '<%=d.getTipo().getEstensione().getMime_type()%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Modifica documento">
                                                         <i class="fa fa-exchange-alt"></i>
                                                     </a>
+
                                                 </div>
                                                 <div class='offset-1 row'>
                                                     <%String docente_nome = d.getDocente() != null ? d.getDocente().getCognome() + " " + d.getDocente().getNome() : "";%>
@@ -197,7 +200,7 @@
                                     </div>
                                     <%if (!tipo_doc_obbl.isEmpty()) {%>
                                     <br>
-                                    <h4 class='kt-font-io'>Carica Documento:</h4>
+                                    <h4 class='text-primary'>Carica Documento:</h4>
                                     <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
                                     <div class="row">
                                         <%for (TipoDoc_Allievi t : tipo_doc_obbl) {
@@ -205,23 +208,24 @@
                                         <div class='col-lg-2 col-md-4 col-sm-6'>
                                             <div class='row'>
                                                 <div class='col-6 paddig_0_r' style="text-align: center;">
-                                                    <a href='javascript:void(0);' onclick="uploadDocs(<%=a.getId()%>,<%=t.getId()%>, '<%=t.getEstensione().getEstensione().replaceAll("\"", "&quot;")%>', '<%=t.getEstensione().getMime_type()%>');" class='btn-icon kt-font-warning document'>
+                                                     <a href='javascript:void(0);' onclick="uploadDocs(<%=a.getId()%>,<%=t.getId()%>, '<%=t.getEstensione().getEstensione().replaceAll("\"", "&quot;")%>', '<%=t.getEstensione().getMime_type()%>');" class='btn-icon kt-font-warning document'>
                                                         <i class='fa fa-file-upload' style='font-size: 100px;'></i>
                                                     </a>
+
                                                 </div>
 
                                                 <div class='col-6 paddig_0_l' style="text-align: left;">
                                                     <%=t.getObbligatorio() == 1 ? "<label class='kt-font-danger kt-font-boldest' style='font-size: 30px;text-align:left;'>*</label>" : ""%>
                                                 </div>
                                                 <div class='offset-1 row'>
-                                                    <h5 class='kt-font-io'>Carica <%=t.getDescrizione()%></h5>
+                                                    <h5 class='text-primary'>Carica <%=t.getDescrizione()%></h5>
                                                 </div>
                                             </div>
                                         </div>
                                         <%}
                                             }%>
                                     </div>
-                                    <label class="kt-font-danger kt-font-bold"><font size="2" >* Documenti Obbligatori</font></label>
+                                    <label class="text-danger"><font size="2" >* Documenti Obbligatori</font></label>
                                         <%}%>
                                 </div>
                             </div>
@@ -229,10 +233,14 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0066CC">
             <i class="fa fa-arrow-up"></i>
         </div>
+
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.bundle.min.js"></script>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
