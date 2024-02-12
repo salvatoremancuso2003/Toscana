@@ -80,6 +80,7 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/custom.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <style type="text/css">
             .form-group {
@@ -131,10 +132,15 @@
             .select2-selection__clear{
                 display: none;
             }
+            
+            body{
+                background-color: #ccc;
+            }
         </style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -239,8 +245,8 @@
                                             <div class="form-row">
                                                 <%for (LezioneCalendario lez : grouppedByLezione) {
                                                         temp = Utility.lezioneFilteredByGroup(lezioni, lez.getId(), i);%>
-                                                
-                                                        <div class='col-lg-2 col-md-4 col-sm-6'>
+
+                                                <div class='col-lg-2 col-md-4 col-sm-6'>
                                                     <div class='row'>
                                                         <%if (lez.isDoppia()) {%>
                                                         <div class="col-6 paddig_0_r" id="msgItem_<%=lez.getLezione()%>_<%=i%>" data-container="body" data-html="true" data-toggle="kt-tooltip" title="" style="text-align: center;">
@@ -369,6 +375,7 @@
                     </div>
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
         <div id="kt_scrolltop" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>

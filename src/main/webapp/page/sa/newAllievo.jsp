@@ -85,18 +85,23 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/custom.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
 
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <style type="text/css">
             .form-group {
                 margin-bottom: 1rem;
             }
-
+            
             .custom-file-label::after {
                 color:#fff;
                 background-color: #eaa21c;
             }
-
+            
+            body{
+                background-color: #ccc;
+            }
+            
         </style>
         <script type="text/javascript">
             function model_funct(codice) {
@@ -108,9 +113,10 @@
             }
         </script>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
         <%if (fancy) {%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <%@ include file="menu/head1.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
@@ -172,28 +178,20 @@
                                                                 <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
                                                                 <div class="form-row">
                                                                     <div class="form-group col-xl-3 col-lg-6">
-                                                                        <label>Nome </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Nome </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control obbligatory text-uppercase" id="nome" name="nome" />
                                                                     </div>
                                                                     <div class="form-group col-xl-3 col-lg-6">
-                                                                        <label>Cognome </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Cognome </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control obbligatory text-uppercase" id="cognome" name="cognome" />
                                                                     </div>
                                                                     <div class="form-group col-xl-3 col-lg-6">
-                                                                        <label>Codice fiscale </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Codice fiscale </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input class="form-control obbligatory text-uppercase" type="text" name="codicefiscale" id="codicefiscale" />
                                                                     </div>
                                                                     <div class="form-group col-xl-3 col-lg-6">
-                                                                        <label>Stato di nascita <i class="fa fa-info-circle" 
-                                                                                                   data-container="body" 
-                                                                                                   data-toggle="kt-popover" 
-                                                                                                   data-placement="bottom"
-                                                                                                   data-original-title="Stato di Nascita"
-                                                                                                   data-content="Possono partecipare al programma Garanzia giovani, i cittadini Italiani, 
-                                                                                                   i cittadini di uno stato membro dell'Unione Europea oppure stranieri extra UE, purché con permesso di soggiorno o residenza in Italia.
-                                                                                                   In mancanza, del requisito della residenza o del permesso di soggiorno l'iscrizione al percorso YES I START UP non &#232; valida."></i>
-                                                                        </label>
-                                                                        <label class="kt-font-danger kt-font-boldest">*</label> 
+                                                                        
+                                                                        <label class="kt-font-danger kt-font-boldest"></label> 
 
 
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="stato_div" style="padding: 0;">
@@ -214,11 +212,11 @@
                                                                 </div>
                                                                 <div class="form-row">
                                                                     <div class="form-group col-xl-3 col-lg-6">
-                                                                        <label>Data di nascita </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Data di nascita </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control obbligatory date-picker_r" name="datanascita" id="datanascita"/>
                                                                     </div>
                                                                     <div class="form-group col-xl-3 col-lg-6">
-                                                                        <label>Regione di nascita </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="regionenascita_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general obbligatory" id="regionenascita" name="regionenascita"  style="width: 100%">
                                                                                 <option value="-">Seleziona Regione</option>
@@ -229,7 +227,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-xl-3 col-lg-6">
-                                                                        <label>Provincia di nascita </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="provincianascita_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general obbligatory" id="provincianascita" name="provincianascita"  style="width: 100%;">
                                                                                 <option value="-">Seleziona Provincia</option>
@@ -237,7 +235,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-xl-3 col-lg-6">
-                                                                        <label>Comune di nascita </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="comunenascita_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general obbligatory" id="comunenascita" name="comunenascita"  style="width: 100%;">
                                                                                 <option value="-">Seleziona Comune</option>
@@ -250,32 +248,24 @@
                                                                 </div>
                                                                 <div class="form-row">
                                                                     <div class="form-group col-xl-3 col-lg-6">
-                                                                        <label>Telefono (Cellulare, senza +39) </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Telefono (Cellulare, senza +39) </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control obbligatory" 
                                                                                id="telefono" name="telefono" 
                                                                                onkeypress="return check_mobiletel_bef(event, this);" 
                                                                                onkeyup="return check_mobiletel_aft(event, this);"/>
                                                                     </div>
                                                                     <div class="form-group col-xl-3 col-lg-6">
-                                                                        <label>Documento di identità </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        
                                                                         <div class="custom-file">
                                                                             <input type="file" tipo="obbligatory" class="custom-file-input" accept="application/pdf" name="docid" id="docid" onchange="return checkFileExtAndDim(['pdf']);">
-                                                                            <label class="custom-file-label selected" id='label_file'>Scegli File</label>
+                                                                            <label class="custom-file-label selected" id='label_file'>Scegli File (Documento Identità)</label>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-xl-3 col-lg-6">
-                                                                        <label>Data scadenza documento</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Data scadenza documento</label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control obbligatory date-picker_r1" name="scadenzadoc" id="scadenzadoc" autocomplete="off"/>
                                                                     </div>
                                                                     <div class="form-group col-xl-3 col-lg-6">
-                                                                        <label>Cittadinanza</label> <i class="fa fa-info-circle" 
-                                                                                                       data-container="body" 
-                                                                                                       data-toggle="kt-popover" 
-                                                                                                       data-placement="bottom"
-                                                                                                       data-original-title="Cittadinanza"
-                                                                                                       data-content="Possono partecipare al programma Garanzia giovani, i cittadini Italiani, 
-                                                                                                       i cittadini di uno stato membro dell'Unione Europea oppure stranieri extra UE, purché con permesso di soggiorno o residenza in Italia.
-                                                                                                       In mancanza, del requisito della residenza o del permesso di soggiorno l'iscrizione al percorso YES I START UP non &#232; valida."></i><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="cittadinanza_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general obbligatory" id="cittadinanza" name="cittadinanza"  style="width: 100%">
                                                                                 <option value="-">Seleziona Cittadinanza</option>
@@ -297,15 +287,15 @@
                                                                 <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
                                                                 <div class="form-row">
                                                                     <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label>Indirizzo </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Indirizzo </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control obbligatory text-uppercase" id="indirizzores" name="indirizzores" />
                                                                     </div>
                                                                     <div class="form-group col-xl-2 col-lg-6">
-                                                                        <label>Civico </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Civico </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control obbligatory text-uppercase" id="civicores" name="civicores" />
                                                                     </div>
                                                                     <div class="form-group col-xl-2 col-lg-6">
-                                                                        <label>CAP </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>CAP </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control obbligatory text-uppercase" id="capres" name="capres"  onkeypress="return isNumber(event);"/>
                                                                     </div>
                                                                     <div class="form-group col-xl-4 col-lg-6 kt-align-right">
@@ -322,7 +312,7 @@
                                                                 </div>
                                                                 <div class="form-row">
                                                                     <div class="form-group col-lg-4">
-                                                                        <label>Regione di residenza </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="regioneres_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general obbligatory" id="regioneres" name="regioneres"  style="width: 100%">
                                                                                 <option value="-">Seleziona Regione</option>
@@ -333,7 +323,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-lg-4">
-                                                                        <label>Provincia di residenza </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="provinciares_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general obbligatory" id="provinciares" name="provinciares"  style="width: 100%;">
                                                                                 <option value="-">Seleziona Provincia</option>
@@ -341,7 +331,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-lg-4">
-                                                                        <label>Comune di residenza </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="comuneres_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general obbligatory" id="comuneres" name="comuneres"  style="width: 100%;">
                                                                                 <option value="-">Seleziona Comune</option>
@@ -353,21 +343,20 @@
                                                                 <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
                                                                 <div class="form-row">
                                                                     <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label>Indirizzo </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Indirizzo </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control text-uppercase" id="indirizzodom" name="indirizzodom" />
                                                                     </div>
                                                                     <div class="form-group col-xl-2 col-lg-6">
-                                                                        <label>Civico </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Civico </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control text-uppercase" id="civicodom" name="civicodom" />
                                                                     </div>
                                                                     <div class="form-group col-xl-2 col-lg-6">
-                                                                        <label>CAP </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>CAP </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control text-uppercase" id="capdom" name="capdom"  onkeypress="return isNumber(event);"/>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-row">
                                                                     <div class="form-group col-lg-4">
-                                                                        <label>Regione di domicilio </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="regionedom_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general" id="regionedom" name="regionedom"  style="width: 100%">
                                                                                 <option value="-">Seleziona Regione</option>
@@ -378,7 +367,6 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-lg-4">
-                                                                        <label>Provincia di domicilio </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="provinciadom_div" style="padding: 0;">
                                                                             <select  class="form-control kt-select2-general" id="provinciadom" name="provinciadom"  style="width: 100%;">
                                                                                 <option value="-">Seleziona Provincia</option>
@@ -386,7 +374,6 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-lg-4">
-                                                                        <label>Comune di domicilio </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="comunedom_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general" id="comunedom" name="comunedom"  style="width: 100%;">
                                                                                 <option value="-">Seleziona Comune</option>
@@ -399,7 +386,6 @@
                                                                 <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
                                                                 <div class="form-row">
                                                                     <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label>Titolo di studio </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="titolo_studio_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general obbligatory" id="titolo_studio" name="titolo_studio"  style="width: 100%">
                                                                                 <option value="-">Seleziona titolo di studio</option>
@@ -410,7 +396,6 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label>Condizione lavorativa precedente </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <!--29-04-2020 MODIFICA - CONDIZIONE LAVORATIVA PRECEDENTE-->
                                                                         <!--<input type="text" class="form-control obbligatory" id="neet" name="neet" />-->
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="condizione_lavorativa_div" style="padding: 0;">
@@ -423,7 +408,6 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label>Canale di conoscenza </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="canale_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general obbligatory" id="canale" name="canale"  style="width: 100%">
                                                                                 <option value="-">Seleziona canale di conoscenza</option>
@@ -437,15 +421,15 @@
                                                                 <input type="hidden" name="condizione" value="01" />
                                                                 <div class="form-row">
                                                                     <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label>Email </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Email </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control obbligatory text-lowercase" id="email" name="email"  />
                                                                     </div>
                                                                     <div class="form-group col-xl-2 col-lg-6">
-                                                                        <label>Data iscrizione G.G. </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Data iscrizione G.G. </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control obbligatory date-picker_r" name="iscrizionegg" id="iscrizionegg" />
                                                                     </div>
                                                                     <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label>Operatore Privato / CPI </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Operatore Privato / CPI </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="cpi_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general obbligatory" id="cpi" name="cpi"  style="width: 100%">
                                                                                 <option value="-">Seleziona</option>
@@ -457,13 +441,12 @@
                                                                     </div>
 
                                                                     <div class="form-group col-xl-2 col-lg-6">
-                                                                        <label>Data presa in carico </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label>Data presa in carico </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <input type="text" class="form-control obbligatory date-picker_r" name="datacpi" id="datacpi" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-row">   
                                                                     <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label>Motivazione </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="motivazione_div" style="padding: 0;">
                                                                             <select class="form-control kt-select2-general obbligatory"
                                                                                     id="motivazione" name="motivazione"  style="width: 100%">
@@ -477,13 +460,12 @@
                                                                 </div>
                                                                 <h5>AUTORIZZAZIONI PRIVACY</h5>
                                                                 <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
-
                                                                 <div class="form-row">   
                                                                     <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label>Autorizzazione Privacy 1 </label><label class="kt-font-danger kt-font-boldest">*</label>
-
+                                                                        <label>Autorizzazione Privacy 1</label><label class="kt-font-danger kt-font-boldest"></label>
                                                                         <span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
                                                                             <label>
+                                                                                <br>
                                                                                 <input type="checkbox" class="form-control" name="prv1" id="prv1" checked disabled/>
                                                                                 <span></span>
                                                                                 <%=prv1%>
@@ -495,6 +477,7 @@
                                                                         <label>Autorizzazione Privacy 2 </label>
                                                                         <span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
                                                                             <label>
+                                                                                <br>
                                                                                 <input type="checkbox" class="form-control" name="prv2" id="prv2"/>
                                                                                 <span></span>
                                                                                 <%=prv2%>
@@ -505,6 +488,7 @@
                                                                         <label>Autorizzazione Privacy 3</label>
                                                                         <span class="kt-switch kt-switch--outline kt-switch--icon kt-switch--primary">
                                                                             <label>
+                                                                                <br>
                                                                                 <input type="checkbox" class="form-control" name="prv3" id="prv3"/>
                                                                                 <span></span>
                                                                                 <%=prv3%>
@@ -512,8 +496,12 @@
                                                                         </span>
                                                                     </div>
                                                                 </div>
+                                                                <br>
+                                                                <br>
+                                                                <hr>
 
                                                                 <%if (mod_1.getModello() != null) {%>
+                                                                <br>
                                                                 <h5>MODELLO 1</h5>
                                                                 <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
                                                                 <div class="row">
@@ -527,7 +515,9 @@
                                                                 <div class="form-group row">
                                                                     <div class="form-group col-xl-6 col-lg-6">
                                                                         <label>Scaricare il modello con i dati inseriti per poi caricarlo firmato dal NEET nel campo seguente.</label>
-                                                                        <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                                        <br>
+                                                                        <br>
+                                                                        <button class="btn btn-primary" 
                                                                                 type="button" 
                                                                                 onclick="return model_funct('<%=mod_1.getId()%>');"
                                                                                 >
@@ -550,7 +540,7 @@
                                                                 <div class="form-group row">
                                                                     <%for (TipoDoc_Allievi t : tipo_doc) {%>
                                                                     <div class="form-group col-xl-4 col-lg-6">
-                                                                        <label><%=t.getDescrizione()%></label><%=t.getObbligatorio() == 1 ? "<label id='label_doc_" + t.getId() + "' class='kt-font-danger kt-font-boldest'>*</label>" : "<label id='label_doc_" + t.getId() + "' class='kt-font-danger kt-font-boldest'></label>"%>
+                                                                        <label><%=t.getDescrizione()%></label><%=t.getObbligatorio() == 1 ? "<label id='label_doc_" + t.getId() + "' class='kt-font-danger kt-font-boldest'></label>" : "<label id='label_doc_" + t.getId() + "' class='kt-font-danger kt-font-boldest'></label>"%>
                                                                         <div class="custom-file">
                                                                             <input type="file" <%=t.getObbligatorio() == 1 ? "tipo='obbligatory'" : ""%> 
                                                                                    class="custom-file-input" 
@@ -564,7 +554,7 @@
                                                                 <div class="kt-portlet__foot" style="padding-left: 10px;">
                                                                     <div class="kt-form__actions">
                                                                         <div class="row">
-                                                                            <a id="submit_change" href="javascript:void(0);" class="btn btn-io" style="font-family: Poppins"><i class="flaticon2-plus-1"></i> Aggiungi</a>
+                                                                            <a id="submit_change" href="javascript:void(0);" class="btn btn-primary" style="font-family: Poppins"><i class="flaticon2-plus-1"></i> Aggiungi</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -577,15 +567,15 @@
                                     </div>
                                     <%if (fancy) {%>
                                 </div>
-                                <%@ include file="menu/footer.jsp"%>
                                 <%}%>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0021c3">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
