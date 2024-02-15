@@ -69,6 +69,7 @@
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <!--this page-->
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
@@ -77,8 +78,18 @@
         <script type="text/javascript" src="<%=src%>/assets/soop/js/jquery-3.6.1.min.js"></script>
         <script type="text/javascript" src="<%=src%>/assets/soop/js/jquery.fancybox.min.js"></script>
         <script type="text/javascript" src="<%=src%>/assets/soop/js/fancy.js"></script>
+
+        <style>
+            body{
+                background-color: #ccc;
+            }
+        </style>
+
+
+
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -98,7 +109,7 @@
                                     </div>
                                     <div class="kt-portlet__body">
                                         <div class="form-group col-xl-3 col-lg-6">
-                                            <label>Operatore ENM</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                            <label class="active">Operatore ENM</label><label class="kt-font-danger kt-font-boldest">*</label>
 
                                             <select class="form-control kt-select2-general" id="tos_operatore" name="tos_operatore"  style="width: 100%">
                                                 <option value="-">Seleziona Operatore ENM</option>
@@ -126,6 +137,7 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
         <div id="kt_scrolltop" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>

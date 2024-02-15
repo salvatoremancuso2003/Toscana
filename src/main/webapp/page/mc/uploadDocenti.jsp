@@ -56,6 +56,7 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
 
 
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
@@ -63,9 +64,14 @@
             .kt-section__title {
                 font-size: 1.2rem!important;
             }
+            
+            body{
+                background-color: #ccc;
+            }
         </style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <%@ include file="menu/head1.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
@@ -73,7 +79,7 @@
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
                     <%@ include file="menu/head.jsp"%>
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-                        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                        <!--<div class="kt-subheader   kt-grid__item" id="kt_subheader">
                             <div class="kt-subheader   kt-grid__item" id="kt_subheader">
                                 <div class="kt-subheader__main">
                                     <h3 class="kt-subheader__title">Docenti</h3>
@@ -81,8 +87,8 @@
                                     <a class="kt-subheader__breadcrumbs-link">Carica</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+                        </div>-->
+                        <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content" style="padding-right:250px;">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="kt-portlet" id="kt_portlet" data-ktportlet="true"><!--io-background-->
@@ -110,7 +116,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <a href="javascript:void(0);" id="submit_file" class="btn btn-io">Carica</a>
+                                                                <a href="javascript:void(0);" id="submit_file" class="btn btn-primary">Carica</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -181,8 +187,8 @@
                                                         <div class="kt-form__actions">
                                                             <div class="row">
                                                                 <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                                    <a id="submit" href="javascript:void(0);" class="btn btn-io"><font color='white'>Salva</font></a>
-                                                                    <a href="<%=pageName_%>" class="btn btn-io-n"><font color='white'>Reset</font></a>
+                                                                    <a id="submit" href="javascript:void(0);" class="btn btn-primary"><font color='white'>Salva</font></a>
+                                                                    <a href="<%=pageName_%>" class="btn btn-warning"><font color='white'>Reset</font></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -195,11 +201,11 @@
                             </div>
                         </div>
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0029f6">
             <i class="fa fa-arrow-up"></i>
         </div>
         <!--begin:: Global Mandatory Vendors -->

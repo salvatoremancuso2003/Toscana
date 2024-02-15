@@ -11,19 +11,19 @@
                 <div class="kt-separator kt-separator--border kt-separator--space-sm"></div>
                 <div class="row form-group">
                     <div class="col-lg-3 col-md-6">
-                        <label>Nome</label><label class="kt-font-danger">*</label>
+                        <label>Nome</label><label class="kt-font-danger"></label>
                         <input class="form-control obbligatory" name="nome">
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <label>Cognome</label><label class="kt-font-danger">*</label>
+                        <label>Cognome</label><label class="kt-font-danger"></label>
                         <input class="form-control obbligatory" name="cognome">
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <label>Numero</label><label class="kt-font-danger">*</label>
+                        <label>Numero</label><label class="kt-font-danger"></label>
                         <input class="form-control obbligatory" name="numero" onkeypress="return isNumber(event);">
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <label>Email</label><label class="kt-font-danger">*</label>
+                        <label>Email</label><label class="kt-font-danger"></label>
                         <input class="form-control obbligatory" name="email" id="email">
                     </div>
                 </div>
@@ -31,11 +31,11 @@
                 <div class="kt-separator kt-separator--border kt-separator--space-sm"></div>
                 <div class="row form-group">
                     <div class="col-lg-3 col-md-6">
-                        <label>Data</label><label class="kt-font-danger">*</label>
+                        <label></label><label class="kt-font-danger"></label>
                         <input type="text" class="form-control obbligatory" name="giorno" id="giorno"  autocomplete="off" readonly placeholder="Selezionare giorno del colloquio">
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <label>ora di inizio e fine</label><label class="kt-font-danger">*</label>
+                        <label></label><label class="kt-font-danger"></label>
                         <div class="input-group" >
                             <div class="col-6" style="padding-left: 0px; ">
                                 <input type="text" class="form-control time obbligatory" disabled name="start" id="start" placeholder="Orario inizio" autocomplete="off" readonly/>
@@ -56,7 +56,7 @@
                 <div class="kt-form__actions">
                     <div class="row">
                         <div class="offset-6 col-6 kt-align-right">
-                            <a id="submit" href="javascript:void(0);" class="btn btn-io"><font color='white'>Salva</font></a>
+                            <a id="submit" href="javascript:void(0);" class="btn btn-primary"><font color='white'>Salva</font></a>
                         </div>
                     </div>
                 </div>

@@ -34,7 +34,7 @@
             List<TipoDoc_Allievi_Pregresso> tipo_doc_preg = e.findAll(TipoDoc_Allievi_Pregresso.class);
             List<Documenti_Allievi_Pregresso> documeti = e.getDoc_Pregresso(a);
             e.close();
-            
+
             for (Documenti_Allievi_Pregresso d : documeti) {
                 tipo_doc_preg.remove(d.getTipo());
             }
@@ -73,6 +73,7 @@
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <!--this page-->
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
@@ -82,7 +83,8 @@
         <script type="text/javascript" src="<%=src%>/assets/soop/js/jquery.fancybox.min.js"></script>
         <script type="text/javascript" src="<%=src%>/assets/soop/js/fancy.js"></script>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -110,7 +112,7 @@
                                                     </a>
                                                 </div>
                                                 <div class='col-6 paddig_0_l' style='text-align: left;'>
-                                                    <a class="btn btn-icon btn-sm btn-io-n" href="javascript:void(0);" onclick="modifyDocId(<%=a.getId()%>, '[&quot;pdf&quot;]', 'application/pdf');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Cambia documento">
+                                                    <a class="btn btn-icon btn-sm btn-secondary" href="javascript:void(0);" onclick="modifyDocId(<%=a.getId()%>, '[&quot;pdf&quot;]', 'application/pdf');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Cambia documento">
                                                         <i class="fa fa-exchange-alt"></i>
                                                     </a>
                                                 </div>
@@ -129,7 +131,7 @@
                                                     </a>
                                                 </div>
                                                 <div class='col-6 paddig_0_l' style='text-align: left;'>
-                                                    <a class="btn btn-icon btn-sm btn-io-n" href="javascript:void(0);" onclick="modifyDoc(<%=d.getId()%>, '<%=d.getTipo().getEstensione().getEstensione().replaceAll("\"", "&quot;")%>', '<%=d.getTipo().getEstensione().getMime_type()%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Cambia documento">
+                                                    <a class="btn btn-icon btn-sm btn-secondary" href="javascript:void(0);" onclick="modifyDoc(<%=d.getId()%>, '<%=d.getTipo().getEstensione().getEstensione().replaceAll("\"", "&quot;")%>', '<%=d.getTipo().getEstensione().getMime_type()%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Cambia documento">
                                                         <i class="fa fa-exchange-alt"></i>
                                                     </a>
                                                 </div>
@@ -186,8 +188,9 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0029f6">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

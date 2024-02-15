@@ -86,11 +86,16 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
 
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <!--end::Layout Skins -->
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <style>
-            th { font-size: 13px; }
-            td { font-size: 12px; }
+            th {
+                font-size: 13px;
+            }
+            td {
+                font-size: 12px;
+            }
             tr:hover {
                 background-color: #ffdaa2;
             }
@@ -104,8 +109,9 @@
         </style>
         <!--end::countDown -->
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <!-- end:: Aside -->
@@ -136,14 +142,14 @@
                                             <div class="row">
                                                 <div class="col-md-12 col-sm-12">
                                                     <div class="form-group">
-                                                        <h6><label style="font-weight: 500!important; font-size:1.15rem" class="kt-font-io">Descrizione</label>&nbsp;<label class="kt-font-danger kt-font-boldest">*</label></h6>
+                                                        <h6><label style="font-weight: 500!important; font-size:1.15rem" class="kt-font-io active">Descrizione</label>&nbsp;<label class="kt-font-danger kt-font-boldest">*</label></h6>
                                                         <div class="input-group">
                                                             <input type="hidden" id="codice" name="codice" value="<%=u.getCodice()%>">
                                                             <input type="hidden" id="old_desc" name="old_desc" value="<%=u.getDescrizione() == null ? "" : u.getDescrizione()%>">
                                                             <input type="text" class="form-control" maxlength="255" onkeypress="counterCharacters()" id="descrizione" name="descrizione" value="<%=u.getDescrizione() == null ? "" : u.getDescrizione()%>">
                                                             <%if (us.getTipo() == 2) {%>
                                                             <div class="input-group-append">
-                                                                <button class="btn btn-io-n" type="button" onclick="saveDescription()">Salva</button>
+                                                                <button class="btn btn-secondary" type="button" onclick="saveDescription()">Salva</button>
                                                             </div>
                                                             <%}%>
                                                         </div>
@@ -182,15 +188,15 @@
                                                                                         <%if (us.getTipo() == 2) {%>
                                                                                 <td widht="5%"><a href="javascript:void(0);" onclick="updateDocUD(<%=doc.getId_docud()%>, '[&quot;pdf&quot;]', 'application/pdf')" class="btn" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Modifica documento</h5>"><i style="font-size: 15px;" class="fa fa-pen kt-font-io-n"></i></a></td>
                                                                                         <%}%>
-                                                                                <%} else {%>
+                                                                                        <%} else {%>
                                                                                 <td widht="5%"><a target="_blank" href="<%=doc.getPath()%>" class="btn" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Apri link in un'altra scheda</h5>"><i style="font-size: 15px;" class="fa fa-expand kt-font-io"></i></a> </td>
                                                                                         <%if (us.getTipo() == 2) {%>
                                                                                 <td widht="5%"><a href="javascript:void(0);" onclick='updateLinkUD(<%=doc.getId_docud()%>, "<%=doc.getPath()%>")' class="btn" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Modifica Link</h5>"><i style="font-size: 15px;" class="fa fa-pen kt-font-io-n"></i></a></td>
                                                                                         <%}%>
-                                                                                <%}%>
-                                                                                <%if (us.getTipo() == 2) {%>
+                                                                                        <%}%>
+                                                                                        <%if (us.getTipo() == 2) {%>
                                                                                 <td widht="5%"><a href="javascript:void(0);" onclick="deleteDocUD(<%=doc.getId_docud()%>)" class="btn" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Elimina documento</h5>"><i style="font-size: 15px;" class="fa fa-times kt-font-danger"></i></a></td>
-                                                                                <%}%>
+                                                                                        <%}%>
                                                                             </tr>
                                                                             <%}%>
                                                                         </table>
@@ -201,7 +207,7 @@
                                                             <%if (us.getTipo() == 2) {%>
                                                             <div class="col-md-3 kt-align-right">
                                                                 <div class="btn-group" role="group">
-                                                                    <button id="btnGroupDrop1" type="button" class="btn btn-io font-weight-bold dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary font-weight-bold dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                         Carica documento
                                                                     </button>
                                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -225,6 +231,7 @@
                 </div>
                 <!-- end:: Content -->
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
 
         <!-- end:: Page -->

@@ -73,11 +73,13 @@
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
         <!--fancy-->
         <link href="<%=src%>/assets/soop/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <script type="text/javascript" src="<%=src%>/assets/soop/js/jquery-3.6.1.min.js"></script>
         <script type="text/javascript" src="<%=src%>/assets/soop/js/jquery.fancybox.min.js"></script>
         <script type="text/javascript" src="<%=src%>/assets/soop/js/fancy.js"></script>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body style="background-color: #ccc">
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -97,7 +99,7 @@
                                     </div>
                                     <div class="kt-portlet__body">
                                         <div class="form-group col-xl-3 col-lg-6">
-                                            <label>Data ANPAL </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                            <label class="active">Data ANPAL </label><label class="kt-font-danger kt-font-boldest">*</label>
                                             <input type="text" class="form-control obbligatory date-picker_r" 
                                                    name="datanpal" value="<%=a.getData_anpal()%>" 
                                                    id="datanpal"/>
@@ -106,7 +108,7 @@
                                     <div class="kt-portlet__foot" style="padding-left: 10px;">
                                         <div class="kt-form__actions">
                                             <div class="form-group col-xl-3 col-lg-6">
-                                                <button type="submit" class="btn btn-io" 
+                                                <button type="submit" class="btn btn-primary" 
                                                         style="font-family: Poppins"><i class="flaticon2-splus-1"></i> SALVA </button>
                                             </div>
                                         </div>
@@ -117,6 +119,7 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
         <div id="kt_scrolltop" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>

@@ -76,6 +76,7 @@
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <!--this page-->
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
@@ -85,7 +86,8 @@
         <script type="text/javascript" src="<%=src%>/assets/soop/js/jquery.fancybox.min.js"></script>
         <script type="text/javascript" src="<%=src%>/assets/soop/js/fancy.js"></script>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -104,74 +106,74 @@
                                 <div class="kt-portlet__body">
                                     <div class="row col-md-12">
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Cognome</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Cognome</label>
                                             <label><%=a.getCognome()%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Nome</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Nome</label>
                                             <label><%=a.getNome()%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Data di Nascita</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Data di Nascita</label>
                                             <label><%=Utility.sdfITA.format(a.getDatanascita())%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Codice Fiscale</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Codice Fiscale</label>
                                             <label><%=a.getCodicefiscale()%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Sesso</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Sesso</label>
                                             <label><%=a.getSesso()%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Comune Nascita</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Comune Nascita</label>
                                             <label><%=a.getComune_nascita().getNome()%> (<%=a.getComune_nascita().getProvincia()%>) - <%=a.getComune_nascita().getRegione()%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Cittadinanza</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Cittadinanza</label>
                                             <label><%=cittadinanza%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Telefono</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Telefono</label>
                                             <label><%=a.getTelefono()%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Email</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Email</label>
                                             <label><%=a.getEmail()%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Data Iscrizione</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Data Iscrizione</label>
                                             <label><%=Utility.sdfITA.format(a.getIscrizionegg())%></label>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label class="kt-font-danger kt-font-boldest">Indirizzo Residenza</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Indirizzo Residenza</label>
                                             <label><%=a.getIndirizzoresidenza()%> - <%=a.getComune_residenza().getNome()%> (<%=a.getComune_residenza().getProvincia()%>) - <%=a.getComune_residenza().getRegione()%></label>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label class="kt-font-danger kt-font-boldest">Gruppo vulnerabilità</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Gruppo vulnerabilità</label>
                                             <label><%=a.getTos_gruppovulnerabile().getDescrizione()%></label>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label class="kt-font-danger kt-font-boldest">Titolo di studio</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Titolo di studio</label>
                                             <label><%=a.getTitoloStudio().getDescrizione()%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">CPI</label>
+                                            <label class="kt-font-danger kt-font-boldest active">CPI</label>
                                             <label><%=a.getCpi().getDescrizione()%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Data Iscrizione CPI</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Data Iscrizione CPI</label>
                                             <label><%=Utility.sdfITA.format(a.getDatacpi())%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Condizione professionale</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Condizione professionale</label>
                                             <label><%=a.getCondizione_mercato().getDescrizione()%></label>
                                         </div>
                                         <div class="form-group col-md-3">
-                                            <label class="kt-font-danger kt-font-boldest">Tipo Finanziamento (GOL/PATTO)</label>
+                                            <label class="kt-font-danger kt-font-boldest active">Tipo Finanziamento (GOL/PATTO)</label>
                                             <label><%=a.getTos_tipofinanziamento()%></label>
                                         </div>
-                                        
+
                                     </div>
                                     <div class="row col-md-12">
                                         <hr>
@@ -185,8 +187,9 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0029f6">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

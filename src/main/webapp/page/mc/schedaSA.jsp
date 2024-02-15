@@ -85,16 +85,22 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
 
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <!--end::Layout Skins -->
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
-<style>
-th { font-size: 13px; }
-td { font-size: 12px; }
-</style>
+        <style>
+            th {
+                font-size: 13px;
+            }
+            td {
+                font-size: 12px;
+            }
+        </style>
         <!--end::countDown -->
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <!-- end:: Aside -->
@@ -159,33 +165,33 @@ td { font-size: 12px; }
                                                                         <%}%></h6>
                                                                     <br>
                                                                     <div class="form-group ">
-                                                                        <label>Ragione Sociale </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Ragione Sociale </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly type="text" class="form-control" id="ragionesociale" name="ragionesociale" value="<%=sa.getRagionesociale()%>">
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Partita IVA </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Partita IVA </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly class="form-control" type="text" value="<%=sa.getPiva() == null ? "" : sa.getPiva()%>" name="piva" id="piva" onkeypress="return isNumber(event);"  >
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Codice Fiscale </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Codice Fiscale </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly class="form-control" type="text" value="<%=sa.getCodicefiscale() == null ? "" : sa.getCodicefiscale()%>" name="cf" id="cf" onkeypress="return isNumber(event);"  >
                                                                     </div>
                                                                     <br>
                                                                     <h6>Contatti</h6><br>
                                                                     <div class="form-group ">
-                                                                        <label>Email</label> 
+                                                                        <label class="active">Email</label> 
                                                                         <input readonly type="text" class="form-control" id="email" name="email" value="<%=sa.getEmail()%>">
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Posta Elettronica Certificata (PEC) </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Posta Elettronica Certificata (PEC) </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly type="text" class="form-control" id="pec" name="pec" value="<%=sa.getPec()%>">
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Telefono </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Telefono </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly type="text" class="form-control" id="telefono_sa" name="telefono_sa" value="<%=sa.getTelefono_sa()%>">
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Cellulare </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Cellulare </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly type="text" class="form-control" id="cell_sa" name="cell_sa" value="<%=sa.getCell_sa()%>">
                                                                     </div>
                                                                 </div>
@@ -193,23 +199,23 @@ td { font-size: 12px; }
 
                                                                     <h6>Indirizzo Sede Legale</h6><br>
                                                                     <div class="form-group ">
-                                                                        <label>Indirizzo </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Indirizzo </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly type="text" class="form-control" id="indirizzo" name="indirizzo" value="<%=sa.getIndirizzo()%>">
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Regione </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Regione </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="regione_div" style="padding: 0;height: 35px;">
                                                                             <input readonly type="text" class="form-control" id="regione" name="regione" value="<%=sa.getComune().getRegione()%>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Provincia </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Provincia </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="provincia_div" style="padding: 0;height: 35px;">
                                                                             <input readonly type="text" class="form-control" id="provincia" name="provincia" value="<%=sa.getComune().getNome_provincia()%>">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Comune </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Comune </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <div class="dropdown bootstrap-select form-control kt-" id="comune_div" style="padding: 0;height: 35px;">
                                                                             <input readonly type="text" class="form-control" id="comune" name="comune" value="<%=sa.getComune().getNome()%>">
                                                                         </div>
@@ -228,23 +234,23 @@ td { font-size: 12px; }
                                                                 <div class="col-md-5">
                                                                     <h5>Amministratore Delegato / Unico</h5><br>
                                                                     <div class="form-group ">
-                                                                        <label>Nome </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active" >Nome </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly type="text" class="form-control" id="nome" name="nome" value="<%=sa.getNome()%>">
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Cognome </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Cognome </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly type="text" class="form-control" id="cognome" name="cognome" value="<%=sa.getCognome()%>">
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Data Nascita </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Data Nascita </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly type="text" class="form-control" value="<%=new SimpleDateFormat("dd/MM/yyyy").format(sa.getDatanascita())%>" name="datanascita"/>
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Numero Documento </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Numero Documento </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly class="form-control " type="text" value="<%=sa.getNro_documento()%>" name="nrodocumento" id="nrodocumento" >
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Scadenza Documento </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Scadenza Documento </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly type="text" class="form-control" value="<%=new SimpleDateFormat("dd/MM/yyyy").format(sa.getScadenza())%>" name="scadenza"/>
                                                                     </div>
                                                                 </div>
@@ -264,18 +270,18 @@ td { font-size: 12px; }
                                                                 <div class="col-md-5">
                                                                     <h5>Referente </h5><br>
                                                                     <div class="form-group ">
-                                                                        <label>Nome </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label  class="active">Nome </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly type="text" class="form-control" id="nome_ref" name="nome_ref" value="<%=sa.getNome_refente()%>">
                                                                     </div>
                                                                     <div class="form-group ">
-                                                                        <label>Telefono </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Telefono </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly type="text" class="form-control" value="<%=sa.getTelefono_referente()%>" name="tel_ref" id="tel_ref" onkeypress="return isNumber(event);"/>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-5">
                                                                     <h5>&nbsp;</h5><br>
                                                                     <div class="form-group ">
-                                                                        <label>Cognome </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                        <label class="active">Cognome </label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                         <input readonly type="text" class="form-control" id="cognome_ref" name="cognome_ref" value="<%=sa.getCognome_referente()%>">
                                                                     </div>
                                                                 </div>
@@ -312,6 +318,7 @@ td { font-size: 12px; }
                 </div>
                 <!-- end:: Content -->
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
 
         <!-- end:: Page -->
@@ -322,7 +329,7 @@ td { font-size: 12px; }
         <!-- end::Quick Panel -->
 
         <!-- begin::Scrolltop -->
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0029f6">
             <i class="fa fa-arrow-up"></i>
         </div>
 
@@ -383,7 +390,7 @@ td { font-size: 12px; }
                                                                                         });
                                                                                     });
         </script>
-        
+
         <script>
             $("#kt_table_1").DataTable({
                 dom: `<'row'<'col-sm-12'ftr>><'row'<'col-sm-6 col-md-6 col-lg-6 kt-align-left'i><'col-sm-6 col-lg-6 dataTables_pager 'lp >>`,
@@ -400,30 +407,30 @@ td { font-size: 12px; }
                 },
                 searchDelay: 500,
                 processing: true,
-                        ajax: '<%=request.getContextPath()%>/QueryMicro?type=getPec&id=<%=sa.getId()%>',
-                                order: [],
-                                columns: [
-                                    {data: 'data',},
-                                    {data: 'operazione'},
-                                    {defaultContent: ''}
-                                ],
-                                columnDefs: [
-                                    {"className": "dt-center", "targets": "_all"},
-                                    {
-                                        targets: 0,
-                                        type: 'date-it',
-                                        render: function (data, type, row, meta) {
-                                            return formattedDate(new Date(row.data));
-                                        }
-                                    },
-                                    {
-                                        targets: 2,
-                                        render: function (data, type, row, meta) {
-                                            return "<a data-container='body' data-toggle='kt-tooltip' data-placement='top' title='Scarica' href='<%=request.getContextPath()%>/OperazioniGeneral?type=downloadDoc&path=" + row.path + "'><u><b>" + row.path.substring(row.path.lastIndexOf("/") + 1) + "</b><u></a>";
-                                        }
-                                    }
-                                ],
-                            });
+                ajax: '<%=request.getContextPath()%>/QueryMicro?type=getPec&id=<%=sa.getId()%>',
+                        order: [],
+                        columns: [
+                            {data: 'data', },
+                            {data: 'operazione'},
+                            {defaultContent: ''}
+                        ],
+                        columnDefs: [
+                            {"className": "dt-center", "targets": "_all"},
+                            {
+                                targets: 0,
+                                type: 'date-it',
+                                render: function (data, type, row, meta) {
+                                    return formattedDate(new Date(row.data));
+                                }
+                            },
+                            {
+                                targets: 2,
+                                render: function (data, type, row, meta) {
+                                    return "<a data-container='body' data-toggle='kt-tooltip' data-placement='top' title='Scarica' href='<%=request.getContextPath()%>/OperazioniGeneral?type=downloadDoc&path=" + row.path + "'><u><b>" + row.path.substring(row.path.lastIndexOf("/") + 1) + "</b><u></a>";
+                                }
+                            }
+                        ],
+                    });
         </script>
     </body>
 </html>

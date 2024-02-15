@@ -64,10 +64,12 @@
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
 
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -89,25 +91,25 @@
                                                 <div class="kt-section__body"><br>
                                                     <div class="form-group row">
                                                         <div class="col-lg-3">
-                                                            <label>Nome</label>
+                                                            <label class="active">Nome</label>
                                                             <input class="form-control obbligatory" name="nome" id="nome" value="<%=d.getNome()%>">
                                                         </div>
                                                         <div class="col-lg-3">
-                                                            <label>Cognome</label>
+                                                            <label class="active">Cognome</label>
                                                             <input class="form-control obbligatory" name="cognome" id="cognome" value="<%=d.getCognome()%>">
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <div class="col-lg-3">
-                                                            <label>Codice Fiscale</label>
+                                                            <label class="active">Codice Fiscale</label>
                                                             <input class="form-control obbligatory" name="cf" id="cf" value="<%=d.getCodicefiscale()%>">
                                                         </div>
                                                         <div class="col-lg-3">
-                                                            <label>Data Nascita</label>
+                                                            <label class="active">Data Nascita</label>
                                                             <input class="form-control dp obbligatory" name="data" id="data" autocomplete="off" value="<%=new SimpleDateFormat("dd/MM/yyyy").format(d.getDatanascita())%>" readonly>
                                                         </div>
                                                         <div class="col-lg-3">
-                                                            <label>Fascia</label>
+                                                            <label class="active">Fascia</label>
                                                             <div class="dropdown bootstrap-select form-control kt- paddig_0" id="fascia_div">
                                                                 <select class="form-control kt-select2-general obbligatory" id="fascia" name="fascia">
                                                                     <option value="-">Seleziona Fascia</option>
@@ -124,7 +126,7 @@
                                                     </div>
                                                     <div class="form-group row">
                                                         <div class="col-lg-3">
-                                                            <label>Email</label>
+                                                            <label class="active">Email</label>
                                                             <input class="form-control obbligatory" name="email" id="email" value="<%=d.getEmail() == null ? "" : d.getEmail()%>">
                                                         </div>
                                                         <%
@@ -134,7 +136,7 @@
                                                             }
                                                         %>
                                                         <div class="col-lg-3">
-                                                            <label>Data Webinair</label>
+                                                            <label class="active">Data Webinair</label>
                                                             <input class="form-control dp" 
                                                                    name="dataweb" id="dataweb" 
                                                                    autocomplete="off" 
@@ -152,7 +154,7 @@
                                                                    class="btn btn-success pull-right"><font color='white'>Accredita e Salva dati</font></a>
                                                                     <%} else {%>
                                                                 <a id="submit" href="javascript:void(0);" 
-                                                                   class="btn btn-io pull-right"><font color='white'>Salva</font></a>
+                                                                   class="btn btn-primary pull-right"><font color='white'>Salva</font></a>
                                                                     <%}%>
                                                             </div>
                                                         </div>
@@ -167,8 +169,9 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0029f6">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

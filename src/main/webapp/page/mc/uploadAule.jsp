@@ -56,6 +56,7 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <!-- this page -->
 
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
@@ -63,9 +64,14 @@
             .kt-section__title {
                 font-size: 1.2rem!important;
             }
+            
+            body{
+                background-color: #ccc;
+            }
         </style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <%@ include file="menu/head1.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
@@ -73,7 +79,7 @@
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
                     <%@ include file="menu/head.jsp"%>
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-                        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                        <!--<div class="kt-subheader   kt-grid__item" id="kt_subheader">
                             <div class="kt-subheader   kt-grid__item" id="kt_subheader">
                                 <div class="kt-subheader__main">
                                     <h3 class="kt-subheader__title">Sedi di Formazione</h3>
@@ -81,45 +87,45 @@
                                     <a class="kt-subheader__breadcrumbs-link">Carica</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
-<!--                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">io-background
-                                        <div class="kt-portlet__head">
-                                            <div class="kt-portlet__head-label">
-                                                <h3 class="kt-portlet__head-title" >
-                                                    Carica File Aule :
-                                                </h3>
-                                            </div>
-                                            <div class="kt-portlet__head-toolbar">
-                                                <div class="kt-portlet__head-group">
-                                                    <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <form id="kt_form_file" action="/OperazioniMicro?type=addAuleFile" class="kt-form kt-form--label-right" accept-charset="ISO-8859-1" method="post">
-                                            <div class="kt-portlet__body paddig_0_t paddig_0_b">
-                                                <div class="kt-section kt-section--first">
-                                                    <div class="kt-section__body"><br>
-                                                        <div class="form-group row">
-                                                            <div class="col-xl-4 col-lg-6 col-md-8">
-                                                                <div class="custom-file">
-                                                                    <input type="file" tipo="obbligatory" class="custom-file-input" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" name="file" id="file" onchange="return checkFileExtAndDim(['xls', 'xlsx']);">
-                                                                    <label class="custom-file-label" id="label_file" style="text-align: left;">Scegli File</label>
+                        </div>-->
+                        <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content" style="padding-left: -500px; padding-right: 200px;">
+                            <!--                            <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="kt-portlet" id="kt_portlet" data-ktportlet="true">io-background
+                                                                    <div class="kt-portlet__head">
+                                                                        <div class="kt-portlet__head-label">
+                                                                            <h3 class="kt-portlet__head-title" >
+                                                                                Carica File Aule :
+                                                                            </h3>
+                                                                        </div>
+                                                                        <div class="kt-portlet__head-toolbar">
+                                                                            <div class="kt-portlet__head-group">
+                                                                                <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down" id="toggle_search"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <form id="kt_form_file" action="/OperazioniMicro?type=addAuleFile" class="kt-form kt-form--label-right" accept-charset="ISO-8859-1" method="post">
+                                                                        <div class="kt-portlet__body paddig_0_t paddig_0_b">
+                                                                            <div class="kt-section kt-section--first">
+                                                                                <div class="kt-section__body"><br>
+                                                                                    <div class="form-group row">
+                                                                                        <div class="col-xl-4 col-lg-6 col-md-8">
+                                                                                            <div class="custom-file">
+                                                                                                <input type="file" tipo="obbligatory" class="custom-file-input" accept="application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" name="file" id="file" onchange="return checkFileExtAndDim(['xls', 'xlsx']);">
+                                                                                                <label class="custom-file-label" id="label_file" style="text-align: left;">Scegli File</label>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="col-lg-3">
+                                                                                            <a href="javascript:void(0);" id="submit_file" class="btn btn-io">Carica</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-lg-3">
-                                                                <a href="javascript:void(0);" id="submit_file" class="btn btn-io">Carica</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>-->
+                                                        </div>-->
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="kt-portlet" id="kt_portlet" data-ktportlet="true"><!--io-background-->
@@ -147,7 +153,7 @@
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="col-lg-4">
-                                                                <label>Regione</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label class="active">Regione</label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                 <div class="dropdown bootstrap-select form-control kt- " id="regione_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" id="regione" name="regione"  style="width: 100%">
                                                                         <option value="-">Seleziona Regione</option>
@@ -158,7 +164,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4">
-                                                                <label>Provincia</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label class="active" >Provincia</label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" id="provincia_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" id="provincia" name="provincia"  style="width: 100%;">
                                                                         <option value="-">Seleziona Provincia</option>
@@ -166,7 +172,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4">
-                                                                <label>Comune</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label class="active">Comune</label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" id="comune_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" id="comune" name="comune"  style="width: 100%;">
                                                                         <option value="-">Seleziona Comune</option>
@@ -176,13 +182,13 @@
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="col-lg-12">
-                                                                <label>Indirizzo</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label class="active">Indirizzo</label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                 <input class="form-control obbligatory" name="via" id="via">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="col-lg-4">
-                                                                <label>Referente</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label class="active">Referente</label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                 <input class="form-control obbligatory" name="referente" id="referente">
                                                             </div>
                                                         </div>
@@ -206,8 +212,8 @@
                                                         <div class="kt-form__actions">
                                                             <div class="row">
                                                                 <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                                    <a id="submit" href="javascript:void(0);" class="btn btn-io"><font color='white'>Salva</font></a>
-                                                                    <a href="<%=pageName_%>" class="btn btn-io-n"><font color='white'>Reset</font></a>
+                                                                    <a id="submit" href="javascript:void(0);" class="btn btn-primary"><font color='white'>Salva</font></a>
+                                                                    <a href="<%=pageName_%>" class="btn btn-warning"><font color='white'>Reset</font></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -220,11 +226,12 @@
                             </div>
                         </div>
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
                 </div>
             </div>
+            <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
+
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0029f6">
             <i class="fa fa-arrow-up"></i>
         </div>
         <!--begin:: Global Mandatory Vendors -->

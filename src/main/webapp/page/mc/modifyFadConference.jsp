@@ -62,6 +62,7 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <!-- this page -->
 
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
@@ -72,9 +73,14 @@
             .input-group {
                 margin-bottom: 5px;
             }
+            
+            body{
+                background-color: #ccc;
+            }
         </style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -96,17 +102,17 @@
                                                 <div class="kt-section__body"><br>
                                                     <div class="row form-group">
                                                         <div class="col-lg-6 col-md-12">
-                                                            <label>Nome</label><label class="kt-font-danger">*</label>
+                                                            <label class="active">Nome</label><label class="kt-font-danger ">*</label>
                                                             <input class="form-control obbligatory" name="name_fad" onkeydown="return blockspecialcharacter();" value="<%=fad.getNomestanza()%>">
                                                         </div>
                                                         <div class="col-lg-6 col-md-12">
-                                                            <label>Data e ora di inizio e fine</label><label class="kt-font-danger">*</label>
+                                                            <label class="active">Data e ora di inizio e fine</label><label class="kt-font-danger">*</label>
                                                             <input type="text" class="form-control obbligatory" name="range" id="range"  autocomplete="off" readonly placeholder="Selezionare data e ora inizio fine" value ="<%=fad.getInizio() != null ? sdf.format(fad.getInizio()) + " - " + sdf.format(fad.getFine()) : ""%>">
                                                         </div>
                                                     </div>
                                                     <div class="row form-group-marginless">
                                                         <div class="col-lg-6 col-md-12" id="paretcipant">
-                                                            <label>Patecipanti</label><label class="kt-font-danger">*</label>
+                                                            <label class="active">Patecipanti</label><label class="kt-font-danger">*</label>
                                                             <%for (String s : fad.getList_partecipanti()) {%>
                                                             <div class="input-group">
                                                                 <div class="input-group-prepend">
@@ -127,7 +133,7 @@
                                                     <div class="kt-form__actions">
                                                         <div class="row">
                                                             <div class="col-lg-6 kt-align-right">
-                                                                <a id="submit" href="javascript:void(0);" class="btn btn-io btn-lg"><font color='white'>Salva</font></a>
+                                                                <a id="submit" href="javascript:void(0);" class="btn btn-primary btn-lg"><font color='white'>Salva</font></a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -141,8 +147,9 @@
                     </div>	
                 </div>
             </div>
+                                                            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0029f6">
             <i class="fa fa-arrow-up"></i>
         </div>       
         <!--begin:: Global Mandatory Vendors -->

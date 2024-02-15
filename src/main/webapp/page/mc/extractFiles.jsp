@@ -55,15 +55,21 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <!-- this page -->
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <style>
             .kt-section__title {
                 font-size: 1.2rem!important;
             }
+
+            body{
+                background-color: #ccc;
+            }
         </style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <%@ include file="menu/head1.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
@@ -101,7 +107,7 @@
                                                 <div class="kt-section kt-section--first">
                                                     <div class="kt-section__body"><br>
                                                         <div class="form-group row">
-                                                            <label>Progetti</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                            <label class="active">Progetti</label><label class="kt-font-danger kt-font-boldest">*</label>
                                                             <div class="dropdown bootstrap-select form-control paddig_0 kt-" id="progetti_div">
                                                                 <select class="form-control kt-select2 obbligatory" id="progetti" name="progetti[]" multiple="multiple">
                                                                     <%for (ProgettiFormativi p : progetti) {%>
@@ -112,7 +118,7 @@
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="col-lg-3">
-                                                                <a href="javascript:void(0);" id="submit" class="btn btn-io">Scarica</a>
+                                                                <a href="javascript:void(0);" id="submit" class="btn btn-primary">Scarica</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -155,11 +161,11 @@
                             </div>
                         </div>
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0029f6">
             <i class="fa fa-arrow-up"></i>
         </div>
         <!--begin:: Global Mandatory Vendors -->

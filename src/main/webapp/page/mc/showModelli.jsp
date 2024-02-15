@@ -76,6 +76,7 @@
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/custom.css" rel="stylesheet" type="text/css" />
 
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
@@ -133,8 +134,9 @@
 
         </style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -187,8 +189,8 @@
                                                                   title="VISUALIZZA REGISTRO PRESENZE" 
                                                                   href="calendar.jsp?idcalendar=<%=temp.getId()%>" 
                                                                   class='btn btn-icon btn-sm <%=btn%>'><i class='fa fa-calendar-alt' style='font-size: 20px;'></i></a>
-                                                                <%}else{%>
-                                                                | <a  data-container="body" data-html="true" data-toggle="kt-tooltip" 
+                                                                <%} else {%>
+                                                            | <a  data-container="body" data-html="true" data-toggle="kt-tooltip" 
                                                                   title="REGISTRO PRESENZE DA CARICARE" 
                                                                   href=""
                                                                   onclick="return false;"
@@ -311,9 +313,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
     </div>
 </div>

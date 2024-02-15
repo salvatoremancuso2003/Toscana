@@ -63,6 +63,7 @@
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <!--this page-->
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
@@ -73,14 +74,14 @@
         <script type="text/javascript" src="<%=src%>/assets/soop/js/jquery.fancybox.min.js"></script>
         <script type="text/javascript" src="<%=src%>/assets/soop/js/fancy.js"></script>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
 
         <%if (p != null) {
 
                 List<FadCalendar> calendarioFAD = Action.calendarioFAD(request.getParameter("id"));
         %>
 
-
+        <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -159,7 +160,7 @@
                                                                    autocomplete="off"/>
                                                         </div>
                                                         <div class="col-lg-3">
-                                                            <label>Numero Corso</label>
+                                                            <label class="active">Numero Corso</label>
                                                             <div class="dropdown bootstrap-select form-control kt-"style="padding: 0;height: 35px;">
                                                                 <select class="form-control kt-select2-general" id="corso" name="corso" style="width: 100%" required>
                                                                     <option value="">Seleziona Corso</option>
@@ -172,18 +173,18 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-3">
-                                                            <label>Ora Inizio</label>
+                                                            <label class="active">Ora Inizio</label>
                                                             <input class="form-control kt_timepicker_r" required id="orainizio" name="orainizio" placeholder="Ora Inizio" type="text" />
                                                         </div>
 
                                                         <div class="col-lg-3">
-                                                            <label>Ora Fine</label>
+                                                            <label class="active">Ora Fine</label>
                                                             <input class="form-control kt_timepicker_r" required id="orafine" name="orafine" placeholder="Ora Fine" type="text" />
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
                                                         <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                            <button type="submit" class="btn btn-io"><i class="fa fa-save"></i>
+                                                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>
                                                                 Salva</button>
                                                         </div>
                                                     </div>
@@ -232,7 +233,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body" id="modalerrortxt">
-                                                    
+
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -246,9 +247,10 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
         <%}%>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0029f6">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
@@ -273,23 +275,23 @@
         <script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap-timepicker/js/bootstrap-timepicker.js" type="text/javascript"></script>
         <script type="text/javascript">
-                                    var KTAppOptions = {
-                                        "colors": {
-                                            "state": {
-                                                "brand": "#5d78ff",
-                                                "dark": "#282a3c",
-                                                "light": "#ffffff",
-                                                "primary": "#5867dd",
-                                                "success": "#34bfa3",
-                                                "info": "#36a3f7",
-                                                "warning": "#ffb822"
-                                            },
-                                            "base": {
-                                                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                        var KTAppOptions = {
+                                            "colors": {
+                                                "state": {
+                                                    "brand": "#5d78ff",
+                                                    "dark": "#282a3c",
+                                                    "light": "#ffffff",
+                                                    "primary": "#5867dd",
+                                                    "success": "#34bfa3",
+                                                    "info": "#36a3f7",
+                                                    "warning": "#ffb822"
+                                                },
+                                                "base": {
+                                                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                                }
                                             }
-                                        }
-                                    };
+                                        };
         </script>
     </body>
 </html>
