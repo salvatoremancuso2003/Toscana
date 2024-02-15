@@ -114,7 +114,7 @@
                                 </div>
                                 <div class="kt-portlet__body">
                                     <h4 class='text-primary'>Documenti:</h4>
-                                    <div class="kt-separator kt-separator--border kt-separator--space-md" style="margin-top: 0px;"></div>
+                                     <div><hr></div>
                                     <div class="row">
                                         <%for (Documenti_Allievi d : docs) {
                                                 if (Action.isModifiable(d.getTipo().getModifiche_stati(), a.getProgetto().getStato().getId()) && d.getTipo().getId() != 5) {
@@ -128,12 +128,12 @@
                                         <div class='col-lg-2 col-md-4 col-sm-6'>
                                             <div class='row'>
                                                 <div class='col-6 paddig_0_r' data-container="body" data-html="true" data-toggle="kt-tooltip" title="Visualizza documento" style="text-align: center;">
-                                                    <a target='_blank' href='<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=d.getPath()%>' class='btn-icon kt-font-io document'>
+                                                    <a target='_blank' href='<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=d.getPath()%>' class='btn-icon text-warning m-4'>
                                                         <i class='fa fa-file-pdf' style='font-size: 100px;'></i>
                                                     </a>
                                                 </div>
                                                 <div class='col-6 paddig_0_l' style="text-align: left;">
-                                                    <a class="btn btn-icon btn-sm btn-io-n" href="javascript:void(0);" onclick="changeDocs(%=d.getId()%>,%=id_se%>, '%=idea%>', '%=protocollo%>',<%=d.getTipo().getId()%>, '<%=d.getTipo().getEstensione().getEstensione().replaceAll("\"", "&quot;")%>', '<%=d.getTipo().getEstensione().getMime_type()%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Modifica documento">
+                                                    <a class="btn btn-icon text-warning m-4" href="javascript:void(0);" onclick="changeDocs(<%=d.getId()%>,<%=id_se%>, '%=idea%>', '%=protocollo%>',<%=d.getTipo().getId()%>, '<%=d.getTipo().getEstensione().replaceAll("\"", "&quot;")%>', '<%=d.getTipo().getMimetype()%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Modifica documento">
                                                         <i class="fa fa-exchange-alt"></i>
                                                     </a>
 
@@ -141,7 +141,7 @@
                                                 <div class='offset-1 row'>
                                                     <%String docente_nome = d.getDocente() != null ? d.getDocente().getCognome() + " " + d.getDocente().getNome() : "";%>
                                                     <%String scadenza = d.getScadenza() != null ? "<br>scad. " + new SimpleDateFormat("dd/MM/yyyy").format(d.getScadenza()) : "";%>
-                                                    <h5 class='kt-font-io-n'><%=d.getTipo().getDescrizione()%> <%=docente_nome + scadenza%></h5>
+                                                    <h5 class='text-primary'><%=d.getTipo().getDescrizione()%> <%=docente_nome + scadenza%></h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -162,9 +162,9 @@
                                             }
                                     %>
                                     <div class="row" style="padding-top: 20px;">
-                                        <h4 class="kt-font-io col-6">Registri:</h4><h4 class="kt-font-io col-6 kt-align-right">Totale ore effettuate: <b><%=totale%></b></h4>
+                                        <h4 class="text-primary">Registri:</h4><h4 class="kt-font-io col-6 kt-align-right">Totale ore effettuate: <b><%=totale%></b></h4>
                                     </div>
-                                    <div class="kt-separator kt-separator--border kt-separator--space-md" style="margin-top: 0px;"></div>
+                                    <div><hr></div>
                                     <div class="row">
                                         <%for (Documenti_Allievi d : registri) {
                                                 if (Action.isModifiable(d.getTipo().getModifiche_stati(), a.getProgetto().getStato().getId()) && d.getTipo().getId() == 5) {
@@ -201,14 +201,14 @@
                                     <%if (!tipo_doc_obbl.isEmpty()) {%>
                                     <br>
                                     <h4 class='text-primary'>Carica Documento:</h4>
-                                    <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
+                                     <div><hr></div>
                                     <div class="row">
                                         <%for (TipoDoc_Allievi t : tipo_doc_obbl) {
                                                 if (t.getId() != 5) {%>
                                         <div class='col-lg-2 col-md-4 col-sm-6'>
                                             <div class='row'>
                                                 <div class='col-6 paddig_0_r' style="text-align: center;">
-                                                     <a href='javascript:void(0);' onclick="uploadDocs(<%=a.getId()%>,<%=t.getId()%>, '<%=t.getEstensione().getEstensione().replaceAll("\"", "&quot;")%>', '<%=t.getEstensione().getMime_type()%>');" class='btn-icon kt-font-warning document'>
+                                                     <a href='javascript:void(0);' onclick="uploadDocs(<%=a.getId()%>,<%=t.getId()%>, '<%=t.getEstensione().replaceAll("\"", "&quot;")%>', '<%=t.getMimetype()%>');" class='btn-icon text-warning m-4'>
                                                         <i class='fa fa-file-upload' style='font-size: 100px;'></i>
                                                     </a>
 

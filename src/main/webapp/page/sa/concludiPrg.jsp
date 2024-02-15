@@ -62,8 +62,9 @@
             List<Formagiuridica> list_fg = e.findAll(Formagiuridica.class);
             List<Item> regioni = e.listaRegioni();
             Map<Integer, String> bando_SE = Utility.bando_SE();
-            Map<Integer, String> bando_SUD = Utility.bando_SUD();
-            Map<Integer, String> no_agevolazione = Utility.no_agenvolazione();
+            Map<Integer, String> bando_SUD = Utility.bando_SUD();<
+            Map<Integer, String> 
+            no_agevolazione = Utility.no_agenvolazione();
             List<ValutazioneFinaleM5> list_valutazione = e.findAll(ValutazioneFinaleM5.class);
             e.close();
 
@@ -116,6 +117,7 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
+        <link rel="stylesheet" href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css"/>
 
         <style type="text/css">
             .form-group {
@@ -130,10 +132,7 @@
                 margin-left: 5%;
             }
 
-            .kt-radio > span::after {
-                border: solid #363a90;
-                border-color: #363a90;
-            }
+
 
             .kt-radio-valid > span {
                 border-color: #0abb87 !important;
@@ -158,163 +157,154 @@
 
 
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
         <%if (fancy) {%>
         <%@ include file="menu/head1.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
-            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-                <%@ include file="menu/menu.jsp"%>
-                <!-- end:: Aside -->
-                <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
-                    <%@ include file="menu/head.jsp"%>
-                    <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-                        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                            <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                                <div class="kt-subheader__main">
-                                    <h3 class="kt-subheader__title">Progetto Formativo</h3>
-                                    <span class="kt-subheader__separator kt-subheader__separator--v"></span>
-                                    <a class="kt-subheader__breadcrumbs-link">Conclusione</a>
-                                </div>
-                            </div>
-                        </div>
-                        <%} else {%>
+            <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
+            <%@ include file="menu/menu.jsp"%>
+            <!-- end:: Aside -->
+            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+                <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
 
-                        <div class="kt-grid kt-grid--hor kt-grid--root">
-                            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-                                <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-                                    <%}%>
-                                    <!-- end:: Content Head -->
-                                    <!-- begin:: Content -->
+                    <%} else {%>
 
-                                    <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+                    <div class="kt-grid kt-grid--hor kt-grid--root">
+                        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
+                            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
+                                <%}%>
+                                <!-- end:: Content Head -->
+                                <!-- begin:: Content -->
 
-                                        <div class="row" style="height: 100%;">
-                                            <div class="kt-grid  kt-wizard-v1 kt-wizard-v1--white" id="kt_wizard_v1" data-ktwizard-state="step-first" style="width: 100%;">
-                                                <div class="kt-grid__item" style="">
-                                                    <!--begin: Form Wizard Nav -->
-                                                    <div class="kt-wizard-v1__nav">
-                                                        <div class="kt-wizard-v1__nav-items" style="background: #fff; border-top-left-radius: 10px; border-top-right-radius: 10px;">
-                                                            <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step" data-ktwizard-state="current">
-                                                                <div class="kt-wizard-v1__nav-body " >
-                                                                    <div class="kt-wizard-v1__nav-icon">
-                                                                        <i class="fa fa-users" ></i>
-                                                                    </div>
-                                                                    <div class="kt-wizard-v1__nav-label text-uppercase">
-                                                                        1 - Area rendiconto allievi
-                                                                    </div>
+                                <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
+
+                                    <div class="row" style="height: 100%;">
+                                        <div class="kt-grid  kt-wizard-v1 kt-wizard-v1--white" id="kt_wizard_v1" data-ktwizard-state="step-first" style="width: 100%;">
+                                            <div class="kt-grid__item" style="">
+                                                <!--begin: Form Wizard Nav -->
+                                                <div class="kt-wizard-v1__nav">
+                                                    <div class="kt-wizard-v1__nav-items" style="background: #fff; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                                                        <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step" data-ktwizard-state="current">
+                                                            <div class="kt-wizard-v1__nav-body " >
+                                                                <div class="kt-wizard-v1__nav-icon">
+                                                                    <i class="fa fa-users text-primary" ></i>
                                                                 </div>
-                                                            </a>
-                                                            <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step">
-                                                                <div class="kt-wizard-v1__nav-body">
-                                                                    <div class="kt-wizard-v1__nav-icon">
-                                                                        <i class="fa fa-file-pdf"></i>
-                                                                    </div>
-                                                                    <div class="kt-wizard-v1__nav-label text-uppercase">
-                                                                        2 - Stampa registri
-                                                                    </div>
+                                                                <div class="kt-wizard-v1__nav-label text-uppercase text-warning">
+                                                                    1 - Area rendiconto allievi
                                                                 </div>
-                                                            </a>
-                                                            <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step">
-                                                                <div class="kt-wizard-v1__nav-body">
-                                                                    <div class="kt-wizard-v1__nav-icon">
-                                                                        <i class="fa fa-pen-nib"></i>
-                                                                    </div>
-                                                                    <div class="kt-wizard-v1__nav-label  text-uppercase">
-                                                                        3 - Dichiarazione di chiusura percorso
-                                                                    </div>
+                                                            </div>
+                                                        </a>
+                                                        <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step">
+                                                            <div class="kt-wizard-v1__nav-body">
+                                                                <div class="kt-wizard-v1__nav-icon">
+                                                                    <i class="fa fa-file-pdf text-warning"></i>
                                                                 </div>
-                                                            </a>
-                                                            <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step">
-                                                                <div class="kt-wizard-v1__nav-body">
-                                                                    <div class="kt-wizard-v1__nav-icon">
-                                                                        <i class="fa fa-file-pdf"></i>
-                                                                    </div>
-                                                                    <div class="kt-wizard-v1__nav-label  text-uppercase">
-                                                                        4 - Area richiesta contributo
-                                                                    </div>
+                                                                <div class="kt-wizard-v1__nav-label text-uppercase text-warning">
+                                                                    2 - Stampa registri
                                                                 </div>
-                                                            </a>
-                                                        </div>
+                                                            </div>
+                                                        </a>
+                                                        <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step">
+                                                            <div class="kt-wizard-v1__nav-body">
+                                                                <div class="kt-wizard-v1__nav-icon">
+                                                                    <i class="fa fa-pen-nib text-warning"></i>
+                                                                </div>
+                                                                <div class="kt-wizard-v1__nav-label  text-uppercase text-warning">
+                                                                    3 - Dichiarazione di chiusura percorso
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <a class="kt-wizard-v1__nav-item" href="#" data-ktwizard-type="step">
+                                                            <div class="kt-wizard-v1__nav-body">
+                                                                <div class="kt-wizard-v1__nav-icon">
+                                                                    <i class="fa fa-file-pdf text-warning"></i>
+                                                                </div>
+                                                                <div class="kt-wizard-v1__nav-label  text-uppercase text-warning">
+                                                                    4 - Area richiesta contributo
+                                                                </div>
+                                                            </div>
+                                                        </a>
                                                     </div>
                                                 </div>
-                                                <!--end: Form Wizard Nav -->
-                                                <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v1__wrapper">
-                                                    <form id="kt_form" action="<%=request.getContextPath()%>/OperazioniSA?type=concludiPrg" 
-                                                          style="padding: 0;" class="kt-form kt-form--label-right"
-                                                          accept-charset="ISO-8859-1" method="post" enctype="multipart/form-data">
-                                                        <input type="hidden" class="hidden" name="pf" id="pf" value="<%=p.getId()%>" />
-                                                        <input type="hidden" class="hidden" name="cip" id="cip" value="<%=p.getCip()%>" />
-                                                        <input type="hidden" class="hidden" name="currentstep" id="currentstep"/>
-                                                        <!--step: 1-->
-                                                        <div class="kt-wizard-v1__content" id="step1" data-ktwizard-type="step-content" data-ktwizard-state="current">
-                                                            <div class="kt-form__section kt-form__section--first">
-                                                                <%if (Utility.demoversion) {%>
-                                                                <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>   
-                                                                <a href="<%=request.getContextPath()%>/OperazioniSA?type=simulaconcludi&fase=1&idpr=<%=p.getId()%>" class="btn btn-dark kt-font-bold"><i class="fa fa-user"></i> SIMULA RENDICONTO ALLIEVI</a>
-                                                                <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
-                                                                <%}%>
+                                            </div>
+                                            <!--end: Form Wizard Nav -->
+                                            <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v1__wrapper">
+                                                <form id="kt_form" action="<%=request.getContextPath()%>/OperazioniSA?type=concludiPrg" 
+                                                      style="padding: 0;" class="kt-form kt-form--label-right"
+                                                      accept-charset="ISO-8859-1" method="post" enctype="multipart/form-data">
+                                                    <input type="hidden" class="hidden" name="pf" id="pf" value="<%=p.getId()%>" />
+                                                    <input type="hidden" class="hidden" name="cip" id="cip" value="<%=p.getCip()%>" />
+                                                    <input type="hidden" class="hidden" name="currentstep" id="currentstep"/>
+                                                    <!--step: 1-->
+                                                    <div class="kt-wizard-v1__content" id="step1" data-ktwizard-type="step-content" data-ktwizard-state="current">
+                                                        <div class="kt-form__section kt-form__section--first">
+                                                            <%if (Utility.demoversion) {%>
+                                                            <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>   
+                                                            <a href="<%=request.getContextPath()%>/OperazioniSA?type=simulaconcludi&fase=1&idpr=<%=p.getId()%>" class="btn btn-primary"><i class="fa fa-user"></i> SIMULA RENDICONTO ALLIEVI</a>
+                                                            <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
+                                                            <%}%>
 
-                                                                <div class="kt-wizard-v1__form" style="color: #6c7293; min-height: 40vh">
-                                                                    <%for (Allievi a : al) {
-                                                                            if (oreRendicontabili_faseA.get(a.getId()) == null || (oreRendicontabili_faseA.get(a.getId())
-                                                                                    != null && oreRendicontabili_faseA.get(a.getId()).compareTo(hh36) < 0)) {
-                                                                                cntA--;%>
-                                                                    <div class="accordion  accordion-toggle-arrow" id="al_<%=a.getId()%>">
-                                                                        <div class="card" style="border-radius: 17px; margin-block: 20px; color: #363a90;">
-                                                                            <div class="card-header">
-                                                                                <div class="card-title loaded">
-                                                                                    <i class="fa fa-times-circle kt-font-danger"></i>&nbsp;<i class="fa fa-user kt-font-danger"></i> <%=a.getNome()%> <%=a.getCognome()%> (Allievo non rendicontabile in quanto non ha effettuato il minimo delle 36 ore nella fase A)
-                                                                                </div>
+                                                            <div class="kt-wizard-v1__form" style="color: #6c7293; min-height: 40vh">
+                                                                <%for (Allievi a : al) {
+                                                                        if (oreRendicontabili_faseA.get(a.getId()) == null || (oreRendicontabili_faseA.get(a.getId())
+                                                                                != null && oreRendicontabili_faseA.get(a.getId()).compareTo(hh36) < 0)) {
+                                                                            cntA--;%>
+                                                                <div class="accordion  accordion-toggle-arrow" id="al_<%=a.getId()%>">
+                                                                    <div class="card" style="border-radius: 17px; margin-block: 20px; color: #363a90;">
+                                                                        <div class="card-header">
+                                                                            <div class="card-title loaded">
+                                                                                <i class="fa fa-times-circle text-danger"></i>&nbsp;<i class="fa fa-user kt-font-danger"></i> <%=a.getNome()%> <%=a.getCognome()%> (Allievo non rendicontabile in quanto non ha effettuato il minimo delle 36 ore nella fase A)
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <%} else {
+                                                                </div>
+                                                                <%} else {
                                                                         if (allievi_m5.get(a.getId()) == null) {%>
-                                                                    <div class="accordion  accordion-toggle-arrow countAtoL" id="al_<%=a.getId()%>">
-                                                                        <div class="card" style="border-radius: 17px; margin-block: 20px; color: #363a90;">
+                                                                <div class="accordion  accordion-toggle-arrow countAtoL" id="al_<%=a.getId()%>">
+                                                                    <div class="card" style="border-radius: 17px; margin-block: 20px; color: #363a90;">
 
-                                                                            <div class="card-header" id="headingOne4_<%=a.getId()%>">
-                                                                                <div class="card-title collapsed" data-toggle="collapse" data-target="#collapse_al_<%=a.getId()%>" aria-expanded="false" aria-controls="collapse_al_<%=a.getId()%>">
-                                                                                    <i class="fa fa-user"></i> <%=a.getNome()%> <%=a.getCognome()%>
-                                                                                </div>
+                                                                        <div class="card-header" id="headingOne4_<%=a.getId()%>">
+                                                                            <div class="card-title collapsed" data-toggle="collapse" data-target="#collapse_al_<%=a.getId()%>" aria-expanded="false" aria-controls="collapse_al_<%=a.getId()%>">
+                                                                                <i class="fa fa-user"></i> <%=a.getNome()%> <%=a.getCognome()%>
                                                                             </div>
-                                                                            <div id="collapse_al_<%=a.getId()%>" class="collapse" aria-labelledby="headingOne" data-parent="#al_<%=a.getId()%>" style="">
-                                                                                <div class="card-body">
-                                                                                    <div class="form-group row">
-                                                                                        <label class="col-3 col-form-label"><b>Domanda di ammissione 
-                                                                                                <i class="fa fa-info-circle  kt-font-io-n" data-container="body" data-toggle="kt-popover" 
-                                                                                                   data-placement="top" data-original-title="Domanda di ammissione" 
-                                                                                                   data-content="È possibile caricare SOLO la domanda di Ammissione scaricata dal sito di Invitalia oppure il modello presente nel Gestionale nella cartellina Materiale Didattico."></i>
-                                                                                            </b></label>
-                                                                                        <div class="col-3">
-                                                                                            <span class="kt-switch kt-switch--lg kt-switch--icon">
-                                                                                                <label>
-                                                                                                    <input type="checkbox" checked id="domanda_a_<%=a.getId()%>" name="domanda_a_<%=a.getId()%>" onchange="domAmm_check(<%=a.getId()%>)">
-                                                                                                    <span></span>
-                                                                                                </label> 
-                                                                                            </span>
-                                                                                        </div>
-                                                                                        <div class="col-6" id="file_daok_<%=a.getId()%>">
-                                                                                            <div class="custom-file">
-                                                                                                <input type="file" <%=doc_allievo.getObbligatorio() == 1 ? "tipo='obbligatory'" : ""%> 
-                                                                                                       class="custom-file-input" id="doc_<%=a.getId()%>"
-                                                                                                       accept="<%=doc_allievo.getMimetype()%>" name="doc_<%=a.getId()%>" 
-                                                                                                       onchange="return checkFileExtAndDim('<%=doc_allievo.getEstensione()%>');">
-                                                                                                <label class="custom-file-label selected" 
-                                                                                                       style="color: #a7abc3; text-align: left;">Scegli File</label>
-                                                                                            </div>
+                                                                        </div>
+                                                                        <div id="collapse_al_<%=a.getId()%>" class="collapse" aria-labelledby="headingOne" data-parent="#al_<%=a.getId()%>" style="">
+                                                                            <div class="card-body">
+                                                                                <div class="form-group row">
+                                                                                    <label class="col-3 col-form-label"><b>Domanda di ammissione 
+                                                                                            <i class="fa fa-info-circle  kt-font-io-n" data-container="body" data-toggle="kt-popover" 
+                                                                                               data-placement="top" data-original-title="Domanda di ammissione" 
+                                                                                               data-content="È possibile caricare SOLO la domanda di Ammissione scaricata dal sito di Invitalia oppure il modello presente nel Gestionale nella cartellina Materiale Didattico."></i>
+                                                                                        </b></label>
+                                                                                    <div class="col-3">
+                                                                                        <span class="kt-switch kt-switch--lg kt-switch--icon">
+                                                                                            <label>
+                                                                                                <input type="checkbox" checked id="domanda_a_<%=a.getId()%>" name="domanda_a_<%=a.getId()%>" onchange="domAmm_check(<%=a.getId()%>)">
+                                                                                                <span></span>
+                                                                                            </label> 
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div class="col-6" id="file_daok_<%=a.getId()%>">
+                                                                                        <div class="custom-file">
+                                                                                            <input type="file" <%=doc_allievo.getObbligatorio() == 1 ? "tipo='obbligatory'" : ""%> 
+                                                                                                   class="custom-file-input" id="doc_<%=a.getId()%>"
+                                                                                                   accept="<%=doc_allievo.getMimetype()%>" name="doc_<%=a.getId()%>" 
+                                                                                                   onchange="return checkFileExtAndDim('<%=doc_allievo.getEstensione()%>');">
+                                                                                            <label class="custom-file-label selected" 
+                                                                                                   style="color: #a7abc3; text-align: left;">Scegli File</label>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div id="cont_daok_<%=a.getId()%>">
+                                                                                </div>
+                                                                                <div id="cont_daok_<%=a.getId()%>">
                                                                                     <h5 style="color:#b9003d; font-weight: 800;">PROGETTO D'IMPRESA</h5>
                                                                                     <br>
                                                                                     <div class="form-group">
-                                                                                        <label for="rs_<%=a.getId()%>"><b>Ragione Sociale iniziativa proposta</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
+                                                                                        <label for="rs_<%=a.getId()%>" class="active"><b>Ragione Sociale iniziativa proposta</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
                                                                                         <input type="text" class="form-control obbligatory" name="rs_<%=a.getId()%>" id="rs_<%=a.getId()%>" placeholder="Ragione Sociale iniziativa proposta">
                                                                                     </div>
                                                                                     <div class="form-group">
-                                                                                        <label for="fg_<%=a.getId()%>"><b>Forma giuridica</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
+                                                                                        <label for="fg_<%=a.getId()%>" class="active"><b>Forma giuridica</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
                                                                                         <div class="dropdown bootstrap-select form-control kt-" id="fg_<%=a.getId()%>_div" style="padding: 0;">
                                                                                             <select class="form-control kt-select2-general obbligatory" id="fg_<%=a.getId()%>" name="fg_<%=a.getId()%>"  style="width: 100%">
                                                                                                 <option selected value="-">Seleziona forma giuridica</option>
@@ -326,7 +316,7 @@
                                                                                     </div>
                                                                                     <div class="form-group row">
                                                                                         <div class="col-6">
-                                                                                            <label for="check_sede_<%=a.getId()%>"><b>Sede individuata?</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
+                                                                                            <label for="check_sede_<%=a.getId()%>" class="active"><b>Sede individuata?</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
                                                                                             <div class="kt-radio-inline radioGroup_<%=a.getId()%>">
                                                                                                 <label class="kt-radio" name="check_sede_<%=a.getId()%>">
                                                                                                     <input type="radio" name="check_sede_<%=a.getId()%>" value="SI"> SI
@@ -339,7 +329,7 @@
                                                                                             </div>
                                                                                         </div>  
                                                                                         <div class="col-6">
-                                                                                            <label for="check_colloquio_<%=a.getId()%>"><b>Disponibile a colloquio di approfondimento?</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
+                                                                                            <label for="check_colloquio_<%=a.getId()%>" class="active"><b>Disponibile a colloquio di approfondimento?</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
                                                                                             <div class="kt-radio-inline radioGroup_<%=a.getId()%>">
                                                                                                 <label class="kt-radio"  name="check_colloquio_<%=a.getId()%>">
                                                                                                     <input type="radio"  name="check_colloquio_<%=a.getId()%>" value="SI"> SI
@@ -356,7 +346,7 @@
                                                                                     <input type="hidden" id="motivazione_<%=a.getId()%>" name="motivazione_<%=a.getId()%>" value="Presente sulla domanda"/>
                                                                                     <div class="form-group row">
                                                                                         <div class="form-group col-12">
-                                                                                            <label for="ateco_<%=a.getId()%>"><b>Codice Ateco</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
+                                                                                            <label for="ateco_<%=a.getId()%>" class="active"><b>Codice Ateco</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
                                                                                             <div class="dropdown bootstrap-select form-control kt-" id="ateco_<%=a.getId()%>_div" style="padding: 0;">
                                                                                                 <select class="form-control kt-select2-general obbligatory" id="ateco_<%=a.getId()%>" name="ateco_<%=a.getId()%>"  style="width: 100%">
                                                                                                     <option selected value="-">Seleziona Codice Ateco</option>
@@ -369,7 +359,7 @@
                                                                                     </div>
                                                                                     <div class="form-group row">
                                                                                         <div class="form-group col-4">
-                                                                                            <label for="regione_<%=a.getId()%>"><b>Regione di localizzazione</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
+                                                                                            <label for="regione_<%=a.getId()%>" class="active"><b>Regione di localizzazione</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
                                                                                             <div class="dropdown bootstrap-select form-control kt-" id="regione_<%=a.getId()%>_div" style="padding: 0;">
                                                                                                 <select class="form-control kt-select2-general obbligatory" id="regione_<%=a.getId()%>" name="regione_<%=a.getId()%>"  style="width: 100%">
                                                                                                     <option selected value="-">Seleziona Regione</option>
@@ -380,7 +370,7 @@
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="form-group col-4">
-                                                                                            <label for="provincia_<%=a.getId()%>"><b>Provincia di localizzazione</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
+                                                                                            <label for="provincia_<%=a.getId()%>" class="active"><b>Provincia di localizzazione</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
                                                                                             <div class="dropdown bootstrap-select form-control kt-" id="provincia_<%=a.getId()%>_div" style="padding: 0;">
                                                                                                 <select class="form-control kt-select2-general obbligatory" id="provincia_<%=a.getId()%>" name="provincia_<%=a.getId()%>"  style="width: 100%;">
                                                                                                     <option value="-">Seleziona Provincia</option>
@@ -388,7 +378,7 @@
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="form-group col-4">
-                                                                                            <label for="comune_<%=a.getId()%>"><b>Comune di localizzazione</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
+                                                                                            <label for="comune_<%=a.getId()%>" class="active"><b>Comune di localizzazione</b></label><label class="kt-font-danger kt-font-boldest valobbl_<%=a.getId()%>">*</label>
                                                                                             <div class="dropdown bootstrap-select form-control kt-" id="comune_<%=a.getId()%>_div" style="padding: 0;">
                                                                                                 <select class="form-control kt-select2-general obbligatory" id="comune_<%=a.getId()%>" name="comune_<%=a.getId()%>"  style="width: 100%;">
                                                                                                     <option value="-">Seleziona Comune</option>
@@ -516,306 +506,308 @@
                                                                                     <%}%>
 
                                                                                 </div>
-                                                                                    <div class="form-group row">
-                                                                                        <div class="col-6">
-                                                                                            <a href="<%=request.getContextPath()%>/OperazioniSA?type=scaricaModello7&iduser=<%=a.getId()%>&orerendicontabili=<%=oreRendicontabili.get(a.getId())%>" target="_blank" class="btn btn-success"><i class="fa fa-user-graduate" style='position: absolute; right: 5rem'></i>&nbsp; Scarica attestato di frequenza (Modello 7)</a>
-                                                                                        </div>
-                                                                                        <div class="col-6">
-                                                                                            <div class="custom-file">
-                                                                                                <input type="file" tipo='obbligatory' 
-                                                                                                       class="custom-file-input" id="m7_<%=a.getId()%>" 
-                                                                                                       accept="<%=modello7.getMimetype()%>" name="m7_<%=a.getId()%>" 
-                                                                                                       onchange="return checkFileExtAndDim('<%=modello7.getEstensione()%>');">
-                                                                                                <label class="custom-file-label selected" 
-                                                                                                       style="color: #a7abc3; text-align: left;">Scegli File</label>
-                                                                                            </div>
+                                                                                <div class="form-group row">
+                                                                                    <div class="col-6">
+                                                                                        <a href="<%=request.getContextPath()%>/OperazioniSA?type=scaricaModello7&iduser=<%=a.getId()%>&orerendicontabili=<%=oreRendicontabili.get(a.getId())%>" target="_blank" class="btn btn-success"><i class="fa fa-user-graduate" style='position: absolute; right: 5rem'></i>&nbsp; Scarica attestato di frequenza (Modello 7)</a>
+                                                                                    </div>
+                                                                                    <div class="col-6">
+                                                                                        <div class="custom-file">
+                                                                                            <input type="file" tipo='obbligatory' 
+                                                                                                   class="custom-file-input" id="m7_<%=a.getId()%>" 
+                                                                                                   accept="<%=modello7.getMimetype()%>" name="m7_<%=a.getId()%>" 
+                                                                                                   onchange="return checkFileExtAndDim('<%=modello7.getEstensione()%>');">
+                                                                                            <label class="custom-file-label selected" 
+                                                                                                   style="color: #a7abc3; text-align: left;">Scegli File</label>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <!--<div id="assegnazione_premialita"></div>-->
-                                                                                    <div class="kt-section__content kt-section__content--solid text-center" style="margin-top:3rem;">
-                                                                                        <a id="rendiconta_<%=a.getId()%>" href="javascript:void(0);" class="btn btn-io" style="font-family: Poppins;"><i class="fa fa-check"></i> Completa</a>
-                                                                                    </div>
+                                                                                </div>
+                                                                                <!--<div id="assegnazione_premialita"></div>-->
+                                                                                <div class="kt-section__content kt-section__content--solid text-center" style="margin-top:3rem;">
+                                                                                    <a id="rendiconta_<%=a.getId()%>" href="javascript:void(0);" class="btn btn-primary" style="font-family: Poppins;"><i class="fa fa-check"></i> Completa</a>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <%} else {
+                                                                </div>
+                                                                <%} else {
                                                                         m5_files.add(a);%>
-                                                                    <div class="accordion  accordion-toggle-arrow" id="al_<%=a.getId()%>">
-                                                                        <div class="card" style="border-radius: 17px; margin-block: 20px; color: #363a90;">
-                                                                            <div class="card-header">
-                                                                                <div class="card-title loaded">
-                                                                                    <i class="fa fa-check-circle kt-font-success"></i>&nbsp;<i class="fa fa-user kt-font-success"></i> <%=a.getNome()%> <%=a.getCognome()%> (Dati del Progetto d'Impresa caricati)
-                                                                                    <%if (modelli7.get(a) != null) {%>
-                                                                                    <a href="<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=modelli7.get(a).getPath()%>" target="_blank" class="btn"><i class="fa fa-user-graduate kt-font-io-ultra" style='position: absolute; right: 5rem' data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Visualizza modello 7 - Attestato di frequenza per <%=a.getNome()%> <%=a.getCognome()%></h5>"></i></a>
-                                                                                        <%}%>
-                                                                                    <a href="<%=request.getContextPath()%>/OperazioniSA?type=scaricaModello5&iduser=<%=a.getId()%>&idmodello=<%=allievi_m5.get(a.getId())%>" target="_blank" class="btn"><i class="fa fa-file-download kt-font-success" style='position: absolute; right: 3rem' data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Scarica modello 5 precompilato relativo a <%=a.getNome()%> <%=a.getCognome()%></h5>"></i></a>
-                                                                                    <a href="javascript:void(0);" onclick="deleteModello(<%=allievi_m5.get(a.getId())%>)" class="btn"><i style='position: absolute; right: 1rem' class="fa fa-times-circle kt-font-danger"data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Elimina modello 5 per <%=a.getNome()%> <%=a.getCognome()%></h5>"></i></a>
-                                                                                </div>
+                                                                <div class="accordion  accordion-toggle-arrow" id="al_<%=a.getId()%>">
+                                                                    <div class="card" style="border-radius: 17px; margin-block: 20px; color: #363a90;">
+                                                                        <div class="card-header">
+                                                                            <div class="card-title loaded">
+                                                                                <i class="fa fa-check-circle kt-font-success"></i>&nbsp;<i class="fa fa-user kt-font-success"></i> <%=a.getNome()%> <%=a.getCognome()%> (Dati del Progetto d'Impresa caricati)
+                                                                                <%if (modelli7.get(a) != null) {%>
+                                                                                <a href="<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=modelli7.get(a).getPath()%>" target="_blank" class="btn"><i class="fa fa-user-graduate kt-font-io-ultra" style='position: absolute; right: 5rem' data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Visualizza modello 7 - Attestato di frequenza per <%=a.getNome()%> <%=a.getCognome()%></h5>"></i></a>
+                                                                                    <%}%>
+                                                                                <a href="<%=request.getContextPath()%>/OperazioniSA?type=scaricaModello5&iduser=<%=a.getId()%>&idmodello=<%=allievi_m5.get(a.getId())%>" target="_blank" class="btn"><i class="fa fa-file-download kt-font-success" style='position: absolute; right: 3rem' data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Scarica modello 5 precompilato relativo a <%=a.getNome()%> <%=a.getCognome()%></h5>"></i></a>
+                                                                                <a href="javascript:void(0);" onclick="deleteModello(<%=allievi_m5.get(a.getId())%>)" class="btn"><i style='position: absolute; right: 1rem' class="fa fa-times-circle kt-font-danger"data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Elimina modello 5 per <%=a.getNome()%> <%=a.getCognome()%></h5>"></i></a>
                                                                             </div>
                                                                         </div>
-                                                                    </div>            
-                                                                    <%}
-                                                                            }
-                                                                        }%>
-                                                                    <br>
-                                                                    <div class="kt-section__content kt-section__content--solid text-center">
-                                                                        <%for (Allievi a : m5_files) {%>
-                                                                        <div class="btn-group" role="group" aria-label="First group">
-                                                                            <button type="button" disabled="disabled" class="btn" style="background-color: #363a90!important; opacity: 1!important; color:white;"><%=a.getNome()%> <%=a.getCognome()%></button>
-                                                                            <%if (modelli5.get(a) == null) {%>
-                                                                            <button id="loadM5_<%=a.getId()%>" type="button" load="toload" class="btn btn-io-n" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Carica modello 5 - <%=a.getNome()%> <%=a.getCognome()%></h5>" ><i class="fa fa-file-signature"></i></button>
-                                                                                <%} else {%>
-                                                                            <button id="loadM5_<%=a.getId()%>" type="button" class="btn btn-io" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Cambia modello 5 - <%=a.getNome()%> <%=a.getCognome()%></h5>" ><i class="fa fa-file-signature"></i></button>
-                                                                            <a target="_blank" href="<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=modelli5.get(a).getPath()%>" style="display: flex;" class="btn btn-io" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Visualizza modello 5 caricato</h5>" ><i class="fa fa-download"></i></a> 
-                                                                                <%}%>
-                                                                        </div>   
-                                                                        <%}%>    
                                                                     </div>
-                                                                    <br>
-                                                                    <label class="kt-font-io kt-font-bold"><font size="2">Per ogni alunno rendicontato scaricare il modello 5 (dal tasto <i class="fa fa-file-download kt-font-success"></i>), firmarlo digitalmente e ricaricarlo.</font></label>
+                                                                </div>            
+                                                                <%}
+                                                                        }
+                                                                    }%>
+                                                                <br>
+                                                                <div class="kt-section__content kt-section__content--solid text-center">
+                                                                    <%for (Allievi a : m5_files) {%>
+                                                                    <div class="btn-group" role="group" aria-label="First group">
+                                                                        <button type="button" disabled="disabled" class="btn" style="background-color: #363a90!important; opacity: 1!important; color:white;"><%=a.getNome()%> <%=a.getCognome()%></button>
+                                                                        <%if (modelli5.get(a) == null) {%>
+                                                                        <button id="loadM5_<%=a.getId()%>" type="button" load="toload" class="btn btn-primary" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Carica modello 5 - <%=a.getNome()%> <%=a.getCognome()%></h5>" ><i class="fa fa-file-signature"></i></button>
+                                                                            <%} else {%>
+                                                                        <button id="loadM5_<%=a.getId()%>" type="button" class="btn btn-primary" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Cambia modello 5 - <%=a.getNome()%> <%=a.getCognome()%></h5>" ><i class="fa fa-file-signature"></i></button>
+                                                                        <a target="_blank" href="<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=modelli5.get(a).getPath()%>" style="display: flex;" class="btn btn-primary" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Visualizza modello 5 caricato</h5>" ><i class="fa fa-download"></i></a> 
+                                                                            <%}%>
+                                                                    </div>   
+                                                                    <%}%>    
                                                                 </div>
+                                                                <br>
+                                                                <label class="text-danger"><font size="2">Per ogni alunno rendicontato scaricare il modello 5 (dal tasto <i class="fa fa-file-download kt-font-success"></i>), firmarlo digitalmente e ricaricarlo.</font></label>
                                                             </div>
-                                                            <label class="kt-font-danger kt-font-bold"><font size="2" >Per poter proseguire è necessario rendicontare ogni allievo presente in lista - <%=allievi_m5.size()%>/<%=cntA%></font></label>
                                                         </div>
-                                                        <!--step: 2-->
-                                                        <div class="kt-wizard-v1__content" id="step2" data-ktwizard-type="step-content">
-                                                            <div class="kt-form__section kt-form__section--first">
-                                                                <div class="kt-wizard-v1__form" style="color: #6c7293;">
-                                                                    <div class="accordion  accordion-toggle-arrow">
-                                                                        <%if (p.getSvolgimento().equals("F")) {%>
-                                                                        <div class="card" style="border-radius: 17px; margin-block: 20px; color: #363a90;">
-                                                                            <div class="card-header">
-                                                                                <div class="card-title loaded">
-                                                                                    <i class="fa fa-file-pdf kt-font-success"></i>&nbsp;<i class="fa fa-users kt-font-success"></i> REGISTRO COMPLESSIVO PRESENZE
-                                                                                    <a href="<%=request.getContextPath()%>/OperazioniSA?type=scaricaregistrotemp&idpr=<%=p.getId()%>" target="_blank" class="btn"><i class="fa fa-file-download kt-font-success" style='position: absolute; right: 1rem' data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Scarica il registro complessivo delle presenze</h5>"></i></a>
-                                                                                </div>
+                                                        <label class="text-danger"><font size="2" >Per poter proseguire è necessario rendicontare ogni allievo presente in lista - <%=allievi_m5.size()%>/<%=cntA%></font></label>
+                                                    </div>
+                                                    <!--step: 2-->
+                                                    <div class="kt-wizard-v1__content" id="step2" data-ktwizard-type="step-content">
+                                                        <div class="kt-form__section kt-form__section--first">
+                                                            <div class="kt-wizard-v1__form" style="color: #6c7293;">
+                                                                <div class="accordion  accordion-toggle-arrow">
+                                                                    <%if (p.getSvolgimento().equals("F")) {%>
+                                                                    <div class="card" style="border-radius: 17px; margin-block: 20px; color: #363a90;">
+                                                                        <div class="card-header">
+                                                                            <div class="card-title loaded">
+                                                                                <i class="fa fa-file-pdf kt-font-success"></i>&nbsp;<i class="fa fa-users kt-font-success"></i> REGISTRO COMPLESSIVO PRESENZE
+                                                                                <a href="<%=request.getContextPath()%>/OperazioniSA?type=scaricaregistrotemp&idpr=<%=p.getId()%>" target="_blank" class="btn"><i class="fa fa-file-download kt-font-success" style='position: absolute; right: 1rem' data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Scarica il registro complessivo delle presenze</h5>"></i></a>
                                                                             </div>
                                                                         </div>
+                                                                    </div>
+                                                                    <%}%>
+                                                                </div>
+                                                                <div class="kt-section__content kt-section__content--solid text-center" style="margin-top: 3rem; margin-bottom: 2rem;">
+                                                                    <%if (registro_complessivo == null) {%>
+                                                                    <button id="registro_<%=p.getId()%>" type="button" registro="toload" class="btn btn-primary"><i class="fa fa-file-signature"></i>&nbsp;Carica  <%=complessivo.getDescrizione()%></button>&nbsp;
+                                                                    <label style="display: flex; margin-top:1.5rem;" class="kt-font-io kt-font-bold"><font size="2">Il presente registro complessivo delle presenze generato dal sistema, va scaricato (dal tasto <i class="fa fa-file-download kt-font-success"></i> ), firmato digitalmente (.p7m CAdES, .pdf PAdES) e ricaricato.</font></label>
+                                                                    <label style="display: flex; margin-top:0.5rem;" class="kt-font-danger kt-font-bold"><font size="2" >Per poter proseguire è necessario caricare il registro complessivo delle presenze firmato digitalmente - 0/1</font></label>
+                                                                        <%} else {%>
+                                                                    <div class="btn-group" role="group" aria-label="First group">
+                                                                        <button id="registro_<%=p.getId()%>" type="button" class="btn btn-success"><i class="fa fa-file-signature"></i>&nbsp;Cambia <%=complessivo.getDescrizione()%> </button>
+                                                                        <a target="_blank" href="<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=registro_complessivo.getPath()%>" style="display: flex;" class="btn btn-success" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Visualizza registro complessivo presenze caricato</h5>" ><i class="fa fa-expand"></i></a> 
+                                                                    </div>
+                                                                    <label style="display: flex; margin-top:1.5rem;" class="kt-font-io kt-font-bold"><font size="2">Il presente registro complessivo delle presenze generato dal sistema, va scaricato (dal tasto <i class="fa fa-file-download kt-font-success"></i> ), firmato digitalmente (.p7m CAdES, .pdf PAdES) e ricaricato.</font></label>
+                                                                    <label style="display: flex; margin-top:0.5rem;" class="kt-font-danger kt-font-bold"><font size="2" >Per poter proseguire è necessario caricare il registro complessivo delle presenze firmato digitalmente - 1/1</font></label>
                                                                         <%}%>
+                                                                </div>
+
+
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--step: 3-->
+                                                    <div class="kt-wizard-v1__content" id="step3" data-ktwizard-type="step-content">
+                                                        <div class="kt-form__section kt-form__section--first">
+                                                            <div class="kt-wizard-v1__form" style="color: #6c7293;">
+                                                                <!--<div class="form-group col-xl-12 col-lg-12">-->
+                                                                <!--<div class="row">-->
+                                                                <label style="text-align: left;"><b>SI DICHIARA</b> ai sensi del D.P.R. n.445/2000, sotto la propria personale responsabilità, consapevole delle pene stabilite per false mendaci dichiarazioni dall’art. 76 del predetto D.P.R., che:</label>
+                                                                <div class="form-group row" style="width: 100%;">
+                                                                    <div class="kt-radio-list">
+                                                                        <label class="kt-radio">
+                                                                            <input type="radio" value="1" name="scelta_step3"> La sede di svolgimento del percorso anche sede legale/amministrativa  
+                                                                            <span></span>
+                                                                        </label>
+                                                                        <label class="kt-radio">
+                                                                            <input type="radio" value="2" name="scelta_step3"> La sede amministrativa/legale della scrivente sita in: 
+                                                                            <span></span>
+                                                                        </label>
                                                                     </div>
-                                                                    <div class="kt-section__content kt-section__content--solid text-center" style="margin-top: 3rem; margin-bottom: 2rem;">
-                                                                        <%if (registro_complessivo == null) {%>
-                                                                        <button id="registro_<%=p.getId()%>" type="button" registro="toload" class="btn btn-io-n"><i class="fa fa-file-signature"></i>&nbsp;Carica <%=complessivo.getDescrizione()%></button>&nbsp;
-                                                                        <label style="display: flex; margin-top:1.5rem;" class="kt-font-io kt-font-bold"><font size="2">Il presente registro complessivo delle presenze generato dal sistema, va scaricato (dal tasto <i class="fa fa-file-download kt-font-success"></i> ), firmato digitalmente (.p7m CAdES, .pdf PAdES) e ricaricato.</font></label>
-                                                                        <label style="display: flex; margin-top:0.5rem;" class="kt-font-danger kt-font-bold"><font size="2" >Per poter proseguire è necessario caricare il registro complessivo delle presenze firmato digitalmente - 0/1</font></label>
-                                                                            <%} else {%>
-                                                                        <div class="btn-group" role="group" aria-label="First group">
-                                                                            <button id="registro_<%=p.getId()%>" type="button" class="btn btn-success"><i class="fa fa-file-signature"></i>&nbsp;Cambia <%=complessivo.getDescrizione()%></button>
-                                                                            <a target="_blank" href="<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=registro_complessivo.getPath()%>" style="display: flex;" class="btn btn-success" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Visualizza registro complessivo presenze caricato</h5>" ><i class="fa fa-expand"></i></a> 
+                                                                </div>
+                                                                <div style="padding: 20px; margin: 10px 0px 30px; border: 4px solid rgb(239, 239, 239); width: 100%;" id="info_step3">
+                                                                    <div class="row"  style="width: 100%;">
+                                                                        <div class="form-group col-4">
+                                                                            <label for="regione_step3" class="active">Regione</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                            <div class="dropdown bootstrap-select form-control kt-" id="regione_step3_div" style="padding: 0;">
+                                                                                <select class="form-control kt-select2-general obbligatory" id="regione_step3" name="regione_step3"  style="width: 100%">
+                                                                                    <option value="-">Seleziona Regione</option>
+                                                                                    <%for (Item i : regioni) {%>
+                                                                                    <option value="<%=i.getValue()%>"><%=i.getDesc()%></option>
+                                                                                    <%}%>
+                                                                                </select>
+                                                                            </div>
                                                                         </div>
-                                                                        <label style="display: flex; margin-top:1.5rem;" class="kt-font-io kt-font-bold"><font size="2">Il presente registro complessivo delle presenze generato dal sistema, va scaricato (dal tasto <i class="fa fa-file-download kt-font-success"></i> ), firmato digitalmente (.p7m CAdES, .pdf PAdES) e ricaricato.</font></label>
-                                                                        <label style="display: flex; margin-top:0.5rem;" class="kt-font-danger kt-font-bold"><font size="2" >Per poter proseguire è necessario caricare il registro complessivo delle presenze firmato digitalmente - 1/1</font></label>
-                                                                            <%}%>
+                                                                        <div class="form-group col-4">
+                                                                            <label for="provincia_step3" class="active">Provincia</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                            <div class="dropdown bootstrap-select form-control kt-" id="provincia_step3_div" style="padding: 0;">
+                                                                                <select class="form-control kt-select2-general obbligatory" id="provincia_step3" name="provincia_step3"  style="width: 100%;">
+                                                                                    <option value="-">Seleziona Provincia</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group col-4">
+                                                                            <label for="comune_step3" class="active">Comune</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                            <div class="dropdown bootstrap-select form-control kt-" id="comune_step3_div" style="padding: 0;">
+                                                                                <select class="form-control kt-select2-general obbligatory" id="comune_step3" name="comune_step3"  style="width: 100%;">
+                                                                                    <option value="-">Seleziona Comune</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row"  style="width: 100%;">
+                                                                        <div class="form-group col-6">
+                                                                            <label for="indirizzo_step3" class="active">Indirizzo</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                            <input type="text" class="form-control obbligatory" name="indirizzo_step3" id="indirizzo_step3" placeholder="Indirizzo sede amministrativa/legale">
+                                                                        </div>
+                                                                        <div class="form-group col-6">
+                                                                            <label for="civico_step3" class="active">Civico</label>
+                                                                            <input type="text" class="form-control" name="civico_step3" id="civico_step3" placeholder="Civico indirizzo">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="kt-section__content kt-section__content--solid text-center">
+                                                                    <%if (m6_loaded) {%>
+                                                                    <button id="dichiarazione_<%=p.getId()%>" type="button" declar="loaded" class="btn btn-success"><i class="fa fa-check-circle"></i>&nbsp;Cambia</button>&nbsp;
+                                                                    <label style="display: flex; margin-top: 1.5rem" class="kt-font-danger kt-font-bold"><font size="2" >E' possibile proseguire avendo già salvato la dichiarazione</font></label>
+                                                                        <%} else {%>
+                                                                    <button id="dichiarazione_<%=p.getId()%>" declar="toload" type="button" class="btn btn-primary"><i class="fa fa-check-circle"></i>&nbsp;Salva</button>&nbsp;
+                                                                    <label style="display: flex; margin-top: 1.5rem" class="kt-font-danger kt-font-bold"><font size="2" >Per poter proseguire è necessario salvare la dichiarazione</font></label>
+                                                                        <%}%>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--step: 4-->
+                                                    <div class="kt-wizard-v1__content" id="step4" data-ktwizard-type="step-content">
+                                                        <div class="kt-form__section kt-form__section--first">
+                                                            <div class="kt-wizard-v1__form" style="color: #6c7293;">
+                                                                <div class="accordion  accordion-toggle-arrow">
+                                                                    <div class="card" style="border-radius: 17px; margin-block: 20px; color: #363a90;">
+                                                                        <div class="card-header">
+                                                                            <div class="card-title loaded">
+                                                                                <i class="fa fa-file-pdf kt-font-success"></i>&nbsp;<i class="fa fa-users kt-font-success"></i> MODELLO 6
+                                                                                <a href="<%=request.getContextPath()%>/OperazioniSA?type=scaricamodello6temp&idpr=<%=p.getId()%>" target="_blank" class="btn"><i class="fa fa-file-download kt-font-success" style='position: absolute; right: 1rem' data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Scarica il Modello 6</h5>"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="kt-section__content kt-section__content--solid text-center">
+
+                                                                    <label> < %=m6.getDescrizione()%></label> <%=m6.getObbligatorio() == 1 ? --> "<label class='kt-font-danger kt-font-boldest'>*</label>" : ""%>
+                                                                    <input type="hidden" class="hidden" name="modello"  id="modello_<%=m6.getId()%>" value="0"/>
+                                                                           <div class="custom-file">
+                                                                        <input type="file" <%=m6.getObbligatorio() == 1 ? "tipo='obbligatory'" : ""%> 
+                                                                               class="custom-file-input" 
+                                                                               accept="  <%=m6.getMimetype()%>" name="doc_step4_%=<m6.getId()%>" id="doc_step4_<%=m6.getId()%>"
+                                                                               onchange="return checkFileExtAndDim('<%=m6.getEstensione()%>');">
+                                                                               <label class="custom-file-label selected" 
+                                                                               style="color: #a7abc3; text-align: left;">Scegli File</label>
                                                                     </div>
 
-
-
+                                                                    <label style="display: flex; margin-top:1.5rem;" class="kt-font-io kt-font-bold"><font size="2">Il presente Modello 6 generato dal sistema, va scaricato (dal tasto <i class="fa fa-file-download kt-font-success"></i> ), firmato digitalmente (.p7m CAdES, .pdf PAdES) e ricaricato.</font></label>
+                                                                    <label style="display: flex; margin-top:0.5rem;" class="kt-font-io kt-font-bold"><font size="2" >Una volta effettuate queste operazioni, si può procedere con la conclusione del Progetto formativo.</font></label>
 
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <!--step: 3-->
-                                                        <div class="kt-wizard-v1__content" id="step3" data-ktwizard-type="step-content">
-                                                            <div class="kt-form__section kt-form__section--first">
-                                                                <div class="kt-wizard-v1__form" style="color: #6c7293;">
-                                                                    <!--<div class="form-group col-xl-12 col-lg-12">-->
-                                                                    <!--<div class="row">-->
-                                                                    <label style="text-align: left;"><b>SI DICHIARA</b> ai sensi del D.P.R. n.445/2000, sotto la propria personale responsabilità, consapevole delle pene stabilite per false mendaci dichiarazioni dall’art. 76 del predetto D.P.R., che:</label>
-                                                                    <div class="form-group row" style="width: 100%;">
-                                                                        <div class="kt-radio-list">
-                                                                            <label class="kt-radio">
-                                                                                <input type="radio" value="1" name="scelta_step3"> La sede di svolgimento del percorso anche sede legale/amministrativa  
-                                                                                <span></span>
-                                                                            </label>
-                                                                            <label class="kt-radio">
-                                                                                <input type="radio" value="2" name="scelta_step3"> La sede amministrativa/legale della scrivente sita in: 
-                                                                                <span></span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div style="padding: 20px; margin: 10px 0px 30px; border: 4px solid rgb(239, 239, 239); width: 100%;" id="info_step3">
-                                                                        <div class="row"  style="width: 100%;">
-                                                                            <div class="form-group col-4">
-                                                                                <label for="regione_step3">Regione</label><label class="kt-font-danger kt-font-boldest">*</label>
-                                                                                <div class="dropdown bootstrap-select form-control kt-" id="regione_step3_div" style="padding: 0;">
-                                                                                    <select class="form-control kt-select2-general obbligatory" id="regione_step3" name="regione_step3"  style="width: 100%">
-                                                                                        <option value="-">Seleziona Regione</option>
-                                                                                        <%for (Item i : regioni) {%>
-                                                                                        <option value="<%=i.getValue()%>"><%=i.getDesc()%></option>
-                                                                                        <%}%>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-group col-4">
-                                                                                <label for="provincia_step3">Provincia</label><label class="kt-font-danger kt-font-boldest">*</label>
-                                                                                <div class="dropdown bootstrap-select form-control kt-" id="provincia_step3_div" style="padding: 0;">
-                                                                                    <select class="form-control kt-select2-general obbligatory" id="provincia_step3" name="provincia_step3"  style="width: 100%;">
-                                                                                        <option value="-">Seleziona Provincia</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-group col-4">
-                                                                                <label for="comune_step3">Comune</label><label class="kt-font-danger kt-font-boldest">*</label>
-                                                                                <div class="dropdown bootstrap-select form-control kt-" id="comune_step3_div" style="padding: 0;">
-                                                                                    <select class="form-control kt-select2-general obbligatory" id="comune_step3" name="comune_step3"  style="width: 100%;">
-                                                                                        <option value="-">Seleziona Comune</option>
-                                                                                    </select>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row"  style="width: 100%;">
-                                                                            <div class="form-group col-6">
-                                                                                <label for="indirizzo_step3">Indirizzo</label><label class="kt-font-danger kt-font-boldest">*</label>
-                                                                                <input type="text" class="form-control obbligatory" name="indirizzo_step3" id="indirizzo_step3" placeholder="Indirizzo sede amministrativa/legale">
-                                                                            </div>
-                                                                            <div class="form-group col-6">
-                                                                                <label for="civico_step3">Civico</label>
-                                                                                <input type="text" class="form-control" name="civico_step3" id="civico_step3" placeholder="Civico indirizzo">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="kt-section__content kt-section__content--solid text-center">
-                                                                        <%if (m6_loaded) {%>
-                                                                        <button id="dichiarazione_<%=p.getId()%>" type="button" declar="loaded" class="btn btn-success"><i class="fa fa-check-circle"></i>&nbsp;Cambia</button>&nbsp;
-                                                                        <label style="display: flex; margin-top: 1.5rem" class="kt-font-danger kt-font-bold"><font size="2" >E' possibile proseguire avendo già salvato la dichiarazione</font></label>
-                                                                            <%} else {%>
-                                                                        <button id="dichiarazione_<%=p.getId()%>" declar="toload" type="button" class="btn btn-io-n"><i class="fa fa-check-circle"></i>&nbsp;Salva</button>&nbsp;
-                                                                        <label style="display: flex; margin-top: 1.5rem" class="kt-font-danger kt-font-bold"><font size="2" >Per poter proseguire è necessario salvare la dichiarazione</font></label>
-                                                                            <%}%>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                    </div>                    
+                                                    <!--step: final-->
+                                                    <div class="kt-form__actions">
+                                                        <div class="btn btn-primary" data-ktwizard-type="action-prev">
+                                                            Indietro
                                                         </div>
-                                                        <!--step: 4-->
-                                                        <div class="kt-wizard-v1__content" id="step4" data-ktwizard-type="step-content">
-                                                            <div class="kt-form__section kt-form__section--first">
-                                                                <div class="kt-wizard-v1__form" style="color: #6c7293;">
-                                                                    <div class="accordion  accordion-toggle-arrow">
-                                                                        <div class="card" style="border-radius: 17px; margin-block: 20px; color: #363a90;">
-                                                                            <div class="card-header">
-                                                                                <div class="card-title loaded">
-                                                                                    <i class="fa fa-file-pdf kt-font-success"></i>&nbsp;<i class="fa fa-users kt-font-success"></i> MODELLO 6
-                                                                                    <a href="<%=request.getContextPath()%>/OperazioniSA?type=scaricamodello6temp&idpr=<%=p.getId()%>" target="_blank" class="btn"><i class="fa fa-file-download kt-font-success" style='position: absolute; right: 1rem' data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Scarica il Modello 6</h5>"></i></a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="kt-section__content kt-section__content--solid text-center">
-
-                                                                        <label><%=m6.getDescrizione()%></label><%=m6.getObbligatorio() == 1 ? "<label class='kt-font-danger kt-font-boldest'>*</label>" : ""%>
-                                                                        <input type="hidden" class="hidden" name="modello" id="modello_<%=m6.getId()%>" value="0"/>
-                                                                        <div class="custom-file">
-                                                                            <input type="file" <%=m6.getObbligatorio() == 1 ? "tipo='obbligatory'" : ""%> 
-                                                                                   class="custom-file-input" 
-                                                                                   accept="<%=m6.getMimetype()%>" name="doc_step4_<%=m6.getId()%>" id="doc_step4_<%=m6.getId()%>" 
-                                                                                   onchange="return checkFileExtAndDim('<%=m6.getEstensione()%>');">
-                                                                            <label class="custom-file-label selected" 
-                                                                                   style="color: #a7abc3; text-align: left;">Scegli File</label>
-                                                                        </div>
-
-                                                                        <label style="display: flex; margin-top:1.5rem;" class="kt-font-io kt-font-bold"><font size="2">Il presente Modello 6 generato dal sistema, va scaricato (dal tasto <i class="fa fa-file-download kt-font-success"></i> ), firmato digitalmente (.p7m CAdES, .pdf PAdES) e ricaricato.</font></label>
-                                                                        <label style="display: flex; margin-top:0.5rem;" class="kt-font-io kt-font-bold"><font size="2" >Una volta effettuate queste operazioni, si può procedere con la conclusione del Progetto formativo.</font></label>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>                    
-                                                        <!--step: final-->
-                                                        <div class="kt-form__actions">
-                                                            <div class="btn btn-io-n btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
-                                                                Indietro
-                                                            </div>
-                                                            <div class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
-                                                                 data-ktwizard-type="action-submit">
-                                                                Concludi Progetto Formativo
-                                                            </div>
-                                                            <div id="go_next" class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
-                                                                Avanti
-                                                            </div>
+                                                        <div class="btn btn-primary" 
+                                                             data-ktwizard-type="action-submit">
+                                                            Concludi Progetto Formativo
                                                         </div>
-                                                    </form>
-                                                </div>
+                                                        <div id="go_next" class="btn btn-primary" data-ktwizard-type="action-next">
+                                                            Avanti
+                                                        </div>
+                                                    </div>
+                                                </form>
                                             </div>
-                                        </div>                        
-                                    </div>
+                                        </div>
+                                    </div>                        
                                 </div>
-                                <%if (fancy) {%>
-                                <%@ include file="menu/footer.jsp"%>
-                                <%}%>
                             </div>
+                            <%if (fancy) {%>
+                            <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
+                            <%}%>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
-            <i class="fa fa-arrow-up"></i>
-        </div>
-        <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/custom/general/components/extended/blockui1.33.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
-        <!--this page-->
-        <script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-daterangepicker.js" type="text/javascript"></script><!--usa questo per modificare daterangepicker-->
-        <script src="<%=src%>/assets/vendors/general/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/custom/wizard/wizard-concludiPrg.js" type="text/javascript" id="wizCp" data-context="<%=request.getContextPath()%>"></script>
-        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/input-mask.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/inputmask/dist/inputmask/inputmask.js" type="text/javascript"></script>
-        <script src="<%=src%>/assets/vendors/general/inputmask/dist/inputmask/jquery.inputmask.js" type="text/javascript"></script>
+    </div>
+    <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0066CC">
+        <i class="fa fa-arrow-up"></i>
+    </div>
 
-        <script src="https://cdn.tiny.cloud/1/x58q84nl0ol5hipr98106p13ns8tn6unummy0pcynuezjrhf/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/perfect-scrollbar/dist/perfect-scrollbar.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/sticky-js/dist/sticky.min.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/app/custom/general/components/extended/blockui1.33.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
+    <!--this page-->
+    <script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-daterangepicker.js" type="text/javascript"></script><!--usa questo per modificare daterangepicker-->
+    <script src="<%=src%>/assets/vendors/general/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/app/custom/wizard/wizard-concludiPrg.js" type="text/javascript" id="wizCp" data-context="<%=request.getContextPath()%>"></script>
+    <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/input-mask.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/inputmask/dist/inputmask/inputmask.js" type="text/javascript"></script>
+    <script src="<%=src%>/assets/vendors/general/inputmask/dist/inputmask/jquery.inputmask.js" type="text/javascript"></script>
+
+    <script src="https://cdn.tiny.cloud/1/x58q84nl0ol5hipr98106p13ns8tn6unummy0pcynuezjrhf/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 
-        <script id="concludiPrg" src="<%=src%>/page/sa/js/concludiPrg.js<%="?dummy=" + String.valueOf(new Date().getTime())%>" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
-        <script type="text/javascript">
+   <script id="concludiPrg" src="<%=src%>/page/sa/js/concludiPrg.js<%="?dummy=" + String.valueOf(new Date().getTime())%>" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
 
-                                                                                       $(function () {
-                                                                                           tinymce.init({
-                                                                                               selector: '.tinyta',
-                                                                                               height: 200,
-                                                                                               menubar: false,
-                                                                                               statusbar: false,
-                                                                                               schema: 'html5',
-                                                                                               toolbar1: 'undo redo',
-                                                                                               language: 'it'
-                                                                                           });
-                                                                                       });
+    <script type="text/javascript">
 
-                                                                                       var KTAppOptions = {
-                                                                                           "colors": {
-                                                                                               "state": {
-                                                                                                   "brand": "#5d78ff",
-                                                                                                   "dark": "#282a3c",
-                                                                                                   "light": "#ffffff",
-                                                                                                   "primary": "#5867dd",
-                                                                                                   "success": "#34bfa3",
-                                                                                                   "info": "#36a3f7",
-                                                                                                   "warning": "#ffb822"
-                                                                                               },
-                                                                                               "base": {
-                                                                                                   "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                                                                   "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                                                                                               }
-                                                                                           }
-                                                                                       };
-        </script>
-    </body>
+                                                                                    $(function () {
+                                                                                        tinymce.init({
+                                                                                            selector: '.tinyta',
+                                                                                            height: 200,
+                                                                                            menubar: false,
+                                                                                            statusbar: false,
+                                                                                            schema: 'html5',
+                                                                                            toolbar1: 'undo redo',
+                                                                                            language: 'it'
+                                                                                        });
+                                                                                    });
+
+                                                                                    var KTAppOptions = {
+                                                                                        "colors": {
+                                                                                            "state": {
+                                                                                                "brand": "#5d78ff",
+                                                                                                "dark": "#282a3c",
+                                                                                                "light": "#ffffff",
+                                                                                                "primary": "#5867dd",
+                                                                                                "success": "#34bfa3",
+                                                                                                "info": "#36a3f7",
+                                                                                                "warning": "#ffb822"
+                                                                                            },
+                                                                                            "base": {
+                                                                                                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                                                                                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                                                                            }
+                                                                                        }
+                                                                                    };
+    </script>
+</body>
 </html>
 <%}
     }%>

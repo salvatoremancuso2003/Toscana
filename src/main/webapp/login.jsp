@@ -208,7 +208,7 @@
                                             return false;
                                         }
                                         swal.fire({
-                                            title: 'Sto Accedendo...',
+                                            title: 'Login in corso...',
                                             text: '',
                                             onOpen: function () {
                                                 swal.showLoading();

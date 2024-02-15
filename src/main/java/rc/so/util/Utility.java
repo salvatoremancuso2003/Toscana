@@ -729,6 +729,10 @@ public class Utility {
     }
 
     public static TipoDoc filterDocById(List<TipoDoc> docs, Long id) {
+        if(docs.isEmpty()){
+            return null;
+        }
+                
         return docs.stream().filter(s -> s.getId() == id).findFirst().orElse(null);
     }
 
@@ -794,6 +798,11 @@ public class Utility {
     }
 
     public static DocumentiPrg filterByTipo(ProgettiFormativi p, TipoDoc t) {
+        if(p.getDocumenti() == null || t==null  ){
+            return null;
+        }
+        
+        
         return p.getDocumenti().stream().filter(d -> d.getTipo().getId() == t.getId()).findFirst().orElse(null);
     }
 

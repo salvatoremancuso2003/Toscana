@@ -46,7 +46,7 @@
     <div class="kt-aside  kt-aside--fixed  kt-grid__item kt-grid kt-grid--desktop kt-grid--hor-desktop" id="kt_aside" >
 
         <!-- begin:: Aside -->
-        <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand"  >
+      <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand" style="background-color: #0059b3 !important; border: solid 3px #0059b3">
             <div class="kt-aside__brand-logo" >
                 <a href="indexSoggettoAttuatore.jsp">
         

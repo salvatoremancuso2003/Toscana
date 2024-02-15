@@ -32,7 +32,7 @@
             Entity e = new Entity();
             ProgettiFormativi p = e.getEm().find(ProgettiFormativi.class, Long.parseLong(request.getParameter("id")));
             List<TipoDoc> tipo_doc_obbl = new ArrayList<>();
-            if(!p.getStato().getId().equals("FA")){//serve a non far vedere i documenti che non deve caricare il micro
+            if (!p.getStato().getId().equals("FA")) {//serve a non far vedere i documenti che non deve caricare il micro
                 tipo_doc_obbl = e.getTipoDoc(p.getStato());
             }
             List<DocumentiPrg> documeti = e.getDocPrg(p);
@@ -119,11 +119,11 @@
                                             <div class='row'>
                                                 <div class='col-6 paddig_0_r' data-container="body" data-html="true" data-toggle="kt-tooltip" title="Visualizza documento" style="text-align: center;">
                                                     <a target='_blank' href='<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=d.getPath()%>' class='btn-icon kt-font-io document'>
-                                                        <i class='fa fa-file-<%=d.getTipo().getEstensione().getId()%>' style='font-size: 100px;'></i>
+                                                        <i class='fa fa-file-<%=d.getTipo().getEstensione()%>' style='font-size: 100px;'></i>
                                                     </a>
                                                 </div>
                                                 <div class='col-6 paddig_0_l' style='text-align: left;'>
-                                                    <a class="btn btn-icon btn-sm btn-io-n" href="javascript:void(0);" onclick="changeDoc(<%=d.getId()%>, '<%=d.getTipo().getEstensione().getEstensione().replaceAll("\"", "&quot;")%>', '<%=d.getTipo().getEstensione().getMime_type()%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Cambia documento">
+                                                    <a class="btn btn-icon btn-sm btn-io-n" href="javascript:void(0);" onclick="changeDoc(<%=d.getId()%>, '<%=d.getTipo().getEstensione().replaceAll("\"", "&quot;")%>', '<%=d.getTipo().getMimetype()%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Cambia documento">
                                                         <i class="fa fa-exchange-alt"></i>
                                                     </a>
                                                 </div>
@@ -173,7 +173,7 @@
                                         <div class='col-lg-2 col-md-4 col-sm-6'>
                                             <div class='row'>
                                                 <div class='col-6 paddig_0_r' style="text-align: center;">
-                                                    <a href='javascript:void(0);' onclick="uploadDoc(<%=p.getId()%>,<%=t.getId()%>, '<%=t.getEstensione().getEstensione().replaceAll("\"", "&quot;")%>', '<%=t.getEstensione().getMime_type()%>');" class='btn-icon kt-font-warning document'>
+                                                    <a href='javascript:void(0);' onclick="uploadDoc(<%=p.getId()%>,<%=t.getId()%>, '<%=t.getEstensione().replaceAll("\"", "&quot;")%>', '<%=t.getMimetype()%>');" class='btn-icon kt-font-warning document'>
                                                         <i class='fa fa-file-upload' style='font-size: 100px;'></i>
                                                     </a>
                                                 </div>

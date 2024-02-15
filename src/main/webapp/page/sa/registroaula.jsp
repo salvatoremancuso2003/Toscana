@@ -33,10 +33,10 @@
             List<LezioneCalendario> lezioniCalendarioFASEB = e.getLezioniByModello(4);
             ModelliPrg m3 = Utility.filterModello3(p.getModelli());
             ModelliPrg m4 = Utility.filterModello4(p.getModelli());
-
+            
             List<Lezioni_Modelli> lezioniA = m3.getLezioni();
             List<LezioneCalendario> grouppedByLezioneA = Utility.grouppedByLezione(lezioniCalendarioFASEA);
-
+            
             int gruppi = Utility.numberGroupsModello4(p);
             List<Lezioni_Modelli> lezioniB = m4.getLezioni();
             List<LezioneCalendario> grouppedByLezioneB = Utility.grouppedByLezione(lezioniCalendarioFASEB);
@@ -82,11 +82,13 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
     </head>
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
         <!-- begin:: Page -->
         <div class="kt-grid kt-grid--hor kt-grid--root">
+            <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
                     <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
@@ -96,25 +98,26 @@
                                     <div class="form-group form-group-sm row">
                                         <div class="col-12">
                                             <div class="row">
-                                                <h5 class="text-primary">Registro Lezioni - Modalità svolgimento <u class="text-primary">IN PRESENZA</u>: Lezioni programmate</h5>
+                                                <h4 class="text-primary">Registro Lezioni - Modalità svolgimento <u class="text-primary">IN PRESENZA</u>: Lezioni programmate</h4>
                                             </div>
-                                            <table class="table table-bordered" style="width: 100%;" >
+                                            <hr style="color: white">
+                                            <table class="responsive" style="width: 100%;" >
                                                 <thead>
-                                                <th>FASE</th>
-                                                <th>#</th>
-                                                <th>GIORNO</th>
-                                                <th>ORA INIZIO</th>
-                                                <th>ORA FINE</th>
-                                                <th>GRUPPO</th>
-                                                <th>AZIONI</th>
+                                                <th class="text-primary">FASE</th>
+                                                <th class="text-primary">#</th>
+                                                <th class="text-primary">GIORNO</th>
+                                                <th class="text-primary">ORA INIZIO</th>
+                                                <th class="text-primary">ORA FINE</th>
+                                                <th class="text-primary">GRUPPO</th>
+                                                <th class="text-primary">AZIONI</th>
                                                 </thead>
                                                 <%
                                                     for (LezioneCalendario lez : grouppedByLezioneA) {
                                                         Lezioni_Modelli tempA = Utility.lezioneFiltered(lezioniA, lez.getId());
                                                         if (tempA != null) {
-
+                                                            
                                                             Registro_completo rc1 = rc.stream().filter(rr1 -> rr1.getData().equals(new DateTime(tempA.getGiorno()))).findAny().orElse(null);
-
+                                                            
                                                             String operazioni = rc1 != null
                                                                     ? "<a href='registroaula_edit.jsp?idpr=" + idpr + "&data=" + new DateTime(tempA.getGiorno()).toString("yyyyMMdd") + "&giorno=" + lez.getLezione() + "&fase=A' "
                                                                     + "class='btn btn-primary btn-icon btn-circle btn-sm' data-container='body' data-html='true' data-toggle='kt-tooltip'"
@@ -122,7 +125,7 @@
                                                                     : "<a href='registroaula_edit.jsp?idpr=" + idpr + "&data=" + new DateTime(tempA.getGiorno()).toString("yyyyMMdd") + "&giorno=" + lez.getLezione() + "&fase=A' "
                                                                     + "class='btn btn-danger btn-icon btn-circle btn-sm' data-container='body' data-html='true' data-toggle='kt-tooltip'"
                                                                     + "title='Carica Registro'><i class='fa fa-upload'></i></a>";
-
+                                                            
                                                             boolean passato = new DateTime(tempA.getGiorno()).isBefore(oggi);
                                                             String azioni = passato
                                                                     ? operazioni
@@ -145,10 +148,10 @@
                                                         for (LezioneCalendario lez : grouppedByLezioneB) {
                                                             Lezioni_Modelli tempB = Utility.lezioneFilteredByGroup(lezioniB, lez.getId(), i);
                                                             if (tempB != null) {
-
+                                                                
                                                                 Registro_completo rc1 = rc.stream().filter(rr1 -> rr1.getData()
                                                                         .equals(new DateTime(tempB.getGiorno()))).findAny().orElse(null);
-
+                                                                
                                                                 String operazioni = rc1 != null
                                                                         ? "<a href='registroaula_edit.jsp?idpr=" + idpr + "&data=" + new DateTime(tempB.getGiorno()).toString("yyyyMMdd") + "&gruppo=" + i + "&giorno=" + lez.getLezione() + "&fase=B' "
                                                                         + "class='btn btn-primary btn-icon btn-circle btn-sm' data-container='body' data-html='true' data-toggle='kt-tooltip'"
@@ -156,7 +159,7 @@
                                                                         : "<a href='registroaula_edit.jsp?idpr=" + idpr + "&data=" + new DateTime(tempB.getGiorno()).toString("yyyyMMdd") + "&gruppo=" + i + "&giorno=" + lez.getLezione() + "&fase=B' ' "
                                                                         + "class='btn btn-danger btn-icon btn-circle btn-sm' data-container='body' data-html='true' data-toggle='kt-tooltip'"
                                                                         + "title='Carica Registro'><i class='fa fa-upload'></i></a>";
-
+                                                                
                                                                 boolean passato = new DateTime(tempB.getGiorno()).isBefore(oggi);
                                                                 String azioni = passato
                                                                         ? operazioni
@@ -185,14 +188,16 @@
             </div>
         </div>
     </div>
+
 </div>
+<%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
 </div>
-<div id="kt_scrolltop" class="kt-scrolltop">
-    <i class="fa fa-arrow-up"></i>
+<div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0066CC"
+     <i class="fa fa-arrow-up"></i>
 </div>
+<script src="../../Bootstrap2024/assets/js/bootstrap-italia.bundle.min.js"></script>
 <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
 <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
-<script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<%=src%>/assets/vendors/general/js-cookie/src/js.cookie.js" type="text/javascript"></script>
 <script src="<%=src%>/assets/soop/js/moment.min.js" type="text/javascript"></script>
 <script src="<%=src%>/assets/vendors/general/tooltip.js/dist/umd/tooltip.min.js" type="text/javascript"></script>

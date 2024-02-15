@@ -36,14 +36,14 @@
             List<DocumentiPrg> registri = new ArrayList<>();
             e.close();
             
-            for(DocumentiPrg d : documeti){
-                if(d.getGiorno() != null && Action.isModifiable(d.getTipo().getModifiche_stati(), p.getStato().getId())){//prendo solo i registri
+            for (DocumentiPrg d : documeti) {
+                if (d.getGiorno() != null && Action.isModifiable(d.getTipo().getModifiche_stati(), p.getStato().getId())) {//prendo solo i registri
                     registri.add(d);
                 }
             }
             
             SimpleDateFormat sdf_day = new SimpleDateFormat("dd/MM/yyyy");
-            
+
 //            registri = documeti.stream()
 //                    .filter(d -> d.getGiorno() != null && Action.isModifiable(d.getTipo().getModifiche_stati(), p.getStato().getId()))
 //                    .collect(Collectors.toList());//prendo solo i registri
@@ -85,6 +85,7 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
+        <link rel="stylesheet" href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css"/>
         <!--this page-->
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
         <!--fancy-->
@@ -95,6 +96,7 @@
     </head>
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
         <div class="kt-grid kt-grid--hor kt-grid--root">
+            <%@include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp" %>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -102,15 +104,15 @@
                             <div class="kt-portlet kt-portlet--mobile">
                                 <div class="kt-portlet__head">
                                     <div class="kt-portlet__head-label">
-                                        <h3 class="kt-portlet__head-title">
+                                        <h3 class="text-primary">
                                             Carica Documenti:
                                         </h3>
                                     </div>
                                 </div>
                                 <div class="kt-portlet__body">
                                     <input type="hidden" id="id_progetto" value="<%=p.getId()%>">
-                                    <h4 class='kt-font-io' style="padding-top: 20px;">Documenti Modificabili:</h4>
-                                    <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
+                                    <h4 class='text-primary' style="padding-top: 20px;">Documenti Modificabili:</h4>
+                                    <div><hr></div>
                                     <div class="row">
                                         <%String docente_nome, scadenza, giorno;
                                             for (DocumentiPrg d : documeti) {
@@ -122,12 +124,12 @@
                                         <div class='col-lg-2 col-md-4 col-sm-6'>
                                             <div class='row'>
                                                 <div class='col-6 paddig_0_r' data-container="body" data-html="true" data-toggle="kt-tooltip" title="Visualizza documento" style="text-align: center;">
-                                                    <a target='_blank' href='<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=d.getPath()%>' class='btn-icon kt-font-io document'>
+                                                    <a target='_blank' href='<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=d.getPath()%>' class='btn-icon text-warning m-4'>
                                                         <i class='fa fa-file-pdf' style='font-size: 100px;'></i>
                                                     </a>
                                                 </div>
                                                 <div class='col-6 paddig_0_l' style='text-align: left;'>
-                                                    <a class="btn btn-icon btn-sm btn-io-n" href="javascript:void(0);" onclick="changeDoc(<%=d.getId()%>,<%=d.getScadenza() != null ? d.getScadenza().getTime() : null%>, '<%=d.getTipo().getEstensione().replaceAll("\"", "&quot;")%>', '<%=d.getTipo().getMimetype()%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Cambia documento">
+                                                    <a class="btn-icon text-warning m-4" href="javascript:void(0);" onclick="changeDoc(<%=d.getId()%>,<%=d.getScadenza() != null ? d.getScadenza().getTime() : null%>, '<%=d.getTipo().getEstensione().replaceAll("\"", "&quot;")%>', '<%=d.getTipo().getMimetype()%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Cambia documento">
                                                         <i class="fa fa-exchange-alt"></i>
                                                     </a>
                                                 </div>
@@ -144,22 +146,22 @@
                                     </div>
 
                                     <%if (!registri.isEmpty()) {%>
-                                    <h4 class='kt-font-io' style="padding-top: 20px;">Registri:</h4><h5 class="kt-font-danger kt-font-boldest">*Se si dovesse avere la necessità di cambiare la data del registro, il registro errato dovrà essere eliminato e ricaricato in seguito</h5>
-                                    <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
+                                    <h4 class='text-primary' style="padding-top: 20px;">Registri:</h4><h5 class="text-warning">*Se si dovesse avere la necessità di cambiare la data del registro, il registro errato dovrà essere eliminato e ricaricato in seguito</h5>
+                                     <div><hr></div>
                                     <div class="row">
                                         <%for (DocumentiPrg d : registri) {%>
                                         <div class='col-lg-2 col-md-4 col-sm-6'>
                                             <div class='row'>
                                                 <div class='col-6 paddig_0_r' style="text-align: center;">
-                                                    <a class='btn-icon kt-font-io document'>
+                                                    <a class='btn-icon text-warning m-4'>
                                                         <i class='fa fa-clipboard-list' style='font-size: 100px;'></i>
                                                     </a>
                                                 </div>
                                                 <div class='col-6 paddig_0_l' style='text-align: left;'>
-                                                    <a class="btn btn-icon btn-sm btn-io-n fancyBoxRafFull" href="modifyRegistroAula.jsp?id=<%=d.getId()%>" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Modifica Registro">
+                                                    <a class="btn-icon text-warning m-4 fancyBoxRafFull" href="modifyRegistroAula.jsp?id=<%=d.getId()%>" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Modifica Registro">
                                                         <i class="fa fa-edit"></i>
                                                     </a><br>
-                                                    <a class="btn btn-icon btn-sm btn-danger" href="javascript:void(0);" onclick="deleteRegister(<%=d.getId()%>, '<%=sdf_day.format(d.getGiorno())%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Elimina Registro" style="margin-top: 3px;">
+                                                    <a class="btn-icon text-danger m-4" href="javascript:void(0);" onclick="deleteRegister(<%=d.getId()%>, '<%=sdf_day.format(d.getGiorno())%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Elimina Registro" style="margin-top: 3px;">
                                                         <i class="fa fa-trash-alt"></i>
                                                     </a>
                                                 </div>
@@ -175,28 +177,28 @@
                                     <%}%>
                                     <%if (!tipo_doc_obbl.isEmpty()) {%>
                                     <br>
-                                    <h4 class='kt-font-io' style="padding-top: 20px;">Documenti Da Caricare:</h4>
-                                    <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
+                                    <h4 class='text-primary' style="padding-top: 20px;">Documenti Da Caricare:</h4>
+                                     <div><hr></div>
                                     <div class="row">
                                         <%for (TipoDoc t : tipo_doc_obbl) {%>
                                         <div class='col-lg-2 col-md-4 col-sm-6'>
                                             <div class='row'>
                                                 <div class='col-6 paddig_0_r' style="text-align: center;">
-                                                    <a href='javascript:void(0);' onclick="uploadDoc(<%=p.getId()%>,<%=t.getId()%>, '<%=t.getEstensione().replaceAll("\"", "&quot;")%>', '<%=t.getMimetype()%>');" class='btn-icon kt-font-warning document'>
+                                                    <a href='javascript:void(0);' onclick="uploadDoc(<%=p.getId()%>,<%=t.getId()%>, '<%=t.getEstensione().replaceAll("\"", "&quot;")%>', '<%=t.getMimetype()%>');" class='btn-icon text-warning m-4'>
                                                         <i class='fa fa-file-upload' style='font-size: 100px;'></i>
                                                     </a>
                                                 </div>
                                                 <div class='col-6 paddig_0_l' style="text-align: left;">
-                                                    <%=t.getObbligatorio() == 1 ? "<label class='kt-font-danger kt-font-boldest' style='font-size: 30px;text-align:left;'>*</label>" : ""%>
+                                                    <%=t.getObbligatorio() == 1 ? "<label class='text-danger' style='font-size: 30px;text-align:left;'>*</label>" : ""%>
                                                 </div>
                                                 <div class='offset-1 row'>
-                                                    <h5 class='kt-font-io'>Carica <%=t.getDescrizione()%></h5>
+                                                    <h5 class='text-primary'>Carica <%=t.getDescrizione()%></h5>
                                                 </div>
                                             </div>
                                         </div>
                                         <%}%>
                                     </div>
-                                    <label class="kt-font-danger kt-font-bold"><font size="2" >* Documenti Obbligatori</font></label>
+                                    <label class="text-danger"><font size="2" >* Documenti Obbligatori</font></label>
                                         <%}%>
                                 </div>
                             </div>
@@ -204,10 +206,12 @@
                     </div>	
                 </div>
             </div>
+            <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0066CC">
             <i class="fa fa-arrow-up"></i>
         </div>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.bundle.min.js"></script>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/popper.js/dist/umd/popper.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
@@ -227,7 +231,7 @@
         <!--this page-->
         <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
-        <script id="uploadDocument" src="<%=src%>/page/sa/js/uploadDocument.js<%="?dummy="+String.valueOf(new Date().getTime())%>" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
+        <script id="uploadDocument" src="<%=src%>/page/sa/js/uploadDocument.js<%="?dummy=" + String.valueOf(new Date().getTime())%>" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
         <script type="text/javascript">
                                                         var KTAppOptions = {
                                                             "colors": {
