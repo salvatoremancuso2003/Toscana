@@ -79,16 +79,10 @@
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
                     <%@ include file="menu/head.jsp"%>
                     <!-- begin:: Footer -->
-                    <div class="container-fluid">
-                        <!-- begin:: Content Head -->
-                        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                            <div class="kt-subheader__main">
-                                <h3 class="kt-subheader__title">CAD</h3>
-                                <span class="kt-subheader__separator kt-subheader__separator--v"></span>
-                                <a class="kt-subheader__breadcrumbs-link">Utenti CPI</a>
-                            </div>
-                        </div>
-                    </div>
+                    <!--<div class="container-fluid">
+                        <h3 style="color: #0021c3;">CAD</h3>
+                        <p1>Utenti CPI</p1>
+                    </div>-->
                     <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content" style="padding:100px;">
                         <div class="container-fluid">  
                             <div class="row" id="offsetresult">
@@ -97,6 +91,11 @@
                                         <div class="kt-portlet__head">
                                             <div class="kt-portlet__head-label col-lg-8">
                                                 <div class="col-lg-4">
+                                                    <div>
+                                                    <h6> CAD </h6>
+                                                    <p>Utenti cpi</p>
+                                                    </div>
+                                                    <hr>
                                                     <h3 class="kt-portlet__head-title text" >
                                                         Risultati :
                                                     </h3>

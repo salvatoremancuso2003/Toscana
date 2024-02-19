@@ -67,6 +67,10 @@
             .kt-section__title {
                 font-size: 1.2rem!important;
             }
+            
+            body{
+                background-color: #ccc;
+            }
         </style>
 
 

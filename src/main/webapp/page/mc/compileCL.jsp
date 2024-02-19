@@ -175,7 +175,7 @@
                 border-bottom: 1px solid #363a90;
                 padding-left: 0px!important;
             }
-            
+
             body{
                 background-color :#ccc;
             }
@@ -198,15 +198,6 @@
                     <div class="container-fluid">
                         <%@ include file="menu/head.jsp"%>
                         <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-                            <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                                <div class="kt-subheader   kt-grid__item" id="kt_subheader">
-                                    <div class="kt-subheader__main">
-                                        <h3 class="kt-subheader__title">Progetto Formativo</h3>
-                                        <span class="kt-subheader__separator kt-subheader__separator--v"></span>
-                                        <a class="kt-subheader__breadcrumbs-link">Rendicontazione</a>
-                                    </div>
-                                </div>
-                            </div>
                             <%} else {%>
 
                             <div class="kt-grid kt-grid--hor kt-grid--root">
@@ -217,11 +208,16 @@
                                         <!-- begin:: Content -->
 
                                         <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
-                                            <div class="row">
+                                            <div class="container-fluid">
+                                                <h5> PROGETTO FORMATIVO </h5>
+                                                <p1> Rendicontazione </p1>
                                                 <!--<div class="alert alert-info col-12" style="text-align: center; display: flow-root; background: #363a90; border: 1px solid #363a90;">
                                                 <%=msg%>
+                                                
                                             </div>-->
+                                                <hr>
                                             </div>
+
                                             <div class="row" style="height: 100%;">
                                                 <div class="kt-grid  kt-wizard-v1 kt-wizard-v1--white" id="kt_wizard_v1" data-ktwizard-state="step-first" style="width: 100%;">
                                                     <div class="kt-grid__item" style="">
@@ -884,7 +880,7 @@
             </div>
             <%@include file="../../Bootstrap2024/index/login/Footer_login.jsp" %>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #2857b7">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
@@ -920,35 +916,35 @@
         <script id="compileCL" src="<%=src%>/page/mc/js/compileCL.js<%="?dummy=" + String.valueOf(new Date().getTime())%>" data-context="<%=request.getContextPath()%>" type="text/javascript"></script>
         <script type="text/javascript">
 
-                                                                                                $(function () {
-                                                                                                    tinymce.init({
-                                                                                                        selector: '.tinyta',
-                                                                                                        height: 200,
-                                                                                                        menubar: false,
-                                                                                                        statusbar: false,
-                                                                                                        schema: 'html5',
-                                                                                                        toolbar1: 'undo redo',
-                                                                                                        language: 'it'
+                                                                                                    $(function () {
+                                                                                                        tinymce.init({
+                                                                                                            selector: '.tinyta',
+                                                                                                            height: 200,
+                                                                                                            menubar: false,
+                                                                                                            statusbar: false,
+                                                                                                            schema: 'html5',
+                                                                                                            toolbar1: 'undo redo',
+                                                                                                            language: 'it'
+                                                                                                        });
                                                                                                     });
-                                                                                                });
 
-                                                                                                var KTAppOptions = {
-                                                                                                    "colors": {
-                                                                                                        "state": {
-                                                                                                            "brand": "#5d78ff",
-                                                                                                            "dark": "#282a3c",
-                                                                                                            "light": "#ffffff",
-                                                                                                            "primary": "#5867dd",
-                                                                                                            "success": "#34bfa3",
-                                                                                                            "info": "#36a3f7",
-                                                                                                            "warning": "#ffb822"
-                                                                                                        },
-                                                                                                        "base": {
-                                                                                                            "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                                                                            "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                                                                                    var KTAppOptions = {
+                                                                                                        "colors": {
+                                                                                                            "state": {
+                                                                                                                "brand": "#5d78ff",
+                                                                                                                "dark": "#282a3c",
+                                                                                                                "light": "#ffffff",
+                                                                                                                "primary": "#5867dd",
+                                                                                                                "success": "#34bfa3",
+                                                                                                                "info": "#36a3f7",
+                                                                                                                "warning": "#ffb822"
+                                                                                                            },
+                                                                                                            "base": {
+                                                                                                                "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                                                                                                "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                                                                                            }
                                                                                                         }
-                                                                                                    }
-                                                                                                };
+                                                                                                    };
         </script>
     </body>
 </html>
