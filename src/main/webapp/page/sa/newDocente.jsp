@@ -94,7 +94,7 @@
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
                     <%@ include file="menu/head.jsp"%>
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
-                        <!--<div class="kt-subheader   kt-grid__item" id="kt_subheader">
+                        <div class="kt-subheader   kt-grid__item" id="kt_subheader">
                             <div class="kt-subheader   kt-grid__item" id="kt_subheader">
                                 <div class="kt-subheader__main">
                                     <h3 class="kt-subheader__title">Docenti</h3>
@@ -102,7 +102,7 @@
                                     <a class="kt-subheader__breadcrumbs-link">Aggiungi</a>
                                 </div>
                             </div>
-                        </div>-->
+                        </div>
                         <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
 
                             <div class="row">
@@ -446,7 +446,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+                <div id="kt_scrolltop" class="kt-scrolltop" style="background-color: #0021c3;">
             <i class="fa fa-arrow-up"></i>
         </div>
         <!--begin:: Global Mandatory Vendors -->

@@ -164,7 +164,7 @@
                                                 <input type="hidden" id="orastandardlezione" value="<%=lm.getLezione_calendario().getOre()%>"/>
                                                 <div class="form-row">
                                                     <div class="col-lg-4">
-                                                        <h6 id="hOraInizio"> <b> ORA INIZIO </b> </h6> 
+                                                        <h6 id="hOraInizio"> <b> ORA INIZIO </b> </h6>
                                                         <%if (modify) {%>
                                                         <div class="dropdown bootstrap-select form-control kt-" id="orai_div" style="padding: 0;height: 35px;">
                                                             <select class="form-control kt-select2-general" id="orai" name="orai" 
