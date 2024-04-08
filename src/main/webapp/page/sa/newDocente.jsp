@@ -416,7 +416,7 @@
                                                                     </div>
                                                                     <div class="form-group col-xl-6 col-lg-6">
                                                                         <label>Scaricare il modello con i dati inseriti per poi caricarlo firmato digitalmente (.p7m CAdES, .pdf PAdES) nel campo seguente.</label>
-                                                                        <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                                        <button class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                                 type="button" 
                                                                                 onclick="return model_funct('<%=richiesta.getId()%>');">
                                                                             Scarica
@@ -463,8 +463,8 @@
                                                     <div class="kt-form__actions">
                                                         <div class="row">
                                                             <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                                <a id="submit" href="javascript:void(0);" class="btn btn-io"><font color='white'>Salva</font></a>
-                                                                <a href="<%=pageName_%>" class="btn btn-io-n"><font color='white'>Reset</font></a>
+                                                                <a id="submit" href="javascript:void(0);" class="btn btn-primary"><font color='white'>Salva</font></a>
+                                                                <a href="<%=pageName_%>" class="btn btn-warning"><font color='white'>Reset</font></a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -480,7 +480,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+                <div id="kt_scrolltop" style="background-color: #1d32a6" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <!--begin:: Global Mandatory Vendors -->
