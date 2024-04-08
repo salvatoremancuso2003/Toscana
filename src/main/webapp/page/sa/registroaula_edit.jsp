@@ -21,7 +21,8 @@
 <%@page import="rc.so.db.Entity"%>
 <%@page import="rc.so.entity.Item"%>
 <%@page import="rc.so.domain.User"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="application/json; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%
     User us = (User) session.getAttribute("user");
     if (us == null) {
