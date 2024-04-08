@@ -21,8 +21,8 @@
 <%@page import="rc.so.db.Entity"%>
 <%@page import="rc.so.entity.Item"%>
 <%@page import="rc.so.domain.User"%>
-<%@ page language="java" contentType="application/json; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <%
     User us = (User) session.getAttribute("user");
     if (us == null) {
@@ -430,6 +430,7 @@
 <script type="text/javascript" src="<%=src%>/assets/soop/js/jquery.fancybox.min.js"></script>
 <script type="text/javascript" src="<%=src%>/assets/soop/js/fancy.js"></script>
 <input type="hidden" id="systemtype" value="<%=Utility.iswindows()%>" />
+<script type="text/javascript" src="../../assets/DOMPurify/src/purify.js"></script>
 <script type="text/javascript">
                                                             var KTAppOptions = {
                                                                 "colors": {
@@ -488,6 +489,7 @@
                                                                         }
                                                                 );
                                                             }
+                                                            
 
 </script>
 </body>

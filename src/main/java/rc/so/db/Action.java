@@ -22,6 +22,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import javax.persistence.TypedQuery;
 import static org.apache.commons.io.FilenameUtils.separatorsToSystem;
+import org.apache.commons.text.StringEscapeUtils;
 
 /**
  *
@@ -36,8 +37,8 @@ public class Action {
             db.closeDB();
         } catch (Exception e) {
         }
-   }
-    
+    }
+
     public static File createFile_R(String path) {
         try {
             File out = new File(separatorsToSystem(path));
