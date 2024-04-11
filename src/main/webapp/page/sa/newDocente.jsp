@@ -481,7 +481,7 @@
                 </div>
             </div>
         </div>
-                <div id="kt_scrolltop" style="background-color: #1d32a6" class="kt-scrolltop">
+                <div id="kt_scrolltop" style="background-color: #0059b3" style="background-color: #1d32a6" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <!--begin:: Global Mandatory Vendors -->
