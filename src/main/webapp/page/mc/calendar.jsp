@@ -377,7 +377,7 @@
                                                         <label class="custom-file-label selected" name="label_registrofirmato">Scegli File</label>
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-io"><i class="fa fa-save"></i> SALVA DATI</button>
+                                                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> SALVA DATI</button>
                                             </form>
                                             <%} else {%>
                                             </form>

@@ -143,7 +143,7 @@
                                                     <div class="col-lg-4 col-md-6 col-sm-12 contatto" style="margin-top: 0.5rem;">
                                                         <div class="input-group">
                                                             <div class="input-group-prepend">
-                                                                <a href="javascript:void(0);" onclick="showConversation(<%=s.getId()%>, false)" class="btn btn-io btn-icon"><i class="fa fa-comment"></i></a>
+                                                                <a href="javascript:void(0);" onclick="showConversation(<%=s.getId()%>, false)" class="btn btn-primary btn-icon"><i class="fa fa-comment"></i></a>
                                                             </div>
                                                             <input type="text" class="form-control" readonly value="<%=s.getRagionesociale()%>">
                                                         </div>                                                       

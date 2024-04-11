@@ -178,7 +178,7 @@
                                             <br>
                                             <div class="kt-form__actions">
                                                 <div class="row" style="  align-items: center; justify-content: center;">
-                                                    <button id="createGroups" disabled style="display: none" class="btn btn-io" style="font-family: Poppins;"><i class="fa fa-users"></i> Crea gruppi</button>
+                                                    <button id="createGroups" disabled style="display: none" class="btn btn-primary" style="font-family: Poppins;"><i class="fa fa-users"></i> Crea gruppi</button>
                                                 </div>
                                             </div>
                                         </div> 
@@ -305,7 +305,7 @@
                                                             <label>Scaricare il modello con il calendario inserito per poi caricarlo
                                                                 firmato digitalmente (.p7m CAdES, .pdf PAdES) nel campo sottostante.</label>
                                                             <div class='col-lg-2 col-md-4 col-sm-6'>
-                                                                <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                                <button class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                         type="submit" 
                                                                         >
                                                                     Scarica
@@ -339,7 +339,7 @@
                                                         </div>           
                                                         <div class="row">
                                                             <div class='col-lg-2 col-md-4 col-sm-6'>
-                                                                <button type="submit"  class="btn btn-io" style="font-family: Poppins"><i class="flaticon2-plus-1"></i> Carica Modello 4</button>
+                                                                <button type="submit"  class="btn btn-primary" style="font-family: Poppins"><i class="flaticon2-plus-1"></i> Carica Modello 4</button>
                                                             </div>
                                                         </div>
                                                     </form>

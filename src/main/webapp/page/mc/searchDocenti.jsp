@@ -429,8 +429,8 @@
                     showCancelButton: true,
                     confirmButtonText: '&nbsp;<i class="la la-check"></i>',
                     cancelButtonText: '&nbsp;<i class="la la-close"></i>',
-                    cancelButtonClass: "btn btn-io-n",
-                    confirmButtonClass: "btn btn-io",
+                    cancelButtonClass: "btn btn-danger",
+                    confirmButtonClass: "btn btn-primary",
                     width: '750px',
                     customClass: {
                         popup: 'animated bounceInUp'

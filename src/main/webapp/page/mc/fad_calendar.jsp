@@ -184,7 +184,7 @@
                                                     </div>
                                                     <div class="form-group row">
                                                         <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                            <button type="submit" class="btn btn-io"><i class="fa fa-save"></i>
+                                                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>
                                                                 Salva</button>
                                                         </div>
                                                     </div>

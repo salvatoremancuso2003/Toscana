@@ -155,8 +155,8 @@
                                     </form>
                                     <div class="form-group">
                                         <div class="kt-form__actions">
-                                            <a href="javascript:void(0);" class="btn btn-io" id="submit"><font color='white'>Salva</font></a>
-                                            <button onclick="location.reload();" class="btn btn-io-n"><font color='white'>Reset</font></button>
+                                            <a href="javascript:void(0);" class="btn btn-primary" id="submit"><font color='white'>Salva</font></a>
+                                            <button onclick="location.reload();" class="btn btn-warning"><font color='white'>Reset</font></button>
                                         </div>
                                     </div>
                                 </div>

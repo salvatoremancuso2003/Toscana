@@ -527,7 +527,7 @@
                                                                 <div class="form-group row">
                                                                     <div class="form-group col-xl-6 col-lg-6">
                                                                         <label>Scaricare il modello con i dati inseriti per poi caricarlo firmato dal NEET nel campo seguente.</label>
-                                                                        <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                                        <button class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                                 type="button" 
                                                                                 onclick="return model_funct('<%=mod_1.getId()%>');"
                                                                                 >
@@ -564,7 +564,7 @@
                                                                 <div class="kt-portlet__foot" style="padding-left: 10px;">
                                                                     <div class="kt-form__actions">
                                                                         <div class="row">
-                                                                            <a id="submit_change" href="javascript:void(0);" class="btn btn-io" style="font-family: Poppins"><i class="flaticon2-plus-1"></i> Aggiungi</a>
+                                                                            <a id="submit_change" href="javascript:void(0);" class="btn btn-primary" style="font-family: Poppins"><i class="flaticon2-plus-1"></i> Aggiungi</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>

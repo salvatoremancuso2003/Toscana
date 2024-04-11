@@ -134,7 +134,7 @@
 
                                                         </div>
                                                         <div class="form-group row"><div class="col-lg-6">
-                                                                <a href="javascript:void(0);" id="submit" class="btn btn-io"><i class="fa fa-check"></i> Invia Richiesta</a>
+                                                                <a href="javascript:void(0);" id="submit" class="btn btn-primary"><i class="fa fa-check"></i> Invia Richiesta</a>
                                                             </div></div>
                                                     </div>
                                                 </div>

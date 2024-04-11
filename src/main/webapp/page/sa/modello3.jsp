@@ -286,7 +286,7 @@
                                                             <label>Scaricare il modello con il calendario inserito per poi caricarlo
                                                                 firmato digitalmente (.p7m CAdES, .pdf PAdES) nel campo sottostante.</label>
                                                             <div class='col-lg-2 col-md-4 col-sm-6'>
-                                                                <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                                <button class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                         type="submit" 
                                                                         >
                                                                     Scarica

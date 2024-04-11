@@ -121,7 +121,7 @@
                                     <div class="kt-portlet__foot">
                                         <div class="kt-form__actions">
                                             <div class="row col-12">
-                                                <button type="submit" class="btn btn-io"><font color='white'><i class="fa fa-video"></i> Apri FAD</font></button>
+                                                <button type="submit" class="btn btn-primary"><font color='white'><i class="fa fa-video"></i> Apri FAD</font></button>
                                             </div>
                                         </div>
                                     </div>

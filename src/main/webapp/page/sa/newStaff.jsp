@@ -147,7 +147,7 @@
                                                 <div class="kt-form__actions">
                                                     <div class="row">
                                                         <div class="col-12 kt-align-center">
-                                                            <a id="submit_<%=i%>" href="javascript:void(0);" class="btn btn-io" style="width:12%;"><font color='white'>Salva</font></a>
+                                                            <a id="submit_<%=i%>" href="javascript:void(0);" class="btn btn-primary" style="width:12%;"><font color='white'>Salva</font></a>
                                                             <a id="delete_<%=i%>" onclick="deleteMembro(<%=i%>)" href="javascript:void(0);" class="btn btn-danger" style="width:12%;display: none;"><font color='white'>Elimina</font></a>
                                                         </div>
                                                     </div>

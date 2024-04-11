@@ -99,7 +99,7 @@
                 background-color: transparent;
             }
 
-            .btn-io:not(:disabled):not(.disabled):active, .btn-io:not(:disabled):not(.disabled).active, .show > .btn-io.dropdown-toggle {
+            .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
                 background-color: #4b4e92!important;
             }
         </style>
@@ -144,7 +144,7 @@
                                                             <input type="text" class="form-control" maxlength="255" onkeypress="counterCharacters()" id="descrizione" name="descrizione" value="<%=u.getDescrizione() == null ? "" : u.getDescrizione()%>">
                                                             <%if (us.getTipo() == 2) {%>
                                                             <div class="input-group-append">
-                                                                <button class="btn btn-io-n" type="button" onclick="saveDescription()">Salva</button>
+                                                                <button class="btn btn-danger" type="button" onclick="saveDescription()">Salva</button>
                                                             </div>
                                                             <%}%>
                                                         </div>
@@ -202,7 +202,7 @@
                                                             <%if (us.getTipo() == 2) {%>
                                                             <div class="col-md-3 kt-align-right">
                                                                 <div class="btn-group" role="group">
-                                                                    <button id="btnGroupDrop1" type="button" class="btn btn-io font-weight-bold dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary font-weight-bold dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                         Carica documento
                                                                     </button>
                                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">

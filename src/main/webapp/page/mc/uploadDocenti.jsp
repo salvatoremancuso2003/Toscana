@@ -112,7 +112,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <a href="javascript:void(0);" id="submit_file" class="btn btn-io">Carica</a>
+                                                                <a href="javascript:void(0);" id="submit_file" class="btn btn-primary">Carica</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -183,7 +183,7 @@
                                                         <div class="kt-form__actions">
                                                             <div class="row">
                                                                 <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                                    <a id="submit" href="javascript:void(0);" class="btn btn-io"><font color='white'>Salva</font></a>
+                                                                    <a id="submit" href="javascript:void(0);" class="btn btn-primary"><font color='white'>Salva</font></a>
                                                                     <a href="<%=StringEscapeUtils.escapeHtml4(pageName_)%>" class="btn btn-warning"><font color='white'>Reset</font></a>
                                                                 </div>
                                                             </div>

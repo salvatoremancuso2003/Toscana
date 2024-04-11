@@ -104,7 +104,7 @@
                                         <div class="kt-portlet__foot">
                                             <div class="kt-form__actions">
                                                 <div class="row">
-                                                    <a id="submit" href="javascript:void(0);" class="btn btn-io">Salva</a>
+                                                    <a id="submit" href="javascript:void(0);" class="btn btn-primary">Salva</a>
                                                 </div>
                                             </div>
                                         </div>

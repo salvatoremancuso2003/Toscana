@@ -96,7 +96,7 @@
                                                 </div>
                                             </div>
                                             <div class="kt-portlet__foot">
-                                                <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                <button class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                         type="button" id="submit"
                                                         >
                                                     Carica

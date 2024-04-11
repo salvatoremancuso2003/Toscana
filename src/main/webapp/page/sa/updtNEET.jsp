@@ -120,7 +120,7 @@
                                             <div class="kt-portlet__head-toolbar">
                                                 <ul class="nav nav-pills nav-pills-sm nav-pills-label nav-pills-bold" role="tablist">
                                                     <li class="nav-item">
-                                                        <a href="#" onclick="submitUpdate();" class="btn btn-io submit_change" style="font-family: Poppins"><i class="flaticon2-accept"></i> Aggiorna</a>
+                                                        <a href="#" onclick="submitUpdate();" class="btn btn-primary submit_change" style="font-family: Poppins"><i class="flaticon2-accept"></i> Aggiorna</a>
                                                         <!--<a href="jascript:void(0);" class="btn btn-io submit_change" style="font-family: Poppins"><i class="flaticon2-accept"></i> Aggiorna</a>-->
                                                     </li>
                                                 </ul>
@@ -570,7 +570,7 @@
                                 "title": 'Errore',
                                 "html": "<h3>Email già presente</h3>",
                                 "type": "error",
-                                cancelButtonClass: "btn btn-io-n",
+                                cancelButtonClass: "btn btn-danger",
                             });
                             $('#email').attr("class", "form-control is-invalid");
                             err = true;
@@ -595,7 +595,7 @@
                                 "title": 'Errore',
                                 "html": "<h3>Codice fiscale già presente</h3>",
                                 "type": "error",
-                                cancelButtonClass: "btn btn-io-n",
+                                cancelButtonClass: "btn btn-danger",
                             });
                             $('#codicefiscale').attr("class", "form-control is-invalid");
                             err = true;
@@ -910,7 +910,7 @@
                                 "title": 'Errore',
                                 "text": "Riprovare, se l'errore persiste contattare il servizio clienti",
                                 "type": "error",
-                                cancelButtonClass: "btn btn-io-n",
+                                cancelButtonClass: "btn btn-danger",
                             });
                         },
                         success: function (resp) {
@@ -922,14 +922,14 @@
                                     "html": "<h4>Operazione effettuata con successo.</h4>",
                                     "type": "success",
                                     "width": '45%',
-                                    "confirmButtonClass": "btn btn-io",
+                                    "confirmButtonClass": "btn btn-primary",
                                 });
                             } else {
                                 swal.fire({
                                     "title": '<h2 class="kt-font-io-n"><b>Errore!</b></h2><br>',
                                     "html": "<h4>" + json.message + "</h4>",
                                     "type": "error",
-                                    cancelButtonClass: "btn btn-io-n"
+                                    cancelButtonClass: "btn btn-danger"
                                 });
                             }
                         }

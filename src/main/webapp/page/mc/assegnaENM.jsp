@@ -115,7 +115,7 @@
                                     <div class="kt-portlet__foot" style="padding-left: 10px;">
                                         <div class="kt-form__actions">
                                             <div class="form-group col-xl-3 col-lg-6">
-                                                <button type="submit" class="btn btn-io" 
+                                                <button type="submit" class="btn btn-primary" 
                                                         style="font-family: Poppins"><i class="flaticon2-splus-1"></i> SALVA </button>
                                             </div>
                                         </div>

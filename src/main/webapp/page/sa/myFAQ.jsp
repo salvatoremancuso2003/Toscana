@@ -108,7 +108,7 @@
                                                         <textarea class="form-control obbligatory" name="ask" id="ask" placeholder="Scrivi qui la tua domanda" style="height: calc(1.5em + 1.3rem + 2px)!important;" onkeypress="return pressEnter(event)"></textarea>
                                                     </div>
                                                     <div class="col-1">
-                                                        <a onclick="sendAsk();" href="javascript:void(0);" class="btn btn-io btn-icon btn-circle"><i class="fa fa-paper-plane"></i></a>
+                                                        <a onclick="sendAsk();" href="javascript:void(0);" class="btn btn-primary btn-icon btn-circle"><i class="fa fa-paper-plane"></i></a>
                                                     </div>
                                                 </div>
                                             </div>

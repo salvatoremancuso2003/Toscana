@@ -1,4 +1,4 @@
-
+w
 <%@page import="rc.so.domain.Estrazioni"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="rc.so.util.Utility"%>
