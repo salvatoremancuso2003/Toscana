@@ -1,6 +1,7 @@
 
 
 
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="rc.so.domain.TipoDoc"%>
 <%@page import="rc.so.util.Utility"%>
 <%@page import="rc.so.db.Database"%>
@@ -248,7 +249,7 @@
                                                                             id="area_stu" name="area_stu"  style="width: 100%">
                                                                         <option value="-">Seleziona Area di qualificazione</option>
                                                                         <%for (Item t : aq) {%>
-                                                                        <option value="<%=t.getCodice()%>"><%=t.getDescrizione()%></option>
+                                                                        <option value="<%=t.getCodice()%>"><%=StringEscapeUtils.escapeHtml4(t.getDescrizione())%></option>
                                                                         <%}%>
                                                                     </select>
                                                                 </div>
@@ -280,7 +281,7 @@
                                                                         id="inquad" name="inquad">
                                                                     <option value="-">Seleziona Inquadramento</option>
                                                                     <%for (Item f : inq) {%>
-                                                                    <option value="<%=f.getCodice()%>"><%=f.getDescrizione()%></option>
+                                                                    <option value="<%=f.getCodice()%>"><%=StringEscapeUtils.escapeHtml4(f.getDescrizione())%></option>
                                                                     <%}%>
                                                                 </select>
                                                             </div>
@@ -320,7 +321,7 @@
                                                                                 id="tipo_att_<%=i%>" name="tipo_att_<%=i%>">
                                                                             <option value="-">Seleziona Attivit&#224;</option>
                                                                             <%for (Item f : att) {%>
-                                                                            <option value="<%=f.getCodice()%>"><%=f.getDescrizione()%></option>
+                                                                            <option value="<%=f.getCodice()%>"><%=StringEscapeUtils.escapeHtml4(f.getDescrizione())%></option>
                                                                             <%}%>
                                                                         </select>
                                                                     </div>
@@ -364,7 +365,7 @@
                                                                         <select class="form-control kt-select2-general" id="incarico_<%=i%>" name="incarico_<%=i%>">
                                                                             <option value="-">Seleziona Tipologia di incarico</option>
                                                                             <%for (Item f : inq) {%>
-                                                                            <option value="<%=f.getCodice()%>"><%=f.getDescrizione()%></option>
+                                                                            <option value="<%=f.getCodice()%>"><%=StringEscapeUtils.escapeHtml4(f.getDescrizione())%></option>
                                                                             <%}%>
                                                                         </select>
                                                                     </div>
@@ -376,7 +377,7 @@
                                                                         <select class="form-control kt-select2-general" id="fonte_<%=i%>" name="fonte_<%=i%>">
                                                                             <option value="-">Seleziona Fonte</option>
                                                                             <%for (Item f : fon) {%>
-                                                                            <option value="<%=f.getCodice()%>"><%=f.getDescrizione()%></option>
+                                                                            <option value="<%=f.getCodice()%>"><%=StringEscapeUtils.escapeHtml4(f.getDescrizione())%></option>
                                                                             <%}%>
                                                                         </select>
                                                                     </div>
@@ -464,7 +465,7 @@
                                                         <div class="row">
                                                             <div class="offset-lg-6 col-lg-6 kt-align-right">
                                                                 <a id="submit" href="javascript:void(0);" class="btn btn-primary"><font color='white'>Salva</font></a>
-                                                                <a href="<%=pageName_%>" class="btn btn-warning"><font color='white'>Reset</font></a>
+                                                                <a href="<%=StringEscapeUtils.escapeHtml4(pageName_)%>" class="btn btn-warning"><font color='white'>Reset</font></a>
                                                             </div>
                                                         </div>
                                                     </div>

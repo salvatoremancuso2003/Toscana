@@ -116,6 +116,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.SystemUtils;
+import org.apache.commons.text.StringEscapeUtils;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.parser.AutoDetectParser;
 import org.apache.tika.sax.ToTextContentHandler;
@@ -178,6 +179,11 @@ public class Utility {
 
     public static final String APP = "ENM_TOSCANA";
     public static final Logger LOGAPP = Logger.getLogger(APP);
+
+    public static String formatHtml(String input) {
+         String inputFormat = StringEscapeUtils.escapeHtml4(input);
+         return inputFormat;
+    }
 
     //END RAF
     public static void redirect(HttpServletRequest request, HttpServletResponse response, String destination) throws ServletException, IOException {
@@ -455,21 +461,18 @@ public class Utility {
         return ec1.getMessage();
 
     }
-    
 
     public static String getRequestValue(HttpServletRequest request, String fieldname) {
-        String out = request.getParameter(fieldname);
-        if (out == null || out.trim().equals("null")) {
-            out = "";
-        } else {
-            out = out.trim();
+        try {
+            return StringEscapeUtils.escapeHtml4(request.getParameter(fieldname)).trim();
+        } catch (Exception e) {
         }
-        return out;
+        return "";
     }
 
     public static String getRequestCheckbox(HttpServletRequest request, String fieldname) {
-        String out = request.getParameter(fieldname);
-        if (out == null) {
+        String out = getRequestValue(request, fieldname);
+        if (out.equals("")) {
             return "NO";
         }
         return "SI";
@@ -1349,9 +1352,9 @@ public class Utility {
 
     public static List<Allievi> estraiAllieviOK(ProgettiFormativi p) {
         try {
-            List<Allievi> a = p.getAllievi().stream().filter(al -> 
-                    al.getStatopartecipazione().getId()
-                    .equalsIgnoreCase("13") || al.getStatopartecipazione().getId()
+            List<Allievi> a = p.getAllievi().stream().filter(al
+                    -> al.getStatopartecipazione().getId()
+                            .equalsIgnoreCase("13") || al.getStatopartecipazione().getId()
                     .equalsIgnoreCase("14") || al.getStatopartecipazione().getId()
                     .equalsIgnoreCase("15")
             ).collect(Collectors.toList());

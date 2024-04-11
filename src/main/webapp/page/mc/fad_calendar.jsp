@@ -7,7 +7,7 @@
 <%@page import="rc.so.entity.FadCalendar"%>
 <%@page import="java.util.Date"%>
 <%@page import="rc.so.util.Utility"%>
-<%@page import="org.apache.commons.lang3.StringEscapeUtils"%>
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="java.util.stream.Collectors"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -28,6 +28,7 @@
         String src = session.getAttribute("src").toString();
         Entity e = new Entity();
         ProgettiFormativi p = e.getEm().find(ProgettiFormativi.class, Long.parseLong(request.getParameter("id")));
+        
 
 %>
 <html>
@@ -77,7 +78,7 @@
 
         <%if (p != null) {
 
-                List<FadCalendar> calendarioFAD = Action.calendarioFAD(request.getParameter("id"));
+                List<FadCalendar> calendarioFAD = Action.calendarioFAD(StringEscapeUtils.escapeHtml4(request.getParameter("id")));
         %>
 
 

@@ -31,11 +31,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.text.StringEscapeUtils;
 import org.apache.commons.validator.routines.EmailValidator;
 import static rc.so.db.Action.insertTR;
 import rc.so.domain.Email;
 import rc.so.util.SendMailJet;
 import static rc.so.util.Utility.estraiEccezione;
+import static rc.so.util.Utility.formatHtml;
 import static rc.so.util.Utility.redirect;
 
 /**
@@ -122,6 +124,8 @@ public class OperazioniGeneral extends HttpServlet {
             response.sendRedirect("404.jsp");
         }
     }
+
+    
 
     protected void showDoc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

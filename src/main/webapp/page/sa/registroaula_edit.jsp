@@ -1,3 +1,4 @@
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="java.util.concurrent.atomic.AtomicInteger"%>
 <%@page import="rc.so.domain.Allievi"%>
 <%@page import="rc.so.domain.Docenti"%>
@@ -329,8 +330,8 @@
                                         <%for (Registro_completo d1 : docenti) {%>
                                         <tr class="bg-light">
                                             <td>DOCENTE</td>
-                                            <td><%=d1.getCognome()%></td>
-                                            <td><%=d1.getNome()%></td>
+                                            <td><%=StringEscapeUtils.escapeHtml4(d1.getCognome())%></td>
+                                            <td><%=StringEscapeUtils.escapeHtml4(d1.getNome())%></td>
                                             <td>
                                                 <select class="form-control kt-select2-general" 
                                                         id="<%=d1.getId()%>_docereg" 
@@ -355,8 +356,8 @@
                                         <%for (Registro_completo d1 : allievi) {%>
                                         <tr class="bg-light2">
                                             <td>ALLIEVO</td>
-                                            <td><%=d1.getCognome()%></td>
-                                            <td><%=d1.getNome()%></td>
+                                            <td><%=StringEscapeUtils.escapeHtml4(d1.getCognome())%></td>
+                                            <td><%=StringEscapeUtils.escapeHtml4(d1.getNome())%></td>
                                             <td><select class="form-control kt-select2-general" 
                                                         id="<%=d1.getId()%>_allreg" 
                                                         name="<%=d1.getId()%>_allreg"  style="width: 100%"

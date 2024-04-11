@@ -49,7 +49,7 @@ public class Action {
         }
         return null;
     }
-
+    
     public static boolean isVisibile(String gruppo, String page) {//(tipo, pagina)
 
         Database db = new Database(false);

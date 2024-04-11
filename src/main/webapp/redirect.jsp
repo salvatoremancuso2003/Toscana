@@ -4,11 +4,14 @@
     Author     : agodino
 --%>
 
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="rc.so.util.Utility"%>
 <%@page import="java.util.Enumeration"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%response.addHeader("X-Frame-Options", "SAMEORIGIN");%>
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,7 +21,7 @@
         <title>YES I Start Up - Toscana</title>
     </head>
     <body>
-        <form action="<%=request.getContextPath()%>/<%=request.getParameter("page")%>" method="post" name="form" htmlEscape="true"
+        <form action="<%=request.getContextPath()%>/<%=StringEscapeUtils.escapeHtml4(request.getParameter("page"))%>" method="post" name="form" htmlEscape="true"
               id="form" accept-charset="ISO-8859-1" style="display: none">
             <input type="hidden"
                    name="_csrf"
@@ -29,7 +32,7 @@
                     String[] paramValues = request.getParameterValues(paramName);
                     if (!paramName.equals("page")) {
                         for (int i = 0; i < paramValues.length; i++) {;%>
-            <input name="<%=paramName%>" value="<%=paramValues[i]%>">
+            <input name="<%=StringEscapeUtils.escapeHtml4(paramName)%>" value="<%=StringEscapeUtils.escapeHtml4(paramValues[i])%>">
             <%}
                     }
                 }%>

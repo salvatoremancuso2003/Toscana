@@ -1,4 +1,6 @@
 
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
+<%@page import="rc.so.util.Utility"%>
 <%@page import="java.util.Date"%>
 <%@page import="rc.so.domain.StaffModelli"%>
 <%@page import="rc.so.domain.ProgettiFormativi"%>
@@ -113,7 +115,7 @@
                                     <form id="kt_form_<%=i%>" action="<%=request.getContextPath()%>/OperazioniSA?type=manageMembriStaff&row=<%=i%>" class="kt-form kt-form--label-right" method="post" >
                                         <div class="kt-portlet__body" style="padding: 25px 25px 5px 25px;">
                                             <input type="hidden" name="mid_<%=i%>" id="mid_<%=i%>" />
-                                            <input type="hidden" name="pf<%=i%>" value="<%=request.getParameter("id")%>" />
+                                            <input type="hidden" name="pf<%=i%>" value="<%=StringEscapeUtils.escapeHtml4(request.getParameter("id"))%>" />
                                             <h5>Membro #<%=cnt%></h5> 
                                             <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
                                             <div class="kt-section kt-section--first">
@@ -181,7 +183,7 @@
         <!-- this page -->
         <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/bootstrap-datepicker.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" type="text/javascript"></script>
-        <script id="newStaff" src="<%=src%>/page/sa/js/newStaff.js?<%="?dummy=" + String.valueOf(new Date().getTime())%>" data-context="<%=request.getContextPath()%>" defer pId="<%=request.getParameter("id")%>" nro="2" type="text/javascript"></script> 
+        <script id="newStaff" src="<%=src%>/page/sa/js/newStaff.js?<%="?dummy=" + String.valueOf(new Date().getTime())%>" data-context="<%=request.getContextPath()%>" defer pId="<%=StringEscapeUtils.escapeHtml4(request.getParameter("id"))%>" nro="2" type="text/javascript"></script> 
         <script type="text/javascript">
                                                                 var KTAppOptions = {
                                                                     "colors": {

@@ -1,4 +1,5 @@
 
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="java.util.Date"%>
 <%@page import="rc.so.util.Utility"%>
 <%@page import="rc.so.domain.Documenti_UnitaDidattiche"%>
@@ -21,7 +22,7 @@
         } else {
             String src = session.getAttribute("src").toString();
             Entity e = new Entity();
-            UnitaDidattiche u = e.getEm().find(UnitaDidattiche.class, request.getParameter("codice"));
+            UnitaDidattiche u = e.getEm().find(UnitaDidattiche.class, StringEscapeUtils.escapeHtml4(request.getParameter("codice")));
             int files = Integer.parseInt(e.getPath("UD_max_files"));
             int links = Integer.parseInt(e.getPath("UD_max_links"));
             boolean checkUpload[] = Utility.LinksDocs_UD(u.getDocumenti_ud(), Integer.parseInt(e.getPath("UD_max_files")), Integer.parseInt(e.getPath("UD_max_links")));

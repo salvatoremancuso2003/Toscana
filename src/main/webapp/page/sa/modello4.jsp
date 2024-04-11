@@ -1,3 +1,4 @@
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="java.util.LinkedList"%>
 <%@page import="rc.so.domain.TipoDoc"%>
 <%@page import="java.util.Date"%>
@@ -299,7 +300,7 @@
                                                     <form action="<%=request.getContextPath()%>/OperazioniSA" 
                                                           method="POST" target="_blank">
                                                         <input type="hidden" name="type" value="scaricamodello4" />
-                                                        <input type="hidden" name="idpr" value="<%=request.getParameter("id")%>" />
+                                                        <input type="hidden" name="idpr" value="<%=StringEscapeUtils.escapeHtml4(request.getParameter("id"))%>" />
                                                         <div class="row">
                                                             <label>Scaricare il modello con il calendario inserito per poi caricarlo
                                                                 firmato digitalmente (.p7m CAdES, .pdf PAdES) nel campo sottostante.</label>
@@ -318,7 +319,7 @@
                                                     <form action="<%=request.getContextPath()%>/OperazioniSA" method="POST" 
                                                           enctype="multipart/form-data">
                                                         <input type="hidden" name="type" value="salvamodello4" />
-                                                        <input type="hidden" name="idpr" value="<%=request.getParameter("id")%>" />
+                                                        <input type="hidden" name="idpr" value="<%=StringEscapeUtils.escapeHtml4(request.getParameter("id"))%>" />
                                                         <input type="hidden" name="idmodello" value="<%=m4.getId()%>" />
                                                         <div class="row">
                                                             <div class='col-lg-4 col-md-4 col-sm-6'>
