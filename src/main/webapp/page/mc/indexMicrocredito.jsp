@@ -151,10 +151,10 @@ w
             }
         </style>
     </head>
+
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
         <!-- begin:: Page -->                   
         <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
-
         <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
             <%@ include file="menu/menu.jsp"%>
             <!-- end:: Aside -->
@@ -364,7 +364,7 @@ w
                                     }
                                     )
                                 </script>
-                                
+
 
                                 <div class="row flex col-lg-12"  style="margin-right: 0px; padding-right: 0px;">
                                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" style="padding-bottom: 1.5rem;">
@@ -563,7 +563,7 @@ w
                                                     </a>
                                                 </div>
                                                 <%}
-                                                }%>
+                                                    }%>
                                             </div>
                                         </div>
                                     </div>

@@ -40,12 +40,12 @@ $('#regione').on('change', function (e) {
         $.get(context + '/Login?type=getProvincia&regione=' + $('#regione').val(), function (resp) {
             var json = JSON.parse(resp);
             for (var i = 0; i < json.length; i++) {
-                $("#provincia").append('<option value="' + json[i].value + '">' + json[i].desc + '</option>');
+                $("#provincia").innerText('<option value="' + json[i].value + '">' + json[i].desc + '</option>');
             }
             stopBlockUI("#provincia_div");
         });
     } else {
-        $("#provincia").append('<option value="-">. . .</option>');
+        $("#provincia").innerText('<option value="-">. . .</option>');
     }
 });
 $('#provincia').on('change', function (e) {
@@ -56,7 +56,7 @@ $('#provincia').on('change', function (e) {
         $.get(context + '/Login?type=getComune&provincia=' + $('#provincia').val(), function (resp) {
             var json = JSON.parse(resp);
             for (var i = 0; i < json.length; i++) {
-                $("#comune").append('<option value="' + json[i].value + '">' + json[i].desc + '</option>');
+                $("#comune").innerText('<option value="' + json[i].value + '">' + json[i].desc + '</option>');
             }
             stopBlockUI("#comune_div");
         });

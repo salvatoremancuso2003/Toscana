@@ -196,14 +196,16 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- end:: Content Head -->
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
-                    <!-- end:: Footer -->
-                    <!-- end:: Content -->
+                </div>
+            </div>
+            <div class="kt-footer kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" style="padding: 15px; ">
+                <div class="kt-footer__copyright" style="right: -250px!important; position: relative!important;">
+                    YES I Start Up - Toscana v1.0 
                 </div>
             </div>
         </div>
+
         <!-- begin::Scrolltop -->
         <div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
@@ -246,8 +248,6 @@
                                                                                 }
                                                                             }
                                                                         };
-        </script>
-        <script>
         </script>
     </body>
 </html>

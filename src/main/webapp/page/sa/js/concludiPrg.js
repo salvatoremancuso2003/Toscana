@@ -18,7 +18,7 @@ $('select[id^=regione_]').on('change', function (e) {
         $.get(context + '/Login?type=getProvincia&regione=' + $('#regione_' + alr).val(), function (resp) {
             var json = JSON.parse(resp);
             for (var i = 0; i < json.length; i++) {
-                $("#provincia_" + alr).append('<option value="' + json[i].value + '">' + json[i].desc + '</option>');
+                $("#provincia_" + alr).innerText('<option value="' + json[i].value + '">' + json[i].desc + '</option>');
             }
             stopBlockUI("#provincia_" + alr + "_div");
         });
@@ -36,7 +36,7 @@ $('select[id^=provincia_]').on('change', function (e) {
         $.get(context + '/Login?type=getComune&provincia=' + $('#provincia_' + alp).val(), function (resp) {
             var json = JSON.parse(resp);
             for (var i = 0; i < json.length; i++) {
-                $("#comune_" + alp).append('<option value="' + json[i].value + '">' + json[i].desc + '</option>');
+                $("#comune_" + alp).innerText('<option value="' + json[i].value + '">' + json[i].desc + '</option>');
             }
             stopBlockUI("#comune_" + alp + "_div");
         });
@@ -781,9 +781,9 @@ function setComuneStep3(provincia, comune) {
         var json = JSON.parse(resp);
         for (var i = 0; i < json.length; i++) {
             if (comune === json[i].value) {
-                $("#comune_step3").append('<option selected value="' + json[i].value + '">' + json[i].desc + '</option>');
+                $("#comune_step3").innerText('<option selected value="' + json[i].value + '">' + json[i].desc + '</option>');
             } else {
-                $("#comune_step3").append('<option value="' + json[i].value + '">' + json[i].desc + '</option>');
+                $("#comune_step3").innerText('<option value="' + json[i].value + '">' + json[i].desc + '</option>');
             }
         }
         stopBlockUI("#comune_step3_div");
@@ -798,9 +798,9 @@ function setProvinciaStep3(regione, provincia) {
         var json = JSON.parse(resp);
         for (var i = 0; i < json.length; i++) {
             if (provincia.toLowerCase() === json[i].value.toLowerCase()) {
-                $("#provincia_step3").append('<option selected value="' + json[i].value + '">' + json[i].desc + '</option>');
+                $("#provincia_step3").innerText('<option selected value="' + json[i].value + '">' + json[i].desc + '</option>');
             } else {
-                $("#provincia_step3").append('<option value="' + json[i].value + '">' + json[i].desc + '</option>');
+                $("#provincia_step3").innerText('<option value="' + json[i].value + '">' + json[i].desc + '</option>');
             }
         }
         stopBlockUI("#provincia_step3_div");
