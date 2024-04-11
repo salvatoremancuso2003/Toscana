@@ -289,6 +289,10 @@ public class Database {
         }
         return p1;
     }
+    
+    private static String sanitizePath(String path) {
+        return path.replaceAll("[^a-zA-Z0-9-_./]", "");
+    }
 
     public String getNomePR_F(String id) {
         String p1 = "Progetto Formativo";

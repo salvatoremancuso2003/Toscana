@@ -69,7 +69,6 @@ public class Action {
     }
 
     private static String sanitizePath(String path) {
-        // Rimuovi tutti i caratteri non validi dal percorso
         return path.replaceAll("[^a-zA-Z0-9-_./]", "");
     }
 
