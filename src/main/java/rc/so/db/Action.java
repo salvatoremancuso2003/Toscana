@@ -56,7 +56,11 @@ public class Action {
         if (db.getC() == null) {
             return false;
         }
-        boolean c = db.isVisible(gruppo, page);
+
+        String gruppoFix = sanitizePath(gruppo);
+        String pageFix = sanitizePath(page);
+        
+        boolean c = db.isVisible(gruppoFix, pageFix);
         db.closeDB();
         return c;
 
@@ -65,6 +69,11 @@ public class Action {
 //        e.close();
 //        return out;
     }
+    
+    private static String sanitizePath(String path) {
+    // Rimuovi tutti i caratteri non validi dal percorso
+    return path.replaceAll("[^a-zA-Z0-9-_./]", "");
+}
 
     public static boolean isModifiable(String modificabile, String stato) {//usato anche per la visualizzazione dei modelli
         if (modificabile != null) {
