@@ -120,15 +120,15 @@
                                                                     FadCalendar lez = calendarioFAD.get(i);%>
                                                         <form action="../../OperazioniMicro?type=removelez" method="post">
                                                             <input type="hidden" name="idpr1" value="<%=p.getId()%>" />
-                                                            <input type="hidden" name="data1" value="<%=lez.getData()%>" />
-                                                            <input type="hidden" name="corso1" value="<%=lez.getNumerocorso()%>" />
-                                                            <input type="hidden" name="inizio1" value="<%=lez.getOrainizio()%>" />
+                                                            <input type="hidden" name="data1" value="<%=StringEscapeUtils.escapeHtml4(lez.getData())%>" />
+                                                            <input type="hidden" name="corso1" value="<%=StringEscapeUtils.escapeHtml4(lez.getNumerocorso())%>" />
+                                                            <input type="hidden" name="inizio1" value="<%=StringEscapeUtils.escapeHtml4(lez.getOrainizio())%>" />
                                                             <tr>
                                                                 <th scope="row">
-                                                                    <%=lez.getData()%></th>
-                                                                <td><%=lez.getNumerocorso()%></td>
-                                                                <td><%=lez.getOrainizio()%></td>
-                                                                <td><%=lez.getOrafine()%></td>
+                                                                    <%=StringEscapeUtils.escapeHtml4(lez.getData())%></th>
+                                                                <td><%=StringEscapeUtils.escapeHtml4(lez.getNumerocorso())%></td>
+                                                                <td><%=StringEscapeUtils.escapeHtml4(lez.getOrainizio())%></td>
+                                                                <td><%=StringEscapeUtils.escapeHtml4(lez.getOrafine())%></td>
                                                                 <td><button type="submit" class="btn btn-sm btn-outline-danger">
                                                                         <i class="fa fa-trash"></i> Elimina</button>
                                                                 </td>
