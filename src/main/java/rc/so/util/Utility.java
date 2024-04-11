@@ -92,6 +92,7 @@ import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormatter;
 import static java.nio.file.Files.createDirectories;
 import static java.nio.file.Paths.get;
+import java.security.SecureRandom;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.DecimalFormat;
@@ -274,6 +275,19 @@ public class Utility {
         boolean useNumbers = false;
         return RandomStringUtils.random(length, useLetters, useNumbers);
     }
+    
+    public static String generatePassword(int length) {
+        
+        Random RANDOM = new SecureRandom();
+        String POSSIBLE_CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+=!@#$%&*()[]{}<>:.,?";
+
+        StringBuilder password = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+            password.append(POSSIBLE_CHARACTERS.charAt(RANDOM.nextInt(POSSIBLE_CHARACTERS.length())));
+        }
+        return password.toString();
+    }
+
 
     public static String correctName(String ing) {
         ing = correggiusername(ing);
@@ -469,6 +483,8 @@ public class Utility {
         }
         return "";
     }
+
+    
 
     public static String getRequestCheckbox(HttpServletRequest request, String fieldname) {
         String out = getRequestValue(request, fieldname);

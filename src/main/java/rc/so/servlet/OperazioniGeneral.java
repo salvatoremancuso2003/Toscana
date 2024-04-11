@@ -46,6 +46,11 @@ import static rc.so.util.Utility.redirect;
  */
 public class OperazioniGeneral extends HttpServlet {
 
+    private static String sanitizePath(String path) {
+        // Rimuovi tutti i caratteri non validi dal percorso
+        return path.replaceAll("[^a-zA-Z0-9-_./]", "");
+    }
+
     protected void sendmailModello0(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String maildest = getRequestValue(request, "maildest");
         String path = getRequestValue(request, "path");
@@ -71,7 +76,9 @@ public class OperazioniGeneral extends HttpServlet {
     }
 
     protected void onlyDownloadnew(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String path = request.getParameter("path");
+        String path2 = request.getParameter("path");
+        
+        String path = sanitizePath(path2);
         try {
             Entity e = new Entity();
             String manuale = e.getPath(path);
@@ -104,7 +111,10 @@ public class OperazioniGeneral extends HttpServlet {
     }
 
     protected void onlyDownload(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String path = request.getParameter("path");
+        String path2 = request.getParameter("path");
+        String path = sanitizePath(path2);
+        
+        
         File downloadFile = createFile_R(path);
         if (downloadFile != null
                 && downloadFile.exists()) {
@@ -125,11 +135,9 @@ public class OperazioniGeneral extends HttpServlet {
         }
     }
 
-    
-
     protected void showDoc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        String path = request.getParameter("path");
+        String path2 = request.getParameter("path");
+        String path = sanitizePath(path2);
         File downloadFile = createFile_R(path);
         if (downloadFile != null && downloadFile.exists()) {
             try (FileInputStream inStream = new FileInputStream(downloadFile)) {
@@ -169,7 +177,12 @@ public class OperazioniGeneral extends HttpServlet {
     }
 
     protected void downloadDoc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String path = request.getParameter("path");
+        String path2 = request.getParameter("path");
+        
+        String path = sanitizePath(path2);
+        
+        
+        
         File downloadFile = createFile_R(path);
 
         if (downloadFile.exists()) {

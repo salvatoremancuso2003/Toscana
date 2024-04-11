@@ -4,6 +4,7 @@
     Author     : agodino
 --%>
 
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="rc.so.domain.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
@@ -18,7 +19,7 @@
         //} else {
         String src = session.getAttribute("src").toString();
 
-        String active = request.getParameter("active") == null ? "no" : request.getParameter("active");
+        String active = StringEscapeUtils.escapeHtml4(request.getParameter("active")) == null ? "no" : StringEscapeUtils.escapeHtml4(request.getParameter("active"));
 %>
 <html>
     <head>

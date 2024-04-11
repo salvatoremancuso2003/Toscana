@@ -10,7 +10,6 @@ import rc.so.domain.ProgettiFormativi;
 import rc.so.domain.SoggettiAttuatori;
 import rc.so.domain.User;
 import rc.so.entity.FadCalendar;
-import rc.so.util.Utility;
 import static rc.so.util.Utility.estraiEccezione;
 import static rc.so.util.Utility.pregresso;
 import java.io.File;
@@ -22,7 +21,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import javax.persistence.TypedQuery;
 import static org.apache.commons.io.FilenameUtils.separatorsToSystem;
-import org.apache.commons.text.StringEscapeUtils;
 
 /**
  *
