@@ -108,7 +108,7 @@ function changeLezione(idlezione, l, grp) {
                 daysOfWeekHighlighted: "0",
                 daysOfWeekDisabled: [0]
             });
-            $("#tot_hh").html('Totale ore di lezione da effettuare: <b>' + lez.lezione_calendario.ore + '</b>');
+            $("#tot_hh").innerText('Totale ore di lezione da effettuare: <b>' + lez.lezione_calendario.ore + '</b>');
             $('#orario1_start').val(lez.orainizio);
             $('#orario1_start').timepicker("setTime", lez.orainizio);
             $('#orario1_end').val(lez.orafine);
@@ -119,9 +119,9 @@ function changeLezione(idlezione, l, grp) {
                 var json = JSON.parse(resp);
                 for (var i = 0; i < json.length; i++) {
                     if (lez.docente.id === json[i].id) {
-                        $("#docente").append('<option selected value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
+                        $("#docente").innerText('<option selected value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
                     } else {
-                        $("#docente").append('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
+                        $("#docente").innerText('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
                     }
                 }
             });
@@ -247,12 +247,12 @@ function changeLezioneDouble(idlezione1, idlezione2, l, grp) {
                 daysOfWeekHighlighted: "0",
                 daysOfWeekDisabled: [0]
             });
-            $("#tot_hh1").html('Totale ore di lezione da effettuare per ' + lez.codice_ud + ': <b>' + lez.lezione_calendario.ore + '</b>');
-            $("#tot_hh2").html('Totale ore di lezione da effettuare per ' + lez2.codice_ud + ': <b>' + lez2.lezione_calendario.ore + '</b>');
-            $("#docente1_msg").html('Docente ' + lez.codice_ud);
-            $("#docente2_msg").html('Docente ' + lez2.codice_ud);
-            $("#orari1_msg").html('Orari di inizio e fine ' + lez.codice_ud);
-            $("#orari2_msg").html('Orari di inizio e fine ' + lez2.codice_ud);
+            $("#tot_hh1").innerText('Totale ore di lezione da effettuare per ' + lez.codice_ud + ': <b>' + lez.lezione_calendario.ore + '</b>');
+            $("#tot_hh2").innerText('Totale ore di lezione da effettuare per ' + lez2.codice_ud + ': <b>' + lez2.lezione_calendario.ore + '</b>');
+            $("#docente1_msg").innerText('Docente ' + lez.codice_ud);
+            $("#docente2_msg").innerText('Docente ' + lez2.codice_ud);
+            $("#orari1_msg").innerText('Orari di inizio e fine ' + lez.codice_ud);
+            $("#orari2_msg").innerText('Orari di inizio e fine ' + lez2.codice_ud);
 
             $('#orario1_start').val(lez.orainizio);
             $('#orario1_end').val(lez.orafine);
@@ -269,14 +269,14 @@ function changeLezioneDouble(idlezione1, idlezione2, l, grp) {
                 var json = JSON.parse(resp);
                 for (var i = 0; i < json.length; i++) {
                     if (lez.docente.id === json[i].id) {
-                        $("#docente1").append('<option selected value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
+                        $("#docente1").innerText('<option selected value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
                     } else {
-                        $("#docente1").append('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
+                        $("#docente1").innerText('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
                     }
                     if (lez2.docente.id === json[i].id) {
-                        $("#docente2").append('<option selected value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
+                        $("#docente2").innerText('<option selected value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
                     } else {
-                        $("#docente2").append('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
+                        $("#docente2").innerText('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
                     }
                 }
             });
@@ -444,7 +444,7 @@ function uploadLezione(idprogetto, idm, idl, grp, ud, sedefisica) {
 
             $('#giorno').val(formattedDate(days[2]));
             $("#giorno").datepicker("update");
-            $("#tot_hh").html('Totale ore di lezione da effettuare per: <b>' + (t.ore1 + t.ore2) + '</b>');
+            $("#tot_hh").innerText('Totale ore di lezione da effettuare per: <b>' + (t.ore1 + t.ore2) + '</b>');
             $('#docente').select2({
                 dropdownCssClass: "select2-on-top",
                 minimumResultsForSearch: -1
@@ -452,7 +452,7 @@ function uploadLezione(idprogetto, idm, idl, grp, ud, sedefisica) {
             $.get(context + "/QuerySA?type=getDocentiByPrg&idprogetto=" + idprogetto, function (resp) {
                 var json = JSON.parse(resp);
                 for (var i = 0; i < json.length; i++) {
-                    $("#docente").append('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
+                    $("#docente").innerText('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
                 }
             });
 
@@ -480,13 +480,13 @@ function uploadLezione(idprogetto, idm, idl, grp, ud, sedefisica) {
                 $.get(context + "/QuerySA?type=getSedeByPrg&idprogetto=" + idprogetto, function (resp) {
                     var json = JSON.parse(resp);
                     for (var i = 0; i < json.length; i++) {
-                        $("#sedefisica").append('<option value="' + json[i].id + '">' + json[i].denominazione + " : " + json[i].indirizzo + " - " + json[i].comune.nome + '</option>');
+                        $("#sedefisica").innerText('<option value="' + json[i].id + '">' + json[i].denominazione + " : " + json[i].indirizzo + " - " + json[i].comune.nome + '</option>');
                     }
                 });
             } else {
                 $.get(context + "/QuerySA?type=getSedeById&sedefisica=" + sedefisica, function (resp) {
                     var json = JSON.parse(resp);
-                    $("#sedefisica").append('<option selected value="' + json.id + '">' + json.denominazione + " : " + json.indirizzo + " - " + json.comune.nome + '</option>');
+                    $("#sedefisica").innerText('<option selected value="' + json.id + '">' + json.denominazione + " : " + json.indirizzo + " - " + json.comune.nome + '</option>');
                 });
             }
             if (ud.endsWith("B")) {
@@ -665,8 +665,8 @@ function uploadLezioneDouble(idprogetto, idm, idl, grp) {
             $.get(context + "/QuerySA?type=getDocentiByPrg&idprogetto=" + idprogetto, function (resp) {
                 var json = JSON.parse(resp);
                 for (var i = 0; i < json.length; i++) {
-                    $("#docente1").append('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
-                    $("#docente2").append('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
+                    $("#docente1").innerText('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
+                    $("#docente2").innerText('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
                 }
             });
             $('#orario1_start').change(function (e) {
@@ -863,11 +863,11 @@ function check_limit_hh(hh_start, hh_end, hhmax, ud, double) {
     }
     if (err) {
         if (double) {
-            $('#alertmsg2').html(msg);
+            $('#alertmsg2').innerText(msg);
             $('#warning_hh2').css("display", "");
             $('input.time.second').removeClass('is-valid').addClass('is-invalid');
         } else {
-            $('#alertmsg').html(msg);
+            $('#alertmsg').innerText(msg);
             $('#warning_hh').css("display", "");
             $('input.time').removeClass('is-valid').addClass('is-invalid');
         }
@@ -962,9 +962,9 @@ function showLezioneSingle(idlezione, l, grp, ud, sedefisica) {
             
             $("#alertmsg_day").html("La modifica è disabilitata in quanto la data della lezione è antecedente ad oggi.");
             $("#warning_day").show();
-            $("#tot_hh1").html('Totale ore di lezione da effettuare : <b>' + lez.lezione_calendario.ore + '</b>');
+            $("#tot_hh1").innerText('Totale ore di lezione da effettuare : <b>' + lez.lezione_calendario.ore + '</b>');
             $("#docente1_msg").html('Docente');
-            $("#orari1_msg").html('Orari di inizio e fine ' + lez.codice_ud);
+            $("#orari1_msg").innerText('Orari di inizio e fine ' + lez.codice_ud);
             $('#orario1_start').val(lez.orainizio);
             $('#orario1_end').val(lez.orafine);
             $('#giorno').val(formattedDate(new Date(lez.giorno)));
@@ -992,12 +992,12 @@ function showLezioneDouble(idlezione1, idlezione2, l, grp) {
         onOpen: function () {
             $("#alertmsg_day").html("La modifica è disabilitata in quanto la data della lezione è antecedente ad oggi.");
             $("#warning_day").show();
-            $("#tot_hh1").html('Totale ore di lezione da effettuare per ' + lez.codice_ud + ': <b>' + lez.lezione_calendario.ore + '</b>');
-            $("#tot_hh2").html('Totale ore di lezione da effettuare per ' + lez2.codice_ud + ': <b>' + lez2.lezione_calendario.ore + '</b>');
-            $("#docente1_msg").html('Docente ' + lez.codice_ud);
-            $("#docente2_msg").html('Docente ' + lez2.codice_ud);
-            $("#orari1_msg").html('Orari di inizio e fine ' + lez.codice_ud);
-            $("#orari2_msg").html('Orari di inizio e fine ' + lez2.codice_ud);
+            $("#tot_hh1").innerText('Totale ore di lezione da effettuare per ' + lez.codice_ud + ': <b>' + lez.lezione_calendario.ore + '</b>');
+            $("#tot_hh2").innerText('Totale ore di lezione da effettuare per ' + lez2.codice_ud + ': <b>' + lez2.lezione_calendario.ore + '</b>');
+            $("#docente1_msg").innerText('Docente ' + lez.codice_ud);
+            $("#docente2_msg").innerText('Docente ' + lez2.codice_ud);
+            $("#orari1_msg").innerText('Orari di inizio e fine ' + lez.codice_ud);
+            $("#orari2_msg").innerText('Orari di inizio e fine ' + lez2.codice_ud);
             $('#orario1_start').val(lez.orainizio);
             $('#orario1_end').val(lez.orafine);
             $('#orario2_start').val(lez2.orainizio);
