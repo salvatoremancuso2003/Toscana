@@ -181,9 +181,8 @@ public class Utility {
     public static final String APP = "ENM_TOSCANA";
     public static final Logger LOGAPP = Logger.getLogger(APP);
 
-    public static String formatHtml(String input) {
-         String inputFormat = StringEscapeUtils.escapeHtml4(input);
-         return inputFormat;
+    private static String sanitizePath(String path) {
+        return path.replaceAll("[^a-zA-Z0-9-_./]", "");
     }
 
     //END RAF
@@ -478,7 +477,7 @@ public class Utility {
 
     public static String getRequestValue(HttpServletRequest request, String fieldname) {
         try {
-            return StringEscapeUtils.escapeHtml4(request.getParameter(fieldname)).trim();
+            return sanitizePath(request.getParameter(fieldname)).trim();
         } catch (Exception e) {
         }
         return "";

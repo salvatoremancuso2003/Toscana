@@ -1259,7 +1259,7 @@ public class OperazioniMicro extends HttpServlet {
         Entity e = new Entity();
         try {
             String nome_fad = request.getParameter("name_fad").trim();//.replaceAll("\\s+", "_");rimuove tutti gli spazi
-            String pwd = Utility.getRandomString(8);
+            String pwd = Utility.generatePassword(8);
             String[] emails = request.getParameterValues("email[]");
             String[] date = request.getParameter("range").split("-");
             String note = request.getParameter("note") == null || request.getParameter("note").trim().isEmpty()
@@ -1640,7 +1640,7 @@ public class OperazioniMicro extends HttpServlet {
             HashMap<String, String> listusernames = e.getUsersSA();
             String em = request.getParameter("email");
             e.begin();
-            String pwd = Utility.getRandomString(8);
+            String pwd = Utility.generatePassword(8);
             User u = new User();
             u.setUsername(Utility.UniqueUser(listusernames, em.substring(0, em.lastIndexOf("@"))));
             u.setPassword(Utility.convMd5(pwd));
@@ -1771,7 +1771,7 @@ public class OperazioniMicro extends HttpServlet {
                         });
 
                         //CREARE UTENZA
-                        String pwd = Utility.getRandomString(8);
+                        String pwd = Utility.generatePassword(8);
                         User u = new User();
                         u.setUsername(Utility.UniqueUser(listusernames, sa.getEmail().substring(0, sa.getEmail().lastIndexOf("@"))));
                         u.setPassword(Utility.convMd5(pwd));

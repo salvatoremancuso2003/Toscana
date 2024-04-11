@@ -47,7 +47,7 @@ public class Action {
         }
         return null;
     }
-    
+
     public static boolean isVisibile(String gruppo, String page) {//(tipo, pagina)
 
         Database db = new Database(false);
@@ -57,7 +57,7 @@ public class Action {
 
         String gruppoFix = sanitizePath(gruppo);
         String pageFix = sanitizePath(page);
-        
+
         boolean c = db.isVisible(gruppoFix, pageFix);
         db.closeDB();
         return c;
@@ -67,11 +67,11 @@ public class Action {
 //        e.close();
 //        return out;
     }
-    
+
     private static String sanitizePath(String path) {
-    // Rimuovi tutti i caratteri non validi dal percorso
-    return path.replaceAll("[^a-zA-Z0-9-_./]", "");
-}
+        // Rimuovi tutti i caratteri non validi dal percorso
+        return path.replaceAll("[^a-zA-Z0-9-_./]", "");
+    }
 
     public static boolean isModifiable(String modificabile, String stato) {//usato anche per la visualizzazione dei modelli
         if (modificabile != null) {
@@ -390,7 +390,10 @@ public class Action {
 
     public static List<Registro_completo> registro_modello6(String idpr) {
         Database db = new Database(false);
-        List<Registro_completo> rc = db.registro_modello6(idpr);
+
+        String idprfix = sanitizePath(idpr);
+
+        List<Registro_completo> rc = db.registro_modello6(idprfix);
         db.closeDB();
         return rc;
     }
