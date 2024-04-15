@@ -13,6 +13,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
+             <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+        <link href="Bootstrap2024/assets/css/global.css" rel="stylesheet">
     </head>
     <body>
         <form action="<%=StringEscapeUtils.escapeHtml4(request.getParameter("page"))%>" method="post" name="form" id="form" accept-charset="ISO-8859-1" style="display: none">

@@ -41,6 +41,8 @@
         <link href="assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+            <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+        <link href="Bootstrap2024/assets/css/global.css" rel="stylesheet">
         <style type="text/css">
             label {
                 color: #363a90;

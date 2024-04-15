@@ -61,6 +61,8 @@
         <link href="assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+        <link href="Bootstrap2024/assets/css/global.css" rel="stylesheet">
         <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
         <script src="./Bootstrap2024/assets/js/bootstrap-italia.min.js"></script>
 
@@ -82,9 +84,9 @@
                                     <div class="kt-login__title">
                                         <img src="resource/demologo.png" alt="" height="100"/>
                                     </div>
-                                    <h3 class="kt-login__title kt-font-io" style="font-size:2rem"><b>YES I STARTUP - Regione Toscana</b></h3>
+                                    <h3 class="text-primary" style="font-size:2rem"><b>YES I STARTUP - Regione Toscana</b></h3>
                                     <%} else {%>
-                                    <h3 class="kt-login__title kt-font-io" style="font-size:2rem ; color: #0066CC!important" ><b>YES I STARTUP - Regione Toscana</b></h3>
+                                    <h3 class="text-primary" style="font-size:2rem ; white-space: nowrap" ><b>YES I STARTUP - Regione Toscana</b></h3>
                                     <%if (Utility.test) {%>
                                     <br>
                                     <div class="kt-login__title">
@@ -92,32 +94,34 @@
                                     </div>
                                     <%}%>
                                     <%}%>
-                                    <div class="kt-login__title" style="color: #0066CC" >Accedi</div>
+                                    <br>
+                                    <div class="text-primary" style="text-align: center;" >
+                                        <h4 class="text-primary">Accedi</h4></div>
                                 </div>
                                 <form action="Login?type=login" id="kt-form" class="kt-form" htmlEscape="true" onsubmit="return ctrlForm();" accept-charset="ISO-8859-1" method="post">
                                     <input type="hidden"
                                            name="_csrf"
                                            value="4bfd1575-3ad1-4d21-96c7-4ef2d9f86721"/>
                                     <div class="form-group">
-                                        <label for="user" class="active" style="color: #0066CC" >Username</label>
+                                        <label for="user" class="active text-primary"  >Username</label>
                                         <input class="form-control" type="text" name="username" id="user" autocomplete="off">
                                     </div>
                                     <div class="form-group" >
-                                        <label for="password" class="active" style="color: #0066CC" >Password</label>
+                                        <label for="password" class="active text-primary" >Password</label>
                                         <input class="form-control" type="password" name="password" id="password" autocomplete="off">
                                     </div>
                                     <div class="row kt-login__extra">
-                                        <div class="col-6 kt-align-left">
+                                        <div class="col-6">
                                             <div class="col">
                                                 <a href="faq.jsp" class="" style="font-size: 18px;"><b> FAQ</b></a>
                                             </div>
                                         </div>
-                                        <div class="col-6 kt-align-right">
-                                            <a href="javascript:;" id="kt_login_forgot" class="">Password dimenticata ?</a>
+                                        <div class="col-6 kt-align-right text-primary">
+                                            <a href="javascript:;" id="kt_login_forgot">Password dimenticata ?</a>
                                         </div>
                                     </div>
                                     <div class="kt-login__actions">
-                                        <button id="kt_login_signin_submit" type="submit" class="btn btn-primary" style="background-color:#0066CC"  >Login</button>
+                                        <button id="kt_login_signin_submit" type="submit" class="btn btn-primary" >Login</button>
                                     </div>
                                 </form>
                                 <form id="manform" target="_blank" htmlEscape="true"
@@ -139,8 +143,8 @@
                                                class="kt-login__link document"
                                                >
 
-                                                <i class="fa fa-file-pdf kt-font-danger2"></i> 
-                                                Guida all'uso della piattaforma
+                                                <i class="fa fa-file-pdf text-danger"></i> 
+                                                <i class="text-primary"> Guida all'uso della piattaforma</i>
 
                                             </a>
                                         </div>
@@ -192,29 +196,29 @@
             <!--begin:: Global Mandatory Vendors -->
             <script src="assets/soop/js/utility.js" type="text/javascript"></script>
             <script>
-                                        function ctrlForm() {
-                                            var err = false;
-                                            var user = $("#user");
-                                            var pass = $("#password");
-                                            if (checkValue(user, false)) {
-                                                err = true;
-                                            }
-                                            if (checkValue(pass, false)) {
-                                                err = true;
-                                            }
-                                            if (err) {
-                                                $("#drop_login").trigger('click');
-                                                return false;
-                                            }
-                                            swal.fire({
-                                                title: 'Sto Accedendo...',
-                                                text: '',
-                                                onOpen: function () {
-                                                    swal.showLoading();
-                                                }
-                                            });
-                                            return true;
+                                    function ctrlForm() {
+                                        var err = false;
+                                        var user = $("#user");
+                                        var pass = $("#password");
+                                        if (checkValue(user, false)) {
+                                            err = true;
                                         }
+                                        if (checkValue(pass, false)) {
+                                            err = true;
+                                        }
+                                        if (err) {
+                                            $("#drop_login").trigger('click');
+                                            return false;
+                                        }
+                                        swal.fire({
+                                            title: 'Sto Accedendo...',
+                                            text: '',
+                                            onOpen: function () {
+                                                swal.showLoading();
+                                            }
+                                        });
+                                        return true;
+                                    }
             </script>
 
             <script>
@@ -306,29 +310,29 @@
                     if (esito == null) {
                         esito = "";
                     } else if (esito.equals("KO")) {%>
-            swal.fire({
-                type: 'error',
-                title: 'Credenziali errate',
-                confirmButtonColor: '#363a90'
-            });
+                swal.fire({
+                    type: 'error',
+                    title: 'Credenziali errate',
+                    confirmButtonColor: '#363a90'
+                });
                 <%} else if (esito.equals("banned")) {%>
-            swal.fire({
-                type: 'error',
-                title: 'Utenza bloccata',
-                confirmButtonColor: '#363a90'
-            });
+                swal.fire({
+                    type: 'error',
+                    title: 'Utenza bloccata',
+                    confirmButtonColor: '#363a90'
+                });
                 <%}%>
 
-            function clickLink(link, target) {
-                var a = document.createElement('a');
-                a.href = link;
-                a.target = target;
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-            }
+                function clickLink(link, target) {
+                    var a = document.createElement('a');
+                    a.href = link;
+                    a.target = target;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                }
 
-            //$( document ).ready(function() {
+                //$( document ).ready(function() {
 //    alert(heidiDecode('676673756A6D6A7B7B621'));
 //});
 

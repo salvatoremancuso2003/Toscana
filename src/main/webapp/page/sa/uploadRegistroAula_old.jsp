@@ -80,6 +80,8 @@
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
+        <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+        <link href="Bootstrap2024/assets/css/global.css" rel="stylesheet">
     </head>
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
         <div class="kt-grid kt-grid--hor kt-grid--root">
@@ -192,7 +194,7 @@
         <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap-timepicker/js/bootstrap-timepicker.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
-        <script id="restristro_aula" src="<%=src%>/page/sa/js/restristro_aula.js<%="?dummy="+String.valueOf(new Date().getTime())%>"
+        <script id="restristro_aula" src="<%=src%>/page/sa/js/restristro_aula.js<%="?dummy=" + String.valueOf(new Date().getTime())%>"
         data-context="<%=request.getContextPath()%>" data-end="0" data-start="<%=start%>" data-day="<%=new Date().getTime()%>" type="text/javascript"></script>
         <script type="text/javascript">
                                                 var KTAppOptions = {

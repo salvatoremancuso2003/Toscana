@@ -37,6 +37,8 @@
         <link rel="shortcut icon" href="<%=src%>assets/media/logos/favicon.ico" />
         <link href="<%=src%>resource/custom.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>resource/404.css" rel="stylesheet" type="text/css"/>
+             <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+        <link href="Bootstrap2024/assets/css/global.css" rel="stylesheet">
     </head>
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
         <div class="kt-grid kt-grid--ver kt-grid--root">

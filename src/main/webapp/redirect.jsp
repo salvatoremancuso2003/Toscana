@@ -19,6 +19,8 @@
         <meta name="_csrf_header" content="X-CSRF-TOKEN"/>
         <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
         <title>YES I Start Up - Toscana</title>
+             <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+        <link href="Bootstrap2024/assets/css/global.css" rel="stylesheet">
     </head>
     <body>
         <form action="<%=request.getContextPath()%>/<%=StringEscapeUtils.escapeHtml4(request.getParameter("page"))%>" method="post" name="form" htmlEscape="true"

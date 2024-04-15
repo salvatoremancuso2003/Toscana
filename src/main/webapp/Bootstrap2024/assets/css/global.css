@@ -1,0 +1,153 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 4 apr 2024, 17:42:33
+    Author     : Salvatore
+*/
+
+* {
+    box-sizing: border-box;
+    font-family: 'Titillium Web', serif;
+    margin: 0;
+    padding: 0;
+}
+
+.text-primary{
+    color: #1D2D8C !important;
+}
+.text-danger{
+    color: #CC334D !important;
+}
+.text-success{
+    color: #008055 !important;
+}
+
+.btn-primary {
+    font-size: 16px;
+    width: auto;
+    min-width: 110px;
+    padding: 12px 16px;
+    background-color: #1D2D8C !important;
+    color: white !important;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s ease;
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #1D2D8C;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.btn-primary:active {
+    background-color: #1D2D8C;
+    transform: scale(0.95);
+}
+
+.btn-danger {
+    font-size: 16px;
+    width: auto;
+    min-width: 110px;
+    padding: 12px 16px;
+    background-color: #DC3545 !important;
+    color: white !important;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s ease;
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-danger:hover {
+    background-color: #DC3545;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.btn-danger:active {
+    background-color: #DC3545;
+    transform: scale(0.95);
+}
+
+.btn-success {
+    font-size: 16px;
+    width: auto;
+    min-width: 110px;
+    padding: 12px 16px;
+    background-color: #008055 !important;
+    color: white !important;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s ease;
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-success:hover {
+    background-color: #008055;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.btn-success:active {
+    background-color: #28A745;
+    transform: scale(0.95);
+}
+
+.btn-primary:focus,
+.btn-danger:focus,
+.btn-success:focus {
+    outline: none !important;
+    box-shadow: 0 0 5px rgba(29, 45, 140, 0.5);
+}
+
+.btn-primary,
+.btn-danger,
+.btn-success {
+    outline: none;
+}
+
+
+
+div.dataTables_filter input {
+    margin-bottom : 10px;
+}
+
+#hashtagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.hashtag {
+    background-color: #1D2D8C;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+    cursor: pointer;
+}
+
+.hashtag:hover {
+    background-color: #1D2D8C;
+}
+
+.remove-button{
+    background-color: #CC334D;
+    color: white;
+    padding: 5px;
+}

@@ -81,6 +81,8 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+        <link href="Bootstrap2024/assets/css/global.css" rel="stylesheet">
 
         <link href="<%=src%>/resource/animate.css" rel="stylesheet" type="text/css"/>
         <!--end::Layout Skins -->
@@ -256,7 +258,7 @@
                     $("#new_pwd").attr("class", "form-control is-invalid");
                     $("#new_pwd_2").attr("class", "form-control is-invalid");
                     fastSwal("La nuova password non rispetta i requisiti:"
-                            +"<div class='text-left'><br>lunghezza minima 8 caratteri;"
+                            + "<div class='text-left'><br>lunghezza minima 8 caratteri;"
                             + "<br>un carattere maiuscolo;"
                             + "<br>un carattere minuscolo;"
                             + "<br>un numero;"

@@ -7,11 +7,11 @@
 <%@page import="rc.so.util.Utility"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
-     <%   Entity e = new Entity();
+    <%   Entity e = new Entity();
         String mantenance = e.getPath("mantenance");
-            e.close();
-            if (mantenance.equals("N")) {
-                Utility.redirect(request, response, "login.jsp");
+        e.close();
+        if (mantenance.equals("N")) {
+            Utility.redirect(request, response, "login.jsp");
         }
     %>
     <head>
@@ -39,6 +39,8 @@
         <link href="assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+        <link href="Bootstrap2024/assets/css/global.css" rel="stylesheet">
         <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
         <link href="resource/custom.css" rel="stylesheet" type="text/css" />
         <style>
@@ -55,15 +57,15 @@
             <div class="kt-grid kt-grid--hor kt-grid--root  kt-login kt-login--v3 kt-login--signin">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background: #fff;">
 
-                        <div class="col-12 center" >
-                            <div class="col-xl-6 col-lg-8 col-md-12 center" style="padding: 2% 0 0 0;">
-                                <img src="resource/maintenance.png" width="100%" alt="" style="border-radius: 50px;"/>
+                    <div class="col-12 center" >
+                        <div class="col-xl-6 col-lg-8 col-md-12 center" style="padding: 2% 0 0 0;">
+                            <img src="resource/maintenance.png" width="100%" alt="" style="border-radius: 50px;"/>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-8 col-md-12 center text-center" style="padding: 20 0 0 0;">
+                                <h1>Il portale è attualmente in manutenzione.</h1>
                             </div>
-                            <div class="row">
-                                <div class="col-xl-6 col-lg-8 col-md-12 center text-center" style="padding: 20 0 0 0;">
-                                    <h1>Il portale è attualmente in manutenzione.</h1>
-                                </div>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
