@@ -405,9 +405,9 @@ function swalSigma(id, idsp) {
                 var json = JSON.parse(resp);
                 for (var i = 0; i < json.length; i++) {
                     if (json[i].id === idsp) {
-                        $("#sigma").append('<option selected value="' + json[i].id + '">' + json[i].descrizione + '</option>');
+                        $("#sigma").innerText('<option selected value="' + json[i].id + '">' + json[i].descrizione + '</option>');
                     } else {
-                        $("#sigma").append('<option value="' + json[i].id + '">' + json[i].descrizione + '</option>');
+                        $("#sigma").innerText('<option value="' + json[i].id + '">' + json[i].descrizione + '</option>');
                     }
                 }
             });
@@ -715,7 +715,7 @@ function swalDocumentAllievo(idallievo) {
             if (ext === null || ext === undefined || typeof ext === 'undefined' || ext === "p7m" || ext.includes("pdf")) {
                 ext = "pdf";
             }
-            $("#prg_docs").append(doc_prg.replace("@href", context + "/OperazioniGeneral?type=showDoc&path=" + json[i].path)
+            $("#prg_docs").innerText(doc_prg.replace("@href", context + "/OperazioniGeneral?type=showDoc&path=" + json[i].path)
                     .replace("#ex", ext)
                     .replace("@nome", json[i].tipo.descrizione + giorno));
             //}

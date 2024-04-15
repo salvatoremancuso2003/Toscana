@@ -96,7 +96,7 @@
                                                 </div>
                                             </div>
                                             <div class="kt-portlet__foot">
-                                                <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                <button class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                         type="button" id="submit"
                                                         >
                                                     Carica
@@ -138,7 +138,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop"style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

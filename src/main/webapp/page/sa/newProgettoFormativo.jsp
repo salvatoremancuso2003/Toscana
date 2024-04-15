@@ -334,7 +334,7 @@
 
                                                                                 <div class="row col-xl-8 col-lg-8">
                                                                                     <label>Scaricare il modello con i dati inseriti per poi caricarlo firmato digitalmente (.p7m CAdES, .pdf PAdES) nel campo sottostante.</label>
-                                                                                    <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                                                    <button class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                                             type="button" 
                                                                                             onclick="return model_funct('<%=t.getId()%>');"
                                                                                             >
@@ -405,14 +405,14 @@
                                                             </div>
                                                         </div>
                                                         <div class="kt-form__actions">
-                                                            <div class="btn btn-io-n btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
+                                                            <div class="btn btn-warning-n btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
                                                                 Indietro
                                                             </div>
-                                                            <div class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                            <div class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                  data-ktwizard-type="action-submit">
                                                                 Salva
                                                             </div>
-                                                            <div id="go_next" class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+                                                            <div id="go_next" class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
                                                                 Avanti
                                                             </div>
                                                         </div>
@@ -431,7 +431,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

@@ -64,9 +64,9 @@ function showLezioneSingleM3(idlezione, l) {
             popup: 'animated bounceInUp'
         },
         onOpen: function () {
-            $("#tot_hh1").html('Totale ore di lezione da effettuare: <b>' + lez.lezione_calendario.ore + '</b>');
+            $("#tot_hh1").innerText('Totale ore di lezione da effettuare: <b>' + lez.lezione_calendario.ore + '</b>');
             $("#docente1_msg").html('Docente');
-            $("#orari1_msg").html('Orari di inizio e fine ' + lez.codice_ud);
+            $("#orari1_msg").innerText('Orari di inizio e fine ' + lez.codice_ud);
             $('#orario1_start').val(lez.orainizio);
             $('#orario1_end').val(lez.orafine);
             $('#giorno').val(formattedDate(new Date(lez.giorno)));
@@ -92,12 +92,12 @@ function showLezioneDoubleM3(idlezione1, idlezione2, l) {
             popup: 'animated bounceInUp'
         },
         onOpen: function () {
-            $("#tot_hh1").html('Totale ore di lezione da effettuare per ' + lez.codice_ud + ': <b>' + lez.lezione_calendario.ore + '</b>');
-            $("#tot_hh2").html('Totale ore di lezione da effettuare per ' + lez2.codice_ud + ': <b>' + lez2.lezione_calendario.ore + '</b>');
-            $("#docente1_msg").html('Docente ' + lez.codice_ud);
-            $("#docente2_msg").html('Docente ' + lez2.codice_ud);
-            $("#orari1_msg").html('Orari di inizio e fine ' + lez.codice_ud);
-            $("#orari2_msg").html('Orari di inizio e fine ' + lez2.codice_ud);
+            $("#tot_hh1").innerText('Totale ore di lezione da effettuare per ' + lez.codice_ud + ': <b>' + lez.lezione_calendario.ore + '</b>');
+            $("#tot_hh2").innerText('Totale ore di lezione da effettuare per ' + lez2.codice_ud + ': <b>' + lez2.lezione_calendario.ore + '</b>');
+            $("#docente1_msg").innerText('Docente ' + lez.codice_ud);
+            $("#docente2_msg").innerText('Docente ' + lez2.codice_ud);
+            $("#orari1_msg").innerText('Orari di inizio e fine ' + lez.codice_ud);
+            $("#orari2_msg").innerText('Orari di inizio e fine ' + lez2.codice_ud);
             $('#orario1_start').val(lez.orainizio);
             $('#orario1_end').val(lez.orafine);
             $('#orario2_start').val(lez2.orainizio);
@@ -125,9 +125,9 @@ function showLezioneSingleM4(idlezione, l, grp) {
             popup: 'animated bounceInUp'
         },
         onOpen: function () {
-            $("#tot_hh1").html('Totale ore di lezione da effettuare : <b>' + lez.lezione_calendario.ore + '</b>');
+            $("#tot_hh1").innerText('Totale ore di lezione da effettuare : <b>' + lez.lezione_calendario.ore + '</b>');
             $("#docente1_msg").html('Docente');
-            $("#orari1_msg").html('Orari di inizio e fine ' + lez.codice_ud);
+            $("#orari1_msg").innerText('Orari di inizio e fine ' + lez.codice_ud);
             $('#orario1_start').val(lez.orainizio);
             $('#orario1_end').val(lez.orafine);
             $('#giorno').val(formattedDate(new Date(lez.giorno)));
@@ -153,12 +153,12 @@ function showLezioneDoubleM4(idlezione1, idlezione2, l, grp) {
             popup: 'animated bounceInUp'
         },
         onOpen: function () {
-            $("#tot_hh1").html('Totale ore di lezione da effettuare per ' + lez.codice_ud + ': <b>' + lez.lezione_calendario.ore + '</b>');
-            $("#tot_hh2").html('Totale ore di lezione da effettuare per ' + lez2.codice_ud + ': <b>' + lez2.lezione_calendario.ore + '</b>');
-            $("#docente1_msg").html('Docente ' + lez.codice_ud);
-            $("#docente2_msg").html('Docente ' + lez2.codice_ud);
-            $("#orari1_msg").html('Orari di inizio e fine ' + lez.codice_ud);
-            $("#orari2_msg").html('Orari di inizio e fine ' + lez2.codice_ud);
+            $("#tot_hh1").innerText('Totale ore di lezione da effettuare per ' + lez.codice_ud + ': <b>' + lez.lezione_calendario.ore + '</b>');
+            $("#tot_hh2").innerText('Totale ore di lezione da effettuare per ' + lez2.codice_ud + ': <b>' + lez2.lezione_calendario.ore + '</b>');
+            $("#docente1_msg").innerText('Docente ' + lez.codice_ud);
+            $("#docente2_msg").innerText('Docente ' + lez2.codice_ud);
+            $("#orari1_msg").innerText('Orari di inizio e fine ' + lez.codice_ud);
+            $("#orari2_msg").innerText('Orari di inizio e fine ' + lez2.codice_ud);
             $('#orario1_start').val(lez.orainizio);
             $('#orario1_end').val(lez.orafine);
             $('#orario2_start').val(lez2.orainizio);

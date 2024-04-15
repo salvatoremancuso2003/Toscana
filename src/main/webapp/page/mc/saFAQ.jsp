@@ -143,7 +143,7 @@
                                                     <div class="col-lg-4 col-md-6 col-sm-12 contatto" style="margin-top: 0.5rem;">
                                                         <div class="input-group">
                                                             <div class="input-group-prepend">
-                                                                <a href="javascript:void(0);" onclick="showConversation(<%=s.getId()%>, false)" class="btn btn-io btn-icon"><i class="fa fa-comment"></i></a>
+                                                                <a href="javascript:void(0);" onclick="showConversation(<%=s.getId()%>, false)" class="btn btn-primary btn-icon"><i class="fa fa-comment"></i></a>
                                                             </div>
                                                             <input type="text" class="form-control" readonly value="<%=s.getRagionesociale()%>">
                                                         </div>                                                       
@@ -163,7 +163,7 @@
             </div>
         </div>
         <!-- begin::Scrolltop -->
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

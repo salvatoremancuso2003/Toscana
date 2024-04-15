@@ -7,7 +7,7 @@
 <%@page import="rc.so.entity.FadCalendar"%>
 <%@page import="java.util.Date"%>
 <%@page import="rc.so.util.Utility"%>
-<%@page import="org.apache.commons.lang3.StringEscapeUtils"%>
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="java.util.stream.Collectors"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -28,6 +28,7 @@
         String src = session.getAttribute("src").toString();
         Entity e = new Entity();
         ProgettiFormativi p = e.getEm().find(ProgettiFormativi.class, Long.parseLong(request.getParameter("id")));
+        
 
 %>
 <html>
@@ -77,7 +78,7 @@
 
         <%if (p != null) {
 
-                List<FadCalendar> calendarioFAD = Action.calendarioFAD(request.getParameter("id"));
+                List<FadCalendar> calendarioFAD = Action.calendarioFAD(StringEscapeUtils.escapeHtml4(request.getParameter("id")));
         %>
 
 
@@ -119,15 +120,15 @@
                                                                     FadCalendar lez = calendarioFAD.get(i);%>
                                                         <form action="../../OperazioniMicro?type=removelez" method="post">
                                                             <input type="hidden" name="idpr1" value="<%=p.getId()%>" />
-                                                            <input type="hidden" name="data1" value="<%=lez.getData()%>" />
-                                                            <input type="hidden" name="corso1" value="<%=lez.getNumerocorso()%>" />
-                                                            <input type="hidden" name="inizio1" value="<%=lez.getOrainizio()%>" />
+                                                            <input type="hidden" name="data1" value="<%=StringEscapeUtils.escapeHtml4(lez.getData())%>" />
+                                                            <input type="hidden" name="corso1" value="<%=StringEscapeUtils.escapeHtml4(lez.getNumerocorso())%>" />
+                                                            <input type="hidden" name="inizio1" value="<%=StringEscapeUtils.escapeHtml4(lez.getOrainizio())%>" />
                                                             <tr>
                                                                 <th scope="row">
-                                                                    <%=lez.getData()%></th>
-                                                                <td><%=lez.getNumerocorso()%></td>
-                                                                <td><%=lez.getOrainizio()%></td>
-                                                                <td><%=lez.getOrafine()%></td>
+                                                                    <%=StringEscapeUtils.escapeHtml4(lez.getData())%></th>
+                                                                <td><%=StringEscapeUtils.escapeHtml4(lez.getNumerocorso())%></td>
+                                                                <td><%=StringEscapeUtils.escapeHtml4(lez.getOrainizio())%></td>
+                                                                <td><%=StringEscapeUtils.escapeHtml4(lez.getOrafine())%></td>
                                                                 <td><button type="submit" class="btn btn-sm btn-outline-danger">
                                                                         <i class="fa fa-trash"></i> Elimina</button>
                                                                 </td>
@@ -183,7 +184,7 @@
                                                     </div>
                                                     <div class="form-group row">
                                                         <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                            <button type="submit" class="btn btn-io"><i class="fa fa-save"></i>
+                                                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>
                                                                 Salva</button>
                                                         </div>
                                                     </div>
@@ -248,7 +249,7 @@
             </div>
         </div>
         <%}%>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop"style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

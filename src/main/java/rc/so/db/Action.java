@@ -10,7 +10,6 @@ import rc.so.domain.ProgettiFormativi;
 import rc.so.domain.SoggettiAttuatori;
 import rc.so.domain.User;
 import rc.so.entity.FadCalendar;
-import rc.so.util.Utility;
 import static rc.so.util.Utility.estraiEccezione;
 import static rc.so.util.Utility.pregresso;
 import java.io.File;
@@ -36,8 +35,8 @@ public class Action {
             db.closeDB();
         } catch (Exception e) {
         }
-   }
-    
+    }
+
     public static File createFile_R(String path) {
         try {
             File out = new File(separatorsToSystem(path));
@@ -55,7 +54,11 @@ public class Action {
         if (db.getC() == null) {
             return false;
         }
-        boolean c = db.isVisible(gruppo, page);
+
+        String gruppoFix = sanitizePath(gruppo);
+        String pageFix = sanitizePath(page);
+
+        boolean c = db.isVisible(gruppoFix, pageFix);
         db.closeDB();
         return c;
 
@@ -63,6 +66,10 @@ public class Action {
 //        boolean out = e.isVisible(gruppo, page);
 //        e.close();
 //        return out;
+    }
+
+    private static String sanitizePath(String path) {
+        return path.replaceAll("[^a-zA-Z0-9-_./]", "");
     }
 
     public static boolean isModifiable(String modificabile, String stato) {//usato anche per la visualizzazione dei modelli
@@ -382,7 +389,10 @@ public class Action {
 
     public static List<Registro_completo> registro_modello6(String idpr) {
         Database db = new Database(false);
-        List<Registro_completo> rc = db.registro_modello6(idpr);
+
+        String idprfix = sanitizePath(idpr);
+
+        List<Registro_completo> rc = db.registro_modello6(idprfix);
         db.closeDB();
         return rc;
     }

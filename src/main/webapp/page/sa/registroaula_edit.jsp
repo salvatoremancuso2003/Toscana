@@ -1,3 +1,4 @@
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="java.util.concurrent.atomic.AtomicInteger"%>
 <%@page import="rc.so.domain.Allievi"%>
 <%@page import="rc.so.domain.Docenti"%>
@@ -22,6 +23,7 @@
 <%@page import="rc.so.entity.Item"%>
 <%@page import="rc.so.domain.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <%
     User us = (User) session.getAttribute("user");
     if (us == null) {
@@ -328,8 +330,8 @@
                                         <%for (Registro_completo d1 : docenti) {%>
                                         <tr class="bg-light">
                                             <td>DOCENTE</td>
-                                            <td><%=d1.getCognome()%></td>
-                                            <td><%=d1.getNome()%></td>
+                                            <td><%=StringEscapeUtils.escapeHtml4(d1.getCognome())%></td>
+                                            <td><%=StringEscapeUtils.escapeHtml4(d1.getNome())%></td>
                                             <td>
                                                 <select class="form-control kt-select2-general" 
                                                         id="<%=d1.getId()%>_docereg" 
@@ -354,8 +356,8 @@
                                         <%for (Registro_completo d1 : allievi) {%>
                                         <tr class="bg-light2">
                                             <td>ALLIEVO</td>
-                                            <td><%=d1.getCognome()%></td>
-                                            <td><%=d1.getNome()%></td>
+                                            <td><%=StringEscapeUtils.escapeHtml4(d1.getCognome())%></td>
+                                            <td><%=StringEscapeUtils.escapeHtml4(d1.getNome())%></td>
                                             <td><select class="form-control kt-select2-general" 
                                                         id="<%=d1.getId()%>_allreg" 
                                                         name="<%=d1.getId()%>_allreg"  style="width: 100%"
@@ -399,7 +401,7 @@
 </div>
 </div>
 </div>
-<div id="kt_scrolltop" class="kt-scrolltop">
+<div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
     <i class="fa fa-arrow-up"></i>
 </div>
 <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>
@@ -429,6 +431,7 @@
 <script type="text/javascript" src="<%=src%>/assets/soop/js/jquery.fancybox.min.js"></script>
 <script type="text/javascript" src="<%=src%>/assets/soop/js/fancy.js"></script>
 <input type="hidden" id="systemtype" value="<%=Utility.iswindows()%>" />
+<script type="text/javascript" src="../../assets/DOMPurify/src/purify.js"></script>
 <script type="text/javascript">
                                                             var KTAppOptions = {
                                                                 "colors": {
@@ -487,6 +490,7 @@
                                                                         }
                                                                 );
                                                             }
+                                                            
 
 </script>
 </body>

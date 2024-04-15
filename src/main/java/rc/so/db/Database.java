@@ -56,6 +56,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import static org.apache.commons.lang3.StringUtils.right;
 import static org.apache.commons.lang3.StringUtils.stripAccents;
+import org.apache.commons.text.StringEscapeUtils;
 import org.joda.time.DateTime;
 import rc.so.domain.Presenze_Lezioni_Allievi;
 import static rc.so.util.Utility.conf;
@@ -287,6 +288,10 @@ public class Database {
             LOGAPP.log(Level.SEVERE, estraiEccezione(ex));
         }
         return p1;
+    }
+    
+    private static String sanitizePath(String path) {
+        return path.replaceAll("[^a-zA-Z0-9-_./]", "");
     }
 
     public String getNomePR_F(String id) {
@@ -1115,9 +1120,10 @@ public class Database {
     }
 
     public boolean isVisible(String gruppo, String page) {
-
+        
         try {
-            String sql = "SELECT permessi FROM pagina WHERE nome='" + page + "' AND permessi LIKE'%" + gruppo + "%'";
+            
+            String sql = "SELECT permessi FROM pagina WHERE nome='" + page + "' AND permessi LIKE'%" + gruppo+ "%'";
             try (PreparedStatement ps1 = this.c.prepareStatement(sql); ResultSet rs1 = ps1.executeQuery()) {
                 return rs1.next();
             }

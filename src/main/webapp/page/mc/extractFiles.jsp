@@ -112,7 +112,7 @@
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="col-lg-3">
-                                                                <a href="javascript:void(0);" id="submit" class="btn btn-io">Scarica</a>
+                                                                <a href="javascript:void(0);" id="submit" class="btn btn-primary">Scarica</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -159,7 +159,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop"style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <!--begin:: Global Mandatory Vendors -->

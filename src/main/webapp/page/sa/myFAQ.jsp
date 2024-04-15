@@ -108,7 +108,7 @@
                                                         <textarea class="form-control obbligatory" name="ask" id="ask" placeholder="Scrivi qui la tua domanda" style="height: calc(1.5em + 1.3rem + 2px)!important;" onkeypress="return pressEnter(event)"></textarea>
                                                     </div>
                                                     <div class="col-1">
-                                                        <a onclick="sendAsk();" href="javascript:void(0);" class="btn btn-io btn-icon btn-circle"><i class="fa fa-paper-plane"></i></a>
+                                                        <a onclick="sendAsk();" href="javascript:void(0);" class="btn btn-primary btn-icon btn-circle"><i class="fa fa-paper-plane"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -124,7 +124,7 @@
             </div>
         </div>
         <!-- begin::Scrolltop -->
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop"style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

@@ -344,7 +344,7 @@
         <!-- end::Quick Panel -->
 
         <!-- begin::Scrolltop -->
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <!--begin:: Global Mandatory Vendors -->
@@ -412,8 +412,8 @@
                     showCancelButton: true,
                     confirmButtonText: '&nbsp;<i class="la la-check"></i>',
                     cancelButtonText: '&nbsp;<i class="la la-close"></i>',
-                    cancelButtonClass: "btn btn-io-n",
-                    confirmButtonClass: "btn btn-io",
+                    cancelButtonClass: "btn btn-danger",
+                    confirmButtonClass: "btn btn-primary",
                     customClass: {
                         popup: 'animated bounceInUp'
                     },

@@ -1,4 +1,4 @@
-
+w
 <%@page import="rc.so.domain.Estrazioni"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="rc.so.util.Utility"%>
@@ -151,10 +151,10 @@
             }
         </style>
     </head>
+
     <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
         <!-- begin:: Page -->                   
         <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
-
         <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
             <%@ include file="menu/menu.jsp"%>
             <!-- end:: Aside -->
@@ -598,7 +598,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
 

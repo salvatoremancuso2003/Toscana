@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-<%@page import="com.sun.xml.internal.ws.util.StringUtils"%>
 <%@page import="rc.so.domain.MascheraM5"%>
 <%@page import="rc.so.domain.ModelliPrg"%>
 <%@page import="rc.so.domain.DocumentiPrg"%>
@@ -533,7 +532,7 @@
                                                                                     </div>
                                                                                     <!--<div id="assegnazione_premialita"></div>-->
                                                                                     <div class="kt-section__content kt-section__content--solid text-center" style="margin-top:3rem;">
-                                                                                        <a id="rendiconta_<%=a.getId()%>" href="javascript:void(0);" class="btn btn-io" style="font-family: Poppins;"><i class="fa fa-check"></i> Completa</a>
+                                                                                        <a id="rendiconta_<%=a.getId()%>" href="javascript:void(0);" class="btn btn-primary" style="font-family: Poppins;"><i class="fa fa-check"></i> Completa</a>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -564,10 +563,10 @@
                                                                         <div class="btn-group" role="group" aria-label="First group">
                                                                             <button type="button" disabled="disabled" class="btn" style="background-color: #363a90!important; opacity: 1!important; color:white;"><%=a.getNome()%> <%=a.getCognome()%></button>
                                                                             <%if (modelli5.get(a) == null) {%>
-                                                                            <button id="loadM5_<%=a.getId()%>" type="button" load="toload" class="btn btn-io-n" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Carica modello 5 - <%=a.getNome()%> <%=a.getCognome()%></h5>" ><i class="fa fa-file-signature"></i></button>
+                                                                            <button id="loadM5_<%=a.getId()%>" type="button" load="toload" class="btn btn-danger" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Carica modello 5 - <%=a.getNome()%> <%=a.getCognome()%></h5>" ><i class="fa fa-file-signature"></i></button>
                                                                                 <%} else {%>
-                                                                            <button id="loadM5_<%=a.getId()%>" type="button" class="btn btn-io" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Cambia modello 5 - <%=a.getNome()%> <%=a.getCognome()%></h5>" ><i class="fa fa-file-signature"></i></button>
-                                                                            <a target="_blank" href="<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=modelli5.get(a).getPath()%>" style="display: flex;" class="btn btn-io" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Visualizza modello 5 caricato</h5>" ><i class="fa fa-download"></i></a> 
+                                                                            <button id="loadM5_<%=a.getId()%>" type="button" class="btn btn-primary" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Cambia modello 5 - <%=a.getNome()%> <%=a.getCognome()%></h5>" ><i class="fa fa-file-signature"></i></button>
+                                                                            <a target="_blank" href="<%=request.getContextPath()%>/OperazioniGeneral?type=showDoc&path=<%=modelli5.get(a).getPath()%>" style="display: flex;" class="btn btn-primary" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Visualizza modello 5 caricato</h5>" ><i class="fa fa-download"></i></a> 
                                                                                 <%}%>
                                                                         </div>   
                                                                         <%}%>    
@@ -596,7 +595,7 @@
                                                                     </div>
                                                                     <div class="kt-section__content kt-section__content--solid text-center" style="margin-top: 3rem; margin-bottom: 2rem;">
                                                                         <%if (registro_complessivo == null) {%>
-                                                                        <button id="registro_<%=p.getId()%>" type="button" registro="toload" class="btn btn-io-n"><i class="fa fa-file-signature"></i>&nbsp;Carica <%=complessivo.getDescrizione()%></button>&nbsp;
+                                                                        <button id="registro_<%=p.getId()%>" type="button" registro="toload" class="btn btn-danger"><i class="fa fa-file-signature"></i>&nbsp;Carica <%=complessivo.getDescrizione()%></button>&nbsp;
                                                                         <label style="display: flex; margin-top:1.5rem;" class="kt-font-io kt-font-bold"><font size="2">Il presente registro complessivo delle presenze generato dal sistema, va scaricato (dal tasto <i class="fa fa-file-download kt-font-success"></i> ), firmato digitalmente (.p7m CAdES, .pdf PAdES) e ricaricato.</font></label>
                                                                         <label style="display: flex; margin-top:0.5rem;" class="kt-font-danger kt-font-bold"><font size="2" >Per poter proseguire è necessario caricare il registro complessivo delle presenze firmato digitalmente - 0/1</font></label>
                                                                             <%} else {%>
@@ -680,7 +679,7 @@
                                                                         <button id="dichiarazione_<%=p.getId()%>" type="button" declar="loaded" class="btn btn-success"><i class="fa fa-check-circle"></i>&nbsp;Cambia</button>&nbsp;
                                                                         <label style="display: flex; margin-top: 1.5rem" class="kt-font-danger kt-font-bold"><font size="2" >E' possibile proseguire avendo già salvato la dichiarazione</font></label>
                                                                             <%} else {%>
-                                                                        <button id="dichiarazione_<%=p.getId()%>" declar="toload" type="button" class="btn btn-io-n"><i class="fa fa-check-circle"></i>&nbsp;Salva</button>&nbsp;
+                                                                        <button id="dichiarazione_<%=p.getId()%>" declar="toload" type="button" class="btn btn-primary"><i class="fa fa-check-circle"></i>&nbsp;Salva</button>&nbsp;
                                                                         <label style="display: flex; margin-top: 1.5rem" class="kt-font-danger kt-font-bold"><font size="2" >Per poter proseguire è necessario salvare la dichiarazione</font></label>
                                                                             <%}%>
                                                                     </div>
@@ -723,14 +722,14 @@
                                                         </div>                    
                                                         <!--step: final-->
                                                         <div class="kt-form__actions">
-                                                            <div class="btn btn-io-n btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
+                                                            <div class="btn btn-danger btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
                                                                 Indietro
                                                             </div>
-                                                            <div class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                            <div class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                  data-ktwizard-type="action-submit">
                                                                 Concludi Progetto Formativo
                                                             </div>
-                                                            <div id="go_next" class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+                                                            <div id="go_next" class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
                                                                 Avanti
                                                             </div>
                                                         </div>
@@ -749,7 +748,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

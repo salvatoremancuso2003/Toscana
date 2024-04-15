@@ -1,4 +1,6 @@
 
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
+<%@page import="rc.so.util.Utility"%>
 <%@page import="rc.so.entity.Item"%>
 <%@page import="rc.so.db.Entity"%>
 <%@page import="java.util.List"%>
@@ -149,8 +151,8 @@
                                                         <div class="kt-form__actions">
                                                             <div class="row">
                                                                 <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                                    <a onclick="refresh();" href="javascript:void(0);" class="btn btn-io"><font color='white'>Cerca</font></a>
-                                                                    <a href="<%=pageName_%>" class="btn btn-io-n"><font color='white'>Reset</font></a>
+                                                                    <a onclick="refresh();" href="javascript:void(0);" class="btn btn-primary"><font color='white'>Cerca</font></a>
+                                                                    <a href="<%=StringEscapeUtils.escapeHtml4(pageName_)%>" class="btn btn-warning"><font color='white'>Reset</font></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -210,7 +212,7 @@
         </div>
 
         <!-- begin::Scrolltop -->
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop"style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <!--begin:: Global Mandatory Vendors -->
@@ -390,8 +392,8 @@
                     showCancelButton: true,
                     confirmButtonText: '&nbsp;<i class="la la-check"></i>',
                     cancelButtonText: '&nbsp;<i class="la la-close"></i>',
-                    cancelButtonClass: "btn btn-io-n",
-                    confirmButtonClass: "btn btn-io",
+                    cancelButtonClass: "btn btn-danger",
+                    confirmButtonClass: "btn btn-primary",
                     width: '750px',
                     customClass: {
                         popup: 'animated bounceInUp',

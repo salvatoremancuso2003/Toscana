@@ -1,3 +1,4 @@
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="rc.so.domain.Presenze_Lezioni"%>
 <%@page import="rc.so.domain.TipoDoc"%>
 <%@page import="rc.so.domain.Lezioni_Modelli"%>
@@ -280,12 +281,12 @@
                                                 <div class="kt-form__actions">
                                                     <form action="<%=request.getContextPath()%>/OperazioniSA" method="POST" target="_blank">
                                                         <input type="hidden" name="type" value="scaricamodello3" />
-                                                        <input type="hidden" name="idpr" value="<%=request.getParameter("id")%>" />
+                                                        <input type="hidden" name="idpr" value="<%=StringEscapeUtils.escapeHtml4(request.getParameter("id"))%>" />
                                                         <div class="row">
                                                             <label>Scaricare il modello con il calendario inserito per poi caricarlo
                                                                 firmato digitalmente (.p7m CAdES, .pdf PAdES) nel campo sottostante.</label>
                                                             <div class='col-lg-2 col-md-4 col-sm-6'>
-                                                                <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                                <button class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                         type="submit" 
                                                                         >
                                                                     Scarica
@@ -300,7 +301,7 @@
                                                           method="POST"
                                                           enctype="multipart/form-data">
                                                         <input type="hidden" name="type" value="salvamodello3" />
-                                                        <input type="hidden" name="idpr" value="<%=request.getParameter("id")%>" />
+                                                        <input type="hidden" name="idpr" value="<%=StringEscapeUtils.escapeHtml4(request.getParameter("id"))%>" />
                                                         <input type="hidden" name="idmodello" value="<%=m3.getId()%>" />
                                                         <div class="row">
                                                             <div class='col-lg-4 col-md-4 col-sm-6'>
@@ -356,7 +357,7 @@
     </div>
 </div>
 </div>
-<div id="kt_scrolltop" class="kt-scrolltop">
+<div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
     <i class="fa fa-arrow-up"></i>
 </div>
 <script src="<%=src%>/assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>

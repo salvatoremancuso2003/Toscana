@@ -278,7 +278,7 @@
                                         <div class="kt-portlet__foot" style="padding-left: 10px;">
                                             <div class="kt-form__actions">
                                                 <div class="form-group col-xl-3 col-lg-6">
-                                                    <button type="submit" class="btn btn-io" 
+                                                    <button type="submit" class="btn btn-primary" 
                                                             style="font-family: Poppins"><i class="fa fa-save"></i> SALVA DATI</button>
                                                 </div>
                                             </div>
@@ -305,7 +305,7 @@
                                                 <input type="hidden" name="idallievo" value="<%=a.getId()%>" />
                                                 <input type="hidden" name="maildest" value="<%=a.getEmail()%>" />
                                                 <input type="hidden" name="path" value="<%=presentemod0.getPath()%>" />
-                                                <button type="submit" class="btn btn-io" 
+                                                <button type="submit" class="btn btn-primary" 
                                                         style="font-family: Poppins"><i class="fa fa-file-pdf"></i> INVIA MODELLO 0 TRAMITE MAIL AL DISCENTE</button>
                                             </form>
                                         </div>
@@ -330,7 +330,7 @@
             </div>
         </div>
         <%e.close();%>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop"style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

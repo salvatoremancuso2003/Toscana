@@ -1,3 +1,4 @@
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <!DOCTYPE HTML>
 <%@page import="rc.so.domain.Revisori"%>
 <%@page import="rc.so.domain.Docenti"%>
@@ -459,8 +460,8 @@
                                                                                         <a target="_blank" class="btn btn-success btn-icon kt-font-bold" id="show_file_ASSENZA" style="display: none; float:left" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h5>Visualizza file caricato</h5>"><i class="fa fa-file-pdf"></i></a>
                                                                                     </div>    
                                                                                     <div class="col-lg-2 col-md-12 col-sm-12 kt-align-right" style="float: right;">
-                                                                                        <a href="<%=request.getContextPath()%>/OperazioniMicro?type=scaricaFileAssenza&idpr=<%=request.getParameter("id")%>" id="scarica_ASSENZA_file" 
-                                                                                           target="_blank" class="btn btn-io btn-icon kt-font-bold disablelink" data-container="body" data-html="true" 
+                                                                                        <a href="<%=request.getContextPath()%>/OperazioniMicro?type=scaricaFileAssenza&idpr=<%=StringEscapeUtils.escapeHtml4(request.getParameter("id"))%>" id="scarica_ASSENZA_file" 
+                                                                                           target="_blank" class="btn btn-primary btn-icon kt-font-bold disablelink" data-container="body" data-html="true" 
                                                                                            data-toggle="kt-tooltip" data-placement="top" title="<h5>Scarica Autocertificazione generata dalla piattaforma</h5>">
                                                                                             <i class="fa fa-download"></i>
                                                                                         </a>
@@ -850,13 +851,13 @@
                                                         </div>                    
                                                         <!--step: final-->
                                                         <div class="kt-form__actions">
-                                                            <div class="btn btn-io-n btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
+                                                            <div class="btn btn-primary-n btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-prev">
                                                                 Indietro
                                                             </div>
                                                             <div class="btn btn-success btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                  data-ktwizard-type="action-submit"><i class="fa fa-check"></i> Concludi
                                                             </div>
-                                                            <div id="go_next" class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
+                                                            <div id="go_next" class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" data-ktwizard-type="action-next">
                                                                 Avanti
                                                             </div>
                                                         </div>
@@ -875,7 +876,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

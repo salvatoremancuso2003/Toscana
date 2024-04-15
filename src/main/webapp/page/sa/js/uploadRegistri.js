@@ -144,9 +144,9 @@ function changeRegistro(idallievo, iddocumento, idprogetto, totalems) {
                 var json = JSON.parse(resp);
                 for (var i = 0; i < json.length; i++) {
                     if (docenteselected == json[i].id) {
-                        $("#docente").append('<option selected value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
+                        $("#docente").innerText('<option selected value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
                     } else {
-                        $("#docente").append('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
+                        $("#docente").innerText('<option value="' + json[i].id + '">' + json[i].cognome + " " + json[i].nome + '</option>');
                     }
                 }
             });
@@ -379,7 +379,7 @@ function uploadSE(idallievo, id_tipoDoc, estensione, mime_type) {
             $.get(context + "/QuerySA?type=getSE_Prestiti", function (resp) {
                 var json = JSON.parse(resp);
                 for (var i = 0; i < json.length; i++) {
-                    $("#prestiti").append('<option value="' + json[i].id + '">' + json[i].descrizione + '</option>');
+                    $("#prestiti").innerText('<option value="' + json[i].id + '">' + json[i].descrizione + '</option>');
                 }
             });
         },
@@ -437,9 +437,9 @@ function changeSE(iddocumento, idse, protocollo, estensione, mime_type) {
                 var json = JSON.parse(resp);
                 for (var i = 0; i < json.length; i++) {
                     if (idse == json[i].id) {
-                        $("#prestiti").append('<option selected value="' + json[i].id + '">' + json[i].descrizione + '</option>');
+                        $("#prestiti").innerText('<option selected value="' + json[i].id + '">' + json[i].descrizione + '</option>');
                     } else {
-                        $("#prestiti").append('<option value="' + json[i].id + '">' + json[i].descrizione + '</option>');
+                        $("#prestiti").innerText('<option value="' + json[i].id + '">' + json[i].descrizione + '</option>');
                     }
                 }
             });

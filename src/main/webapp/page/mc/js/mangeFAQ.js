@@ -129,9 +129,9 @@ function setVisibility(idFaq, tipo) {
                 var json = JSON.parse(resp);
                 for (var i = 0; i < json.length; i++) {
                     if (tipo === json[i].id) {
-                        $("#tipo_new").append('<option selected value="' + json[i].id + '">' + json[i].descrizione + '</option>');
+                        $("#tipo_new").innerText('<option selected value="' + json[i].id + '">' + json[i].descrizione + '</option>');
                     } else {
-                        $("#tipo_new").append('<option value="' + json[i].id + '">' + json[i].descrizione + '</option>');
+                        $("#tipo_new").innerText('<option value="' + json[i].id + '">' + json[i].descrizione + '</option>');
                     }
                 }
             });

@@ -1,3 +1,5 @@
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
+<%@page import="rc.so.util.Utility"%>
 <%@page import="rc.so.domain.TipoFaq"%>
 <%@page import="rc.so.domain.StatiPrg"%>
 <%@page import="rc.so.db.Entity"%>
@@ -136,8 +138,8 @@
                                                         <div class="kt-form__actions">
                                                             <div class="row">
                                                                 <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                                    <a onclick="refresh();" href="javascript:void(0);" class="btn btn-io"><font color='white'>Cerca</font></a>
-                                                                    <a href="<%=pageName_%>" class="btn btn-io-n"><font color='white'>Reset</font></a>
+                                                                    <a onclick="refresh();" href="javascript:void(0);" class="btn btn-primary"><font color='white'>Cerca</font></a>
+                                                                    <a href="<%=StringEscapeUtils.escapeHtml4(pageName_)%>" class="btn btn-warning"><font color='white'>Reset</font></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -193,7 +195,7 @@
             </div>
         </div>
         <!-- begin::Scrolltop -->
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop"style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <form target="_blank" id="goFAD" action="" method="POST" style="display: none">

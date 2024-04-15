@@ -159,7 +159,7 @@ public class Login extends HttpServlet {
         try {
             if (us != null) {
                 String email = us.getEmail();
-                pwd = Utility.getRandomString(8);
+                pwd = Utility.generatePassword(8);
                 us.setPassword(Utility.convMd5(pwd));
                 us.setStato(2);
                 e.begin();

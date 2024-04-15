@@ -4,6 +4,7 @@
     Author     : agodino
 --%>
 
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="rc.so.domain.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
@@ -18,7 +19,7 @@
         //} else {
         String src = session.getAttribute("src").toString();
 
-        String active = request.getParameter("active") == null ? "no" : request.getParameter("active");
+        String active = StringEscapeUtils.escapeHtml4(request.getParameter("active")) == null ? "no" : StringEscapeUtils.escapeHtml4(request.getParameter("active"));
 %>
 <html>
     <head>
@@ -173,7 +174,7 @@
         <!-- end::Quick Panel -->
 
         <!-- begin::Scrolltop -->
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
 

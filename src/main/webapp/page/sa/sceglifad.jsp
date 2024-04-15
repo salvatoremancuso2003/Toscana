@@ -121,7 +121,7 @@
                                     <div class="kt-portlet__foot">
                                         <div class="kt-form__actions">
                                             <div class="row col-12">
-                                                <button type="submit" class="btn btn-io"><font color='white'><i class="fa fa-video"></i> Apri FAD</font></button>
+                                                <button type="submit" class="btn btn-primary"><font color='white'><i class="fa fa-video"></i> Apri FAD</font></button>
                                             </div>
                                         </div>
                                     </div>
@@ -132,7 +132,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop"style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

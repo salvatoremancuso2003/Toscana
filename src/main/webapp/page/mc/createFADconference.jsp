@@ -124,7 +124,7 @@
                                                                 <label>Patecipanti</label><label class="kt-font-danger">*</label>
                                                                 <div class="input-group">
                                                                     <div class="input-group-prepend">
-                                                                        <a class="btn btn-io btn-icon"><i class="fa fa-at"></i></a>
+                                                                        <a class="btn btn-primary btn-icon"><i class="fa fa-at"></i></a>
                                                                     </div>
                                                                     <input type="text" name="email[]" class="form-control obbligatory" placeholder="Email">
                                                                     <div class="input-group-append">
@@ -140,7 +140,7 @@
                                                         <div class="kt-form__actions">
                                                             <div class="row">
                                                                 <div class="col-lg-6 kt-align-right">
-                                                                    <a id="submit" href="javascript:void(0);" class="btn btn-io btn-lg"><font color='white'>Crea</font></a>
+                                                                    <a id="submit" href="javascript:void(0);" class="btn btn-primary btn-lg"><font color='white'>Crea</font></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -157,7 +157,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
 
@@ -254,7 +254,7 @@
             $("#add").click(function () {
                 $("#paretcipant").append('<div class="input-group">'
                         + '<div class="input-group-prepend">'
-                        + '<a class="btn btn-io btn-icon"><i class="fa fa-at"></i></a>'
+                        + '<a class="btn btn-primary btn-icon"><i class="fa fa-at"></i></a>'
                         + '</div>'
                         + '<input type="text" name="email[]" class="form-control obbligatory" placeholder="Email">'
                         + '<div class="input-group-append">'

@@ -106,7 +106,7 @@
                                     <div class="kt-portlet__foot" style="padding-left: 10px;">
                                         <div class="kt-form__actions">
                                             <div class="form-group col-xl-3 col-lg-6">
-                                                <button type="submit" class="btn btn-io" 
+                                                <button type="submit" class="btn btn-primary" 
                                                         style="font-family: Poppins"><i class="flaticon2-splus-1"></i> SALVA </button>
                                             </div>
                                         </div>
@@ -118,7 +118,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop"style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

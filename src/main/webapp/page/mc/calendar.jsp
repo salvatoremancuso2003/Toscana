@@ -377,7 +377,7 @@
                                                         <label class="custom-file-label selected" name="label_registrofirmato">Scegli File</label>
                                                     </div>
                                                 </div>
-                                                <button type="submit" class="btn btn-io"><i class="fa fa-save"></i> SALVA DATI</button>
+                                                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> SALVA DATI</button>
                                             </form>
                                             <%} else {%>
                                             </form>
@@ -401,7 +401,7 @@
     </div>
 </div>
 </div>
-<div id="kt_scrolltop" class="kt-scrolltop">
+<div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
     <i class="fa fa-arrow-up"></i>
 </div>
 <script src="<%=src%>/assets/vendors/general/jquery/dist/jquery.js" type="text/javascript"></script>

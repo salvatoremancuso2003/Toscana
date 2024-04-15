@@ -115,7 +115,7 @@
                                                 <hr>
                                                 <div class="row">
                                                     <div class="col-sm-5 col-md-4 col-lg-4">
-                                                        <button class="btn btn-io btn-md btn-wide kt-font-bold" type="button" target="_blank" onclick="return download_m2();">Scarica nuovo Modello 2</button>                                                                
+                                                        <button class="btn btn-primary btn-md btn-wide kt-font-bold" type="button" target="_blank" onclick="return download_m2();">Scarica nuovo Modello 2</button>                                                                
                                                     </div>
                                                     <div class="col-sm-5 col-md-6 col-lg-6">
                                                         <div class="custom-file" style="float: right;">
@@ -128,7 +128,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-2 col-md-2 col-lg-2">
-                                                        <button style="float: right; "class="btn btn-io btn-md btn-wide kt-font-bold" type="button" id="upfile"><i class="fa fa-cloud-upload-alt"></i>Carica</button>                                                                
+                                                        <button style="float: right; "class="btn btn-primary btn-md btn-wide kt-font-bold" type="button" id="upfile"><i class="fa fa-cloud-upload-alt"></i>Carica</button>                                                                
                                                     </div>
                                                 </div>
                                             </div>
@@ -209,7 +209,7 @@
                                         <div class="kt-portlet__foot">
                                             <div class="kt-form__actions">
                                                 <div class="row" style="align-items: center;justify-content: center; display:flex;">
-                                                    <a id="submit" href="javascript:void(0);" class="btn btn-io ">Salva modifiche</a>
+                                                    <a id="submit" href="javascript:void(0);" class="btn btn-primary ">Salva modifiche</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -221,7 +221,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

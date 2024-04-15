@@ -1,4 +1,5 @@
 
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="java.util.Date"%>
 <%@page import="rc.so.util.Utility"%>
 <%@page import="rc.so.domain.Documenti_UnitaDidattiche"%>
@@ -21,7 +22,7 @@
         } else {
             String src = session.getAttribute("src").toString();
             Entity e = new Entity();
-            UnitaDidattiche u = e.getEm().find(UnitaDidattiche.class, request.getParameter("codice"));
+            UnitaDidattiche u = e.getEm().find(UnitaDidattiche.class, StringEscapeUtils.escapeHtml4(request.getParameter("codice")));
             int files = Integer.parseInt(e.getPath("UD_max_files"));
             int links = Integer.parseInt(e.getPath("UD_max_links"));
             boolean checkUpload[] = Utility.LinksDocs_UD(u.getDocumenti_ud(), Integer.parseInt(e.getPath("UD_max_files")), Integer.parseInt(e.getPath("UD_max_links")));
@@ -98,7 +99,7 @@
                 background-color: transparent;
             }
 
-            .btn-io:not(:disabled):not(.disabled):active, .btn-io:not(:disabled):not(.disabled).active, .show > .btn-io.dropdown-toggle {
+            .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
                 background-color: #4b4e92!important;
             }
         </style>
@@ -143,7 +144,7 @@
                                                             <input type="text" class="form-control" maxlength="255" onkeypress="counterCharacters()" id="descrizione" name="descrizione" value="<%=u.getDescrizione() == null ? "" : u.getDescrizione()%>">
                                                             <%if (us.getTipo() == 2) {%>
                                                             <div class="input-group-append">
-                                                                <button class="btn btn-io-n" type="button" onclick="saveDescription()">Salva</button>
+                                                                <button class="btn btn-danger" type="button" onclick="saveDescription()">Salva</button>
                                                             </div>
                                                             <%}%>
                                                         </div>
@@ -201,7 +202,7 @@
                                                             <%if (us.getTipo() == 2) {%>
                                                             <div class="col-md-3 kt-align-right">
                                                                 <div class="btn-group" role="group">
-                                                                    <button id="btnGroupDrop1" type="button" class="btn btn-io font-weight-bold dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <button id="btnGroupDrop1" type="button" class="btn btn-primary font-weight-bold dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                         Carica documento
                                                                     </button>
                                                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -235,7 +236,7 @@
         <!-- end::Quick Panel -->
 
         <!-- begin::Scrolltop -->
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop"style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
 

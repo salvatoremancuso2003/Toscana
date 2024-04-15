@@ -227,7 +227,7 @@
                                                                 <div class="form-group row">
                                                                     <div class="form-group col-xl-6 col-lg-6">
                                                                         <label>Scaricare il modello per l'allievo selezionato per poi caricarlo firmato dall'allievo nel campo seguente.</label>
-                                                                        <button class="btn btn-io btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
+                                                                        <button class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                                 type="button" 
                                                                                 onclick="return model_funct('<%=mod_1.getId()%>');"
                                                                                 >
@@ -264,7 +264,7 @@
                                                                 <div class="kt-portlet__foot" style="padding-left: 10px;">
                                                                     <div class="kt-form__actions">
                                                                         <div class="row">
-                                                                            <a id="submit_change" href="javascript:void(0);" class="btn btn-io" style="font-family: Poppins"><i class="flaticon2-plus-1"></i> Aggiungi</a>
+                                                                            <a id="submit_change" href="javascript:void(0);" class="btn btn-primary" style="font-family: Poppins"><i class="flaticon2-plus-1"></i> Aggiungi</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -285,7 +285,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop" style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

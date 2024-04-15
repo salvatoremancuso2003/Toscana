@@ -123,7 +123,7 @@
                                                     </a>
                                                 </div>
                                                 <div class='col-6 paddig_0_l' style='text-align: left;'>
-                                                    <a class="btn btn-icon btn-sm btn-io-n" href="javascript:void(0);" onclick="changeDoc(<%=d.getId()%>, '<%=d.getTipo().getEstensione().getEstensione().replaceAll("\"", "&quot;")%>', '<%=d.getTipo().getEstensione().getMime_type()%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Cambia documento">
+                                                    <a class="btn btn-icon btn-sm btn-danger" href="javascript:void(0);" onclick="changeDoc(<%=d.getId()%>, '<%=d.getTipo().getEstensione().getEstensione().replaceAll("\"", "&quot;")%>', '<%=d.getTipo().getEstensione().getMime_type()%>');" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Cambia documento">
                                                         <i class="fa fa-exchange-alt"></i>
                                                     </a>
                                                 </div>
@@ -150,7 +150,7 @@
                                                     </a>
                                                 </div>
                                                 <div class='col-6 paddig_0_l' style='text-align: left;'>
-                                                    <a class="btn btn-icon btn-sm btn-io-n fancyBoxRafFull" href="modifyRegistroAula.jsp?id=<%=d.getId()%>" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Modifica Registro">
+                                                    <a class="btn btn-icon btn-sm btn-danger fancyBoxRafFull" href="modifyRegistroAula.jsp?id=<%=d.getId()%>" data-container="body" data-html="true" data-toggle="kt-tooltip" title="Modifica Registro">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
                                                 </div>
@@ -196,7 +196,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop"style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <script src="<%=src%>/assets/soop/js/jquery-3.6.1.js" type="text/javascript"></script>

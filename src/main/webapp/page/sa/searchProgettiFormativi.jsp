@@ -1,4 +1,5 @@
 
+<%@page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@page import="rc.so.util.Utility"%>
 <%@page import="rc.so.domain.StatiPrg"%>
 <%@page import="rc.so.db.Entity"%>
@@ -22,7 +23,7 @@
             int max_ore_day = Integer.parseInt(e.getPath("max_ore_day"));
             e.close();
             String src = session.getAttribute("src").toString();
-            String icip = request.getParameter("icip") != null ? request.getParameter("icip") : "";
+            String icip = StringEscapeUtils.escapeHtml4(request.getParameter("icip")) != null ? StringEscapeUtils.escapeHtml4(request.getParameter("icip")) : "";
 %>
 <html>
     <head>
@@ -139,8 +140,8 @@
                                                         <div class="kt-form__actions">
                                                             <div class="row">
                                                                 <div class="offset-lg-6 col-lg-6 kt-align-right">
-                                                                    <a onclick="refresh();" href="javascript:void(0);" class="btn btn-io"><font color='white'>Cerca</font></a>
-                                                                    <a href="<%=pageName_%>" class="btn btn-io-n"><font color='white'>Reset</font></a>
+                                                                    <a onclick="refresh();" href="javascript:void(0);" class="btn btn-primary"><font color='white'>Cerca</font></a>
+                                                                    <a href="<%=StringEscapeUtils.escapeHtml4(pageName_)%>" class="btn btn-warning"><font color='white'>Reset</font></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -194,7 +195,7 @@
                 </div>
             </div>
         </div>
-        <div id="kt_scrolltop" class="kt-scrolltop">
+        <div id="kt_scrolltop"style="background-color: #0059b3" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <!--start:Modal-->
