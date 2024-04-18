@@ -69,6 +69,8 @@
         <link href="<%=src%>/assets/vendors/custom/vendors/flaticon/flaticon.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/custom/vendors/flaticon2/flaticon.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/custom/vendors/fontawesome5/css/all.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="Bootstrap2024/assets/css/global.css"/>
+        <link href="https://fonts.cdnfonts.com/css/titillium-web" rel="stylesheet">
 
         <!--end:: Global Optional Vendors -->
 

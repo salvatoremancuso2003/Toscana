@@ -24,6 +24,9 @@
         <meta name="_csrf" content="4bfd1575-3ad1-4d21-96c7-4ef2d9f86721"/>
         <meta name="_csrf_header" content="X-CSRF-TOKEN"/>
         <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'">
+        <link rel="stylesheet" href="Bootstrap2024/assets/css/global.css"/>
+        <link href="https://fonts.cdnfonts.com/css/titillium-web" rel="stylesheet">
+
         <!--begin::Fonts -->
         <script src="resource/webfont.js"></script>
         <script>
@@ -82,9 +85,7 @@
                                     <div class="kt-login__title">
                                         <img src="resource/demologo.png" alt="" height="100"/>
                                     </div>
-                                    <h3 class="kt-login__title kt-font-io" style="font-size:2rem"><b>YES I STARTUP - Regione Toscana</b></h3>
                                     <%} else {%>
-                                    <h3 class="kt-login__title kt-font-io" style="font-size:2rem ; color: #0066CC!important" ><b>YES I STARTUP - Regione Toscana</b></h3>
                                     <%if (Utility.test) {%>
                                     <br>
                                     <div class="kt-login__title">
@@ -192,29 +193,29 @@
             <!--begin:: Global Mandatory Vendors -->
             <script src="assets/soop/js/utility.js" type="text/javascript"></script>
             <script>
-                                        function ctrlForm() {
-                                            var err = false;
-                                            var user = $("#user");
-                                            var pass = $("#password");
-                                            if (checkValue(user, false)) {
-                                                err = true;
-                                            }
-                                            if (checkValue(pass, false)) {
-                                                err = true;
-                                            }
-                                            if (err) {
-                                                $("#drop_login").trigger('click');
-                                                return false;
-                                            }
-                                            swal.fire({
-                                                title: 'Sto Accedendo...',
-                                                text: '',
-                                                onOpen: function () {
-                                                    swal.showLoading();
-                                                }
-                                            });
-                                            return true;
+                                    function ctrlForm() {
+                                        var err = false;
+                                        var user = $("#user");
+                                        var pass = $("#password");
+                                        if (checkValue(user, false)) {
+                                            err = true;
                                         }
+                                        if (checkValue(pass, false)) {
+                                            err = true;
+                                        }
+                                        if (err) {
+                                            $("#drop_login").trigger('click');
+                                            return false;
+                                        }
+                                        swal.fire({
+                                            title: 'Sto Accedendo...',
+                                            text: '',
+                                            onOpen: function () {
+                                                swal.showLoading();
+                                            }
+                                        });
+                                        return true;
+                                    }
             </script>
 
             <script>
@@ -306,29 +307,29 @@
                     if (esito == null) {
                         esito = "";
                     } else if (esito.equals("KO")) {%>
-            swal.fire({
-                type: 'error',
-                title: 'Credenziali errate',
-                confirmButtonColor: '#363a90'
-            });
+                swal.fire({
+                    type: 'error',
+                    title: 'Credenziali errate',
+                    confirmButtonColor: '#363a90'
+                });
                 <%} else if (esito.equals("banned")) {%>
-            swal.fire({
-                type: 'error',
-                title: 'Utenza bloccata',
-                confirmButtonColor: '#363a90'
-            });
+                swal.fire({
+                    type: 'error',
+                    title: 'Utenza bloccata',
+                    confirmButtonColor: '#363a90'
+                });
                 <%}%>
 
-            function clickLink(link, target) {
-                var a = document.createElement('a');
-                a.href = link;
-                a.target = target;
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-            }
+                function clickLink(link, target) {
+                    var a = document.createElement('a');
+                    a.href = link;
+                    a.target = target;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                }
 
-            //$( document ).ready(function() {
+                //$( document ).ready(function() {
 //    alert(heidiDecode('676673756A6D6A7B7B621'));
 //});
 

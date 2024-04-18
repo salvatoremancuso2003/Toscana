@@ -63,6 +63,8 @@
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
+        <link rel="stylesheet" href="Bootstrap2024/assets/css/global.css"/>
+        <link href="https://fonts.cdnfonts.com/css/titillium-web" rel="stylesheet">
         <style>
             .kt-section__title {
                 font-size: 1.2rem!important;
