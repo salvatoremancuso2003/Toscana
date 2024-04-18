@@ -108,13 +108,13 @@
                                                                     <ul class="link-list">
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="searchSA.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-search"></use></svg>
                                                                                 <span>Cerca</span>
                                                                             </a>
                                                                         </li>
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="addSA.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-pencil"></use></svg>
                                                                                 <span>Gestisci Nuovi</span>
                                                                             </a>
                                                                         </li>
@@ -141,7 +141,7 @@
                                                                     <ul class="link-list">
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="searchAule.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-search"></use></svg>
                                                                                 <span>Cerca</span>
                                                                             </a>
                                                                         </li>
@@ -168,7 +168,7 @@
                                                                     <ul class="link-list">
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="searchDocenti.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-search"></use></svg>
                                                                                 <span>Cerca</span>
                                                                             </a>
                                                                         </li>
@@ -195,13 +195,13 @@
                                                                     <ul class="link-list">
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="searchAllieviMicro.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-search"></use></svg>
                                                                                 <span>Cerca</span>
                                                                             </a>
                                                                         </li>
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="manageAllievi.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-pencil"></use></svg>
                                                                                 <span>Gestisci Nuovi</span>
                                                                             </a>
                                                                         </li>
@@ -228,19 +228,19 @@
                                                                     <ul class="link-list">
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="searchPFMicro.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-search"></use></svg>
                                                                                 <span>Cerca</span>
                                                                             </a>
                                                                         </li>
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="dUnit.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-list"></use></svg>
                                                                                 <span>Unità didattiche</span>
                                                                             </a>
                                                                         </li>
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="rend.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-card"></use></svg>
                                                                                 <span>Rendicontazione</span>
                                                                             </a>
                                                                         </li>
@@ -267,13 +267,13 @@
                                                                     <ul class="link-list">
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="downloadModelli.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-download"></use></svg>
                                                                                 <span>Gestisci</span>
                                                                             </a>
                                                                         </li>
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="downloadModelliFS.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-download"></use></svg>
                                                                                 <span>Modelli in Facsimile</span>
                                                                             </a>
                                                                         </li>
@@ -300,13 +300,13 @@
                                                                     <ul class="link-list">
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="saFAQ.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-comment"></use></svg>
                                                                                 <span>Domande SE</span>
                                                                             </a>
                                                                         </li>
                                                                         <li>
                                                                             <a class="list-item dropdown-item" href="mangeFAQ.jsp">
-                                                                                <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                                <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-search"></use></svg>
                                                                                 <span>Cerca</span>
                                                                             </a>
                                                                         </li>

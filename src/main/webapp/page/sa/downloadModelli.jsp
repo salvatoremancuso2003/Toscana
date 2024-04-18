@@ -54,27 +54,27 @@
         <%@ include file="menu/head1.jsp"%>
         <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
-             <nav class="navbar navbar-expand-lg has-megamenu" aria-label="Menu principale">
+            <nav class="navbar navbar-expand-lg has-megamenu" aria-label="Menu principale">
                 <button type="button" aria-label="Mostra o nascondi il menu" class="custom-navbar-toggler" aria-controls="menu" aria-expanded="false" data-bs-toggle="navbarcollapsible" data-bs-target="#navbar-E">
                     <span>
-                        <svg role="img" class="icon"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-burger"></use></svg>
+                        <svg role="img" class="icon"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-burger"></use></svg>
                     </span>
                 </button>
                 <div class="navbar-collapsable" id="navbar-E">
                     <div class="overlay fade"></div>
                     <div class="close-div">
                         <button type="button" aria-label="Chiudi il menu" class="btn close-menu">
-                            <span><svg role="img" class="icon"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use></svg></span>
+                            <span><svg role="img" class="icon"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-close-big"></use></svg></span>
                         </button>
                     </div>
                     <div class="menu-wrapper justify-content-lg-between">
                         <ul class="navbar-nav">
                             <li class="nav-item active">
-                                <a class="nav-link" href="indexSoggettoAttuatore.jsp"><span>Home</span></a>
+                                <a class="nav-link  " href="indexSoggettoAttuatore.jsp"><span>Home</span></a>
                             </li>
                             <li class="nav-item dropdown megamenu">
                                 <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
-                                    <span>Allievi</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                    <span>Allievi</span><svg role="img" class="icon icon-xs ms-1"><use href=""></use></svg>
                                 </button>
                                 <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
                                     <div class="megamenu pb-5 pt-3 py-lg-0">
@@ -86,13 +86,13 @@
                                                             <ul class="link-list">
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="modello1.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-pencil"></use></svg>
                                                                         <span>Aggiungi</span>
                                                                     </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="searchAllievi.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-search"></use></svg>
                                                                         <span>Cerca</span>
                                                                     </a>
                                                                 </li>
@@ -107,7 +107,7 @@
                             </li>
                             <li class="nav-item dropdown megamenu">
                                 <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
-                                    <span>Docenti</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                    <span>Docenti</span><svg role="img" class="icon icon-xs ms-1"><use href=""></use></svg>
                                 </button>
                                 <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
                                     <div class="megamenu pb-5 pt-3 py-lg-0">
@@ -119,13 +119,13 @@
                                                             <ul class="link-list">
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="newDocente.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-pencil"></use></svg>
                                                                         <span>Aggiungi</span>
                                                                     </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="searchDocenti_sa.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-search"></use></svg>
                                                                         <span>Cerca</span>
                                                                     </a>
                                                                 </li>
@@ -140,7 +140,7 @@
                             </li>
                             <li class="nav-item dropdown megamenu">
                                 <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
-                                    <span>Progetti Formativi</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                    <span>Progetti Formativi</span><svg role="img" class="icon icon-xs ms-1"><use href=""></use></svg>
                                 </button>
                                 <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
                                     <div class="megamenu pb-5 pt-3 py-lg-0">
@@ -152,13 +152,13 @@
                                                             <ul class="link-list">
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="newProgettoFormativo.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-pencil"></use></svg>
                                                                         <span>Aggiungi</span>
                                                                     </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="searchProgettiFormativi.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-search"></use></svg>
                                                                         <span>Cerca</span>
                                                                     </a>
                                                                 </li>
@@ -173,7 +173,7 @@
                             </li>
                             <li class="nav-item dropdown megamenu">
                                 <button type="button" class="nav-link active dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
-                                    <span>Materiale Didattico</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                    <span>Materiale Didattico</span><svg role="img" class="icon icon-xs ms-1"><use href=""></use></svg>
                                 </button>
                                 <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
                                     <div class="megamenu pb-5 pt-3 py-lg-0">
@@ -185,13 +185,13 @@
                                                             <ul class="link-list">
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="downloadModelli.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-download"></use></svg>
                                                                         <span>Download</span>
                                                                     </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="downloadModelliFS.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-download"></use></svg>
                                                                         <span>Modelli in Facsimile</span>
                                                                     </a>
                                                                 </li>
@@ -206,7 +206,7 @@
                             </li>
                             <li class="nav-item dropdown megamenu">
                                 <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
-                                    <span>FAQ</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                    <span>FAQ</span><svg role="img" class="icon icon-xs ms-1"><use href=""></use></svg>
                                 </button>
                                 <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
                                     <div class="megamenu pb-5 pt-3 py-lg-0">
@@ -218,13 +218,13 @@
                                                             <ul class="link-list">
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="myFAQ.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-comment"></use></svg>
                                                                         <span>Le Mie Domande</span>
                                                                     </a>
                                                                 </li>
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="allFAQ.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-comment"></use></svg>
                                                                         <span>FAQ</span>
                                                                     </a>
                                                                 </li>
@@ -279,7 +279,7 @@
                                 </div>
                             </div>
                         </div>
-                                            <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
+                        <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
                     </div>
                 </div>
             </div>
@@ -301,23 +301,23 @@
         <script src="../../Bootstrap2024/assets/js/bootstrap-italia.bundle.min.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
         <script type="text/javascript">
-        var KTAppOptions = {
-            "colors": {
-                "state": {
-                    "brand": "#5d78ff",
-                    "dark": "#282a3c",
-                    "light": "#ffffff",
-                    "primary": "#5867dd",
-                    "success": "#34bfa3",
-                    "info": "#36a3f7",
-                    "warning": "#ffb822"
-                },
-                "base": {
-                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+            var KTAppOptions = {
+                "colors": {
+                    "state": {
+                        "brand": "#5d78ff",
+                        "dark": "#282a3c",
+                        "light": "#ffffff",
+                        "primary": "#5867dd",
+                        "success": "#34bfa3",
+                        "info": "#36a3f7",
+                        "warning": "#ffb822"
+                    },
+                    "base": {
+                        "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                        "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                    }
                 }
-            }
-        };
+            };
         </script>
     </body>
 </html>
