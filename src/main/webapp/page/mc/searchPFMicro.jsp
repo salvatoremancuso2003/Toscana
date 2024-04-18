@@ -70,6 +70,7 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
         <!--end::countDown -->
         <style>
@@ -88,12 +89,259 @@
             }
         </style>
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
         <%@ include file="menu/head1.jsp"%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
+            <nav class="navbar navbar-expand-lg has-megamenu" aria-label="Menu principale">
+                <button type="button" aria-label="Mostra o nascondi il menu" class="custom-navbar-toggler" aria-controls="menu" aria-expanded="false" data-bs-toggle="navbarcollapsible" data-bs-target="#navbar-E">
+                    <span>
+                        <svg role="img" class="icon"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-burger"></use></svg>
+                    </span>
+                </button>
+                <div class="navbar-collapsable" id="navbar-E">
+                    <div class="overlay fade"></div>
+                    <div class="close-div">
+                        <button type="button" aria-label="Chiudi il menu" class="btn close-menu">
+                            <span><svg role="img" class="icon"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use></svg></span>
+                        </button>
+                    </div>
+                    <div class="menu-wrapper justify-content-lg-between">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="indexMicrocredito.jsp"><span>Home</span></a>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Soggetti Attuatori</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="searchSA.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Cerca</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="addSA.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Gestisci Nuovi</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Sedi di Formazione</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="searchAule.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Cerca</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Docenti</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="searchDocenti.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Cerca</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link  dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Allievi</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="searchAllieviMicro.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Cerca</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="manageAllievi.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Gestisci Nuovi</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link active dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Progetti Formativi</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="searchPFMicro.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Cerca</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="dUnit.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Unità didattiche</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="rend.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Rendicontazione</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Materiale Didattico</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="downloadModelli.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Gestisci</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="downloadModelliFS.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Modelli in Facsimile</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>FAQ</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="saFAQ.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Domande SE</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="mangeFAQ.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Cerca</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-                <%@ include file="menu/menu.jsp"%>
                 <!-- end:: Aside -->
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
                     <%@ include file="menu/head.jsp"%>
@@ -236,7 +484,7 @@
                         </div>
                         <!-- end:: Content Head -->
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
+                    <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
                     <!-- end:: Footer -->
                     <!-- end:: Content -->
                 </div>
@@ -301,7 +549,7 @@
                                     </tr>
                                 </thead>
                             </table>
-                             <table class="table table-bordered" style="width: 100%; display: none;" id="salvamappatura">
+                            <table class="table table-bordered" style="width: 100%; display: none;" id="salvamappatura">
                                 <tfoot style="width: 100%;">
                                 <th colspan="6"><div class="kt-align-center">
                                         <a id="mappaprogetto" onclick="mappaprogetto();" href="javascript:void(0);" class="btn btn-success"> 
@@ -402,6 +650,7 @@
         <script src="<%=src%>/assets/app/bundle/app.bundle.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/sweetalert2/dist/sweetalert2.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.bundle.min.js" type="text/javascript"></script>
         <link href="<%=src%>/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" type="text/css" />
         <!--this page -->
         <script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
@@ -418,23 +667,23 @@
         <script src="<%=src%>/assets/vendors/general/inputmask/dist/inputmask/jquery.inputmask.js" type="text/javascript"></script>
         <script id="searchPFMicro" src="<%=src%>/page/mc/js/searchPFMicro.js<%=no_cache%>" defer data-context="<%=request.getContextPath()%>" data-typeuser="<%=us.getTipo()%>" type="text/javascript"></script>
         <script type="text/javascript">
-                                                                        var KTAppOptions = {
-                                                                            "colors": {
-                                                                                "state": {
-                                                                                    "brand": "#5d78ff",
-                                                                                    "dark": "#282a3c",
-                                                                                    "light": "#ffffff",
-                                                                                    "primary": "#5867dd",
-                                                                                    "success": "#34bfa3",
-                                                                                    "info": "#36a3f7",
-                                                                                    "warning": "#ffb822"
-                                                                                },
-                                                                                "base": {
-                                                                                    "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
-                                                                                    "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
-                                                                                }
-                                                                            }
-                                                                        };
+                                            var KTAppOptions = {
+                                                "colors": {
+                                                    "state": {
+                                                        "brand": "#5d78ff",
+                                                        "dark": "#282a3c",
+                                                        "light": "#ffffff",
+                                                        "primary": "#5867dd",
+                                                        "success": "#34bfa3",
+                                                        "info": "#36a3f7",
+                                                        "warning": "#ffb822"
+                                                    },
+                                                    "base": {
+                                                        "label": ["#c5cbe3", "#a1a8c3", "#3d4465", "#3e4466"],
+                                                        "shape": ["#f0f3ff", "#d9dffa", "#afb4d4", "#646c9a"]
+                                                    }
+                                                }
+                                            };
         </script>
         <script>
 //            serve a far vedere il filtro rendicontato solo se seleziono archiviato

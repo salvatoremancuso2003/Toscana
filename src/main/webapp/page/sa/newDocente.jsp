@@ -50,6 +50,7 @@
         <meta name="description" content="Updates and statistics">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src="<%=src%>/resource/webfont.js"></script>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.bundle.min.js"></script>
         <script>
             WebFont.load({
                 google: {
@@ -79,6 +80,7 @@
         <link href="<%=src%>/assets/demo/default/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/brand/light.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/demo/default/skins/aside/light.css" rel="stylesheet" type="text/css" />
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
 
 
         <link rel="shortcut icon" href="<%=src%>/assets/media/logos/favicon.ico" />
@@ -124,11 +126,198 @@
         </style>
     </head>
 
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <%@ include file="menu/head1.jsp"%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
+            <nav class="navbar navbar-expand-lg has-megamenu" aria-label="Menu principale">
+                <button type="button" aria-label="Mostra o nascondi il menu" class="custom-navbar-toggler" aria-controls="menu" aria-expanded="false" data-bs-toggle="navbarcollapsible" data-bs-target="#navbar-E">
+                    <span>
+                        <svg role="img" class="icon"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-burger"></use></svg>
+                    </span>
+                </button>
+                <div class="navbar-collapsable" id="navbar-E">
+                    <div class="overlay fade"></div>
+                    <div class="close-div">
+                        <button type="button" aria-label="Chiudi il menu" class="btn close-menu">
+                            <span><svg role="img" class="icon"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use></svg></span>
+                        </button>
+                    </div>
+                    <div class="menu-wrapper justify-content-lg-between">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link " href="indexSoggettoAttuatore.jsp"><span>Home</span></a>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Allievi</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="modello1.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Aggiungi</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="searchAllievi.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Cerca</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link active dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Docenti</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item active" href="newDocente.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Aggiungi</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="searchDocenti_sa.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Cerca</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Progetti Formativi</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="newProgettoFormativo.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Aggiungi</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="searchProgettiFormativi.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Cerca</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Materiale Didattico</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="downloadModelli.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Download</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="downloadModelliFS.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Modelli in Facsimile</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>FAQ</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="myFAQ.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Le Mie Domande</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="allFAQ.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>FAQ</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-                <%@ include file="menu/menu.jsp"%>
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
                     <%@ include file="menu/head.jsp"%>
                     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -148,37 +337,38 @@
                                         <form id="kt_form" action="<%=request.getContextPath()%>/OperazioniSA?type=addDocente" 
                                               class="kt-form kt-form--label-right" method="post" enctype="multipart/form-data">
                                             <input type="hidden" name="save" id="save" value="0" />
-                                            <%if(Utility.demoversion){%>
-                                                <div class="kt-portlet__head">
-                                                    <div class="kt-portlet__head-label">
-                                                        <h3 class="kt-portlet__head-title">
-                                                            <a href="<%=request.getContextPath()%>/OperazioniSA?type=generaterandomDocenti" 
-                                                               class="btn btn-dark kt-font-bold"><i class="fa fa-user"></i> INSERISCI DOCENTE RANDOM</a>
-                                                        </h3>
-                                                    </div>
+                                            <%if (Utility.demoversion) {%>
+                                            <div class="kt-portlet__head">
+                                                <div class="kt-portlet__head-label">
+                                                    <h3 class="kt-portlet__head-title">
+                                                        <a href="<%=request.getContextPath()%>/OperazioniSA?type=generaterandomDocenti" 
+                                                           class="btn btn-dark kt-font-bold"><i class="fa fa-user"></i> INSERISCI DOCENTE RANDOM</a>
+                                                    </h3>
                                                 </div>
-                                                <%}%>
+                                            </div>
+                                            <%}%>
                                             <div class="kt-portlet__body">
                                                 <h5>ANAGRAFICA</h5>
+                                                <p1>tutti i campi sono obbligatori* </p1>
                                                 <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
                                                 <div class="kt-section kt-section--first">
                                                     <div class="kt-section__body">
                                                         <div class="form-group row ">
                                                             <div class="col-lg-3">
-                                                                <label for="nome">Nome </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label  for="nome">Nome </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input class="form-control obbligatory" name="nome" id="nome">
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="cognome">Cognome </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="cognome">Cognome </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input class="form-control obbligatory" name="cognome" id="cognome">
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="cf">Codice Fiscale </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="cf">Codice Fiscale </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input class="form-control obbligatory" name="cf" id="cf">
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="com_nas">Comune di nascita <i class="fa fa-info-circle" data-container="body" data-html="true" data-toggle="kt-tooltip" data-placement="top" title="<h6>Per i soggetti nati all'estero, indicare lo stato di nascita.</h6>"></i></label>
-                                                                <label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="com_nas"> </label>
+                                                                <label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" 
                                                                      id="com_nas_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" 
@@ -193,13 +383,13 @@
                                                         </div>
                                                         <div class="form-group row ">
                                                             <div class="col-lg-3">
-                                                                <label for="datanascita">Data Nascita </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="datanascita">Data Nascita </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input type="text" class="form-control obbligatory date-picker_r" 
                                                                        name="data" id="datanascita" autocomplete="off" onkeydown="return false" />
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="reg_res">Regione di residenza </label>
-                                                                <label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="reg_res"></label>
+                                                                <label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" 
                                                                      id="reg_res_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" 
@@ -212,23 +402,23 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="email">Email </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="email">Email </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input class="form-control obbligatory" name="email" id="email">
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="pecmail">PEC </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="pecmail">PEC </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input class="form-control obbligatory" name="pecmail" id="pecmail">
                                                             </div>
 
                                                         </div>
                                                         <div class="form-group row ">
                                                             <div class="col-lg-3">
-                                                                <label for="telefono">Numero di cellulare (Senza +39) </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="telefono">Numero di cellulare (Senza +39) </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input class="form-control obbligatory" name="telefono" id="telefono" onkeypress="return isNumber(event);">
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="tit_stu">Titolo di studio </label>
-                                                                <label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="tit_stu"></label>
+                                                                <label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" 
                                                                      id="tit_stu_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" 
@@ -241,8 +431,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="area_stu">Area Prevalente di qualificazione </label>
-                                                                <label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="area_stu"></label>
+                                                                <label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" 
                                                                      id="area_stu_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" 
@@ -255,8 +445,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-3">
-                                                                <label for="fascia">Fascia </label>
-                                                                <label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="fascia"></label>
+                                                                <label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="dropdown bootstrap-select form-control kt-" 
                                                                      id="fascia_div" style="padding: 0;">
                                                                     <select class="form-control kt-select2-general obbligatory" 
@@ -273,8 +463,8 @@
                                                     </div>
                                                     <div class="form-group row ">
                                                         <div class="col-lg-3">
-                                                            <label for="inquad">Inquadramento </label>
-                                                            <label class="kt-font-danger kt-font-boldest">*</label>
+                                                            <label for="inquad"></label>
+                                                            <label class="kt-font-danger kt-font-boldest"></label>
                                                             <div class="dropdown bootstrap-select form-control kt-" 
                                                                  id="inquad_div" style="padding: 0;">
                                                                 <select class="form-control kt-select2-general obbligatory" 
@@ -314,7 +504,7 @@
                                                             <div class="kt-separator kt-separator--border kt-separator--space-xs"></div>
                                                             <div class="form-group row">
                                                                 <div class="col-lg-3">
-                                                                    <label for="tipo_att_<%=i%>">Tipologia di attivit&#224; </label><label id="tipo_att_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="tipo_att_<%=i%>"></label><label id="tipo_att_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <div class="dropdown bootstrap-select form-control kt-" 
                                                                          id="tipo_att_<%=i%>_div" style="padding: 0;">
                                                                         <select class="form-control kt-select2-general" 
@@ -327,26 +517,26 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <label for="committente_<%=i%>">Committente </label><label id="committente_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="committente_<%=i%>">Committente </label><label id="committente_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <input class="form-control" name="committente_<%=i%>" id="committente_<%=i%>">
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <label for="data_inizio_<%=i%>">Data inizio periodo di riferimento </label><label id="data_inizio_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="data_inizio_<%=i%>">Data inizio periodo di riferimento </label><label id="data_inizio_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <input type="text" class="form-control datepicker-custom" name="data_inizio_<%=i%>" id="data_inizio_<%=i%>" onkeydown="return false" >
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <label for="data_fine_<%=i%>">Data fine periodo di riferimento </label><label id="data_fine_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="data_fine_<%=i%>">Data fine periodo di riferimento </label><label id="data_fine_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <input type="text" class="form-control datepicker-custom" name="data_fine_<%=i%>" id="data_fine_<%=i%>" onkeydown="return false" >
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <div class="col-lg-3">
-                                                                    <label for="durata_<%=i%>">Durata</label><label id="durata_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="durata_<%=i%>">Durata</label><label id="durata_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <input class="form-control" onkeypress="return isNumber(event);"
                                                                            name="durata_<%=i%>" id="durata_<%=i%>">
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <label for="unita_<%=i%>">Unit&#224; di misura </label><label id="unita_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label for="unita_<%=i%>"> </label><label id="unita_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <div class="dropdown bootstrap-select form-control kt-" 
                                                                          id="unita_<%=i%>_div" style="padding: 0;">
                                                                         <select class="form-control kt-select2-general" 
@@ -359,7 +549,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <label for="incarico_<%=i%>">Tipologia di incarico </label><label id="incarico_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label> 
+                                                                    <label for="incarico_<%=i%>"></label><label id="incarico_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label> 
                                                                     <div class="dropdown bootstrap-select form-control kt-" 
                                                                          id="incarico_<%=i%>_div" style="padding: 0;">
                                                                         <select class="form-control kt-select2-general" id="incarico_<%=i%>" name="incarico_<%=i%>">
@@ -371,7 +561,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-lg-3">
-                                                                    <label for="fonte_<%=i%>">Fonte di finanziamento </label><label id="fonte_<%=i%>_obl" class='kt-font-danger kt-font-boldest'>*</label>
+                                                                    <label " for="fonte_<%=i%>"></label><label id="fonte_<%=i%>_obl" class='kt-font-danger kt-font-boldest'></label>
                                                                     <div class="dropdown bootstrap-select form-control kt-" 
                                                                          id="fonte_<%=i%>_div" style="padding: 0;">
                                                                         <select class="form-control kt-select2-general" id="fonte_<%=i%>" name="fonte_<%=i%>">
@@ -416,7 +606,7 @@
                                                                         <h6>RICHIESTA ACCREDITAMENTO DOCENTE</h6>
                                                                     </div>
                                                                     <div class="form-group col-xl-6 col-lg-6">
-                                                                        <label>Scaricare il modello con i dati inseriti per poi caricarlo firmato digitalmente (.p7m CAdES, .pdf PAdES) nel campo seguente.</label>
+                                                                        <label> <br>Scaricare il modello con i dati inseriti per poi caricarlo firmato digitalmente (.p7m CAdES, .pdf PAdES) nel campo seguente.</label>
                                                                         <button class="btn btn-primary btn-md btn-tall btn-wide kt-font-bold kt-font-transform-u" 
                                                                                 type="button" 
                                                                                 onclick="return model_funct('<%=richiesta.getId()%>');">
@@ -437,23 +627,23 @@
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="col-xl-3 col-lg-6">
-                                                                <label for="docid">DOCUMENTO DI RICONOSCIMENTO DOCENTE </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="docid"></label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="custom-file">
                                                                     <input type="file" tipo="obbligatory" class="custom-file-input" accept="application/pdf" 
                                                                            name="docid" id="docid" onchange="return checkFileExtAndDim(['pdf']);">
-                                                                    <label style="text-align: left;" class="custom-file-label selected" id="label_file">Scegli File</label>
+                                                                    <label style="text-align: left;" class="custom-file-label selected" id="label_file">Scegli DOCUMENTO DI RICONOSCIMENTO DOCENTE </label>
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-3 col-lg-6">
-                                                                <label for="scadenzadoc">DATA SCADENZA DOCUMENTO DOCENTE </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="scadenzadoc">DATA SCADENZA DOCUMENTO DOCENTE </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <input type="text" class="form-control obbligatory date-picker_r1" name="scadenzadoc" id="scadenzadoc" 
                                                                        onkeydown="return false"  autocomplete="off"/>
                                                             </div>
                                                             <div class="col-xl-3 col-lg-6">
-                                                                <label for="cv">CURRICULUM VITAE DOCENTE </label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                <label for="cv"> </label><label class="kt-font-danger kt-font-boldest"></label>
                                                                 <div class="custom-file">
                                                                     <input type="file" tipo="obbligatory" class="custom-file-input" accept="application/pdf" name="cv" id="cv" onchange="return checkFileExtAndDim(['pdf']);">
-                                                                    <label style="text-align: left;" class="custom-file-label selected" id="label_file">Scegli File</label>
+                                                                    <label style="text-align: left;" class="custom-file-label selected" id="label_file">Scegli CURRICULUM VITAE DOCENTE </label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -477,11 +667,11 @@
                             </div>
                         </div>
                     </div>
-                    <%@ include file="menu/footer.jsp"%>
+                    <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
                 </div>
             </div>
         </div>
-                <div id="kt_scrolltop" style="background-color: #0059b3" style="background-color: #1d32a6" class="kt-scrolltop">
+        <div id="kt_scrolltop" style="background-color: #0059b3" style="background-color: #1d32a6" class="kt-scrolltop">
             <i class="fa fa-arrow-up"></i>
         </div>
         <!--begin:: Global Mandatory Vendors -->

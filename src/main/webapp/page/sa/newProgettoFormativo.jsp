@@ -58,6 +58,7 @@
             });
         </script>
         <!-- this page -->
+        <link href="../../Bootstrap2024/assets/css/bootstrap-italia.min.css" rel="stylesheet" type="text/css" />
         <link href="<%=src%>/assets/vendors/general/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css"/>
         <link href="<%=src%>/assets/app/custom/wizard/wizard-v1_io.css" rel="stylesheet" type="text/css"/>
         <link href="<%=src%>/assets/vendors/general/select2/dist/css/select2.css" rel="stylesheet" type="text/css" />
@@ -97,7 +98,7 @@
         <script type="text/javascript">
 
             function model_funct(codice) {
-           
+
                 document.getElementById('save').value = "1";
                 document.getElementById('modello_' + codice).value = codice;
                 document.getElementById("kt_form").target = "_blank";
@@ -107,13 +108,200 @@
         </script>
 
     </head>
-    <body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed">
+    <body>
         <!-- begin:: Page -->
         <%if (fancy) {%>
         <%@ include file="menu/head1.jsp"%>
+        <%@ include file="../../Bootstrap2024/index/index_SoggettoAttuatore/Header_soggettoAttuatore.jsp"%>
         <div class="kt-grid kt-grid--hor kt-grid--root">
+            <nav class="navbar navbar-expand-lg has-megamenu" aria-label="Menu principale">
+                <button type="button" aria-label="Mostra o nascondi il menu" class="custom-navbar-toggler" aria-controls="menu" aria-expanded="false" data-bs-toggle="navbarcollapsible" data-bs-target="#navbar-E">
+                    <span>
+                        <svg role="img" class="icon"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-burger"></use></svg>
+                    </span>
+                </button>
+                <div class="navbar-collapsable" id="navbar-E">
+                    <div class="overlay fade"></div>
+                    <div class="close-div">
+                        <button type="button" aria-label="Chiudi il menu" class="btn close-menu">
+                            <span><svg role="img" class="icon"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-close-big"></use></svg></span>
+                        </button>
+                    </div>
+                    <div class="menu-wrapper justify-content-lg-between">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="indexSoggettoAttuatore.jsp"><span>Home</span></a>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Allievi</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="modello1.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Aggiungi</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="searchAllievi.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Cerca</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Docenti</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="newDocente.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Aggiungi</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="searchDocenti_sa.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Cerca</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link active dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Progetti Formativi</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="newProgettoFormativo.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Aggiungi</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="searchProgettiFormativi.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Cerca</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>Materiale Didattico</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="downloadModelli.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Download</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="downloadModelliFS.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Modelli in Facsimile</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown megamenu">
+                                <button type="button" class="nav-link dropdown-toggle px-lg-2 px-xl-3" data-bs-toggle="dropdown" aria-expanded="false" id="megamenu-base-E" data-focus-mouse="false">
+                                    <span>FAQ</span><svg role="img" class="icon icon-xs ms-1"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                                </button>
+                                <div class="dropdown-menu shadow-lg" role="region" aria-labelledby="megamenu-base-E">
+                                    <div class="megamenu pb-5 pt-3 py-lg-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-12 col-lg-4">
+                                                        <div class="link-list-wrapper">
+                                                            <ul class="link-list">
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="myFAQ.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>Le Mie Domande</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="list-item dropdown-item" href="allFAQ.jsp">
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <span>FAQ</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-                <%@ include file="menu/menu.jsp"%>
                 <!-- end:: Aside -->
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
                     <%@ include file="menu/head.jsp"%>
@@ -128,14 +316,14 @@
                             </div>
                         </div>
                         <%} else {%>
-                        
+
                         <div class="kt-grid kt-grid--hor kt-grid--root">
                             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
                                     <%}%>
                                     <!-- end:: Content Head -->
                                     <!-- begin:: Content -->
-                                    
+
                                     <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
                                         <div class="row">
                                             <div class="alert alert-info">
@@ -215,7 +403,7 @@
                                                                 <div class="kt-wizard-v1__form" style="color: #6c7293; min-height: 40vh">
                                                                     <div class="form-group row">
                                                                         <div class="col-lg-12">
-                                                                            <label>Nome</label><label class="kt-font-danger kt-font-boldest"> *</label>
+                                                                            <label></label><label class="kt-font-danger kt-font-boldest"> *</label>
                                                                             <div class="dropdown bootstrap-select form-control kt- paddig_0" id="nome_pf_div">
                                                                                 <select class="form-control kt-select2-general obbligatory" id="nome_pf" name="nome_pf">
                                                                                     <option value="-">Seleziona Nome</option>
@@ -229,24 +417,24 @@
                                                                                                                                                         <input type="text" class="form-control obbligatory" name="nome_pf" id="nome_pf" placeholder="Nome Progetto Formativo">-->
                                                                         </div>
                                                                     </div>
-                                                                                <input type="hidden" name="svolgimento" value="M" />
+                                                                    <input type="hidden" name="svolgimento" value="M" />
                                                                     <div class="form-group">
-                                                                        <label>Descrizione</label>
+                                                                        <label></label>
                                                                         <textarea class="form-control" id="descrizione_pf" name="descrizione_pf" placeholder="Descrizione Progetto Formativo" rows="5"></textarea>
                                                                     </div>
                                                                     <div class="form-group row">
                                                                         <div class="col-lg-12">
-                                                                            <label>Date Avvio - Chiusura <i class="fa fa-info-circle" 
-                                                                                              data-container="body" 
-                                                                                              data-toggle="kt-popover" 
-                                                                                              data-placement="bottom"
-                                                                                              data-original-title="Date Percorso"
-                                                                                              data-content="La data di chiusura non pu&#242; essere successiva ai 45 gg solari dalla data di avvio, 
-                                                                              la data di chiusura effettiva sar&#224; comunicata con la dichiarazione di chiusura percorso."></i>
+                                                                            <label><i class="fa fa-info-circle" 
+                                                                                                            data-container="body" 
+                                                                                                            data-toggle="kt-popover" 
+                                                                                                            data-placement="bottom"
+                                                                                                            data-original-title="Date Percorso"
+                                                                                                            data-content="La data di chiusura non pu&#242; essere successiva ai 45 gg solari dalla data di avvio, 
+                                                                                                            la data di chiusura effettiva sar&#224; comunicata con la dichiarazione di chiusura percorso."></i>
                                                                             </label><label class="kt-font-danger kt-font-boldest">*</label>
-                                                                            
-                                                                              
-                                                                            
+
+
+
                                                                             <input type="text" class="form-control obbligatory" name="date" id="kt_daterange" 
                                                                                    value="" placeholder="Date Inizio e Fine" readonly autocomplete="off" />
                                                                         </div>
@@ -261,7 +449,7 @@
                                                                 <div class="kt-wizard-v1__form" style="color: #6c7293;">
                                                                     <div class="kt-scroll col-12 center" data-scroll="true" style="min-height: 40vh">
                                                                         <div class="form-group">
-                                                                            <label>Sede di Formazione</label><label class="kt-font-danger kt-font-boldest">*</label>
+                                                                            <label></label><label class="kt-font-danger kt-font-boldest">*</label>
                                                                             <div class="dropdown bootstrap-select form-control kt-" id="sede_div" style="padding: 0;">
                                                                                 <select class="form-control kt-select2-general obbligatory" id="sede" name="sede"  style="width: 100%">
                                                                                     <option value="-">Seleziona Sede</option>
@@ -423,7 +611,7 @@
                                     </div>
                                 </div>
                                 <%if (fancy) {%>
-                                <%@ include file="menu/footer.jsp"%>
+                                <%@ include file="../../Bootstrap2024/index/login/Footer_login.jsp"%>
                                 <%}%>
                             </div>
                         </div>
@@ -449,6 +637,7 @@
         <script src="<%=src%>/assets/app/custom/general/components/extended/blockui1.33.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/soop/js/utility.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/vendors/general/jquery-form/dist/jquery.form.min.js" type="text/javascript"></script>
+        <script src="../../Bootstrap2024/assets/js/bootstrap-italia.bundle.min.js" type="text/javascript"></script>
         <!--this page-->
         <script src="<%=src%>/assets/vendors/general/select2/dist/js/select2.full.js" type="text/javascript"></script>
         <script src="<%=src%>/assets/app/custom/general/crud/forms/widgets/select2.js" type="text/javascript"></script>
