@@ -37,7 +37,7 @@
                             <div class="col-12">
                                 <div class="it-header-center-content-wrapper">
                                     <div class="it-brand-wrapper">
-                                        <a href="/bootstrap-italia/docs/esempi/comuni/template-homepage/">
+                                        <a href="">
                                             <svg class="icon" aria-hidden="true">
                                             <use href="/dist/svg/sprites.svg#it-pa"></use>
                                             </svg>

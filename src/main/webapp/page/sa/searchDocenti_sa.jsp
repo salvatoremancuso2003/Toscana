@@ -126,7 +126,7 @@
                                                                 </li>
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="searchAllievi.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-search"></use></svg>
                                                                         <span>Cerca</span>
                                                                     </a>
                                                                 </li>
@@ -159,7 +159,7 @@
                                                                 </li>
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="searchDocenti_sa.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-search"></use></svg>
                                                                         <span>Cerca</span>
                                                                     </a>
                                                                 </li>
@@ -192,7 +192,7 @@
                                                                 </li>
                                                                 <li>
                                                                     <a class="list-item dropdown-item" href="searchProgettiFormativi.jsp">
-                                                                        <svg role="img" class="icon icon-sm me-2"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-arrow-right-triangle"></use></svg>
+                                                                        <svg role="img" class="icon icon-sm me-2"><use href="../../Bootstrap2024/assets/svg/sprites.svg#it-search"></use></svg>
                                                                         <span>Cerca</span>
                                                                     </a>
                                                                 </li>
