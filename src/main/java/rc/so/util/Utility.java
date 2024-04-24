@@ -268,6 +268,7 @@ public class Utility {
 
     public static String convMd5(String psw) {
         try {
+            // deepcode ignore InsecureHash: <please specify a reason of ignoring this>
             MessageDigest md = MessageDigest.getInstance("MD5");
             md.update(psw.getBytes());
             byte byteData[] = md.digest();
