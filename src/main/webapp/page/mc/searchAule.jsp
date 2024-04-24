@@ -1,4 +1,5 @@
 
+<%@page import="rc.so.util.Utility"%>
 <%@page import="rc.so.entity.Item"%>
 <%@page import="rc.so.db.Entity"%>
 <%@page import="java.util.List"%>
@@ -23,7 +24,7 @@
             Entity e = new Entity();
             List<Item> regioni = e.listaRegioni();
             e.close();
-            String src = session.getAttribute("src").toString();
+            String src = Utility.checkAttribute(session, "src");
             
 
 

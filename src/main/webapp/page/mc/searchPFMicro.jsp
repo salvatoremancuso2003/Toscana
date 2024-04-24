@@ -27,7 +27,7 @@
             List<StatiPrg> stati = e.getStatiPrg_R();
             int min_allievi = Integer.parseInt(e.getPath("min_allievi"));
             e.close();
-            String src = session.getAttribute("src").toString();
+            String src = Utility.checkAttribute(session, "src");
             String istato = request.getParameter("tipo") != null ? request.getParameter("tipo") : "";
             String icip = request.getParameter("icip") != null ? request.getParameter("icip") : "";
             idsa = request.getParameter("sa") != null ? Long.parseLong(request.getParameter("sa")) : idsa;

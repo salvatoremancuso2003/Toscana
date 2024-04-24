@@ -27,7 +27,7 @@
             List<CPI> cpi = e.listaCPI();
             List<SoggettiAttuatori> sa_list = e.findAll(SoggettiAttuatori.class);
             e.close();
-            String src = session.getAttribute("src").toString();
+            String src = Utility.checkAttribute(session, "src");
 %>
 <html>
     <head>

@@ -22,7 +22,7 @@
             List<UnitaDidattiche> ud = e.getUD();
             List<String> fasi = e.getFasi_UD();
             e.close();
-            String src = session.getAttribute("src").toString();
+            String src = Utility.checkAttribute(session, "src");
 %>
 <html>
     <head>
