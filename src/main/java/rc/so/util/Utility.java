@@ -190,6 +190,7 @@ public class Utility {
         } catch (Exception e) {
         }
         return "";
+        
     } public static String sanitize(String input) {
         return StringEscapeUtils.escapeHtml4(input);
     }

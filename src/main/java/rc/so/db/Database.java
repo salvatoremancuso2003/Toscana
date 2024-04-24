@@ -48,7 +48,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Level;
 import static org.apache.commons.codec.binary.Base64.decodeBase64;
@@ -56,7 +55,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import static org.apache.commons.lang3.StringUtils.right;
 import static org.apache.commons.lang3.StringUtils.stripAccents;
-import org.apache.commons.text.StringEscapeUtils;
 import org.joda.time.DateTime;
 import rc.so.domain.Presenze_Lezioni_Allievi;
 import static rc.so.util.Utility.conf;
@@ -247,7 +245,7 @@ public class Database {
             String sql = "SELECT base64 FROM fad_report WHERE idprogetti_formativi = " + idpr;
             try (Statement st = this.c.createStatement(); ResultSet rs = st.executeQuery(sql)) {
                 while (rs.next()) {
-                    out = rs.getString(1);
+                    out = Utility.sanitize(rs.getString(1));
                 }
             }
         } catch (SQLException ex) {

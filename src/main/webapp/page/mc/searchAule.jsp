@@ -470,7 +470,7 @@
                                                             <div class="row">
                                                                 <div class="offset-lg-6 col-lg-6 kt-align-right">
                                                                     <a onclick="refresh();" href="javascript:void(0);" class="btn btn-io"><font color='white'>Cerca</font></a>
-                                                                    <a href="<%=pageName_%>" class="btn btn-io-n"><font color='white'>Reset</font></a>
+                                                                    <a href="<%=Utility.sanitize(pageName_)%>" class="btn btn-io-n"><font color='white'>Reset</font></a>
                                                                 </div>
                                                             </div>
                                                         </div>

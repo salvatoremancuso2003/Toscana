@@ -92,20 +92,15 @@ import static org.apache.commons.lang3.StringUtils.removeEnd;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.nio.file.Files;
-import static java.nio.file.Files.probeContentType;
 import org.apache.commons.validator.routines.EmailValidator;
 import org.joda.time.DateTime;
-import static rc.so.db.Action.insertTR;
 import rc.so.domain.Canale;
 import rc.so.domain.MaturazioneIdea;
 import rc.so.domain.Motivazione;
 import rc.so.domain.MotivazioneNO;
 import rc.so.domain.Presenze_Lezioni;
 import rc.so.domain.TipoDoc_Allievi;
-import static rc.so.util.Utility.estraiEccezione;
-import static rc.so.util.Utility.getRequestValue;
 import static rc.so.util.Utility.parseInt;
-import static rc.so.util.Utility.redirect;
 
 /**
  *
